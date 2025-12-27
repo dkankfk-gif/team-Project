@@ -187,8 +187,8 @@ ScrollTrigger.matchMedia({
       }
     });
 
+    
   }
-
 });
 
 
@@ -294,7 +294,78 @@ $(function() {
     }
   });
 
+/* gsap.registerPlugin(ScrollTrigger);
 
+const mm = gsap.matchMedia();
+
+mm.add("(min-width: 769px)", () => {
+  // ✅ 데스크탑만 PIN
+  ScrollTrigger.create({
+    trigger: ".vegan .Texture.green",
+    start: "top 15%",
+    end: "+=200",
+    pin: true,
+    pinSpacing: true,
+    anticipatePin: 1
+  });
+
+  gsap.to(".vegan .Texture.green .img img", {
+    yPercent: 8,
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".vegan .Texture.green",
+      start: "top 70%",
+      end: "bottom 20%",
+      scrub: 1
+    }
+  });
+
+  ScrollTrigger.create({
+    trigger: ".vegan .Texture.Cream",
+    start: "top 15%",
+    end: "+=200",
+    pin: true,
+    pinSpacing: true,
+    anticipatePin: 1
+  });
+
+  gsap.to(".vegan .Texture.Cream .img img", {
+    yPercent: 8,
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".vegan .Texture.Cream",
+      start: "top 70%",
+      end: "bottom 20%",
+      scrub: 1
+    }
+  });
+});
+
+mm.add("(max-width: 768px)", () => {
+  // ✅ 모바일: 핀 제거(겹침 방지)
+  // 필요하면 이미지 y이동만 남기거나, 아예 다 끄기
+  gsap.to(".vegan .Texture.green .img img", {
+    yPercent: 6,
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".vegan .Texture.green",
+      start: "top 90%",
+      end: "bottom 10%",
+      scrub: 1
+    }
+  });
+
+  gsap.to(".vegan .Texture.Cream .img img", {
+    yPercent: 6,
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".vegan .Texture.Cream",
+      start: "top 90%",
+      end: "bottom 10%",
+      scrub: 1
+    }
+  });
+}); */
 
 
 
