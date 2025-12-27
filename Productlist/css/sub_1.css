@@ -1,0 +1,46 @@
+@charset "utf-8";
+/* reset */
+* {margin: 0;padding: 0; box-sizing: border-box;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700; font-size: inherit;}
+a {color: inherit; text-decoration: inherit;}
+img {vertical-align: middle;}
+a img {border: none;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+a:focus {outline: none}
+button:focus {outline: none}
+
+
+.wrap{position: relative; box-sizing: border-box;  margin: 0 auto;  width: 100%; }
+
+.en{font-family: 'PPMori',sans-serif; font-style: normal;}
+.en_s{font-family: 'PPEditorialNew',serif; font-style: normal;}
+
+
+/* header */
+header{width: 100%; padding: 60px 110px 20px; position: fixed; top: 0;left: 0; z-index: 100; display: flex;justify-content: space-between;}
+header .logo{display: inline-block;}
+header p.img{width: 100%;}
+header p.img img{width: 100%;}
+header ul.nav{display: flex; gap: 64px; font-size: 16px; font-weight: 500;}
+header ul.nav li a{display: block; width: 100%;height: 100%;}
+header ul.menu-icon{display: flex; gap: 24px;}
+header ul.menu-icon li a{display: block; width: 100%;height: 100%;}
+
+
+/* footer */
+footer{color: #fff; background: #202020;}
+footer .inner{padding: 140px 110px 60px;}
+footer .top-box{display: flex; justify-content: space-between;margin-bottom: 100px;}
+footer .top-box .left-box{display: flex;width: 50%; flex-wrap: wrap; row-gap: 60px;}
+footer .top-box .left-box ul{width: 30%;}
+footer .top-box .left-box ul li{font-size: 14px; margin-bottom: 12px;}
+footer .top-box .left-box ul li:last-child{margin-bottom: 0;}
+footer .top-box .left-box ul li.tit{color: rgba(255,255,255,0.6);margin-bottom: 18px;}
+footer .top-box .right-box{display:block; width: 20%; padding: ;}
+footer .top-box .right-box ul{display: flex;justify-content: space-between; border-bottom: 1px solid #fff;}
+footer .top-box .right-box li{font-size: 14px; padding: 10px 0; }
+footer .top-box .right-box li img{width: 12px;height: 12px;}
+footer .bottom-box{display: flex; gap: 70px;}
+footer .bottom-box p.logo{color: #fff;}

@@ -1,0 +1,163 @@
+@charset "utf-8";
+
+@font-face{
+  font-family: 'PPEditorialNew';
+  src: url('../font/PPEditorialNew-Ultralight.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face{
+  font-family: 'PPEditorialNew';
+  src: url('../font/PPEditorialNew-UltralightItalic.otf') format('opentype');
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face{
+  font-family: 'PPEditorialNew';
+  src: url('../font/PPEditorialNew-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face{
+  font-family: 'PPEditorialNew';
+  src: url('../font/PPEditorialNew-Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face{
+  font-family: 'PPEditorialNew';
+  src: url('../font/PPEditorialNew-Ultrabold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face{
+  font-family: 'PPEditorialNew';
+  src: url('../font/PPEditorialNew-UltraboldItalic.otf') format('opentype');
+  font-weight: 800;
+  font-style: italic;
+}
+
+@font-face{
+  font-family: 'PPMori';
+  src: url('../font/PPMori-Extralight.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face{
+  font-family: 'PPMori';
+  src: url('../font/PPMori-ExtralightItalic.otf') format('opentype');
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face{
+  font-family: 'PPMori';
+  src: url('../font/PPMori-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face{
+  font-family: 'PPMori';
+  src: url('../font/PPMori-RegularItalic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face{
+  font-family: 'PPMori';
+  src: url('../font/PPMori-Semibold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face{
+  font-family: 'PPMori';
+  src: url('../font/PPMori-SemiboldItalic.otf') format('opentype');
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face{
+  font-family: 'PPMori';
+  src: url('../font/PPMori-BlackItalic.otf') format('opentype');
+  font-weight: 900;
+  font-style: italic;
+}
+/* Yoon Gothic 710 - Light */
+@font-face{
+  font-family: 'Yoon Gothic';
+  src: url("../font/Yoon Gothic.OTF") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-synthesis: none;
+}
+
+/* Yoon Gothic 720 - Regular */
+@font-face{
+  font-family: 'Yoon Gothic';
+  src: url("../font/Yoon Gothic 720.OTF") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-synthesis: none;
+}
+
+/* Yoon Gothic 730 - Medium */
+@font-face{
+  font-family: 'Yoon Gothic';
+  src: url("../font/Yoon Gothic 730.OTF") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-synthesis: none;
+}
+
+/* Yoon Gothic 740 - SemiBold */
+@font-face{
+  font-family: 'Yoon Gothic';
+  src: url("../font/Yoon Gothic 740.OTF") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-synthesis: none;
+}
+
+/* Yoon Gothic 750 - Bold */
+@font-face{
+  font-family: 'Yoon Gothic';
+  src: url("../font/Yoon Gothic 750.OTF") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-synthesis: none;
+}
+
+/* Yoon Gothic 760 - ExtraBold */
+@font-face{
+  font-family: 'Yoon Gothic';
+  src: url("../font/Yoon Gothic 760.OTF") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-synthesis: none;
+}
+
+/* Yoon Gothic 770 - Black */
+@font-face{
+  font-family: 'Yoon Gothic';
+  src: url("../font/Yoon Gothic 770.OTF") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-synthesis: none;
+}
+
+/* Yoon Gothic 780 - Heavy */
+@font-face{
+  font-family: 'Yoon Gothic';
+  src: url("../font/Yoon Gothic 780.OTF") format("opentype");
+  font-weight: 950;
+  font-style: normal;
+  font-synthesis: none;
+}

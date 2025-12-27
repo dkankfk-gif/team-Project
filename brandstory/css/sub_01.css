@@ -1,0 +1,874 @@
+@charset "utf-8";
+/* reset */
+* {margin: 0;padding: 0; box-sizing: border-box;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700; font-size: inherit;}
+a {color: inherit; text-decoration: inherit;}
+img {vertical-align: middle;}
+a img {border: none;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+a:focus {outline: none}
+button:focus {outline: none}
+
+
+.wrap{position: relative; box-sizing: border-box;  margin: 0 auto;  width: 100%;}
+
+.en{font-family: 'PPMori',sans-serif; font-style: normal;}
+.en_s{font-family: 'PPEditorialNew',serif; font-style: normal;}
+
+
+/* header */
+header{width: 100%; padding: 60px 110px 20px; position: fixed; top: 0;left: 0; z-index: 100; display: flex;justify-content: space-between;}
+header .logo{display: inline-block;}
+header p.img{width: 100%;}
+header p.img img{width: 100%;}
+header ul.nav{display: flex; gap: 64px; font-size: 16px; font-weight: 500;}
+header ul.nav li a{display: block; width: 100%;height: 100%;}
+header ul.menu-icon{display: flex; gap: 24px;}
+header ul.menu-icon li a{display: block; width: 100%;height: 100%;}
+
+
+
+/* main */
+.main {background: #F3F4F0;}
+.main .inner{display: flex; justify-content: space-between; padding: 110px;}
+.main .inner .left{width: 50%; position: relative;}
+
+/*  .main-Small */
+/* .main .inner .left .main-Small{  position: absolute; top: 379px; left: 569px;  width: 320px;  } */
+
+
+.main .inner .left .main-Small{position: absolute;
+top: clamp(220px, 14vw, 379px); left: clamp(260px, 30vw, 392px);  width: clamp(240px, 24vw, 320px); }
+
+/* dot  */
+.main .inner .left .main-Small ul{position: relative;   display: flex;   gap: 8px;  margin: 0 0 14px 0;   /* dot과 텍스트 간격 */   padding: 0;  list-style: none; }
+
+.main .inner .left .main-Small ul li{position: static;   width: 8px; height: 8px; border-radius: 50%; background: #ccc;
+}
+
+
+
+.main .inner .left .main-Small ul li:nth-child(1){
+ background: #45663C; /* 첫번째 dot  */}
+
+.main .inner .left .main-Small ul li a.btn{ display:block;
+width:100%;  height:100%;}
+
+/* ------------------------
+텍스트 
+------------------------ */
+.main .inner .left .main-Small p{position: relative; margin: 0 0 18px 0; /* 텍스트와 비디오 간격 */font-size: 19px;  line-height: 150%;  letter-spacing: -0.02em;  font-family: 'PP Mori', sans-serif;  color: #3B3B3B; }
+
+/* ------------------------
+비디오영역 101 x 177
+------------------------ */
+.main .inner .left .main-Small .video{position: relative;  width: 101px;height: 177px;border-radius: 10px; overflow: hidden;opacity: 1; z-index: 2; }
+
+.main .inner .left .main-Small .video video{width: 100%;
+height: 100%; object-fit: cover; display: block;}
+
+
+.main .inner .left .txtBoxBottom{margin-top: clamp(360px, 34vw, 641px);}
+.main .inner .left .txtBoxBottom {width: 100%;}
+.main .inner .left .txtBoxBottom p{width: 100%;}
+
+
+.main .inner .left .txtBoxBottom p.semi {font-family:'PP Mori' ,sans-serif; font-size: clamp(56px, 5.8vw, 110px);
+font-weight: 700;  line-height: 116%;  } 
+.main .inner .left .txtBoxBottom p.set {font-family:'PP Mori' ,sans-serif; font-size: clamp(56px, 5.8vw, 110px);
+font-weight: 700;  line-height: 116%; }
+.main .inner .left .txtBoxBottom p span.bold {font-family: 'PPEditorialNew',serif;font-weight: 400;font-size: clamp(56px, 5.8vw, 115px); line-height: 116%;}
+.main .inner .left .txtBoxBottom p.ital {font-family:'PP Mori' ,sans-serif; font-size: clamp(56px, 5.8vw, 115px); font-style: italic; line-height: 116%;}
+
+
+
+
+
+/* pill 공통 */
+.main .inner .left ul.main-Keyword li.pill{ position: absolute;
+display: inline-flex; align-items: center; text-align: center; justify-content: center; border: 1px solid #3B3B3B; border-radius: 999px;padding: 9px 20px; white-space: nowrap; box-sizing: border-box; background: transparent; line-height: 1; } 
+
+.main .inner .left ul.main-Keyword li.pill{transition: background-color .25s ease, transform .25s ease, opacity .25s ease;}
+.main .inner .left ul.main-Keyword li.pill--white{ background: transparent;}
+.main .inner .left ul.main-Keyword li.pill--white:hover{
+background: #C1D0BA;}
+.main .inner .left ul.main-Keyword li.pill--icon img{
+transition: opacity .2s ease;}
+.main .inner .left ul.main-Keyword li.pill--icon:hover img{
+  opacity: 0; /*  hover하면 잎 숨김 */}
+.main .inner .left ul.main-Keyword li.pill--circle{
+position: absolute;overflow: hidden; /* 잎이 원 밖으로 나가면 잘림 방지 */}
+
+
+/* 빈 원 /잎/'가상요소' */
+.main .inner .left ul.main-Keyword li.pill--circle::after{
+content:"";   width: 42px; height: 42px;   background: url(../img/Group\ 1287_leaf.svg) no-repeat center / contain;     opacity: 0;   /*  기본 숨김 */ transition: opacity .2s ease; 
+}
+/* 원 가운데 정렬 */
+.main .inner .left ul.main-Keyword li.pill--circle::after{
+position: absolute;  left: 50%;   top: 50%;  transform: translate(-50%, -50%); }
+
+.main .inner .left ul.main-Keyword li.pill--circle:hover::after{ opacity: 1;   /*  hover하면 잎 보임 */}
+.main .inner .left ul.main-Keyword li.pill--white:hover{transform: rotate(15deg);  /*  hover에서만 회전 */ }
+
+
+
+/* 색상 */
+.main .inner .left ul.main-Keyword li.pill--green{background: #C1D0BA;}
+.main .inner .left ul.main-Keyword li.pill--white{background: transparent;}
+
+/* 빈 원 */
+.main .inner .left ul.main-Keyword li.pill--circle{width: 50px; height: 50px;padding: 0;border-radius: 50%;background: transparent;}
+
+/* 잎 아이콘  */
+.main .inner .left ul.main-Keyword li.pill--icon{  width: 55px; height: 55px; padding: 0;  border-radius: 50%; background: transparent; display: inline-flex;  align-items: center; justify-content: center;}
+
+.main .inner .left ul.main-Keyword li.pill--icon img{    display: block;width: 60%;  /* 잎 크기  */  height: auto;
+}
+
+
+
+/* font-size */
+.main .inner .left ul.main-Keyword li {font-size: 25px;}
+
+
+/* Nature */
+.main .inner .left ul.main-Keyword li:nth-child(1){top: 119px;
+left: 0px;z-index: 3;}
+
+/* 잎 아이콘: Nature 오른쪽 끝 근처 */
+.main .inner .left ul.main-Keyword li:nth-child(2){ top: 119px;
+left: 138px;  z-index: 4;}
+
+/* 겹침 원: Nature 아래와 Confidence 사이 */
+.main .inner .left ul.main-Keyword li:nth-child(3){    top: 178px;  left: 37px; z-index: 2;}
+
+/* Confidence (green) */
+.main .inner .left ul.main-Keyword li:nth-child(4){top: 178px;
+left: 96px;z-index: 1;}
+
+/* Heritage */
+.main .inner .left ul.main-Keyword li:nth-child(5){top: 238px;
+left: 0px;}
+
+/* Balance (green) */
+.main .inner .left ul.main-Keyword li:nth-child(6){top: 299px;left: 96px;}
+
+/* Love */
+.main .inner .left ul.main-Keyword li:nth-child(7){top: 343px;left: 0px;}
+
+/* Breath  */
+.main .inner .left ul.main-Keyword li:nth-child(8){top: 388px;left: 96px;}
+
+/* .main .inner .left .main-Small .video video {display: block;} */
+
+
+
+/* right 영역  */
+/* .main .inner {position: relative;}
+.main .inner .right{width: 52.45%;}
+.main .inner .right > img{display:block; width: 100%;
+height: auto; margin-top: 200px;} */
+
+
+.main .inner{position: relative; display:flex; justify-content: space-between; padding: clamp(40px, 6vw, 110px); gap: clamp(20px, 4vw, 60px);}
+.main .inner .right{width: 52.45%; position: relative;} /* 모바일 오버레이 대비 */
+.main .inner .right > img{ display:block; width: 100%;
+height: auto; margin-top: clamp(80px, 10vw, 200px); }
+
+/* 버튼: inner 기준 absolute였는데, right 기준으로 바꾸면 모바일에서도 컨트롤 쉬움 */
+.main .inner .right a.btn{
+  position: absolute;
+  right: clamp(0px, -37vw, 40px);
+  bottom: clamp(-49px, -47vw, 3px);
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  padding: 16.5px 22px;
+  border-radius: 100px;
+  background: #4B4B4B;
+  color: #fff;
+  text-decoration: none;
+  font-family: 'PP Mori', sans-serif;
+  font-size: clamp(20px, 1.2vw, 14px);
+  white-space: nowrap;
+}
+
+/* typo */
+
+
+/* 공통 */
+
+.typo{padding: 162px 110px 236px; background:#fff;}
+.typo .inner{max-width:1700px; margin:0 auto;}
+
+.typo .tit1{
+  margin:0;
+  text-align:right;
+  font-family: 'PP Mori', sans-serif;
+  font-weight:bold;
+  font-size: clamp(56px, 8vw, 160px);   /*  반응형 타이포 */
+  line-height: 1.05;
+  color:#000;
+ 
+}
+
+.typo .tit1 .gray{
+  font-family: 'PPEditorialNew',serif;
+  color:#BEBEBE;
+  font-style: normal;
+}
+
+.typo{
+  padding: 162px 110px 236px 110px;
+  width:100%;
+  background:#fff;
+  overflow:hidden;
+  position: relative;
+}
+
+.typo .inner{
+  max-width: 1700px;
+  margin: 0 auto;
+}
+
+/* =========================
+   TITLE (색상 고정)
+   - 기본: #000
+   - 회색: .gray -> #BEBEBE
+========================= */
+.typo .tit1{
+  margin: 0;
+  text-align: right;
+  font-family: 'PP Mori', sans-serif;
+  font-weight:5900;
+  font-size: clamp(56px, 8vw, 160px);  /* 반응형 타이포 */
+  line-height: 1.05;
+  color:#000;
+}
+
+.typo .tit1 span.gray{
+  color:#BEBEBE;
+  font-style: italic;
+  font-weight:400;
+}
+
+/* =========================
+   INLINE SLOT (반응형)
+   - 이미지가 텍스트 흐름 안에서 안정적으로 자리 유지
+========================= */
+.typo .tit1 .slot{
+  display:inline-block;
+  vertical-align: middle;
+  margin: 0 .22em;
+  line-height: 0; /*  라인박스 흔들림 방지 */
+}
+
+
+/* 제품 1 */
+.typo .tit1 .slot-1 img{
+  width: clamp(90px, 10vw, 240px);
+}
+
+/* 제품 2 */
+.typo .tit1 .slot-2 img{
+  width: clamp(70px, 7vw, 150px);
+}
+
+.typo .tit1 .line{
+  display:block;
+  
+}
+
+.typo .tit1 .line > .line-inner{
+  display:inline-block;
+  opacity: 0;
+  transform: translateY(56px);
+  transition-property: transform, opacity;
+  transition-duration: 1.45s;  
+  transition-timing-function: cubic-bezier(.2,.8,.2,1);
+  will-change: transform, opacity;
+}
+
+.typo.is-inview .tit1 .line > .line-inner{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 줄별 딜레이(필요하면 늘려도 됨) */
+.typo.is-inview .tit1 .line:nth-child(1) > .line-inner{ transition-delay: .18s; }
+.typo.is-inview .tit1 .line:nth-child(2) > .line-inner{ transition-delay: .43s; }
+.typo.is-inview .tit1 .line:nth-child(3) > .line-inner{ transition-delay: .68s; }
+.typo.is-inview .tit1 .line:nth-child(4) > .line-inner{ transition-delay: .90s; }
+.typo.is-inview .tit1 .line:nth-child(5) > .line-inner{ transition-delay: 1.15s; }
+
+/* 접근성: 모션 줄이기 */
+@media (prefers-reduced-motion: reduce){
+  .typo .tit1 .line > .line-inner{
+    transition: none;
+    opacity: 1;
+    transform: none;
+}
+}
+
+
+
+
+
+
+
+
+/* ingre */
+.ingre {width: 100%;overflow: hidden;background: #F3F4F0;}
+.ingre .inner {padding: 0px 110px 0px 110px; display: flex;justify-content: space-between;}
+.ingre .inner .ingre-leftbox{display: flex;align-items: center;width: 50%;}
+.card-clip{width: 100%; height: 1120px; overflow: hidden; display: flex; position: relative;}
+.ingre .card {width: 47%; display: flex; justify-content: space-between; flex-wrap: wrap;}
+.ingre .card li {width: 355px;/*  */;height: 400px;margin: 0 20px 20px;background: #FFFFFF; position: relative;overflow: hidden;}
+.ingre .card li a {display: block;width: 100%;height: 100%; position: relative; z-index: 2;transition: transform .6s; margin: 30px;}
+.ingre .card li a .textbox{margin-top: 195px; font-size: 18px;}
+.ingre .card li a .textbox span.b, .ingre .card2 li a .textbox span.b{font-style: italic; display: block;font-size: 18px;font-family: 'PPMori',sans-serif;}
+.ingre .card2 {width: 48%; display: flex; justify-content: space-between; flex-wrap: wrap;transform: translateY(-215px)}
+.ingre .card2 li {width: 355px;padding: 30px;height: 400px;margin: 0 20px 20px;background: #FFFFFF; position: relative;overflow: hidden;}
+.ingre .card2 li a {display: block;width: 100%;height: 100%; position: relative; z-index: 2;transition: transform .6s ease,}
+.ingre .card2 li a .textbox{margin-top: 195px;}
+
+.ingre .ingre-rightbox {margin:215px auto 0 ;width: 36%;}
+.ingre .ingre-rightbox .tit {font-size: 100px;font-family: 'PPMori',sans-serif;}
+.ingre .ingre-rightbox .txt {font-size: 40px;margin-bottom: 450px;font-family: 'PPMori',sans-serif;font-weight: 500;}
+.ingre .ingre-rightbox .txt span {font-size: 48px;font-family:"PP Editorial New", serif;font-style: italic;}
+.ingre .ingre-rightbox .txt2 {font-size: 20px;font-family: 'PPMori',sans-serif;}
+.ingre .ingre-rightbox .txt2 span {font-size: 28px;font-family:"PP Editorial New", serif;font-style: italic;}
+
+/* ingre hover*/
+.ingre .card li::after,.ingre .card2 li::after{content: ''; position: absolute; left: 0; top: 0;background: url(../img/ingre_leaf_hover.png) no-repeat center/cover; z-index: 4; width: 100%;height: 100%; opacity: 0;transform: scale(1)}
+
+.ingre .card li:nth-child(2)::after{ background-image:url(../img/ingre_clay_hover.png); }
+.ingre .card li:nth-child(3)::after{ background-image:url(../img/ingre_seed_oil_hover.png);}
+.ingre .card2 li:nth-child(1)::after{background-image: url(../img/ingre_extract_hover.png);}
+.ingre .card2 li:nth-child(2)::after{background-image: url(../img/ingre_salt_hover.png);}
+.ingre .card2 li:nth-child(3)::after{background-image: url(../img/ingre_extract2_hover.png);}
+.ingre .card2 li:nth-child(4)::after{background-image: url(../img/ingre_bamdoo_hover.png);}
+
+.ingre .card li:hover:after, .ingre .card2 li:hover:after{opacity: 1; transform: scale(1.08); transition-duration: .4s;}
+
+/* =========================
+   2열 유지 + 무한 세로 슬라이드
+   (기존 스타일 최대한 유지)
+========================= */
+
+/* card-clip은 두 컬럼을 나란히 */
+.card-clip{
+  display:flex;
+  gap: 30px;                 /* 두 컬럼 사이 간격(원하면 조절) */
+  position: relative;
+}
+
+/* 각 컬럼이 너비를 담당 */
+.card-clip .col{
+  width: 47%;                /* 기존 .card 47% 느낌 */
+  height: 1120px;            /* 기존 card-clip 높이와 동일 */
+  overflow: hidden;          /*  잘라내기 */
+  position: relative;
+}
+
+.card-clip .col--down{
+  width: 48%;                /* 기존 .card2 48% 느낌 */
+}
+
+/* 트랙: ul(원본+복제) 2개를 세로로 쌓고, 트랙 자체를 움직임 */
+.card-clip .track{
+  display:flex;
+  flex-direction: column;
+  gap: 20px;
+  will-change: transform;
+}
+
+/*  기존 ul의 width 퍼센트는 컬럼에서 처리하므로 ul은 100% */
+.ingre .card,
+.ingre .card2{
+  width: 100% !important;          /* 기존 47/48% 무력화 */
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;                  /*  2열 유지 */
+  transform: none;                  /* 기존 card2 translateY는 track에서 처리 */
+  padding: 0;
+  margin: 0;
+}
+
+/*  2열 그리드가 “규칙적으로” 반복되게
+   (무한 루프는 높이가 항상 동일해야 매끈함)
+   margin 대신 gap을 추천 → 높이 오차 방지 */
+.ingre .card,
+.ingre .card2{
+  gap: 20px;                        /* 기존 margin 20 느낌 */
+}
+
+.ingre .card li,
+.ingre .card2 li{
+  margin: 0 !important;             /* 기존 margin: 0 20px 20px → gap로 대체 */
+}
+
+/* 카드2 컬럼의 시작 오프셋(네가 쓰던 -215px 느낌) */
+.card-clip .col--down .track{
+  transform: translateY(-215px);
+}
+
+/* =========================
+   애니메이션 (무한 루프)
+   - 트랙에 적용
+========================= */
+.card-clip .col--up .track{
+  animation: trackUp 40s linear infinite;
+}
+
+.card-clip .col--down .track{
+  animation: trackDown 40s linear infinite;
+}
+
+/* 원본+복제가 세로로 2세트 → -50% 이동하면 딱 이어짐 */
+@keyframes trackUp{
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+/* 아래로 “내려오는 느낌”은 시작점을 반대로 잡아줌 */
+@keyframes trackDown{
+  0%   { transform: translateY(-50%); }
+  100% { transform: translateY(0); }
+}
+
+
+/* (선택) 모션 줄이기 */
+@media (prefers-reduced-motion: reduce){
+  .card-clip .track{ animation: none !important; }
+}
+
+
+:root{
+  --cardGap: 20px; /* li gap과 동일하게 */
+}
+
+/* ul 내부 간격 */
+.ingre .card,
+.ingre .card2{
+  gap: var(--cardGap);
+}
+
+/*  세트(원본↔복제) 간격 */
+.card-clip .track{
+  gap: var(--cardGap);
+}
+
+/*  gap만큼 보정해서 정확히 이어지게 */
+@keyframes trackUp{
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(calc(-50% - (var(--cardGap) / 2))); }
+}
+
+@keyframes trackDown{
+  0%   { transform: translateY(calc(-50% - (var(--cardGap) / 2))); }
+  100% { transform: translateY(0); }
+}
+
+
+
+/* story */
+.story{padding: 240px 110px 75px 110px;background: #F3F4F0}
+.story .top-textBox {margin-bottom: 220px;}
+.story .top-textBox .sub-tit{ font-size: 32px;font-family: 'PPMori',sans-serif;}
+.story .top-textBox .tit{font-size: 70px;font-family:"PP Editorial New", serif;font-style: italic;color: #3B3B3B;padding-bottom: 14px;}
+.story .top-textBox .sub-tit2{color: #45663C;font-size: 16px;font-family: 'Yoon Gothic',sans-serif;font-weight: 500;}
+.story .bottom-textBox {width: 100%;}
+.story .bottom-textBox ul{display: flex;justify-content: flex-end;gap: 48px;}
+.story .bottom-textBox ul .txt {font-family: 'PPMori',sans-serif;color: #848484;font-weight: 500;}
+
+/* keyword */
+.keyword .inner {width: 100vw;height: 100vh;position: relative;}
+.keyword .face{width: 100vw;height: 100vh;object-fit: cover;position: absolute; left: 0; top: 0; filter: brightness(0.7);}
+.keyword .rows {position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);width: 45%;font-size: 50PX;font-family: 'PPMori',sans-serif;}
+.keyword .rows .italic {font-family:"PP Editorial New", serif;font-style: italic;font-weight: 400;line-height: 2;}
+.keyword .rows ul.list {display: flex;justify-content: space-between;align-items: center;width: 100%;color: #FFF;}
+.keyword .rows ul.list  {margin-bottom: 56px;}
+.keyword .rows ul.list li.love {border-bottom: 2px solid #fff; padding: 0 8px; width: 47%;}
+.keyword .rows ul.list li.love span{padding-left: 69%;}
+
+
+/* package */
+
+
+
+/*  확대하면서 아래 공간을 확보하기 위한 CSS 변수 */
+.Package{
+  --pkg-extra: 0px;
+  padding-bottom: var(--pkg-extra);
+}
+
+.Package .inner{
+  width: 100%;
+  padding: 110px;
+}
+
+.Package .top h2{
+  width: 88.54%;
+  font-size: 60px;
+  font-family: 'PP Editorial New';
+}
+
+.Package .middle{
+  width: 100%;
+  display: flex;
+  gap: 60px;
+}
+
+.Package .middle .left{
+  width: 42%;
+}
+
+.Package .middle .left p{
+  font-size: 40px;
+  margin: 256px auto;
+  font-family: 'PP Mori';
+}
+
+/* right : 썸네일(좌) + copy(우) */
+.Package .middle .right{
+  width: 58%;
+  display: grid;
+  grid-template-columns: 370px 1fr;
+  column-gap: 80px;
+  align-items: start;
+  margin-top: 200px;
+
+  /* 확대 시 잘림 방지 */
+  overflow: visible;
+}
+
+/*  썸네일 영역(고정/핀 대상) */
+.Package .thumb-stage{
+  width: 370px;     /* 썸네일 폭 */
+  height: 470px;    /* 썸네일 높이 */
+  position: relative;
+  overflow: visible;
+  z-index: 5;
+}
+
+/* pin 되는 박스 */
+.Package .thumb-sticky{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: visible;
+}
+
+/* ✅ 중요:
+   - canvas를 absolute로 두어 커질 때 레이아웃을 밀지 않음(상단 튐 방지)
+*/
+.Package .thumb-canvas{
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  /* 창문틀 느낌 */
+  border-radius: 220px 220px 22px 22px;
+
+  transform-origin: 0% 0%;
+  will-change: transform, width, height, border-radius;
+}
+
+/* 큰 이미지: 캔버스에 꽉 채우기 */
+.Package .thumb-canvas .img-large{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 프레임: 위에 덮기 */
+.Package .thumb-canvas .img-frame{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  display: block;
+}
+
+/* copy */
+.Package .right-txt{ width: 100%; }
+
+.Package .copy{
+  list-style: none;
+  padding: 0;
+  margin: 300px 0 0 0;
+  font-family: 'Yoon Gothic 700';
+}
+
+.Package .copy li p{
+  font-size: 16px;
+  margin: 10px 0;
+  line-height: 1.6;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* TimeLine */
+
+
+
+
+
+
+.topBox h2{width: 88.54%; color: #45663C; font-size: 100px; margin: 5.73%;  font-family: 'PP Editorial New'; font-style: italic;}
+.bottom {width: 88.54%; display: flex; justify-content: space-between; margin: 5.73%;}
+
+
+/* Timeline 1*/
+.timeline1 .inner {padding: 110px;} 
+.timeline1 .inner .topBox h2{width: 100%; color: #45663C; font-size: 100px; font-family: 'PP Editorial New'; font-style: italic;}
+.timeline1 .inner .bottom {width: 100%; display: flex; justify-content: space-between;}
+
+.timeline1 .inner .bottom .left {width: 44%;}
+.timeline1 .inner .bottom .left span {font-size: 40px; color: rgba(60, 60, 60, 0.4);font-family: 'PP Editorial New'; font-style: italic;}
+.timeline1 .inner .bottom .left h1 {font-size: 180px; color:#3c3c3c; font-family: 'PP Editorial New'; font-style: italic;}
+.timeline1 .inner .bottom .left p:nth-of-type(1){font-size: 24px; color: rgba(60, 60, 60, 0.8);font-family: 'PP Editorial New'; font-style: italic;}
+.timeline1 .inner .bottom .left p:nth-of-type(2){font-size: 18px;}
+
+.timeline1 .inner .bottom .right {width: 56%; display: flex; position: relative;}
+.timeline1 .inner .bottom .right img{width: 90%;  margin-left: auto; }
+.timeline1 .inner .bottom .right a{position: absolute; border: 1px solid #000}
+
+/* Timeline 2*/
+.timeline2 .inner {padding: 110px;} 
+.timeline2 .inner .topBox h2{width: 100%; color: #45663C; font-size: 100px; font-family: 'PP Editorial New'; font-style: italic;}
+.timeline2 .inner .bottom {width: 100%; display: flex; justify-content: space-between;}
+
+.timeline2 .inner .bottom .left {width: 43%;}
+.timeline2 .inner .bottom .left img:nth-of-type(1) {width: 40%;}
+.timeline2 .inner .bottom .left img:nth-of-type(2) {width: 40%;}
+
+.timeline2 .inner .bottom .right {width: 57%; position: relative; display: flex;}
+.timeline2 .inner .bottom .right span img{position: absolute; top:-100px; left: 100px; }
+.timeline2 .inner .bottom .right .txt{margin-left: auto;}
+.timeline2 .inner .bottom .right .txt p:nth-of-type(2) {font-size: 24px; color: rgba(60, 60, 60, 0.4); font-family: 'PP Editorial New'; font-style: italic;}
+.timeline2 .inner .bottom .right .txt p{font-size: 18px; color: rgba(60, 60, 60, 0.8);}
+.timeline2 .inner .bottom .right .txt h1 {font-size: 180px; color:#3c3c3c;font-family: 'PP Editorial New'; font-style: italic;}
+
+
+/* timeline 3 */
+.timeline3 .inner {padding: 110px;}
+.timeline3 .inner .topBox h2{width: 100%; color: #45663C; font-size: 100px; font-family: 'PP Editorial New'; font-style: italic;}
+.timeline3 .inner .bottom {width: 100%; display: flex; justify-content: space-between;}
+
+.timeline3 .inner .bottom .left {width: 60%;}
+.timeline3 .inner .bottom .left img:nth-of-type(1) {width: 50%;} 
+.timeline3 .inner .bottom .left img:nth-of-type(2) {width: 49%; margin-top: 300px;}
+
+.timeline3 .inner .bottom .right {width: 40%; display: flex;}
+.timeline3 .inner .bottom .right .txt{margin-left: auto;}
+.timeline3 .inner .bottom .right .txt h1{font-size: 180px; color:#3c3c3c; font-family: 'PP Editorial New'; font-style: italic; }
+.timeline3 .inner .bottom .right .txt span{font-size: 24px; color: rgba(60, 60, 60, 0.4);font-family: 'PP Editorial New'; font-style: italic;}
+.timeline3 .inner .bottom .right .txt p{font-size: 18px; color: rgba(60, 60, 60, 0.8);}
+
+
+/* timeline 4 */
+.timeline4 .inner {padding: 110px;}
+.timeline4 .inner .topBox h2{width: 100%; color: #45663C; font-size: 100px; font-family: 'PP Editorial New'; font-style: italic;}
+.timeline4 .inner .bottom {width: 100%; display: flex; justify-content: space-between;}
+
+.timeline4 .inner .bottom .left_timeline_4{width: 50%;}
+.timeline4 .inner .bottom .left_timeline_4 img:nth-of-type(1) {width: 28%; margin-top: 100px; } 
+.timeline4 .inner .bottom .left_timeline_4 img:nth-of-type(2) {width: 50%; margin: 25px;}
+
+.timeline4 .inner .bottom .right {width: 50%; display: flex;}
+.timeline4 .inner .bottom .right .txt {margin-left: auto;}
+.timeline4 .inner .bottom .right .txt h1{font-size: 180px; color:#3c3c3c;font-family: 'PP Editorial New'; font-style: italic;}
+.timeline4 .inner .bottom .right .txt span{font-size: 24px; color: rgba(60, 60, 60, 0.4);font-family: 'PP Editorial New'; font-style: italic;}
+.timeline4 .inner .bottom .right .txt p{font-size: 18px; color: rgba(60, 60, 60, 0.8);}
+
+/* timeline 5 */
+.timeline5 .inner {padding: 110px;}
+.timeline5 .inner .topBox h2{width: 100%; color: #45663C; font-size: 100px;  font-family: 'PP Editorial New'; font-style: italic;}
+.timeline5 .inner .bottom {width: 100%; display: flex; justify-content: space-between;}
+
+
+.timeline5 .inner .bottom .left {width: 50%;}
+.timeline5 .inner .bottom .left img:nth-of-type(1) {width: 40%; margin-top: 100px;} 
+.timeline5 .inner .bottom .left img:nth-of-type(2) {width: 40%; margin: 0 25px 50px;}
+
+.timeline5 .inner .bottom .right {width: 50%;  display: flex;}
+.timeline5 .inner .bottom .right .txt {margin-left: auto;}
+.timeline5 .inner .bottom .right .txt span{font-size: 24px; color: rgba(60, 60, 60, 0.4); font-family: 'PP Editorial New'; font-style: italic;}
+.timeline5 .inner .bottom .right .txt p{font-size: 18px; color: rgba(60, 60, 60, 0.8);}
+.timeline5 .inner .bottom .right .txt h1{font-size: 180px; color:#3c3c3c; font-family: 'PP Editorial New'; font-style: italic;}
+
+
+/* timeline 6 */
+.timeline6 .inner {padding: 110px;} 
+.timeline6 .inner .topBox h2{width: 100%; color: #45663C; font-size: 100px; font-family: 'PP Editorial New'; font-style: italic;}
+.timeline6 .inner .bottom {width: 100%; display: flex; justify-content: space-between;}
+
+.timeline6 .inner .bottom .left{width: 50%;}
+.timeline6 .inner .bottom .left img:nth-of-type(1) {width: 100%;} 
+
+.timeline6 .inner .bottom .right {width: 50%; display: flex;}
+.timeline6 .inner .bottom .right .txt {margin-left: auto;}
+.timeline6 .inner .bottom .right .txt h1{font-size: 180px; color:#3c3c3c; font-family: 'PP Editorial New'; font-style: italic;}
+.timeline6 .inner .bottom .right .txt span{font-size: 24px; color: rgba(60, 60, 60, 0.4); font-family: 'PP Editorial New'; font-style: italic;}
+.timeline6 .inner .bottom .right .txt p{font-size: 18px; color: rgba(60, 60, 60, 0.8);}
+
+
+
+/* ===== Horizontal Timeline Scroll (ADD) ===== */
+.timeline-scroll{
+  position: relative;
+  width: 100%;
+  touch-action: pan-y;
+  /* JS가 여기 height를 동적으로 세팅해줌 */
+}
+
+.timeline-sticky{
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: #F3F4F0; /* 섹션 배경과 맞추고 싶으면 조절 */
+}
+
+.timeline-track{
+  display: flex;
+  height: 100%;
+  will-change: transform;
+  transform: translate3d(0,0,0);
+}
+
+/* 각 타임라인 패널을 "한 화면(1뷰)"로 */
+.timeline-track > section{
+  flex: 0 0 100vw;
+  width: 100vw;
+  height: 100vh;         /* 한 화면씩 넘기는 느낌 */
+  overflow: hidden;      /* 내부가 넘치면 숨김 (원하면 auto로 변경) */
+}
+
+/* 혹시 기존 .inner 폭/패딩 때문에 넘치면 대응 */
+.timeline-track > section .inner{
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* 접근성: 모션 줄이기 설정 */
+@media (prefers-reduced-motion: reduce){
+  .timeline-track{
+    transition: none !important;
+  }
+}
+
+/* beauty */
+.beauty {background: #202020;position: relative;padding: 0 34px;overflow:hidden;height: 1588px;}
+.beauty .inner {margin: 0 auto; height: 100%;}
+.beauty .inner .beauty-title{position: absolute;top: 18%;left: 50%;transform: translate(-50%, -50%);color: #fff;z-index: 10;}
+.beauty .inner .beauty-title .tit{font-size: 90px;text-align: center;font-family: 'PPMori',sans-serif;font-weight: 500;line-height: 1.1;}
+.beauty .inner .beauty-title .tit span{font-family:"PP Editorial New", serif;font-style: italic;text-decoration: underline 3px;text-underline-offset: 6px;font-size: 80px;}
+.beauty .inner .beauty-title .txt{text-align: center;margin: 20px 0 auto ;font-family: 'PPMori',sans-serif;}
+.beauty .beauty-product {display: flex;width: 100%;height: auto;overflow: hidden;align-items: center;transform: translateY(-120px);margin: 0 auto;gap: 30px;box-sizing: border-box;justify-content: flex-start;}
+.beauty .beauty-product .card {text-align: center;flex: 1 1 0;min-width: 0px;text-align: center;overflow:hidden}
+.beauty .beauty-product .card.b {transform: translateY(-215px);}
+.beauty .beauty-product .card.c {transform: translateY(-30px);}
+.beauty .beauty-product .card.d {transform: translateY(-215px);}
+.beauty .beauty-product .card li.logo {display: flex; justify-content: center;}
+.beauty .beauty-product .card li a {display: block; width: 100%; height: 100%;}
+.beauty .beauty-product .card li a img{width: 100%; height: 100%;}
+.beauty .beauty-product .card li a.name{padding:50px 0;transition:transform .6s; width: 70%;height: 50%; display: block;}
+.beauty .beauty-product .card li a.name img{width: 100%;height: 100%;}
+
+/* beauty hover*/
+.beauty .beauty-product .card li img {opacity: 0.35;transform: scale(1);transition:opacity .35s ease,transform .45s cubic-bezier(.22,.61,.36,1)}
+.beauty .beauty-product .card li:hover img{opacity: 1; transform: scale(1.05);}
+
+.beauty .beauty-product .card{
+  position: relative;
+  overflow: hidden; /* column 내부만 보이게 */
+}
+
+/*  ul 내부를 애니메이션할 track 래퍼처럼 쓰기 */
+.beauty .beauty-product .card{
+  will-change: transform;
+}
+
+/*  li 간격: 기존 레이아웃에 맞춰 유지 (필요하면 숫자만 조정) */
+.beauty .beauty-product .card li{
+  margin-bottom: 20px; /* 카드 간격 */
+}
+
+/*  마지막-첫번째가 붙어 보이는 현상 방지:
+   클론 시작부에도 동일 간격을 주기 위해 '패딩 바텀'을 ul에 추가 */
+.beauty .beauty-product .card{
+  padding-bottom: 20px; /* margin-bottom과 동일 값 */
+}
+
+
+
+  /* 모션 줄이기 */
+@media (prefers-reduced-motion: reduce){
+  .beauty .beauty-product .card{ transform: none !important; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* footer */
+footer{color: #fff; background: #202020;}
+footer .inner{padding: 140px 110px 60px;}
+footer .top-box{display: flex; justify-content: space-between; margin-bottom: 100px;}
+footer .top-box .left-box{display: flex;width: 50%; flex-wrap: wrap; row-gap: 60px;}
+footer .top-box .left-box ul{width: 30%;}
+footer .top-box .left-box ul li{font-size: 14px; margin-bottom: 12px;}
+footer .top-box .left-box ul li:last-child{margin-bottom: 0;}
+footer .top-box .left-box ul li.tit{color: rgba(255,255,255,0.6);margin-bottom: 18px;}
+footer .top-box .right-box{display:block; width: 20%; padding: 0;}
+footer .top-box .right-box ul{display: flex;justify-content: space-between; border-bottom: 1px solid #fff;}
+footer .top-box .right-box li{font-size: 14px; padding: 10px 0; }
+footer .top-box .right-box li img{width: 12px;height: 12px;}
+footer .bottom-box{display: flex; gap: 70px;}
+footer .bottom-box p.logo{color: #fff;}
