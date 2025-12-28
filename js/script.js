@@ -610,7 +610,7 @@ function shortSequence(opt) {
       end: opt.end,
       toggleActions: "play none none reverse",
       invalidateOnRefresh: true,
-      markers: true
+      //markers: true
     }
   });
 
