@@ -17,19 +17,25 @@
 <body>
 
 <div class="wrap">
-    <header>
-            <a href="#" class="logo"><img src="img/logo.svg" alt=""></a>
+    <!-- nav gnb -->
+        <header>
+            <a href="#" class="logo"><img src="img/logo_2.svg" alt=""></a>
             <ul class="nav en">
-                <li><a href="#">HOME</a></li>
-                <li><a href="#">BRAND</a></li>
-                <li><a href="#">PRODUCTS</a></li>
+                <!-- ✅ 추가: 닫기 버튼 -->
+                <li class="nav-close">
+                <button type="button" class="btn-close" aria-label="Close menu">×</button>
+                </li>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="../brandstory/sub_01.html">BRAND</a></li>
+                <li><a href="../Productlist/sub_2.html">PRODUCTS</a></li>
                 <li><a href="#">CONTACT</a></li>
             </ul>
             <ul class="menu-icon">
-                <li><a href="#"><p class="img"><img src="img/shopping-bag-01.svg" alt=""></p></a></li>
-                <li><a href="#"><p class="img"><img src="img/menu-01.svg" alt=""></p></a></li>
+                <li><a href="#"><p class="img"><img src="img/shopping-bag-02.svg" alt=""></p></a></li>
+                <li class="btn-menu"><a href="#"><p class="img"><img src="img/menu-02.svg" alt=""></p></a></li>
             </ul>
-    </header>
+            <div class="menu-overlay"></div>
+        </header>
 
 
 
@@ -220,18 +226,18 @@
     </div> 
 </section>
 
-
-<section class="all_About">
+<div class="product-wrap">
+<section class="all_About product-section">
     <div class="inner">
         <div class="topBox">
             <p><span>All About The</span><br>Product</p>
         </div>
 
         <ul class="bar">
-            <li><a href="#">About</a></li>
-            <li><a href="#">Ingredients</a></li>
-            <li><a href="#">Usage</a></li>
-            <li><a href="#">FAQ</a></li>
+            <li><a href="#" data-target="all_About">About</a></li>
+            <li><a href="#" data-target="all_Ingre">Ingredients</a></li>
+            <li><a href="#" data-target="all_Usage">Usage</a></li>
+            <li><a href="#" data-target="all_FAQ">FAQ</a></li>
         </ul>
 
         <div class="con">
@@ -302,17 +308,17 @@
 </section>
 
 
-<section class="all_Ingre">
+<section class="all_Ingre product-section">
     <div class="inner">
         <div class="topBox">
             <p><span>All About The</span><br>Product</p>
         </div>
 
         <ul class="bar">
-            <li><a href="#">About</a></li>
-            <li><a href="#">Ingredients</a></li>
-            <li><a href="#">Usage</a></li>
-            <li><a href="#">FAQ</a></li>
+            <li><a href="#" data-target="all_About">About</a></li>
+            <li><a href="#" data-target="all_Ingre">Ingredients</a></li>
+            <li><a href="#" data-target="all_Usage">Usage</a></li>
+            <li><a href="#" data-target="all_FAQ">FAQ</a></li>
         </ul>
 
         <div class="con">
@@ -384,7 +390,7 @@
 
 
 
-<section class="all_Usage">
+<section class="all_Usage product-section">
     
     <div class="inner"> 
 
@@ -394,10 +400,10 @@
         </div>
 
         <ul class="bar">
-            <li><a href="#">About</a></li>
-            <li><a href="#">Ingredients</a></li>
-            <li><a href="#">Usage</a></li>
-            <li><a href="#">FAQ</a></li>
+            <li><a href="#" data-target="all_About">About</a></li>
+            <li><a href="#" data-target="all_Ingre">Ingredients</a></li>
+            <li><a href="#" data-target="all_Usage">Usage</a></li>
+            <li><a href="#" data-target="all_FAQ">FAQ</a></li>
         </ul>
         
         
@@ -457,7 +463,7 @@
 
 
 
-<section class="all_FAQ">
+<section class="all_FAQ product-section">
 <div class="inner">
 
         <div class="top">
@@ -466,11 +472,11 @@
         </div>
 
         <ul class="bar">
-            <li><a href="#">About</a></li>
-            <li><a href="#">Ingredients</a></li>
-            <li><a href="#">Usage</a></li>
-            <li><a href="#">FAQ</a></li>
-        </ul> 
+            <li><a href="#" data-target="all_About">About</a></li>
+            <li><a href="#" data-target="all_Ingre">Ingredients</a></li>
+            <li><a href="#" data-target="all_Usage">Usage</a></li>
+            <li><a href="#" data-target="all_FAQ">FAQ</a></li>
+        </ul>
         </div>
 
         <div class="con">
@@ -549,26 +555,8 @@
     </ul>
 </div>
 </div>
-
-
-<script>
-document.querySelectorAll('.faq-item .faq-q').forEach((btn) => {
-btn.addEventListener('click', () => {
-    const item = btn.closest('.faq-item');
-    const panel = item.querySelector('.faq-a');
-    const isOpen = item.classList.toggle('is-open');
-
-    btn.setAttribute('aria-expanded', String(isOpen));
-    if (isOpen) {
-    panel.hidden = false;
-    } else {
-    panel.hidden = true;
-    }
-});
-});
-</script>
 </section>
-
+</div>
 
 
 
@@ -692,12 +680,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-<footer>
+    <footer>
     <div class="inner">
         <div class="top-box">
             <div class="left-box">
                     <ul>
-                        <li class="tit">Support</li>
+                        <li class="tit">Support <span class="a"></span><span class="b"></span></li>
                         <li>
                             <a href="#">FAQs</a>
                         </li>
@@ -710,67 +698,73 @@ document.addEventListener("DOMContentLoaded", () => {
                     </ul>
 
                     <ul>
-                        <li class="tit">Support</li>
+                        <li class="tit">Social <span class="a"></span> <span class="b"></span></li>
                         <li>
-                            <a href="#">FAQs</a>
+                            <a href="#">Instargram</a>
                         </li>
                         <li>
-                            <a href="#">Account</a>
+                            <a href="#">Facebook</a>
                         </li>
                         <li>
-                            <a href="#">Contact us</a>
-                        </li>
-                    </ul>
-
-                    <ul>
-                        <li class="tit">Support</li>
-                        <li>
-                            <a href="#">FAQs</a>
-                        </li>
-                        <li>
-                            <a href="#">Account</a>
-                        </li>
-                        <li>
-                            <a href="#">Contact us</a>
+                            <a href="#">Youtube</a>
                         </li>
                     </ul>
 
                     <ul>
-                        <li class="tit">Support</li>
+                        <li class="tit">About <span class="a"></span> <span class="b"></span></li>
                         <li>
-                            <a href="#">FAQs</a>
+                            <a href="#">About us</a>
                         </li>
                         <li>
-                            <a href="#">Account</a>
+                            <a href="#">Labs</a>
                         </li>
                         <li>
-                            <a href="#">Contact us</a>
-                        </li>
-                    </ul>
-
-                    <ul>
-                        <li class="tit">Support</li>
-                        <li>
-                            <a href="#">FAQs</a>
-                        </li>
-                        <li>
-                            <a href="#">Account</a>
-                        </li>
-                        <li>
-                            <a href="#">Contact us</a>
+                            <a href="#"></a>
                         </li>
                     </ul>
 
                     <ul>
-                        <li class="tit">Support</li>
+                        <li class="tit">Shop <span class="a"></span> <span class="b"></span></li>
                         <li>
-                            <a href="#">FAQs</a>
+                            <a href="#">Skincare</a>
+                        </li>
+                        <li>
+                            <a href="#">Cleansing</a>
+                        </li>
+                        <li>
+                            <a href="#">Makeup</a>
+                        </li>
+                        <li>
+                            <a href="#">Vegan Beauty</a>
+                        </li>
+                    </ul>
+
+                    <ul>
+                        <li class="tit">Help <span class="a"></span> <span class="b"></span></li>
+                        <li>
+                            <a href="#">Help</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact</a>
                         </li>
                         <li>
                             <a href="#">Account</a>
                         </li>
+                    </ul>
+
+                    <ul>
+                        <li class="tit">Legal <span class="a"></span> <span class="b"></span></li>
                         <li>
-                            <a href="#">Contact us</a>
+                            <a href="#">Shipping & Returns</a>
+                        </li>
+                        <li>
+                            <a href="#">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="#">Terms & Conditions</a>
+                        </li>
+                        <li>
+                            <a href="#">Accessibility</a>
                         </li>
                     </ul>
             </div>
@@ -782,14 +776,16 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
         </div>
         <div class="bottom-box">
+            <div class="logo-box">
             <p class="logo"><img src="img/logo_2.svg" alt=""></p>
             <p class="text">© THE FACE SHOP, Inc. All rights reserved. 2025</p>
+            </div>
+            <a href="#" class="floating">
+                <img src="img/arrow_1.svg" alt="">
+            </a>
         </div>
     </div>
     </footer>
-    <a href="#" class="floating">
-        <img src="img/arrow_1.svg" alt="">
-    </a>
 
 
 </div>  
