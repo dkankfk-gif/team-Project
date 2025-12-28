@@ -21,6 +21,7 @@
     .vegan .Texture.green{left: 13%; top: 17%}
     .vegan .Texture.Cream{right: 0%; bottom: 4%;}
     .vegan-info .right-box p.txt br{display: none;}
+    .materials .inner{padding: 320px 200px 400px;}
     .materials .inner .fix p.en{font-size: 60px;}
     .materials .inner .fix p.txt{font-size: 14px;}
     .materials .inner ul.list li .text-box p.tit{font-size: 24px;}
