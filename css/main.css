@@ -32,7 +32,7 @@ header ul.nav{display: flex; gap: 64px; font-size: 16px; font-weight: 500;}
 header ul.nav li a{display: block; width: 100%;height: 100%;}
 header ul.menu-icon{display: flex; gap: 24px;}
 header ul.menu-icon li a{display: block; width: 100%;height: 100%;}
-
+header ul.nav li.nav-close {display: none;}
 
 header.active{transform: translateY(-100%);}
 
@@ -265,7 +265,7 @@ header.active{transform: translateY(-100%);}
 
 .vegan .btn-stroy{display: inline-block; position: absolute; display: flex; gap: 14px; align-items: center; left: 128px; top: 30%;}
 .vegan .btn-stroy .icon{width: 80px;height: 80px;background: #3b3b3b; border-radius: 50%; position: relative; overflow: hidden; display: flex; justify-content: center; align-items: center;}
-.vegan .btn-stroy .icon img{transform: rotate(-90deg);width: 40px;height: 40px; opacity: 1;}
+.vegan .btn-stroy .icon img{transform: rotate(-30deg);width: 40px;height: 40px; opacity: 1;}
 
 .vegan .btn-stroy .text .txt.kr{padding-bottom: 4px; text-decoration: underline; font-size: 14px;}
 .vegan .btn-stroy .text .tit.en{font-size: 12px; font-weight: 300 ;line-height: 1.4;}
