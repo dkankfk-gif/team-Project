@@ -108,7 +108,7 @@ gsap.timeline({
         //markers:true
     }
 })
-.to('header', {color:'#222',background:'#fff',ease:'none',duration:5},0)
+.to('header', {color:'#222',ease:'none',duration:5},0)
 .to('header .menu-icon img',{filter: 'invert(1)', duration: 0})
 .to('header .logo',{filter: 'invert(1)', duration: 0})
 
@@ -285,7 +285,7 @@ document.addEventListener("DOMContentLoaded", () => {
       start: "top 70%",
       end: "bottom 50%",
       scrub: 1,
-      markers: true
+      //markers: true
     }
   });
 
@@ -297,7 +297,7 @@ document.addEventListener("DOMContentLoaded", () => {
       start: "top 80%",
       end: "bottom 10%",
       scrub: 1,
-      markers: true
+      //markers: true
     }
   });
   
@@ -419,8 +419,8 @@ ScrollTrigger.matchMedia({
       b: { disabled:true },
       c: { disabled:true },
       d: { disabled:true },
-      t1:{ from:{y:30}, to:{scrub:0.9, start:"70% 85%", end:"85% 60%"} },
-      t2:{ from:{y:40}, to:{scrub:1.0, start:"70% 85%", end:"85% 60%"} }
+      t1:{ from:{y:30}, to:{scrub:0.9, start:"20% 45%", end:"50% 30%"} },
+      t2:{ from:{y:40}, to:{scrub:1.0, start:"20% 45%", end:"50% 30%"} }
     });
   },
 
@@ -431,8 +431,8 @@ ScrollTrigger.matchMedia({
       b: { disabled:true },
       c: { disabled:true },
       d: { disabled:true },
-      t1:{ from:{y:24}, to:{scrub:0.8, start:"72% 90%", end:"88% 65%"} },
-      t2:{ from:{y:32}, to:{scrub:0.9, start:"72% 90%", end:"88% 65%"} }
+      t1:{ from:{y:24}, to:{scrub:0.8, start:"20% 45%", end:"50% 30%"} },
+      t2:{ from:{y:32}, to:{scrub:0.9, start:"20% 45%", end:"50% 30%"} }
     });
   }
 
@@ -473,8 +473,8 @@ function makeFromTo(target, opt, defaultFrom = null){
       start: opt.to?.start || "top 80%",
       end: opt.to?.end || "bottom 20%",
       scrub: opt.to?.scrub ?? 1,
-      invalidateOnRefresh: true
-      // markers: true
+      invalidateOnRefresh: true,
+      //markers: true
     }
   };
 
@@ -483,17 +483,143 @@ function makeFromTo(target, opt, defaultFrom = null){
 
 
 
-  // cream 이미지: 반대로 위로 살짝 (깊이감)
-/*     gsap.to(".vegan .Texture.Cream", {
-    y: 200,
-    ease: "none",
-    scrollTrigger: {
-    trigger: ".vegan",
-    start: "top bottom",
-    end: "bottom top",
-    scrub: 1.4
-    }
+// shorts
+gsap.registerPlugin(ScrollTrigger);
+
+ScrollTrigger.matchMedia({
+
+  // ===== 1920+ =====
+  "(min-width: 1441px)": function () {
+    shortSequence({
+      titleY: 120,
+      titleStagger: 0.12,
+      titleDuration: 0.9,
+
+      cardBigY: 100,
+      cardSmallY: 80,
+
+      start: "50% 80%",
+      end: "top 45%"
+    });
+  },
+
+  // ===== 1024 ~ 1440 =====
+  "(min-width: 1024px) and (max-width: 1440px)": function () {
+    shortSequence({
+      titleY: 100,
+      titleStagger: 0.11,
+      titleDuration: 0.85,
+
+      cardBigY: 90,
+      cardSmallY: 70,
+
+      start: "60% 80%",
+      end: "70% 50%"
+    });
+  },
+
+  // ===== 768 ~ 1023 =====
+  "(min-width: 768px) and (max-width: 1023px)": function () {
+    shortSequence({
+      titleY: 70,
+      titleStagger: 0.09,
+      titleDuration: 0.75,
+
+      cardBigY: 70,
+      cardSmallY: 60,
+
+      start: "20% 50%",
+      end: "40% 60%"
+    });
+  },
+
+  // ===== ≤ 767 =====
+  "(max-width: 767px)": function () {
+    shortSequence({
+      titleY: 52,
+      titleStagger: 0.08,
+      titleDuration: 0.7,
+
+      cardBigY: 60,
+      cardSmallY: 50,
+
+      start: "0% 20%",
+      end: "40% 40%",
+    });
+  }
+
 });
- */
+
+
+// =========================
+// SHORT 통합 시퀀스 함수
+// =========================
+function shortSequence(opt) {
+  const section = ".short";
+  const titleWrap = ".short .shorts-right .title-box";
+  const titleLines = gsap.utils.toArray(
+    `${titleWrap} .title, ${titleWrap} .sub`
+  );
+
+  const cards = [
+    ".short .card-big",
+    ".short .card-small .left",
+    ".short .card-small .right"
+  ];
+
+  // 🔥 깜빡임 방지: 초기 상태 고정
+  gsap.set(titleLines, { y: opt.titleY, opacity: 0 });
+  gsap.set(cards, { y: opt.cardSmallY, opacity: 0 });
+
+  // 큰 카드만 살짝 더 크게
+  gsap.set(".short .card-big", { y: opt.cardBigY });
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: section,
+      start: opt.start,
+      end: opt.end,
+      toggleActions: "play none none reverse",
+      invalidateOnRefresh: true,
+      markers: true
+    }
+  });
+
+  // 1️⃣ 타이틀
+  tl.to(titleLines, {
+    y: 0,
+    opacity: 1,
+    duration: opt.titleDuration,
+    ease: "power3.out",
+    stagger: opt.titleStagger
+  })
+
+  // 2️⃣ 큰 카드
+  .to(".short .card-big", {
+    y: 0,
+    opacity: 1,
+    duration: 0.8,
+    ease: "power3.out"
+  }, "-=0.3")
+
+  // 3️⃣ 작은 카드 LEFT
+  .to(".short .card-small .left", {
+    y: 0,
+    opacity: 1,
+    duration: 0.7,
+    ease: "power3.out"
+  }, "-=0.4")
+
+  // 4️⃣ 작은 카드 RIGHT
+  .to(".short .card-small .right", {
+    y: 0,
+    opacity: 1,
+    duration: 0.7,
+    ease: "power3.out"
+  }, "-=0.35");
+}
+
+
+
 //  https://webs.tistory.com/191
     
