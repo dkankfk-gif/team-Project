@@ -1,8 +1,12 @@
 @media screen and (max-width:1850px){
     .ingredients .sub-img.b{left: 25%;}
     .card-big .text-box p.desc br{display: none;}
+    .vegan .title-box, .vegan .title-box .en_s {font-size: 150px;}
     .vegan .Texture.green{left: 6%;top: 32%;}
-
+    .connect p.deco.a{top: 27%;}
+    .connect p.deco.b{bottom: 14%;}
+    .connect p.deco.c{bottom: 21%;}
+    .connect p.deco.d{bottom: 4%;}
 }
 
 
@@ -13,8 +17,7 @@
     .ingredients .img-box .visual-img{width:40%;}
     .ingredients .sub-img.a{width: 15%;top: 47%;left: 18%;}
     .ingredients .sub-img.b{left: 25%;width: 18%;}
-    .vegan .title-box h2{font-size: 130px;}
-    .vegan .title-box h2 span.en_s{font-size: 130px;}
+    .vegan .title-box, .vegan .title-box .en_s {font-size: 130px;}
     .vegan .Texture.green{left: 13%; top: 17%}
     .vegan .Texture.Cream{right: 0%; bottom: 4%;}
     .vegan-info .right-box p.txt br{display: none;}
@@ -27,7 +30,14 @@
     .vegan-info .right-box .img-box{width: 100%;height: auto;}
     .vegan-info .right-box .img-box .img:nth-child(2) .en p.txt{font-size: 14px;}
     .vegan-info .right-box{padding: 50px 80px; height: auto;}
-
+    .connect .inner{min-height: 1200px;}
+    .connect .img h2.tit{font-size: 80px;}
+    .connect p.deco.a{top: 27%;}
+    .connect p.deco.b{bottom: 14%;}
+    .connect p.deco.c{bottom: 21%;}
+    .connect p.deco.d{bottom: 2%;}
+    .connect .inner p.sub:nth-child(1){bottom: 14%;}
+    .connect .inner p.sub:nth-child(2){bottom: 7%;}
     }
 
 
@@ -75,8 +85,7 @@
 
     
     .vegan .inner {padding: 0 40px;}
-    .vegan .title-box h2{font-size: 120px;}
-    .vegan .title-box h2 span.en_s{font-size: 120px;}
+    .vegan .title-box, .vegan .title-box .en_s {font-size: 120px;}
     .vegan .Texture.green{top: 13%; left: 7%;}
     .vegan .Texture.Cream{bottom: 9%;right: -5%;}
     .vegan .btn-stroy{top: 20%; left: 90px;}
@@ -104,10 +113,15 @@
 
 
 
-
-
-    .connect h2.tit{font-size: 80px;}
-    .connect p.sub{font-size: 18px;}
+    .connect{padding: 200px 0;}
+    .connect .img h2.tit{font-size: 60px;}
+    .connect p.deco.a{left: 8%; top: 31%;}
+    .connect p.deco.b{left: 11%; bottom: 18.5%;}
+    .connect p.deco.c{right: 7%;bottom: 21%;}
+    .connect p.deco.d{bottom: 5%;}
+    .connect .inner p.sub{font-size: 18px;}
+    .connect .inner p.sub:nth-child(1){bottom: 20%;}
+    .connect .inner p.sub:nth-child(2){bottom: 14%;}
 
 
 }
@@ -138,6 +152,18 @@
     .short .inner{gap: 40px;}
     .short .card-big {width: 45%;}
     .short .shorts-right {width: 51%;}
+
+    .connect{padding: 0px 0 60px;}
+    .connect .img h2.tit{font-size: 60px;}
+    .connect p.deco.a{left: 8%; top: 37%;}
+    .connect p.deco.b{left: 11%; bottom: 22.5%;}
+    .connect p.deco.c{right: 8%;bottom: 24%;}
+    .connect p.deco.d{bottom: 11%;right: 13%;}
+    .connect .inner p.sub{font-size: 18px;}
+    .connect .inner p.sub:nth-child(1){bottom: 24%;}
+    .connect .inner p.sub:nth-child(2){bottom: 18%; right: 26%;}
+
+
     
 }
 @media screen and (max-width:1100px){
@@ -200,7 +226,7 @@
     .best-itam .top-box .right-box .title-box a, .best-itam .bottom-box .right-box .title-box a{width: 32px;height: 32px; line-height: 28px;}
 
     
-    .vegan .title-box h2, .vegan .title-box h2 span.en_s{font-size: 9vw;}
+    .vegan .title-box, .vegan .title-box .en_s{font-size: 9vw;}
     .vegan .Texture.green{left: 1%; top: 16%; gap: 20px;}
     .vegan .Texture.green .text{margin-bottom: 0px;}
     .vegan .Texture .text .tit-box{font-size: 16px; margin-bottom:8px}
@@ -248,12 +274,16 @@
     .shorts-cta .btn-stroy .icon{width: 40px;height: 40px;}
     .shorts-cta .btn-stroy .icon img{width: 20px;height: 20px;}
 
-    .connect{padding: 80px 0;}
-    .connect .inner{margin: 150px auto 300px;}
-    .connect h2.tit{font-size: 52px;}
-    .connect p.sub{font-size: 14px;}
-    .connect .inner p.sub:nth-child(1){bottom: -27%;}
-    .connect .inner p.sub:nth-child(2){bottom: -44%;}
+    .connect{padding: 0px 0 60px;}
+    .connect .inner{min-height:780px}
+    .connect .img h2.tit{font-size: 52px;}
+    .connect p.deco.a{left: 6%; top: 33%;}
+    .connect p.deco.b{left: 10%; bottom: 16.5%;}
+    .connect p.deco.c{right: 6%;bottom: 23%;}
+    .connect p.deco.d{bottom: 8%;right: 12%;}
+    .connect .inner p.sub{font-size: 14px;}
+    .connect .inner p.sub:nth-child(1){bottom: 18%;}
+    .connect .inner p.sub:nth-child(2){bottom: 13%; right: 26%;}
     
     footer .inner{padding: 52px;}
     footer .top-box .left-box ul{font-size: 16px;}
@@ -275,6 +305,16 @@
     .short .card-big .text-box h3.tit{font-size: 22px;}
     .short .card-big .text-box p.desc{font-size: 14px;}
     .short .shorts-right .card-small .text-box h3.tit{font-size: 14px;}
+
+    .connect{padding: 0px 0 60px;}
+    .connect .img h2.tit{font-size: 52px;}
+    .connect p.deco.a{left: 8%; top: 37%;}
+    .connect p.deco.b{left: 10%; bottom: 20.5%;}
+    .connect p.deco.c{right: 6%;bottom: 26%;}
+    .connect p.deco.d{bottom: 12%;right: 11%;}
+    .connect .inner p.sub{font-size: 14px;}
+    .connect .inner p.sub:nth-child(1){bottom: 22%;}
+    .connect .inner p.sub:nth-child(2){bottom: 16%; right: 26%;}
 
 }
 /* responsiveWeb */
