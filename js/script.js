@@ -9,6 +9,35 @@ $(function() {
 	});    
     }); 
 
+    /* header */
+document.addEventListener("DOMContentLoaded", () => {
+  const menuBtn = document.querySelector("header .menu-icon .btn-menu a");
+  const closeBtn = document.querySelector("header ul.nav .btn-close");
+  const overlay = document.querySelector(".menu-overlay");
+
+  const openMenu = () => {
+    document.body.classList.add("menu-open");
+    document.body.style.overflow = "hidden"; // ✅ 스크롤 잠금
+  };
+
+  const closeMenu = () => {
+    document.body.classList.remove("menu-open");
+    document.body.style.overflow = ""; // ✅ 원복
+  };
+
+  menuBtn?.addEventListener("click", (e) => {
+    e.preventDefault();
+    openMenu();
+  });
+
+  closeBtn?.addEventListener("click", closeMenu);
+  overlay?.addEventListener("click", closeMenu);
+
+  // ✅ 메뉴 안 링크 누르면 자동 닫기(원하면)
+  document.querySelectorAll("header ul.nav a").forEach(a => {
+    a.addEventListener("click", closeMenu);
+  });
+});
 new Swiper('.best-product', {
     loop: true,
     slidesPerView: "auto",    

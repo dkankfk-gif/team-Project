@@ -343,7 +343,90 @@
     header{padding: 34px 20px 12px; justify-content: center;}
     header .logo{position: absolute;left: 50%;transform: translateX(-50%);}
     header ul.menu-icon{width: 100%; display: flex; width: 100%; justify-content: space-between;}
-    header ul.nav{display: none;}
+    header ul.nav{display: flex;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;          /* ✅ 전체 덮기 */
+    bottom: 0;         /* ✅ 전체 덮기 */
+    width: 100%;
+    height: 100vh;
+
+    background: #fff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+
+    transform: translateX(100%);   /* ✅ 오른쪽 밖으로 숨김 */
+    transition: transform .35s ease;
+    z-index: 1001;
+  }
+    /* ✅ 열렸을 때 */
+  body.menu-open header ul.nav{
+    transform: translateX(0);
+  }
+
+  header ul.nav li a{
+    color:#111;
+    font-size:22px;
+  }
+
+/* ✅ X 버튼 영역 (왼쪽) */
+header ul.nav li.nav-close{
+  position: absolute;
+  top: 18px;
+  left: 18px;     /* ✅ right → left */
+  width: auto;
+}
+
+/* ✅ 폰트 X 말고, 얇은 선 2개로 X 만들기 */
+header ul.nav .btn-close{
+  width: 44px;
+  height: 44px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  padding: 0;
+}
+
+/* X 라인 */
+header ul.nav .btn-close::before,
+header ul.nav .btn-close::after{
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 22px;
+  height: 2px;      
+  background: #222;
+  transform-origin: center;
+}
+
+header ul.nav .btn-close::before{
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+header ul.nav .btn-close::after{
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+  /* ✅ 배경 오버레이 (원하면 유지 / 풀스크린이면 없어도 됨) */
+  .menu-overlay{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.35);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .35s ease;
+    z-index: 1000;
+  }
+  body.menu-open .menu-overlay{
+    opacity: 1;
+    pointer-events: auto;
+  }
+
     header ul.menu-icon li:nth-child(2){ order: 0; }
     header ul.menu-icon li:nth-child(1){ order: 1; }
     .main-visual{height: 60vh;}

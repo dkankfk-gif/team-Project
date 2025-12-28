@@ -24,15 +24,20 @@
         <header>
             <a href="#" class="logo"><img src="img/logo_2.svg" alt=""></a>
             <ul class="nav en">
-                <li><a href="main.html">HOME</a></li>
+                <!-- ✅ 추가: 닫기 버튼 -->
+                <li class="nav-close">
+                <button type="button" class="btn-close" aria-label="Close menu">×</button>
+                </li>
+                <li><a href="index.html">HOME</a></li>
                 <li><a href="../brandstory/sub_01.html">BRAND</a></li>
                 <li><a href="../Productlist/sub_2.html">PRODUCTS</a></li>
                 <li><a href="#">CONTACT</a></li>
             </ul>
             <ul class="menu-icon">
                 <li><a href="#"><p class="img"><img src="img/shopping-bag-02.svg" alt=""></p></a></li>
-                <li><a href="#"><p class="img"><img src="img/menu-02.svg" alt=""></p></a></li>
+                <li class="btn-menu"><a href="#"><p class="img"><img src="img/menu-02.svg" alt=""></p></a></li>
             </ul>
+            <div class="menu-overlay"></div>
         </header>
 
     <section class="main-visual">
