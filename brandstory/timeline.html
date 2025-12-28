@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="timeline.css">
+    <link rel="stylesheet" href="timeline_rseponsive.css">
+    <link rel="stylesheet" href="font/font.css">
+    <link rel="stylesheet" href="css/sub_01_act.css">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+
+
+
+<section class="TimeLine" id="TimeLine">
+    <div class="wrap">
+    <div class="con">
+
+        <p class="toptit">Our history</p>
+
+        <ul class="list">
+        <li class="line01">
+        <div class="textBox">
+            <span class="since">since</span>
+            <h1>2003</h1>
+            <span class="sub">Where naturalism begins</span>
+            <p class="txt">
+            '자연주의'라는 새로운 가치를 세상에 첫발을 내디뎠으며,<br>
+            자연에서 온 순수한 원료로 건강한 아름다움을 전하는 여정을 시작했습니다.
+            </p>
+        </div>
+
+        <div class="right">
+            <p class="img">
+            <img src="img/timeline.svg" alt="">
+            </p>
+        </div>
+        </li>
+    
+
+        <!-- Timeline 2 -->
+        <li class="line02">
+            <div class="left">
+                <p class="img">
+            <img class="first" src="img/timeline_2_img.svg" alt="">
+            <img class="sec"  src="img/timeline_2_img2.svg" alt="">
+            </p>
+            </div>
+
+
+            <p class="bg_img"><img src="img/timeline_2_img3.svg" alt=""></p>
+
+            <div class="textBox">
+
+            
+            <span class="sub">Expanding horizons with expertise</span>
+            <p class="txt" >
+            기술력과 인프라를 더해 제품의 안정성과 신뢰를 한층 강화하며<br>
+            더 많은 고객에게 다가갈 수 있는 기반을 마련했습니다.
+            </p>
+            <h1>2009</h1>
+            </div>
+
+        </li>
+
+        <!-- Timeline 3 -->
+        <li class="line03">
+
+            <div class="left">
+                <p class="img">
+            <img src="img/timeline_3_img.svg" alt="">
+            <img src="img/timeline_3_img2.svg" alt="">
+            </p>
+            </div>
+
+
+            <div class="textBox">
+            
+            <h1>2012</h1>
+            <span class="sub">Discovering the energy of seeds</span>
+            <p class="txt">
+            자연의 생명력이 응축된 '씨앗'을 근원으로 삼아 그 가치를 재발견하고,<br>
+            피부 본연의 힘을 깨우는 더페이스샵만의 차별화된 컨셉을 정립했습니다.
+            </p>
+            </div>
+
+            
+        </li>
+
+        <!-- Timeline 4 -->
+        <li class="line04">
+        <div class="left">
+            <p class="img">
+            <img src="img/timeline_4_img.svg" alt="">
+            <img src="img/timeline_4_img2.svg" alt="">
+            </p>
+        </div>
+
+        <div class="textBox">
+            
+            <h1>2016</h1>
+            <span class="sub">Harmonizing nature's wisdom and space</span>
+            <p class="txt">
+            자연의 지혜와 순수 원료가 어우러진 새로운 공간을 선보였으며,<br>
+            고객과 브랜드가 자연 속에서 교감하는 한 차원 높은 경험을 제안했습니다.
+            </p>
+        </div>
+        </li>
+
+        <!-- Timeline 5 -->
+        <li class="line05">
+        <div class="left">
+            <p class="img">
+            <img class="first" src="img/timeline_5_img.svg" alt="">
+            <img class="sec" src="img/timeline_5_img2.svg" alt="">
+            </p>
+        </div>
+
+        <div class="textBox">
+            <span class="sub">Beginning the journey for tomorrow</span>
+            <p class="txt">
+            동물성 원료 배제와 친환경 패키징을 도입하기 시작하며,<br>
+            피부와 지구를 모두 생각하는 가치 소비의 기준을 마련했습니다.
+            </p>
+            <h1>2021</h1>
+        </div>
+        </li>
+
+        <!-- Timeline 6 -->
+
+        <li class="line06">
+        <div class="left">
+            <p class="img">
+            <img src="img/timeline_6_img.svg" alt="">
+            </p>
+        </div>
+
+        <div class="textBox">
+            <h1>2023</h1>
+            <span class="sub">Pioneering affordable clean beauty</span>
+            <p class="txt">
+            자연과 기술의 균형 속에서 정직한 성분의 '클린 뷰티'를 실현하며<br>
+            지속 가능한 글로벌 브랜드로 성장하고 있습니다.
+            </p>
+        </div>
+        </li>
+
+        </ul>
+
+    </div>
+    </div>
+
+<script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    // =========================
+    // Timeline GSAP (PC=가로 / <=900=세로 sticky)
+    // - 901px 이상: 가로 핀 + x이동 + stroke baseline 계산
+    // - 900px 이하: 가로 트리거 제거 + transform 초기화 (세로 sticky는 CSS 담당)
+    // =========================
+
+    function getBaselineY(el) {
+        const rect = el.getBoundingClientRect();
+        const style = getComputedStyle(el);
+
+        const fontSize = parseFloat(style.fontSize) || 0;
+        const lineHeight =
+        style.lineHeight === "normal"
+            ? fontSize * 1.2
+            : parseFloat(style.lineHeight) || fontSize * 1.2;
+
+        const baselineOffset = fontSize * 0.18;
+        return rect.top + lineHeight - baselineOffset;
+    }
+
+    function setTimelineStrokeToYearBaseline() {
+        const list = document.querySelector(".TimeLine .con .list");
+        if (!list) return;
+
+        const year = document.querySelector(".TimeLine .con .list .line01 h1"); // 2003 기준
+        if (!year) return;
+
+        const listRect = list.getBoundingClientRect();
+        const baselineY = getBaselineY(year);
+        const yInList = baselineY - listRect.top;
+
+        list.style.setProperty("--stroke-y", `${yInList}px`);
+    }
+
+    window.addEventListener("load", () => {
+        ScrollTrigger.matchMedia({
+        //  <=900: 세로(sticky) 모드 — 가로 GSAP 끄기
+        "(max-width: 900px)": function () {
+            const list = document.querySelector(".TimeLine .con .list");
+            if (list) gsap.set(list, { clearProps: "transform" });
+
+            // 세로 모드에서도 stroke baseline 쓰고 싶으면 주석 해제
+            // setTimelineStrokeToYearBaseline();
+            // ScrollTrigger.addEventListener("refresh", setTimelineStrokeToYearBaseline);
+        },
+
+        // >=901: PC 가로 모드 — 기존 가로 GSAP
+        "(min-width: 901px)": function () {
+            const section = document.querySelector(".TimeLine");
+            const con = section?.querySelector(".con");
+            const list = section?.querySelector(".list");
+            if (!section || !con || !list) return;
+
+            const getMaxScrollX = () => Math.max(0, list.scrollWidth - con.clientWidth);
+
+            gsap.to(list, {
+            x: () => -getMaxScrollX(),
+            ease: "none",
+            scrollTrigger: {
+                trigger: section,
+                pin: true,
+                scrub: 1,
+                anticipatePin: 1,
+                invalidateOnRefresh: true,
+                start: "top top",
+                end: () => "+=" + getMaxScrollX(),
+                markers: false,
+            },
+            });
+
+            ScrollTrigger.addEventListener("refreshInit", () => gsap.set(list, { x: 0 }));
+            ScrollTrigger.addEventListener("refresh", setTimelineStrokeToYearBaseline);
+
+            setTimelineStrokeToYearBaseline();
+            ScrollTrigger.refresh();
+
+            let t;
+            window.addEventListener("resize", () => {
+            clearTimeout(t);
+            t = setTimeout(() => ScrollTrigger.refresh(), 150);
+            });
+        },
+        });
+    });
+
+    
+
+</script>
+
+<script>
+(function () {
+    const MQ = window.matchMedia("(max-width: 900px)");
+
+    function applyRepeatTopTit(isMobile) {
+    const section = document.querySelector(".TimeLine");
+    if (!section) return;
+
+    const original = section.querySelector(".con > .toptit");
+    const list = section.querySelector(".con > .list");
+    if (!original || !list) return;
+
+    const items = list.querySelectorAll(":scope > li");
+
+    if (isMobile) {
+        // ✅ 각 li에 없으면 생성
+        items.forEach(li => {
+        if (li.querySelector(":scope > .toptit.is-cloned")) return;
+
+        const clone = original.cloneNode(true);
+        clone.classList.add("is-cloned");         // 구분용
+        // (선택) PC용 스타일 영향 없게 클래스 추가로만 제어
+        li.insertBefore(clone, li.firstChild);
+        });
+    } else {
+        // ✅ 모바일에서 만든 것만 제거
+        section.querySelectorAll(".toptit.is-cloned").forEach(el => el.remove());
+    }
+    }
+
+    // 최초 1회
+    applyRepeatTopTit(MQ.matches);
+
+    // 브레이크포인트 변경 감지
+    if (MQ.addEventListener) {
+    MQ.addEventListener("change", e => applyRepeatTopTit(e.matches));
+    } else {
+    // 구형 사파리 대응
+    MQ.addListener(e => applyRepeatTopTit(e.matches));
+    }
+})();
+</script>
+
+
+
+</section>
+
+
+
+
+
+</body>
+</html>

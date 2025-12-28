@@ -1,0 +1,213 @@
+    /* timeline_mobile_900.css */
+    @media (max-width: 900px){
+
+    /* 섹션/컨테이너: sticky 잘리지 않게 */
+    .TimeLine,
+    .TimeLine .wrap,
+    .TimeLine .con{
+        overflow: visible !important;
+    }
+
+    /*  모바일 여백 */
+    .TimeLine .con{
+        padding: 64px 20px 160px !important;
+    }
+
+    /*  (중요) 상단에 있는 Our history는 sticky로 고정하지 않음 (반복 버전이므로) */
+    .TimeLine .con > .toptit{
+        position: static !important;
+        margin: 0 0 16px !important;
+        padding: 0 !important;
+        background: transparent !important;
+        backdrop-filter: none !important;
+        z-index: auto !important;
+    }
+
+    /*  리스트: 가로 → 세로로 */
+    .TimeLine .con .list{
+        display: block !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        transform: none !important;     /* PC gsap transform 잔여 방지 */
+        will-change: auto !important;
+    }
+
+    /*  가로 stroke(ul::before) 모바일에서는 끔(필요하면 살려도 됨) */
+    .TimeLine .con .list::before{
+        content: none !important;
+    }
+
+    /* =========================
+        카드(각 li) sticky 스택
+        - 아래에서 위로 올라오며 겹치는 느낌
+    ========================= */
+    .TimeLine .con .list > li{
+        position: sticky !important;
+        top: 18px;                       /*  화면 상단에서 붙는 위치 (조절 포인트) */
+        z-index: 1;
+
+        width: 100% !important;
+        max-width: none !important;
+
+        background: #F3F4F0;             /* 섹션 배경과 동일하게 */
+        padding: 22px 0 56px !important;
+        overflow: visible !important;
+    }
+
+    /* 카드 간 스크롤 길이(겹침 템포) */
+    .TimeLine .con .list > li + li{
+        margin-top: 160px !important;    /*  더 천천히: 200~260 */
+    }
+
+    /* 마지막 카드 아래 여백 */
+    .TimeLine .con .list > li:last-child{
+        margin-bottom: 260px !important;
+    }
+
+    /* =========================
+        Our history 반복 노출(각 카드마다)
+        - li 안에 p.toptit이 있어야 함
+        - (현재 HTML은 ul 전에 1개만 있어서, 반복을 원하면 각 li 안에도 넣어야 해)
+    ========================= */
+    .TimeLine .con .list > li .toptit{
+        display: block !important;
+        position: sticky;                /* 카드 상단에서 따라다니는 느낌 */
+        top: 18px;                       /* li의 top과 동일 추천 */
+        z-index: 5;
+
+        margin: 0 0 14px !important;
+        padding: 10px 0 !important;
+
+        font-size: 36px !important;
+        line-height: 1 !important;
+
+        background: rgba(243,244,240,0.92);
+        backdrop-filter: blur(2px);
+    }
+
+    /* =========================
+         PC용 좌/우 배치 해제 → 모바일은 세로 흐름
+    ========================= */
+    .TimeLine .con .list li.line01,
+    .TimeLine .con .list li.line02,
+    .TimeLine .con .list li.line03,
+    .TimeLine .con .list li.line04,
+    .TimeLine .con .list li.line05,
+    .TimeLine .con .list li.line06{
+        display: block !important;
+        gap: 0 !important;
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+    }
+
+    .TimeLine .con .list .left,
+    .TimeLine .con .list .right{
+        width: 100% !important;
+        height: auto !important;
+        position: static !important;
+    }
+
+    .TimeLine .con .list .img{
+        width: 100% !important;
+        height: auto !important;
+        position: static !important;
+        margin: 0 0 16px !important;
+    }
+
+    .TimeLine .con .list .img img{
+        width: 100% !important;
+        height: auto !important;
+        display: block;
+        object-fit: cover;
+    }
+
+    /* textBox 정렬 모바일용 */
+    .TimeLine .con .list .textBox{
+        width: 100% !important;
+        text-align: left !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        position: relative;
+        z-index: 2;
+    }
+
+    /* =========================
+         타이포 스케일(모바일)
+    ========================= */
+    .TimeLine .con .list li h1{
+        font-size: 58px !important;
+        line-height: 1 !important;
+        margin: 10px 0 6px !important;
+    }
+
+    .TimeLine .con .list li span.since{
+        font-size: 16px !important;
+        opacity: 0.9;
+    }
+
+    .TimeLine .con .list li span.sub{
+        display: block;
+        font-size: 15px !important;
+        margin-top: 4px !important;
+    }
+
+    .TimeLine .con .list li p.txt{
+        font-size: 13px !important;
+        line-height: 1.65 !important;
+        margin-top: 10px !important;
+    }
+
+    /* =========================
+         line02 bg_img는 모바일에서 배경 느낌으로 약하게
+    ========================= */
+    .TimeLine .con .list li.line02 .bg_img{
+        position: static !important;
+        margin: 12px 0 6px !important;
+        opacity: 0.22 !important;
+        pointer-events: none;
+    }
+
+    .TimeLine .con .list li.line02 .bg_img img{
+        width: 100% !important;
+        height: auto !important;
+        display: block;
+    }
+
+    /* line02의 2장 이미지는 세로로 자연스럽게 */
+    .TimeLine .con .list li.line02 .left .img{
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 14px !important;
+        align-items: start !important;
+    }
+
+    .TimeLine .con .list li.line02 .left .img img.first,
+    .TimeLine .con .list li.line02 .left .img img.sec{
+        width: 100% !important;
+        height: auto !important;
+    }
+}
+@media (max-width: 900px){
+  /*  원본(ul 밖) toptit은 숨김 */
+    .TimeLine .con > .toptit{
+        display: none !important;
+    }
+
+    /*  li 안에 JS로 복제된 toptit만 표시 + sticky */
+    .TimeLine .con .list > li > .toptit.is-cloned{
+        display: block !important;
+        position: sticky;
+        top: 18px;                 /* li sticky top과 맞추면 예쁨 */
+        z-index: 5;
+
+        margin: 0 0 14px !important;
+        padding: 10px 0 !important;
+
+        font-size: 36px !important;
+        line-height: 1 !important;
+
+        background: rgba(243,244,240,0.92);
+        backdrop-filter: blur(2px);
+    }
+}
