@@ -163,7 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
 //ingredients
 gsap.timeline({
     scrollTrigger:{
-        trigger:'.main',
+        trigger:'.ingredients',
         start:'0% 100%',
         end:'0% 10%',
         scrub:0,

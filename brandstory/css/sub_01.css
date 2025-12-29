@@ -19,14 +19,14 @@ button:focus {outline: none}
 
 
 /* header */
-header{width: 100%; padding: 40px 110px 20px; position: fixed; top: 0;left: 0; z-index: 100; display: flex;justify-content: space-between; color: #fff; transition: color .2s ease;}
+header{width: 100%; padding: 40px 110px 20px; position: fixed; top: 0;left: 0; z-index: 100; display: flex;justify-content: space-between; color: #000; transition: color .2s ease;}
 header .logo{display: inline-block;width: 176px;height: 34px;}
 header .logo img{width: 100%;}
 header p.img{width: 100%;}
 header p.img img{width: 100%; }
 header ul.nav{display: flex; gap: 64px; font-size: 16px; font-weight: 500;}
 header ul.nav li a{display: block; width: 100%;height: 100%;}
-header ul.menu-icon{display: flex; gap: 24px;}
+header ul.menu-icon{display: flex; gap: 24px;filter: }
 header ul.menu-icon li a{display: block; width: 100%;height: 100%;}
 header ul.nav li.nav-close {display: none;}
 
