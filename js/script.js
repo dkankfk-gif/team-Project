@@ -38,6 +38,8 @@ document.addEventListener("DOMContentLoaded", () => {
     a.addEventListener("click", closeMenu);
   });
 });
+
+
 new Swiper('.best-product', {
     loop: true,
     slidesPerView: "auto",    
@@ -105,6 +107,8 @@ new Swiper('.best-product-right', {
 });
 
 
+
+
 // svg 길이구하기
 $(function(){
     $('.svgAni').find("#svgAni01").each(function(i,path){
@@ -126,11 +130,40 @@ document.addEventListener('scroll', function(){
     prevScrollTop = nowScrollTop;  //항상 스크롤값을 전달해야한다
 })
 
+    /* header */
+document.addEventListener("DOMContentLoaded", () => {
+  const menuBtn = document.querySelector("header .menu-icon .btn-menu a");
+  const closeBtn = document.querySelector("header ul.nav .btn-close");
+  const overlay = document.querySelector(".menu-overlay");
+
+  const openMenu = () => {
+    document.body.classList.add("menu-open");
+    document.body.style.overflow = "hidden"; // ✅ 스크롤 잠금
+  };
+
+  const closeMenu = () => {
+    document.body.classList.remove("menu-open");
+    document.body.style.overflow = ""; // ✅ 원복
+  };
+
+  menuBtn?.addEventListener("click", (e) => {
+    e.preventDefault();
+    openMenu();
+  });
+
+  closeBtn?.addEventListener("click", closeMenu);
+  overlay?.addEventListener("click", closeMenu);
+
+  // ✅ 메뉴 안 링크 누르면 자동 닫기(원하면)
+  document.querySelectorAll("header ul.nav a").forEach(a => {
+    a.addEventListener("click", closeMenu);
+  });
+});
 
 //ingredients
 gsap.timeline({
     scrollTrigger:{
-        trigger:'.ingredients',
+        trigger:'.main',
         start:'0% 100%',
         end:'0% 10%',
         scrub:0,
@@ -241,6 +274,35 @@ document.querySelectorAll('footer .top-box .left-box ul').forEach(ul => {
 });
 
 
+    /* header */
+document.addEventListener("DOMContentLoaded", () => {
+  const menuBtn = document.querySelector("header .menu-icon .btn-menu a");
+  const closeBtn = document.querySelector("header ul.nav .btn-close");
+  const overlay = document.querySelector(".menu-overlay");
+
+  const openMenu = () => {
+    document.body.classList.add("menu-open");
+    document.body.style.overflow = "hidden"; // ✅ 스크롤 잠금
+  };
+
+  const closeMenu = () => {
+    document.body.classList.remove("menu-open");
+    document.body.style.overflow = ""; // ✅ 원복
+  };
+
+  menuBtn?.addEventListener("click", (e) => {
+    e.preventDefault();
+    openMenu();
+  });
+
+  closeBtn?.addEventListener("click", closeMenu);
+  overlay?.addEventListener("click", closeMenu);
+
+  // ✅ 메뉴 안 링크 누르면 자동 닫기(원하면)
+  document.querySelectorAll("header ul.nav a").forEach(a => {
+    a.addEventListener("click", closeMenu);
+  });
+});
 
 
 

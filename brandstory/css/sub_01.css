@@ -10,7 +10,7 @@ li {list-style: none;}
 address, em, i {font-style: normal;}
 a:focus {outline: none}
 button:focus {outline: none}
-
+ 
 
 .wrap{position: relative; box-sizing: border-box;  margin: 0 auto;  width: 100%;}
 
@@ -19,14 +19,18 @@ button:focus {outline: none}
 
 
 /* header */
-header{width: 100%; padding: 60px 110px 20px; position: fixed; top: 0;left: 0; z-index: 100; display: flex;justify-content: space-between;}
-header .logo{display: inline-block;}
+header{width: 100%; padding: 40px 110px 20px; position: fixed; top: 0;left: 0; z-index: 100; display: flex;justify-content: space-between; color: #fff; transition: color .2s ease;}
+header .logo{display: inline-block;width: 176px;height: 34px;}
+header .logo img{width: 100%;}
 header p.img{width: 100%;}
-header p.img img{width: 100%;}
+header p.img img{width: 100%; }
 header ul.nav{display: flex; gap: 64px; font-size: 16px; font-weight: 500;}
 header ul.nav li a{display: block; width: 100%;height: 100%;}
 header ul.menu-icon{display: flex; gap: 24px;}
 header ul.menu-icon li a{display: block; width: 100%;height: 100%;}
+header ul.nav li.nav-close {display: none;}
+
+header.active{transform: translateY(-100%);}
 
 
 
@@ -485,6 +489,7 @@ height: auto; margin-top: clamp(80px, 10vw, 200px); }
 .story .bottom-textBox ul{display: flex;justify-content: flex-end;gap: 48px;}
 .story .bottom-textBox ul .txt {font-family: 'PPMori',sans-serif;color: #848484;font-weight: 500;}
 
+
 /* keyword */
 .keyword .inner {width: 100vw;height: 100vh;position: relative;}
 .keyword .face{width: 100vw;height: 100vh;object-fit: cover;position: absolute; left: 0; top: 0; filter: brightness(0.7);}
@@ -496,296 +501,860 @@ height: auto; margin-top: clamp(80px, 10vw, 200px); }
 .keyword .rows ul.list li.love span{padding-left: 69%;}
 
 
-/* package */
 
 
 
-/*  확대하면서 아래 공간을 확보하기 위한 CSS 변수 */
+
+
+
+/* Package */
 .Package{
-  --pkg-extra: 0px;
-  padding-bottom: var(--pkg-extra);
-}
+    position: relative;
+    overflow: hidden;
+    min-height: 1400px;
+    }
 
-.Package .inner{
-  width: 100%;
-  padding: 110px;
-}
+    .Package .inner{
+    /* width: 100%; */
+    max-width: 1920px;
+    padding: 110px 30px;
+    }
 
-.Package .top h2{
-  width: 88.54%;
-  font-size: 60px;
-  font-family: 'PP Editorial New';
-}
+    /* <1> top */
+    .Package .top h2{
+    width: 88.54%;
+    font-size: 60px;
+    font-family: 'PP Editorial New';
+    }
 
-.Package .middle{
-  width: 100%;
-  display: flex;
-  gap: 60px;
-}
+    /*  3열 구조: left / thumb / copy */
+    .Package .middle{
+    width: 86%;
+    display: grid;
+    grid-template-columns: 42% 370px 1fr;  /* left / 이미지 / 텍스트 */
+    column-gap: 80px;
+    align-items: start;
+    margin-top: 120px ;
+    
+    }
 
-.Package .middle .left{
-  width: 42%;
-}
+    /* <2> left */
+    .Package .left p{
+    font-size: 40px;
+    font-family: 'PP Mori';
+    margin-top: 220px;     /* 화면 예시처럼 아래로 내리기 */
+    }
 
-.Package .middle .left p{
-  font-size: 40px;
-  margin: 256px auto;
-  font-family: 'PP Mori';
-}
+    /* 노란색 이미지 */
+    .thumb-wrap{
+    width: 370px;
+    height: 470px;
+    position: relative;
+    margin-top: 140px;     /* 예시처럼 살짝 아래로 */
+    }
 
-/* right : 썸네일(좌) + copy(우) */
-.Package .middle .right{
-  width: 58%;
-  display: grid;
-  grid-template-columns: 370px 1fr;
-  column-gap: 80px;
-  align-items: start;
-  margin-top: 200px;
+    .thumb-canvas{
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    border-radius: 185px 185px 0 0;  /* 상단 둥글게 */
+    }
 
-  /* 확대 시 잘림 방지 */
-  overflow: visible;
-}
+    .coverimg{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    }
 
-/*  썸네일 영역(고정/핀 대상) */
-.Package .thumb-stage{
-  width: 370px;     /* 썸네일 폭 */
-  height: 470px;    /* 썸네일 높이 */
+    .img-large{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    }
+
+    /* <3> copy */
+    .copy-wrap{
+    width: 100%;
+    margin-top: 190px;   /* 예시처럼 텍스트 위치 조정 */
+    }
+
+    .copy{
+    margin: 0;
+    font-family: 'Yoon Gothic 700';
+    }
+
+    .copy li + li{
+    margin-top: 18px;
+    }
+
+    .copy li p{
+    font-size: 16px;
+    line-height: 1.7;
+    margin: 0;
+    }
+
+    .thumb-canvas{ position:absolute; inset:0; overflow:hidden; border-radius:185px 185px 0 0; }
+
+/*  썸네일 래퍼 */
+.thumb-wrap{
+  width: 370px;
+  height: 470px;
   position: relative;
-  overflow: visible;
-  z-index: 5;
+  margin-top: 140px;
 }
 
-/* pin 되는 박스 */
-.Package .thumb-sticky{
-  width: 100%;
-  height: 100%;
-  position: relative;
-  overflow: visible;
-}
-
-/* ✅ 중요:
-   - canvas를 absolute로 두어 커질 때 레이아웃을 밀지 않음(상단 튐 방지)
-*/
-.Package .thumb-canvas{
-  position: absolute;
-  left: 0;
-  top: 0;
-
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-
-  /* 창문틀 느낌 */
-  border-radius: 220px 220px 22px 22px;
-
-  transform-origin: 0% 0%;
-  will-change: transform, width, height, border-radius;
-}
-
-/* 큰 이미지: 캔버스에 꽉 채우기 */
-.Package .thumb-canvas .img-large{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* 프레임: 위에 덮기 */
-.Package .thumb-canvas .img-frame{
+/*  확대 대상 */
+.thumb-canvas{
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  pointer-events: none;
-  display: block;
-}
-
-/* copy */
-.Package .right-txt{ width: 100%; }
-
-.Package .copy{
-  list-style: none;
-  padding: 0;
-  margin: 300px 0 0 0;
-  font-family: 'Yoon Gothic 700';
-}
-
-.Package .copy li p{
-  font-size: 16px;
-  margin: 10px 0;
-  line-height: 1.6;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* TimeLine */
-
-
-
-
-
-
-.topBox h2{width: 88.54%; color: #45663C; font-size: 100px; margin: 5.73%;  font-family: 'PP Editorial New'; font-style: italic;}
-.bottom {width: 88.54%; display: flex; justify-content: space-between; margin: 5.73%;}
-
-
-/* Timeline 1*/
-.timeline1 .inner {padding: 110px;} 
-.timeline1 .inner .topBox h2{width: 100%; color: #45663C; font-size: 100px; font-family: 'PP Editorial New'; font-style: italic;}
-.timeline1 .inner .bottom {width: 100%; display: flex; justify-content: space-between;}
-
-.timeline1 .inner .bottom .left {width: 44%;}
-.timeline1 .inner .bottom .left span {font-size: 40px; color: rgba(60, 60, 60, 0.4);font-family: 'PP Editorial New'; font-style: italic;}
-.timeline1 .inner .bottom .left h1 {font-size: 180px; color:#3c3c3c; font-family: 'PP Editorial New'; font-style: italic;}
-.timeline1 .inner .bottom .left p:nth-of-type(1){font-size: 24px; color: rgba(60, 60, 60, 0.8);font-family: 'PP Editorial New'; font-style: italic;}
-.timeline1 .inner .bottom .left p:nth-of-type(2){font-size: 18px;}
-
-.timeline1 .inner .bottom .right {width: 56%; display: flex; position: relative;}
-.timeline1 .inner .bottom .right img{width: 90%;  margin-left: auto; }
-.timeline1 .inner .bottom .right a{position: absolute; border: 1px solid #000}
-
-/* Timeline 2*/
-.timeline2 .inner {padding: 110px;} 
-.timeline2 .inner .topBox h2{width: 100%; color: #45663C; font-size: 100px; font-family: 'PP Editorial New'; font-style: italic;}
-.timeline2 .inner .bottom {width: 100%; display: flex; justify-content: space-between;}
-
-.timeline2 .inner .bottom .left {width: 43%;}
-.timeline2 .inner .bottom .left img:nth-of-type(1) {width: 40%;}
-.timeline2 .inner .bottom .left img:nth-of-type(2) {width: 40%;}
-
-.timeline2 .inner .bottom .right {width: 57%; position: relative; display: flex;}
-.timeline2 .inner .bottom .right span img{position: absolute; top:-100px; left: 100px; }
-.timeline2 .inner .bottom .right .txt{margin-left: auto;}
-.timeline2 .inner .bottom .right .txt p:nth-of-type(2) {font-size: 24px; color: rgba(60, 60, 60, 0.4); font-family: 'PP Editorial New'; font-style: italic;}
-.timeline2 .inner .bottom .right .txt p{font-size: 18px; color: rgba(60, 60, 60, 0.8);}
-.timeline2 .inner .bottom .right .txt h1 {font-size: 180px; color:#3c3c3c;font-family: 'PP Editorial New'; font-style: italic;}
-
-
-/* timeline 3 */
-.timeline3 .inner {padding: 110px;}
-.timeline3 .inner .topBox h2{width: 100%; color: #45663C; font-size: 100px; font-family: 'PP Editorial New'; font-style: italic;}
-.timeline3 .inner .bottom {width: 100%; display: flex; justify-content: space-between;}
-
-.timeline3 .inner .bottom .left {width: 60%;}
-.timeline3 .inner .bottom .left img:nth-of-type(1) {width: 50%;} 
-.timeline3 .inner .bottom .left img:nth-of-type(2) {width: 49%; margin-top: 300px;}
-
-.timeline3 .inner .bottom .right {width: 40%; display: flex;}
-.timeline3 .inner .bottom .right .txt{margin-left: auto;}
-.timeline3 .inner .bottom .right .txt h1{font-size: 180px; color:#3c3c3c; font-family: 'PP Editorial New'; font-style: italic; }
-.timeline3 .inner .bottom .right .txt span{font-size: 24px; color: rgba(60, 60, 60, 0.4);font-family: 'PP Editorial New'; font-style: italic;}
-.timeline3 .inner .bottom .right .txt p{font-size: 18px; color: rgba(60, 60, 60, 0.8);}
-
-
-/* timeline 4 */
-.timeline4 .inner {padding: 110px;}
-.timeline4 .inner .topBox h2{width: 100%; color: #45663C; font-size: 100px; font-family: 'PP Editorial New'; font-style: italic;}
-.timeline4 .inner .bottom {width: 100%; display: flex; justify-content: space-between;}
-
-.timeline4 .inner .bottom .left_timeline_4{width: 50%;}
-.timeline4 .inner .bottom .left_timeline_4 img:nth-of-type(1) {width: 28%; margin-top: 100px; } 
-.timeline4 .inner .bottom .left_timeline_4 img:nth-of-type(2) {width: 50%; margin: 25px;}
-
-.timeline4 .inner .bottom .right {width: 50%; display: flex;}
-.timeline4 .inner .bottom .right .txt {margin-left: auto;}
-.timeline4 .inner .bottom .right .txt h1{font-size: 180px; color:#3c3c3c;font-family: 'PP Editorial New'; font-style: italic;}
-.timeline4 .inner .bottom .right .txt span{font-size: 24px; color: rgba(60, 60, 60, 0.4);font-family: 'PP Editorial New'; font-style: italic;}
-.timeline4 .inner .bottom .right .txt p{font-size: 18px; color: rgba(60, 60, 60, 0.8);}
-
-/* timeline 5 */
-.timeline5 .inner {padding: 110px;}
-.timeline5 .inner .topBox h2{width: 100%; color: #45663C; font-size: 100px;  font-family: 'PP Editorial New'; font-style: italic;}
-.timeline5 .inner .bottom {width: 100%; display: flex; justify-content: space-between;}
-
-
-.timeline5 .inner .bottom .left {width: 50%;}
-.timeline5 .inner .bottom .left img:nth-of-type(1) {width: 40%; margin-top: 100px;} 
-.timeline5 .inner .bottom .left img:nth-of-type(2) {width: 40%; margin: 0 25px 50px;}
-
-.timeline5 .inner .bottom .right {width: 50%;  display: flex;}
-.timeline5 .inner .bottom .right .txt {margin-left: auto;}
-.timeline5 .inner .bottom .right .txt span{font-size: 24px; color: rgba(60, 60, 60, 0.4); font-family: 'PP Editorial New'; font-style: italic;}
-.timeline5 .inner .bottom .right .txt p{font-size: 18px; color: rgba(60, 60, 60, 0.8);}
-.timeline5 .inner .bottom .right .txt h1{font-size: 180px; color:#3c3c3c; font-family: 'PP Editorial New'; font-style: italic;}
-
-
-/* timeline 6 */
-.timeline6 .inner {padding: 110px;} 
-.timeline6 .inner .topBox h2{width: 100%; color: #45663C; font-size: 100px; font-family: 'PP Editorial New'; font-style: italic;}
-.timeline6 .inner .bottom {width: 100%; display: flex; justify-content: space-between;}
-
-.timeline6 .inner .bottom .left{width: 50%;}
-.timeline6 .inner .bottom .left img:nth-of-type(1) {width: 100%;} 
-
-.timeline6 .inner .bottom .right {width: 50%; display: flex;}
-.timeline6 .inner .bottom .right .txt {margin-left: auto;}
-.timeline6 .inner .bottom .right .txt h1{font-size: 180px; color:#3c3c3c; font-family: 'PP Editorial New'; font-style: italic;}
-.timeline6 .inner .bottom .right .txt span{font-size: 24px; color: rgba(60, 60, 60, 0.4); font-family: 'PP Editorial New'; font-style: italic;}
-.timeline6 .inner .bottom .right .txt p{font-size: 18px; color: rgba(60, 60, 60, 0.8);}
-
-
-
-/* ===== Horizontal Timeline Scroll (ADD) ===== */
-.timeline-scroll{
-  position: relative;
-  width: 100%;
-  touch-action: pan-y;
-  /* JS가 여기 height를 동적으로 세팅해줌 */
-}
-
-.timeline-sticky{
-  position: sticky;
-  top: 0;
-  height: 100vh;
   overflow: hidden;
-  background: #F3F4F0; /* 섹션 배경과 맞추고 싶으면 조절 */
+  border-radius: 185px 185px 0 0;
+  transform-origin: 50% 50%;
+  will-change: transform, border-radius;
 }
 
-.timeline-track{
-  display: flex;
-  height: 100%;
-  will-change: transform;
-  transform: translate3d(0,0,0);
+/* 두 이미지 겹치기 */
+.thumb-canvas img{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    }
+
+    /* 확대용 큰 이미지(배경) */
+    .img-big{
+    object-fit: cover;
+    }
+
+    /* 썸네일 프레임/커버 */
+    .img-frame{
+    object-fit: contain;
+    pointer-events: none;
+    opacity: 1;
+    will-change: opacity;
+    }
+
+
+
+
+
+
+
+/* responsive minimal */
+@media (max-width: 1024px){
+
+  
+.site-header{padding:40px 40px 20px;}
+.Package .inner{padding:80px 40px;}
+.Package .top h2{font-size:48px;width:100%;}
+.Package .middle{gap:40px;}
+.Package .left p{font-size:32px;margin:200px auto;}
+.Package .right{grid-template-columns:340px 1fr;column-gap:40px;}
+.thumb-wrap{width:340px;height:430px;}
+.Package .inner{ padding: 80px 40px; }
+    .Package .top h2{ font-size: 48px; width: 100%; }
+
+    .Package .middle{
+        grid-template-columns: 1fr 340px 1fr;
+        column-gap: 40px;
+    }
+    .thumb-wrap{ width: 340px; height: 430px; }
 }
 
-/* 각 타임라인 패널을 "한 화면(1뷰)"로 */
-.timeline-track > section{
-  flex: 0 0 100vw;
-  width: 100vw;
-  height: 100vh;         /* 한 화면씩 넘기는 느낌 */
-  overflow: hidden;      /* 내부가 넘치면 숨김 (원하면 auto로 변경) */
-}
+@media (max-width: 768px){
 
-/* 혹시 기존 .inner 폭/패딩 때문에 넘치면 대응 */
-.timeline-track > section .inner{
-  height: 100%;
-  box-sizing: border-box;
-}
+      header{padding: 34px 20px 12px; justify-content: center;}
+    header .logo{position: absolute;left: 50%;transform: translateX(-50%);}
+    header ul.menu-icon{width: 100%; display: flex; width: 100%; justify-content: space-between;}
+    header ul.nav{display: flex;
 
-/* 접근성: 모션 줄이기 설정 */
-@media (prefers-reduced-motion: reduce){
-  .timeline-track{
-    transition: none !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;          /* ✅ 전체 덮기 */
+    bottom: 0;         /* ✅ 전체 덮기 */
+    width: 100%;
+    height: 100vh;
+
+    background: #fff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+
+    transform: translateX(100%);   /* ✅ 오른쪽 밖으로 숨김 */
+    transition: transform .35s ease;
+    z-index: 1001;
   }
+    /* ✅ 열렸을 때 */
+  body.menu-open header ul.nav{
+    transform: translateX(0);
+  }
+
+  header ul.nav li a{
+    color:#111;
+    font-size:22px;
+  }
+
+/* ✅ X 버튼 영역 (왼쪽) */
+header ul.nav li.nav-close{
+  display: block;
+  position: absolute;
+  top: 18px;
+  left: 18px;     /* ✅ right → left */
+  width: auto;
 }
+
+/* ✅ 폰트 X 말고, 얇은 선 2개로 X 만들기 */
+header ul.nav .btn-close{
+  width: 44px;
+  height: 44px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  padding: 0;
+}
+
+/* X 라인 */
+header ul.nav .btn-close::before,
+header ul.nav .btn-close::after{
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 22px;
+  height: 2px;      
+  background: #222;
+  transform-origin: center;
+  border-radius: 30px;
+}
+
+header ul.nav .btn-close::before{
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+header ul.nav .btn-close::after{
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+  /* ✅ 배경 오버레이 (원하면 유지 / 풀스크린이면 없어도 됨) */
+  .menu-overlay{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.35);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .35s ease;
+    z-index: 1000;
+  }
+  body.menu-open .menu-overlay{
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+    header ul.menu-icon li:nth-child(2){ order: 0; }
+    header ul.menu-icon li:nth-child(1){ order: 1; }
+.site-header{padding:24px 20px 16px;}
+.site-header .nav{display:none;}
+
+.Package{height:auto; padding-bottom:80px;}
+.Package .inner{padding:90px 20px 0;}
+.Package .top h2{font-size:36px;}
+.Package .middle{flex-direction:column;gap:24px;}
+.Package .left{width:100%;}
+.Package .left p{margin:24px 0 0;font-size:24px;}
+
+.Package .right{
+    width:100%;
+    grid-template-columns:1fr;
+    row-gap:24px;
+    margin-top:20px;
+}
+.thumb-wrap{width:100%; max-width:370px; height:470px;}
+.copy{margin:0;}
+    .Package .inner{ padding: 90px 20px 40px; }
+    .Package .top h2{ font-size: 36px; }
+
+    /* 모바일: 세로 스택 */
+    .Package .middle{
+        grid-template-columns: 1fr;
+        row-gap: 24px;
+        margin-top: 40px;
+    }
+
+    .Package .left p{ margin-top: 0; font-size: 24px; }
+
+    .thumb-wrap{
+        width: 100%;
+        max-width: 370px;
+        height: 470px;
+        margin-top: 0;
+    }
+
+    .copy-wrap{ margin-top: 0; }
+}
+
+
+
+
+
+/* 기본 */
+.TimeLine {background: #F3F4F0;}
+.TimeLine .con {padding: 100px 50px; } 
+.TimeLine .con .textBox{background: #F3F4F0;}
+.TimeLine .con p.toptit{
+    color:#45663C;
+    font-size:100px;
+    font-family:'PP Editorial New';
+    font-style:italic;
+    line-height:1;
+    margin:0 0 40px;
+    position: relative;   /* sticky 제거 */
+    z-index: 10;
+    background: transparent;
+    padding-bottom: 0;
+    padding-left: 100px;
+}
+/* 가로 리스트 */
+.TimeLine .con .list {display: flex; flex-wrap: nowrap; gap: clamp(16px, 2vw, 30px);
+
+
+  /*  하단 여백을 더 넉넉하게 */
+    padding-bottom: 300px;
+    margin: 0;
+    list-style: none;
+    will-change: transform;
+}
+
+/*  li를 '세로(column)'로 만들고, 높이 고정 대신 min-height */
+.TimeLine .con .list > li {
+    flex: 0 0 auto;
+    width: min(1400px, 86vw);
+
+    /* 고정 height 제거 → 여유 있게 늘어날 수 있게 */
+    height: auto;
+    min-height: clamp(360px, 32vw, 520px);
+
+    /*  내부 여백 조금 넉넉히 */
+    /* padding: clamp(14px, 2vw, 30px); */
+    padding: 30px 200px 0 150px;
+    /*  이미지 안 잘리게 */
+    overflow: hidden;
+
+}
+
+
+
+/* 텍스트 */
+.TimeLine .con .list > li h1 { /* margin: 25px; */ font-size: clamp(40px, 5vw, 80px); }
+.TimeLine .con .list > li p  { /* margin: 10px 0 0; */ line-height: 1.5; }
+
+
+/* 텍스트 공동  */
+
+.TimeLine .con .list li h1{
+font-size: 180px; color:#3c3c3c;font-family: 'PP Editorial New'; font-style: italic; font-weight: 400;}
+
+.TimeLine .con .list li span.since{
+font-size: 40px; color: rgba(60, 60, 60, 0.4); font-family: 'PP Editorial New'; font-style: italic;}
+
+.TimeLine .con .list li span.sub { font-family: 'PP Editorial New'; font-style: italic; font-weight: 100;   font-size: 24px; color: rgba(60, 60, 60, 0.8) }
+
+.TimeLine .con .list li p.txt {font-family: 'Yoon Gothic',sans-serif; font-size: 18px; font-weight: 800; margin-top: 20px;}
+
+.TimeLine .con .list .line02 h1 { margin-top: 20px;}
+
+
+
+/* timeline01 */
+/* p 기본 마진 제거(필수) */
+.TimeLine p { margin: 0; }
+
+/* ===== 텍스트 공통 ===== */
+.TimeLine .con .list li h1{
+font-size: 180px;
+color:#3c3c3c;
+font-family: 'PP Editorial New';
+font-style: italic;
+font-weight: 400;
+}
+
+.TimeLine .con .list li span.since{
+font-size: 40px;
+color: rgba(60, 60, 60, 0.4);
+font-family: 'PP Editorial New';
+font-style: italic;
+}
+
+.TimeLine .con .list li span.sub{
+font-family: 'PP Editorial New';
+font-style: italic;
+font-weight: 100;
+font-size: 24px;
+color: rgba(60, 60, 60, 0.8);
+}
+
+.TimeLine .con .list li p.txt{
+font-family: 'Yoon Gothic',sans-serif;
+font-size: 18px;
+font-weight: 800;
+}
+
+/* ===== timeline01 ===== */
+
+/*  li 자체에 flex를 걸어야 좌/우로 나뉨 */
+.TimeLine .con .list li.line01{max-width: 1920px;}
+.TimeLine .con .list li.line01{
+display: flex;
+align-items: flex-start;   /* 텍스트는 위 기준 */
+justify-content: space-between;
+gap: 60px;                 /* 좌/우 간격 */
+padding-left: 0;
+margin-left: 100px;
+}
+
+/* 좌측 텍스트 박스 */
+.TimeLine .con .list li.line01 .textBox{
+flex: 0 0 auto;
+width: 595px;              /* 빨간 박스 폭(원하는 값으로 조절) */
+margin-top: 115px;
+}
+
+.TimeLine .con .list li.line01 .textBox h1 {margin-left: 30px;}
+
+/* 우측 이미지 영역(노란 박스 자리) */
+.TimeLine .con .list li.line01 .right{
+flex: 0 0 auto;
+width: 950px;   
+height: 535px;           /*  목표 규격 */
+display: flex;
+justify-content: flex-end;
+align-items: flex-end;     /*  이미지 바닥 정렬 */
+}
+
+/* 이미지 박스(p.img): 박스 규격을 정확히 잡는 곳 */
+.TimeLine .con .list li.line01 .right .img{
+width: 950px;
+height: 535px;
+overflow: visible;          /* 박스 안에서만 보이게(원하면 visible로 변경) */
+
+}
+
+/* 이미지 자체 */
+.TimeLine .con .list li.line01 .right .img img{
+width: 100%;
+height: 100%;
+object-fit: cover;         /* svg/이미지에 맞게 contain으로 바꿔도 됨 */
+display: block;
+
+
+}
+
+
+/* ===== timeline02 ===== */
+.TimeLine .con .list li.line02{
+  position: relative;              /* bg_img 절대배치 기준점 */
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 60px;
+    max-width: 1920px;
+  overflow: visible;               /*  위로 올린 bg_img 잘리지 않게 */
+}
+
+/*  노란색 배경 이미지: 레이아웃에서 분리 + 위로 올리기 */
+.TimeLine .con .list li.line02 .bg_img{
+    position: absolute;
+    top: -140px;                     /*  파란 박스만큼 위로(수치 조절) */
+    right: 0;                        /* 필요하면 left:0/transform으로 정렬 */
+    z-index: 1;                      /*  textBox보다 아래 */
+    margin: 0;
+  pointer-events: none;            /* 클릭 방해 방지 */
+}
+
+/* bg_img 내부 img 크기(원하는대로) */
+.TimeLine .con .list li.line02 .bg_img img{
+display: block;
+width: 760px;                    /*  노란 이미지 폭(수치 조절) */
+height: auto;
+}
+
+/* 빨간 영역: 배경 이미지 위로 */
+.TimeLine .con .list li.line02 .textBox{
+    position: relative;
+    z-index: 3;                      /*  bg_img(1) 위 */
+    flex: 0 0 auto;
+    width: 500px;
+    margin-left: auto;
+    text-align: right;
+  /* 필요하면 살짝 위로 당기기 */
+  margin-top: 246px;                /*  빨간 박스 위치 미세조정 */
+}
+
+/* 왼쪽 이미지 영역은 기본값 유지 */
+.TimeLine .con .list li.line02 .left{
+    position: relative;
+    z-index: 2;                      /*  bg_img 위로(원하면), textBox보다 아래 */
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+
+.TimeLine .con .list li.line02 .left img.first {width: 300px; height: 430px; margin-right: 50px;}
+.TimeLine .con .list li.line02 .left img.sec {width: 300px; height: 390px; margin-top: 200px;}
+/* timeline03 */
+
+
+.TimeLine .con .list li.line03{
+    display: flex;
+    align-items: flex-start;
+
+
+
+
+    /*  line03은 내부 좌우 여백 과한 것 방지 (공통 li padding이 크면 덮어씀) */
+    padding: 30px 0 30px 100px;
+}
+
+/* 오른쪽 텍스트 박스 */
+.TimeLine .con .list li.line03 .textBox{
+
+width: 582px;          /* 요청 고정 */
+text-align: right;     /* 목표 느낌 */
+margin-top: 82px;
+}
+
+/* 왼쪽 이미지 영역(노란 영역) */
+.TimeLine .con .list li.line03 .left{
+    flex: 0 0 auto;
+    width: 48%;         /*  이미지 두 장 들어갈 자리(여유폭) */
+    height: 600px;         /*  이미지 배치용 캔버스(필요시 조절) */
+    position: relative;
+}
+
+/* p.img는 캔버스 역할 */
+.TimeLine .con .list li.line03 .left .img{
+position: relative;
+width: 100%;
+height: 100%;
+margin: 0;
+}
+
+/*  1번 이미지: 550x310 (좌상단) */
+.TimeLine .con .list li.line03 .left .img img:nth-child(1){
+    position: absolute;
+    left: 0;
+    top: 55px;
+    width: 477px;
+    height: 270px;
+    object-fit: cover;
+    display: block;
+}
+
+/*  2번 이미지: 440x250 (우하단) */
+.TimeLine .con .list li.line03 .left .img img:nth-child(2){
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 440px;
+    height: 227px;
+    object-fit: cover;
+    display: block;
+}
+
+
+/*  Timeline 04  */
+
+.TimeLine .con .list li.line04{
+    display: flex;
+    align-items: flex-start;
+    
+    gap: 50px;
+
+    /* line04만 여백 재정의(공통 li padding이 과하면 덮어씀) */
+    padding: 30px 60px 30px 60px;
+}
+
+/* 왼쪽 이미지 영역(노란 박스) */
+.TimeLine .con .list li.line04 .left{
+    flex: 0 0 auto;
+    width: 54%;          /* 이미지 영역 넉넉하게 */
+    height: 420px;       /* 두 이미지가 들어갈 캔버스 높이 */
+    position: relative;
+}
+
+/* 캔버스 */
+.TimeLine .con .list li.line04 .left .img{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+/* ① 이미지(260x310) - 좌하단 */
+.TimeLine .con .list li.line04 .left .img img:nth-child(1){
+    position: absolute;
+    left: 0;
+    bottom: -90px;
+    width: 260px;
+    height: 310px;
+    object-fit: cover;
+    display: block;
+}
+
+/* ② 이미지(480x280) - 우상단 */
+.TimeLine .con .list li.line04 .left .img img:nth-child(2){
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 480px;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+}
+
+/* 오른쪽 텍스트 박스(빨간 박스) */
+.TimeLine .con .list li.line04 .textBox{
+    flex: 0 0 auto;
+    width: 572px;          /* 필요하면 line03처럼 고정 */
+    text-align: left;
+    margin-left: auto;
+
+  /*  첫 번째 목표처럼 '아래쪽'에 자리잡게 */
+  padding: 82px 0 110px;   /* 위치감 조절 포인트 */
+}
+
+
+/* line05 */
+
+
+    .TimeLine .con .list li.line05{
+    display: flex;
+    align-items: flex-start;
+    
+    gap: 50px;
+
+    /*  line05에서만 과한 공통 padding 덮기 */
+    padding: 30px 0 30px 100px;
+    }
+
+    /* ----- 왼쪽 이미지 영역(노란 영역) ----- */
+    .TimeLine .con .list li.line05 .left{
+    flex: 0 0 auto;
+    width: 700px;          /* 두 이미지 들어갈 캔버스 폭(필요시 조절) */
+    height: 460px;         /* 큰 이미지(430) 기준으로 여유 */
+    position: relative;
+    }
+
+    /* p.img = 캔버스 */
+    .TimeLine .con .list li.line05 .left .img{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    }
+
+    /* 1번 이미지: 300x390 (왼쪽) */
+    .TimeLine .con .list li.line05 .left .img img.first{
+    position: absolute;
+    left: 0;
+    top: 180px;            
+    width: 300px;
+    height: 390px;
+    object-fit: cover;
+    display: block;
+    }
+
+    /* 2번 이미지: 300x430 (오른쪽) */
+    .TimeLine .con .list li.line05 .left .img img.sec{
+    position: absolute;
+    left: 340px;           /*  1번 옆으로 띄우기(간격 포함) */
+    top: 0;                /*  더 위로 올라간 느낌 */
+    width: 300px;
+    height: 430px;
+    object-fit: cover;
+    display: block;
+    }
+
+    /* ----- 오른쪽 텍스트 영역(빨간 영역) ----- */
+    .TimeLine .con .list li.line05 .textBox{
+    flex: 0 0 auto;
+    width: 492px;          /* 목표처럼 작게(원하면 380~460 조절) */
+    margin-top: 200px;
+    text-align: right;
+    }
+
+    /* sub(영문) */
+    .TimeLine .con .list li.line05 .textBox .sub{
+    display: block;
+    margin-bottom: 10px;
+    line-height: 1.2;
+    }
+
+    /* 본문 */
+    .TimeLine .con .list li.line05 .textBox .txt{
+    margin: 0 0 16px;
+    line-height: 1.55;
+    word-break: keep-all;
+    }
+
+    
+
+
+    /* Timeline 06  */
+
+
+    .TimeLine .con .list li.line06{
+    margin-right: 200px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 80px;
+
+    /* 공통 li padding 덮기 */
+    padding: 30px 110px 30px 60px;
+    }
+
+    /* ----- 왼쪽 이미지 영역(노란 영역) ----- */
+    .TimeLine .con .list li.line06 .left{
+    flex: 0 0 auto;
+    width: 955px;
+    height: 535px;
+    display: flex;
+    align-items: flex-start;
+    }
+
+    /* p.img = 이미지 박스(규격 고정) */
+    .TimeLine .con .list li.line06 .left .img{
+    width: 955px;
+    height: 535px;
+    margin: 0;
+    }
+
+    /* 이미지 */
+    .TimeLine .con .list li.line06 .left .img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;     /* SVG면 contain 추천 */
+    display: block;
+    }
+
+    /* ----- 오른쪽 텍스트 영역(빨간 영역) ----- */
+    .TimeLine .con .list li.line06 .textBox{
+    flex: 0 0 auto;
+    width: 420px;          /* 목표처럼 작게 보이게 (원하면 380~520) */
+    margin-left: auto;
+    text-align: right;
+    margin-top: 145px;
+    }
+
+    /* sub */
+    .TimeLine .con .list li.line06 .textBox .sub{
+    display: block;
+    margin: 8px 0 12px;
+    line-height: 1.2;
+    }
+
+    /* 본문 */
+    .TimeLine .con .list li.line06 .textBox .txt{
+    margin: 0;
+    line-height: 1.55;
+    word-break: keep-all;
+    }
+/* =========================
+TIMELINE FINAL
+
+
+/* con = 실제 보이는 프레임(여기 폭 기준으로 JS가 계산함) */
+.TimeLine .con{
+    width: 100%;
+  overflow: hidden; /*  list가 커져도 브라우저 가로 스크롤 생성 방지 */
+}
+
+/* list는 가로로 길어져야 하므로 max-content + 마지막 여백은 padding-right로 */
+.TimeLine .con .list{
+    display: flex;
+    flex-wrap: nowrap;
+    width: max-content;
+    padding-right: 110px;     /*  마지막 카드가 화면 끝에서 숨지 않게 “끝 여백” */
+    box-sizing: content-box;
+    }
+
+    /* 각 li는 con 안에서 "한 화면 가득" 보이도록 폭을 con 기준으로 제한 */
+    .TimeLine .con .list > li{
+    box-sizing: border-box;
+
+    /* 기존 width:min(1400px,86vw) 때문에 1920에서 애매하게 잘릴 수 있어서
+        "con 패딩(좌110/우110) 기준으로 꽉 차게"로 강제 */
+    width: calc(100vw - 220px);   /* con 패딩이 110px*2 라는 전제 */
+    max-width: 1700px;            /* 1920-220 = 1700 */
+    }
+
+    /* ---------- line06 버그 픽스(오타/폭초과 원인 제거) ---------- */
+    .TimeLine .con .list li.line06{
+    margin-right: 0;              /*  200px로 scrollWidth만 키우던 요소 제거 */
+    padding: 30px 110px 30px 60px;
+    }
+
+    /* line06 이미지/텍스트가 con 폭 넘치지 않게 */
+    .TimeLine .con .list li.line06 .left{
+    flex: 0 0 auto;
+    max-width: 955px;
+    }
+    .TimeLine .con .list li.line06 .textBox{
+    flex: 0 0 auto;
+    width: 420px;
+    min-width: 590px;             /* 글 줄바꿈으로 찌그러지지 않게 */
+    }
+
+    /* ---------- toptit “또 보이는 느낌” 방지용(핀 구간에서 겹침 최소화) ---------- */
+    .TimeLine .con p.toptit{
+    position: relative;           /* sticky/fixed 있으면 절대 금지 */
+    z-index: 5;
+    margin: 0 0 40px;
+    }
+
+    /*  ul이 기준점 */
+.TimeLine .con .list{
+    position: relative;
+    --stroke-y: 50%;            /* JS가 못 잡을 때 대비 기본값 */
+    }
+
+    /*  뒤를 가로지르는 stroke */
+    .TimeLine .con .list::before{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+
+    top: var(--stroke-y);       /*  “연도 baseline y”가 여기로 들어옴 */
+    height: 2px;
+    background: #2b4a2c;
+
+
+    transform: scaleY(0.15);
+    transform-origin: center;
+
+    opacity: .7;                /* 체감 두께 조절 */
+    z-index: 1;
+    pointer-events: none;
+}
+
+/*  stroke 위로 올려야 하는 요소들 */
+    .TimeLine .con .list > li{
+    position: relative;
+    z-index: 2;
+    }
+    .TimeLine .con .list > li .img,
+    .TimeLine .con .list > li .textBox{
+    position: relative;
+    z-index: 3;
+}
+
 
 /* beauty */
 .beauty {background: #202020;position: relative;padding: 0 34px;overflow:hidden;height: 1588px;}

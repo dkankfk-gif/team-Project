@@ -18,14 +18,18 @@ button:focus {outline: none}
 .en_s{font-family: 'PPEditorialNew',serif; font-style: normal;}
 
 /* header */
-header{width: 100%; padding: 60px 110px 20px; position: fixed; top: 0;left: 0; z-index: 100; display: flex; justify-content: space-between;}
-header .logo{display: inline-block;}
+header{width: 100%; padding: 40px 110px 20px; position: fixed; top: 0;left: 0; z-index: 100; display: flex;justify-content: space-between; color: #fff; transition: color .2s ease;}
+header .logo{display: inline-block;width: 176px;height: 34px;}
+header .logo img{width: 100%;}
 header p.img{width: 100%;}
-header p.img img{width: 100%;}
+header p.img img{width: 100%; }
 header ul.nav{display: flex; gap: 64px; font-size: 16px; font-weight: 500;}
 header ul.nav li a{display: block; width: 100%;height: 100%;}
 header ul.menu-icon{display: flex; gap: 24px;}
 header ul.menu-icon li a{display: block; width: 100%;height: 100%;}
+header ul.nav li.nav-close {display: none;}
+
+header.active{transform: translateY(-100%);}
 
 .mobile {display: none;}
 .hero .visual {display:block;}
@@ -44,14 +48,80 @@ header ul.menu-icon li a{display: block; width: 100%;height: 100%;}
 .hero .visual .card .title{display: flex;justify-content: space-between; align-items: center; }
 .hero .visual .card .title h3.name{font-size: clamp(2rem, 1.67vw, 2rem); margin-bottom: 42px; font-weight: 400; font-family: 'PP Mori';}
 .hero .visual .card .title h3.name span.txt{display: block; font-size: clamp(0.94rem, 0.9375vw, 1.125rem); padding-top: 4px; font-weight: 500;}
-.hero .visual .card .title a.btn{display: block; width: 50px;height: 50%;background: #222; border-radius: 100%; padding: 10px; text-align: center; align-items: center;}
-.hero .visual .card .title a.btn img{width: 20px; height: 20px;display: flex; align-items: center;}
+.hero .visual .card .title a.btn{  display:flex;
+    align-items:center;
+    justify-content:center;
+    width:50px;
+    height:50px;      /*고정 */
+    background:#222;
+    border-radius:50%;
+  padding:0;        /*  10px 있으면 내부 아이콘 정렬이 흔들릴 수 있음 */
+}
+.hero .visual .card .title a.btn img{
+    width:20px;
+    height:20px;
+    display:block;
+}
 .hero .visual .card .text-box{margin-bottom: 8px;}
 .hero .visual .card .text-box p.text{font-size: 60px; text-transform: uppercase;}
 .hero .visual .card p.text{font-size: 16px;}
-.hero .visual .card p.img{position: absolute; left: 50%; transform: translateX(-50%);  right: 76px; bottom: -24px;}
-.hero .visual .card p.img img{ width: 200%;}
+.hero .visual .card p.img{  position:absolute;
+    left:50%;
+    bottom:-24px;
+    transform:translateX(-50%);
+    width:100%;
+    pointer-events:none;
+}
+.hero .visual .card p.img img{width:min(520px, 120%);   /*  200% 대신 안전한 상한 */
+    height:auto;
+    display:block;
+    margin:0 auto;
+}
 .hero .visual .line-img img{position: absolute; width: 27%; left:32%; bottom: 35%;}
+
+
+
+/*  hero 카드 버튼 원/타원 문제 해결 */
+.hero .visual .card .title a.btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:50px;
+    height:50px;        /* 핵심 */
+    background:#222;
+    border-radius:50%;
+    padding:0;
+    }
+    .hero .visual .card .title a.btn img{
+    width:20px;
+    height:20px;
+    display:block;
+    }
+
+    /*  hero 카드 제품 이미지 과확대 안정화 */
+    .hero .visual .card p.img{
+    position:absolute;
+    left:76%;
+    bottom:-48px;
+    transform:translateX(-50%);
+    width:48%;
+    pointer-events:none;
+    }
+    .hero .visual .card p.img img{
+    width:min(520px, 120%);   /* 기존 200% 대신 */
+    height:auto;
+    display:block;
+    margin:0 auto;
+}
+
+
+
+/* 화살표 추가css */
+
+.hero .visual .line-img{position:absolute; width:27%; left:32%; bottom:35%;}
+.hero .visual .line-img svg{display:block; width:100%; height:auto;}
+
+
 
 
 /* filter */
@@ -117,7 +187,7 @@ footer .top-box .left-box ul{width: 30%;}
 footer .top-box .left-box ul li{font-size: 14px; margin-bottom: 12px;}
 footer .top-box .left-box ul li:last-child{margin-bottom: 0;}
 footer .top-box .left-box ul li.tit{color: rgba(255,255,255,0.6);margin-bottom: 18px;}
-footer .top-box .right-box{display:block; width: 20%; padding: ;}
+footer .top-box .right-box{display:block; width: 20%; /* padding: ; */}
 footer .top-box .right-box ul{display: flex;justify-content: space-between; border-bottom: 1px solid #fff;}
 footer .top-box .right-box li{font-size: 14px; padding: 10px 0; }
 footer .top-box .right-box li img{width: 12px;height: 12px;}
@@ -239,7 +309,7 @@ footer .top-box .left-box ul{width: 30%;}
 footer .top-box .left-box ul li{font-size: 14px; margin-bottom: 12px;}
 footer .top-box .left-box ul li:last-child{margin-bottom: 0;}
 footer .top-box .left-box ul li.tit{color: rgba(255,255,255,0.6);margin-bottom: 18px;}
-footer .top-box .right-box{display:block; width: 20%; padding: ;}
+footer .top-box .right-box{display:block; width: 20%; /* padding: ; */}
 footer .top-box .right-box ul{display: flex;justify-content: space-between; border-bottom: 1px solid #fff;}
 footer .top-box .right-box li{font-size: 14px; padding: 10px 0; }
 footer .top-box .right-box li img{width: 12px;height: 12px;}
@@ -261,14 +331,97 @@ footer .bottom-box p.logo{color: #fff;}
 .en_s{font-family: 'PPEditorialNew',serif; font-style: normal;}
 
 /* header */
-header{width: 100%; padding: 60px 110px 20px; position: fixed; top: 0;left: 0; z-index: 100; display: flex;justify-content: space-between;}
-header .logo{display: inline-block;}
-header p.img{width: 100%;}
-header p.img img{width: 100%;}
-header ul.nav{display: flex; gap: 64px; font-size: 16px; font-weight: 500;}
-header ul.nav li a{display: block; width: 100%;height: 100%;}
-header ul.menu-icon{display: flex; gap: 24px;}
-header ul.menu-icon li a{display: block; width: 100%;height: 100%;}
+    header{padding: 34px 20px 12px; justify-content: center;}
+    header .logo{position: absolute;left: 50%;transform: translateX(-50%);}
+    header ul.menu-icon{width: 100%; display: flex; width: 100%; justify-content: space-between;}
+    header ul.nav{display: flex;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;          /* ✅ 전체 덮기 */
+    bottom: 0;         /* ✅ 전체 덮기 */
+    width: 100%;
+    height: 100vh;
+
+    background: #fff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+
+    transform: translateX(100%);   /* ✅ 오른쪽 밖으로 숨김 */
+    transition: transform .35s ease;
+    z-index: 1001;
+  }
+    /* ✅ 열렸을 때 */
+  body.menu-open header ul.nav{
+    transform: translateX(0);
+  }
+
+  header ul.nav li a{
+    color:#111;
+    font-size:22px;
+  }
+
+/* ✅ X 버튼 영역 (왼쪽) */
+header ul.nav li.nav-close{
+  display: block;
+  position: absolute;
+  top: 18px;
+  left: 18px;     /* ✅ right → left */
+  width: auto;
+}
+
+/* ✅ 폰트 X 말고, 얇은 선 2개로 X 만들기 */
+header ul.nav .btn-close{
+  width: 44px;
+  height: 44px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  padding: 0;
+}
+
+/* X 라인 */
+header ul.nav .btn-close::before,
+header ul.nav .btn-close::after{
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 22px;
+  height: 2px;      
+  background: #222;
+  transform-origin: center;
+  border-radius: 30px;
+}
+
+header ul.nav .btn-close::before{
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+header ul.nav .btn-close::after{
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+  /* ✅ 배경 오버레이 (원하면 유지 / 풀스크린이면 없어도 됨) */
+  .menu-overlay{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.35);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .35s ease;
+    z-index: 1000;
+  }
+  body.menu-open .menu-overlay{
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+    header ul.menu-icon li:nth-child(2){ order: 0; }
+    header ul.menu-icon li:nth-child(1){ order: 1; }
 
 .mobile{display: none;}
 
@@ -370,7 +523,7 @@ footer .top-box .left-box ul{width: 30%;}
 footer .top-box .left-box ul li{font-size: 14px; margin-bottom: 12px;}
 footer .top-box .left-box ul li:last-child{margin-bottom: 0;}
 footer .top-box .left-box ul li.tit{color: rgba(255,255,255,0.6);margin-bottom: 18px;}
-footer .top-box .right-box{display:block; width: 20%; padding: ;}
+footer .top-box .right-box{display:block; width: 20%; /* padding: ; */}
 footer .top-box .right-box ul{display: flex;justify-content: space-between; border-bottom: 1px solid #fff;}
 footer .top-box .right-box li{font-size: 14px; padding: 10px 0; }
 footer .top-box .right-box li img{width: 12px;height: 12px;}
@@ -497,6 +650,47 @@ header ul.menu-icon li a{display: block; width: 100%;height: 100%;}
 .products .shop-swiper .bottom p.price{font-size: 20px; font-weight: 600;}
 
 
+
+
+/* product slide add */
+
+/*  (필수) swiper 레이아웃이 겹치지 않게 기본 골격 세팅 */
+.products .shop-swiper{
+    width: 100%;
+  overflow: hidden;            /*  트랙이 밖으로 튀어나와도 영역 밖은 숨김 */
+}
+
+.products .shop-swiper .swiper-wrapper{
+  display: flex;               /*  가로로 나열 */
+  gap: 30px;                   /*  카드 간격 (원하면 조절) */
+    align-items: stretch;
+    will-change: transform;
+}
+
+.products .shop-swiper .swiper-slide{
+  flex: 0 0 auto;              /*  줄바꿈/늘어남 방지 */
+    will-change: transform;
+}
+
+/*  pin 될 때 다음 섹션 침범 방지(안정화) */
+.product-list{
+    position: relative;
+    overflow: hidden;            /*  pin + transform 조합에서 침범 방지 */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* footer */
 footer{color: #fff; background: #202020;}
 footer .inner{padding: 140px 52px 53px;}
@@ -506,7 +700,7 @@ footer .top-box .left-box ul{width: 30%;}
 footer .top-box .left-box ul li{font-size: 14px; margin-bottom: 12px;}
 footer .top-box .left-box ul li:last-child{margin-bottom: 0;}
 footer .top-box .left-box ul li.tit{color: rgba(255,255,255,0.6);margin-bottom: 18px;}
-footer .top-box .right-box{display:block; width: 20%; padding: ;}
+footer .top-box .right-box{display:block; width: 20%; /* padding: ; */}
 footer .top-box .right-box ul{display: flex;justify-content: space-between; border-bottom: 1px solid #fff;}
 footer .top-box .right-box li{font-size: 14px; padding: 10px 0; }
 footer .top-box .right-box li img{width: 12px;height: 12px;}
