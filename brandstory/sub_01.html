@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="css/sub_01_responsive.css">
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <script src="js/script.js"></script>
 </head>
 <body>
@@ -97,17 +99,6 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script>
 
-        //스크롤에 따라 gnb가 나타나고 사라지는
-var prevScrollTop = 0;
-document.addEventListener('scroll', function(){
-    var nowScrollTop = $(window).scrollTop();   //먼저 현재값을 저장시킨다
-    if(nowScrollTop > prevScrollTop ){
-        $('header').addClass('active');
-    } else{             //아닐경우
-        $('header').removeClass('active');
-    }
-    prevScrollTop = nowScrollTop;  //항상 스크롤값을 전달해야한다
-})
 
         window.addEventListener("load", () => {
         const pills = gsap.utils.toArray(".main-Keyword .pill");
