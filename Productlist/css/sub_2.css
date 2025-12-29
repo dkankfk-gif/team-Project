@@ -390,7 +390,11 @@ header ul.nav .btn-close{
 /* X 라인 */
 header ul.nav .btn-close::before,
 header ul.nav .btn-close::after{
-  content: "";
+  content: "";height: 10px;}
+.hero .visual .card .text-box{margin-bottom: 3px;}
+.hero .visual .card .text-box p.text{font-size: 28px; text-transform: uppercase;}
+.hero .visual .card p.text{font-size: 10px;}
+.hero .visual .card p.img{position: absolut
   position: absolute;
   top: 50%;
   left: 50%;
@@ -466,11 +470,7 @@ header ul.nav .btn-close::after{
 .hero .visual .card .title h3.name{font-size: 16px; font-style: italic; margin-bottom: 18px;}
 .hero .visual .card .title h3.name span .txt{display: block; font-size: 10px; padding-top: 2px; font-weight: 50;}
 .hero .visual .card .title a.btn{display: block; width: 23px;height: 23px;background: #222; border-radius: 50%; padding: 0px; text-align: center;}
-.hero .visual .card .title a.btn img{width: 10px;height: 10px;}
-.hero .visual .card .text-box{margin-bottom: 3px;}
-.hero .visual .card .text-box p.text{font-size: 28px; text-transform: uppercase;}
-.hero .visual .card p.text{font-size: 10px;}
-.hero .visual .card p.img{position: absolute;right: -44px; bottom: -24px;}
+.hero .visual .card .title a.btn img{width: 10px;e;right: -44px; bottom: -24px;}
 .hero .visual .line-img{position: absolute; left:12%; bottom: 12%; display: none;}
 
 

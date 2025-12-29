@@ -724,31 +724,9 @@
         slides.forEach((card) => {
             const aTag = card.querySelector("a") || card;
 
-            // 마우스 진입
-            aTag.addEventListener("mouseenter", () => {
-            gsap.to(card, {
-                rotate: -8,     //  왼쪽으로 기울기 (원하면 -6 ~ -12)
-                x: -8,          //  왼쪽으로 아주 살짝 이동
-                y: -6,          //  살짝 떠오르는 느낌
-                scale: 1.01,    //  과하면 1.005로
-                duration: 0.28,
-                ease: "power2.out",
-                overwrite: true
-            });
-            });
+            
 
-            // 마우스 이탈
-            aTag.addEventListener("mouseleave", () => {
-            gsap.to(card, {
-                rotate: 0,
-                x: 0,
-                y: 0,
-                scale: 1,
-                duration: 0.35,
-                ease: "power2.out",
-                overwrite: true
-            });
-            });
+            
         });
 
         });

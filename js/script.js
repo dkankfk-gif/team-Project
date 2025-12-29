@@ -275,7 +275,7 @@ document.addEventListener("DOMContentLoaded", () => {
       scale: 0.9,
       transformOrigin: "top center",
       ease: "none",
-      scrollTrigger: {
+      scrollTrigger: {올리면
         trigger: li,
         start: "top 60%",
         end: "top 0%",
@@ -665,6 +665,37 @@ function shortSequence(opt) {
     ease: "power3.out"
   }, "-=0.35");
 }
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  // 1) footer accordion
+  const accordions = document.querySelectorAll("footer .top-box .left-box ul");
+
+  accordions.forEach((ul) => {
+    const title = ul.querySelector("li.tit");
+    if (!title) return;
+
+    title.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      // 하나만 열리게
+      accordions.forEach((other) => {
+        if (other !== ul) other.classList.remove("open");
+      });
+
+      ul.classList.toggle("open");
+    });
+  });
+
+  // 2) floating top button
+  const btn = document.querySelector("footer .floating");
+  if (btn) {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+});
 
 
 /* footer */
