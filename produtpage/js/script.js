@@ -35,13 +35,13 @@ document.addEventListener('scroll', function(){
 })
 
 gsap.timeline({
-    scrollTrigger:{
-        trigger:'.product',
-        start:'0% 100%',
-        end:'0% 10%',
-        scrub:0,
-        //markers:true
-    }
+  scrollTrigger:{
+    trigger:'.TopTitle',
+    start:'top top',
+    end:'bottom top',
+    scrub: 0,
+    markers:true
+  }
 })
 .to('header', {color:'#222',ease:'none',duration:5},0)
 .to('header .menu-icon img',{filter: 'invert(1)', duration: 0})
