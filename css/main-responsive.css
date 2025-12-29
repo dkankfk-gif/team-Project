@@ -419,19 +419,23 @@ header ul.nav .btn-close::after{
   .menu-overlay{
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,.35);
+    background: rgb(255,255,255,);
     opacity: 0;
     pointer-events: none;
     transition: opacity .35s ease;
     z-index: 1000;
   }
+  
   body.menu-open .menu-overlay{
     opacity: 1;
     pointer-events: auto;
+    z-index: 1;
   }
 
     header ul.menu-icon li:nth-child(2){ order: 0; }
     header ul.menu-icon li:nth-child(1){ order: 1; }
+
+    
     .main-visual{height: 60vh;}
     .main-visual .title h2{font-size: 52px;}
     .main-visual .title p.sub{font-size: 12px;}
@@ -548,7 +552,7 @@ footer .top-box .left-box ul li.tit{
   align-items:center;
   font-size:16px;
   color:#fff;
-  padding:0 4px;
+  padding:0 4px 8px;
   margin:0;
   position:relative;
   cursor:pointer;
@@ -594,12 +598,11 @@ footer .top-box .right-box li{
   align-items:center;
   justify-content:center;
 }
-footer .bottom-box{justify-content:space-between; gap:0;}
-footer .bottom-box p.logo{margin-top:30px;}
-footer .bottom-box p.text{font-size:12px; opacity:0.8;}
+footer .bottom-box{justify-content:space-between;margin-top: 12px;}
+footer .bottom-box p.logo{margin-top:30px; gap: 40px;}
+footer .bottom-box p.text{font-size:12px; opacity:0.8; padding-top: 30px;}
 
 /* floating: 기본은 보이게(원하면 미디어쿼리로 숨겨) */
-footer .floating{display:block;}
 
 }
 
@@ -658,6 +661,13 @@ footer .floating{display:block;}
     .swiper{transform: scale(0.8);}
     .connect .inner p.sub:nth-child(1){left: 20px; bottom:135px;}
     .connect .inner p.sub:nth-child(2){right: 20px; bottom: 90px;}
+    
+    footer .bottom-box .logo-box { gap: 20px; width: 80%;}
+    footer .bottom-box p.logo{margin-top: 16px;}
+    footer .bottom-box p.text{padding-top: 16px; font-size: 10px;}
+    footer .floating{margin-left: 20px; width: 44px;height: 44px;}
+    footer .floating img{width: 20px;height: 20px;}
+    
 }
 
 
@@ -706,4 +716,5 @@ footer .floating{display:block;}
     .connect .inner p.sub{font-size: 12px;}
     .connect .inner p.sub:nth-child(1){bottom: 40px;}
     .connect .inner p.sub:nth-child(2){bottom: 0px}
+    
 }

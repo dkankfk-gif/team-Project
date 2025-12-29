@@ -302,10 +302,10 @@ header.active{transform: translateY(-100%);}
 .materials .inner{padding: 320px 270px 400px; background: #f3f4f0; display: flex;justify-content: space-between; gap: 60px; overflow: visible;}
 .materials .inner .fix {width: 48%;margin-top: 0; position: sticky; top: 200px; align-self: flex-start; margin-bottom: 340px; overflow: hidden;}
 .materials .inner .fix h2.title{font-size: 18px;margin-bottom: 16px;}
-.materials .inner .fix p.en{margin-bottom: 14px; font-size: 70px; font-weight: 600;}
+.materials .inner .fix p.en{margin-bottom: 4px; font-size: 70px; font-weight: 600;}
 .materials .inner .fix p.en span.en_s{font-style: italic;font-weight: 400;}
 .materials .inner .fix p.en span.color{color: #45663C;}
-.materials .inner .fix p.txt{font-size: 16px; font-weight: 700; color: rgba(34, 34, 34, 0.4)}
+.materials .inner .fix p.txt{font-size: 16px; font-weight: 700; color: rgba(34, 34, 34, 0.4); margin-top: 8px;}
 
 .materials .inner ul.list {width: 56%;height: 100%; box-sizing: border-box;.materials .inner ul.list {width: 56%; box-sizing: border-box; perspective: 1000px;}
 .materials .inner ul.list li{position: sticky; border-radius: 8px;overflow: hidden; width: 100%; aspect-ratio: 1 / 1; margin-bottom: 230px; top: 120px; transform-style: preserve-3d;  will-change: transform;}
@@ -419,5 +419,5 @@ footer .top-box .right-box li img{width: 12px;height: 12px;}
 footer .bottom-box{display: flex; justify-content: space-between;}
 footer .bottom-box .logo-box{display: flex; gap: 70px;}
 footer .bottom-box p.logo{color: #fff;}
-footer .floating {display: block; padding: 14px; right: 6%; bottom: 5%; background: #fff; border-radius: 50%;width: 48px;height: 48px; display: flex; justify-content: center; align-items: center; }
+footer .floating {display: block;  background: #fff; border-radius: 50%;width: 48px;height: 48px; display: flex; justify-content: center; align-items: center; box-sizing: border-box; }
 footer .floating img{width: 24px;height: 24px; transform: rotate(-90deg);}

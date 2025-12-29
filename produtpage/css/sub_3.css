@@ -885,10 +885,9 @@ footer .top-box .right-box li img{width: 12px;height: 12px;}
 footer .bottom-box{display: flex; justify-content: space-between;}
 footer .bottom-box .logo-box{display: flex; gap: 70px;}
 footer .bottom-box p.logo{color: #fff;}
-
-
-footer .floating {display: block; padding: 14px; right: 6%; bottom: 5%; background: #fff; border-radius: 50%;width: 48px;height: 48px; display: flex; justify-content: center; align-items: center; }
+footer .floating {display: block;  background: #fff; border-radius: 50%;width: 48px;height: 48px; display: flex; justify-content: center; align-items: center; box-sizing: border-box; }
 footer .floating img{width: 24px;height: 24px; transform: rotate(-90deg);}
+
 
 
 
@@ -1233,48 +1232,87 @@ header ul.nav .btn-close::after{
   .menu-overlay{
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,.35);
+    background: rgb(255,255,255,);
     opacity: 0;
     pointer-events: none;
     transition: opacity .35s ease;
     z-index: 1000;
   }
+  
   body.menu-open .menu-overlay{
     opacity: 1;
     pointer-events: auto;
+    z-index: 1;
   }
 
     header ul.menu-icon li:nth-child(2){ order: 0; }
     header ul.menu-icon li:nth-child(1){ order: 1; }
 
-    footer .inner{padding:60px 20px;}
-    footer .top-box{display:block; margin:0;}
-    footer .top-box .left-box{width:100%;gap: 14px;}
-    footer .top-box .left-box ul{width:100%;}
-    footer .top-box .left-box ul li{display:none;margin:0; cursor: pointer;} 
-    footer .top-box .left-box ul li.tit{display:flex;justify-content:space-between;align-items:center;font-size:16px;color:#fff;padding:0 4px;border-bottom:0px ;margin:0; position: relative;}
-    footer .top-box .left-box ul li.tit::after{content:'';font-size:22px;line-height:1;opacity:0.9;}
-    footer .top-box .right-box{width:100%;margin-top:20px;}
-    footer .top-box .right-box ul{width:100%;}
-    footer .top-box .right-box li:nth-child(2) img{width: 18px;height: 18px;}
-    footer .bottom-box{justify-content: space-between; gap: 0;}
-    footer .bottom-box p.logo{margin-top:30px;}
-    footer .bottom-box p.text{font-size:12px;opacity:0.8;}
-    footer .top-box .right-box li{padding: 0px 4px 12px; display: flex; align-items: center; justify-content: center;}
+/* ===== footer accordion (mobile) ===== */
+footer .inner{padding:60px 20px;}
+footer .top-box{display:block; margin:0;}
+footer .top-box .left-box{width:100%; gap:14px;}
+footer .top-box .left-box ul{width:100%;}
 
-    footer .top-box .left-box ul li.tit span{position: absolute;width: 18px;height: 2px;background: #fff;transition: transform 0.3s ease, opacity 0.3s ease;top: 50%; right: 4px; transform-origin: center;}
-    footer .top-box .left-box ul li.tit span.b{transform: rotate(90deg);}
-    .floating{display: none;}
+/* 기본: tit만 보이고 나머지는 숨김 */
+footer .top-box .left-box ul li{display:none; margin:0;}
+footer .top-box .left-box ul li.tit{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:16px;
+  color:#fff;
+  padding:0 4px 8px;
+  margin:0;
+  position:relative;
+  cursor:pointer;
+  z-index:2;
+}
 
-    footer .top-box .left-box ul.open li{display: block;}
-    footer .top-box .left-box ul.open li.tit{display: flex; font-size: 16px;}
-    footer .top-box .left-box ul.open li.tit .b{opacity: 0;}
-    footer .top-box .left-box ul.open li{display: block; padding: 8px 4px; font-size: 14px; font-weight: 400;}
+/* + 아이콘 (span 2개로 십자) */
+footer .top-box .left-box ul li.tit span{
+  position:absolute;
+  width:18px;
+  height:2px;
+  background:#fff;
+  top:50%;
+  right:4px;
+  transform-origin:center;
+  transition:transform .3s ease, opacity .3s ease;
+}
+footer .top-box .left-box ul li.tit span.b{transform:rotate(90deg);}
 
-    footer .top-box .left-box ul.open li{display: block;}
-    footer .top-box .left-box ul.open li.tit{display: flex; font-size: 16px;}
-    footer .top-box .left-box ul.open li.tit .b{opacity: 0;}
-    footer .top-box .left-box ul.open li{display: block; padding: 8px 4px; font-size: 14px; font-weight: 400;}
+/* 열렸을 때: tit 제외한 항목만 보이기 */
+footer .top-box .left-box ul.open li:not(.tit){
+  display:block;
+  padding:8px 4px;
+  font-size:14px;
+  font-weight:400;
+  cursor:pointer;
+}
+
+/* 열렸을 때: + 를 - 로 보이게 (세로막대 숨김) */
+footer .top-box .left-box ul.open li.tit span.b{opacity:0;}
+
+/* tit 안에 a가 있으면 클릭이 a로 빨려들어가는 거 방지(선택) */
+footer .top-box .left-box ul li.tit a{pointer-events:none;}
+
+
+/* right-box & bottom */
+footer .top-box .right-box{width:100%; margin-top:20px;}
+footer .top-box .right-box ul{width:100%;}
+footer .top-box .right-box li:nth-child(2) img{width:18px; height:18px;}
+footer .top-box .right-box li{
+  padding:0 4px 12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+footer .bottom-box{justify-content:space-between;margin-top: 12px;}
+footer .bottom-box p.logo{margin-top:30px; gap: 40px;}
+footer .bottom-box p.text{font-size:12px; opacity:0.8; padding-top: 30px;}
+
+/* floating: 기본은 보이게(원하면 미디어쿼리로 숨겨) */
 
   .Hydration .iner_tit .right_txt {right: 150px;bottom: -60px;}
   .product .inner{padding: 0 0 0 52px;}

@@ -21,6 +21,37 @@ $(function(){
     })
 })
 
+    /* header */
+document.addEventListener("DOMContentLoaded", () => {
+  const menuBtn  = document.querySelector("header .menu-icon .btn-menu a");
+  const closeBtn = document.querySelector("header ul.nav .btn-close");
+  const overlay  = document.querySelector(".menu-overlay");
+
+  const openMenu = () => {
+    document.body.classList.add("menu-open");
+    document.body.style.overflow = "hidden";
+  };
+
+  const closeMenu = () => {
+    document.body.classList.remove("menu-open");
+    document.body.style.overflow = "";
+  };
+
+  if (menuBtn) {
+    menuBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      openMenu();
+    });
+  }
+
+  if (closeBtn) closeBtn.addEventListener("click", closeMenu);
+  if (overlay)  overlay.addEventListener("click", closeMenu);
+
+  // 메뉴 안 링크 누르면 자동 닫기
+  document.querySelectorAll("header ul.nav a").forEach((a) => {
+    a.addEventListener("click", closeMenu);
+  });
+}); // ✅ 이게 빠지면 전체가 안 먹힘
 
 //스크롤에 따라 gnb가 나타나고 사라지는
 var prevScrollTop = 0;
@@ -33,37 +64,6 @@ document.addEventListener('scroll', function(){
     }
     prevScrollTop = nowScrollTop;  //항상 스크롤값을 전달해야한다
 })
-
-    /* header */
-document.addEventListener("DOMContentLoaded", () => {
-  const menuBtn = document.querySelector("header .menu-icon .btn-menu a");
-  const closeBtn = document.querySelector("header ul.nav .btn-close");
-  const overlay = document.querySelector(".menu-overlay");
-
-  const openMenu = () => {
-    document.body.classList.add("menu-open");
-    document.body.style.overflow = "hidden"; // ✅ 스크롤 잠금
-  };
-
-  const closeMenu = () => {
-    document.body.classList.remove("menu-open");
-    document.body.style.overflow = ""; // ✅ 원복
-  };
-
-  menuBtn?.addEventListener("click", (e) => {
-    e.preventDefault();
-    openMenu();
-  });
-
-  closeBtn?.addEventListener("click", closeMenu);
-  overlay?.addEventListener("click", closeMenu);
-
-  // ✅ 메뉴 안 링크 누르면 자동 닫기(원하면)
-  document.querySelectorAll("header ul.nav a").forEach(a => {
-    a.addEventListener("click", closeMenu);
-  });
-});
-
 /* footer */
 document.querySelectorAll('footer .top-box .left-box ul').forEach(ul => {
     const tit = ul.querySelector('li.tit');
@@ -79,34 +79,16 @@ document.querySelectorAll('footer .top-box .left-box ul').forEach(ul => {
     });
 });
 
-
-    /* header */
+/* footer */
 document.addEventListener("DOMContentLoaded", () => {
-  const menuBtn = document.querySelector("header .menu-icon .btn-menu a");
-  const closeBtn = document.querySelector("header ul.nav .btn-close");
-  const overlay = document.querySelector(".menu-overlay");
+  const btn = document.querySelector("footer .floating");
+  if (!btn) return;
 
-  const openMenu = () => {
-    document.body.classList.add("menu-open");
-    document.body.style.overflow = "hidden"; // ✅ 스크롤 잠금
-  };
-
-  const closeMenu = () => {
-    document.body.classList.remove("menu-open");
-    document.body.style.overflow = ""; // ✅ 원복
-  };
-
-  menuBtn?.addEventListener("click", (e) => {
-    e.preventDefault();
-    openMenu();
-  });
-
-  closeBtn?.addEventListener("click", closeMenu);
-  overlay?.addEventListener("click", closeMenu);
-
-  // ✅ 메뉴 안 링크 누르면 자동 닫기(원하면)
-  document.querySelectorAll("header ul.nav a").forEach(a => {
-    a.addEventListener("click", closeMenu);
+  btn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
   });
 });
 
@@ -132,6 +114,9 @@ $(function() {
       }); 
     
 
+
+
+      
 document.addEventListener("DOMContentLoaded", () => {
   const faqList = document.querySelector(".faq");
   if (!faqList) return;

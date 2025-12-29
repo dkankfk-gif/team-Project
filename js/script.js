@@ -1,5 +1,6 @@
 $(document).on('click', 'a[href="#"]', function(e){
-    e.preventDefault();
+  if ($(this).closest('header ul.nav').length) return; // 메뉴는 예외
+  e.preventDefault();
 });
 
 $(function() {
@@ -11,33 +12,37 @@ $(function() {
 
     /* header */
 document.addEventListener("DOMContentLoaded", () => {
-  const menuBtn = document.querySelector("header .menu-icon .btn-menu a");
+  const menuBtn  = document.querySelector("header .menu-icon .btn-menu a");
   const closeBtn = document.querySelector("header ul.nav .btn-close");
-  const overlay = document.querySelector(".menu-overlay");
+  const overlay  = document.querySelector(".menu-overlay");
 
   const openMenu = () => {
     document.body.classList.add("menu-open");
-    document.body.style.overflow = "hidden"; // ✅ 스크롤 잠금
+    document.body.style.overflow = "hidden";
   };
 
   const closeMenu = () => {
     document.body.classList.remove("menu-open");
-    document.body.style.overflow = ""; // ✅ 원복
+    document.body.style.overflow = "";
   };
 
-  menuBtn?.addEventListener("click", (e) => {
-    e.preventDefault();
-    openMenu();
-  });
+  if (menuBtn) {
+    menuBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      openMenu();
+    });
+  }
 
-  closeBtn?.addEventListener("click", closeMenu);
-  overlay?.addEventListener("click", closeMenu);
+  if (closeBtn) closeBtn.addEventListener("click", closeMenu);
+  if (overlay)  overlay.addEventListener("click", closeMenu);
 
-  // ✅ 메뉴 안 링크 누르면 자동 닫기(원하면)
-  document.querySelectorAll("header ul.nav a").forEach(a => {
+  // 메뉴 안 링크 누르면 자동 닫기
+  document.querySelectorAll("header ul.nav a").forEach((a) => {
     a.addEventListener("click", closeMenu);
   });
-});
+}); // ✅ 이게 빠지면 전체가 안 먹힘
+
+
 new Swiper('.best-product', {
     loop: true,
     slidesPerView: "auto",    
@@ -112,6 +117,7 @@ $(function(){
         /* alert(lenght) */
     })
 })
+
 
 
 //스크롤에 따라 gnb가 나타나고 사라지는
@@ -236,6 +242,7 @@ ScrollTrigger.matchMedia({
   }
 
 });
+
 
 
 /* footer */
