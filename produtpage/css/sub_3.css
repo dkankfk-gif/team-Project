@@ -868,7 +868,6 @@ justify-content: center;text-decoration: none;}
 .Search .searchBtn:hover{opacity: 0.9;}
 
 
-
 /* footer */
 footer{color: #fff; background: #202020; overflow: hidden;position: relative;}
 footer .inner{padding: 140px 110px 60px;}
@@ -1248,7 +1247,7 @@ header ul.nav .btn-close::after{
     header ul.menu-icon li:nth-child(2){ order: 0; }
     header ul.menu-icon li:nth-child(1){ order: 1; }
 
-        footer .inner{padding:60px 20px;}
+    footer .inner{padding:60px 20px;}
     footer .top-box{display:block; margin:0;}
     footer .top-box .left-box{width:100%;gap: 14px;}
     footer .top-box .left-box ul{width:100%;}
@@ -1266,6 +1265,11 @@ header ul.nav .btn-close::after{
     footer .top-box .left-box ul li.tit span{position: absolute;width: 18px;height: 2px;background: #fff;transition: transform 0.3s ease, opacity 0.3s ease;top: 50%; right: 4px; transform-origin: center;}
     footer .top-box .left-box ul li.tit span.b{transform: rotate(90deg);}
     .floating{display: none;}
+
+    footer .top-box .left-box ul.open li{display: block;}
+    footer .top-box .left-box ul.open li.tit{display: flex; font-size: 16px;}
+    footer .top-box .left-box ul.open li.tit .b{opacity: 0;}
+    footer .top-box .left-box ul.open li{display: block; padding: 8px 4px; font-size: 14px; font-weight: 400;}
 
     footer .top-box .left-box ul.open li{display: block;}
     footer .top-box .left-box ul.open li.tit{display: flex; font-size: 16px;}
