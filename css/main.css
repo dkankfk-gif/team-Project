@@ -379,6 +379,7 @@ header.active{transform: translateY(-100%);}
 .shorts-cta .btn-stroy .icon img{transform: rotate(-30deg);width: 40px;height: 40px; filter: invert(1);}
 
 
+
 /* connect */
 .connect {padding: 320px 0 320px;max-width: 1920px;}
 .connect .inner{position: relative;min-height:1400px; display: flex; justify-content: space-between; align-items: center;}
@@ -387,6 +388,7 @@ header.active{transform: translateY(-100%);}
 .connect .img .tit-connect{ top:-8%; font-weight:600; }
 .connect .img .tit-with{ bottom:-10%; font-style:italic; font-weight:500; }
 .connect .img img{object-fit: cover;width: 100%;aspect-ratio: 5 / 3;}
+
 
 .connect p.sub{font-size: 24px; color: rgba(34,34,34,0.7); position: absolute; font-weight: 300;}
 .connect .inner p.sub:nth-child(1){left: 24%;bottom: 12%;}
