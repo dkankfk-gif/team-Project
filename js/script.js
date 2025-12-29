@@ -266,11 +266,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  
+
+
   // 2) sticky 텍스트 (내리면 등장 / 올리면 사라짐)
   const items = gsap.utils.toArray(
     ".materials .fix h2.title, .materials .fix p.en, .materials .fix p.txt"
   );
-
+// 텍스트 애니메이션
   gsap.set(items, { y: 60, opacity: 0 });
 
   gsap.timeline({
