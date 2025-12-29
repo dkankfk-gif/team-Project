@@ -338,12 +338,12 @@ header.active{transform: translateY(-100%);}
 .short .card-big{width: 35%; position: relative;;box-sizing: border-box; background: #fff;}
 .short .card-big a{display: block; width: 100%;height: 100%; }
 .short .card-big a .img{width: 100%;overflow: hidden;}
-.short .card-big a .img img{width: 100%;}
+.short .card-big a .img img{width: 100%; transition: all .6s ease;}
 .short .card-big .text-box {padding:24px}
 .short .card-big .text-box h3.tit{font-size: 26px; font-weight: 700; padding-bottom: 20px;}
 .short .card-big .text-box p.desc{font-size: 18px; padding-bottom: 20px; font-weight: 500; line-height: 1.3;}
 
-.short .card-big:hover a .img img{transform: scale(1.2); transition: all .6s ease;}
+.short .card-big:hover a .img img{transform: scale(1.2);}
 
 
 .short .shorts-right{width: 48%;display: flex;justify-content: space-between; flex-direction: column;  align-items: center; position: relative; background: ;}
@@ -358,15 +358,15 @@ header.active{transform: translateY(-100%);}
 .short .shorts-right .card-small .left a{display: block; width: 100%;height: 100%;overflow: hidden;}
 .short .shorts-right .card-small .left a .img{width: 100%;overflow: hidden;}
 
-.short .shorts-right .card-small .left a .img img{width: 100%;}
+.short .shorts-right .card-small .left a .img img{width: 100%; transition: all .6s ease;}
 
 .short .shorts-right .card-small .right{width: 49%; position: relative; background: #fff;}
 .short .shorts-right .card-small .right a{display: block; width: 100%;height: 100%;overflow: hidden;}
 .short .shorts-right .card-small .right a .img{width: 100%;overflow: hidden;}
-.short .shorts-right .card-small .right a .img img{width: 100%;}
+.short .shorts-right .card-small .right a .img img{width: 100%; transition: all .6s ease;}
 
-.short .shorts-right .card-small .left a:hover .img img{transform: scale(1.2); transition: all .6s ease;}
-.short .shorts-right .card-small .right a:hover .img img{transform: scale(1.2); transition: all .6s ease;}
+.short .shorts-right .card-small .left a:hover .img img{transform: scale(1.2);}
+.short .shorts-right .card-small .right a:hover .img img{transform: scale(1.2);}
 
 .short .shorts-right .card-small .text-box {padding: 16px;}
 .short .shorts-right .card-small .text-box h3.tit{font-size: 18px;margin-bottom: 20px;font-weight: 700;}
