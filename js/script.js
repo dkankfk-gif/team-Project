@@ -141,6 +141,19 @@ gsap.timeline({
 .to('header .menu-icon img',{filter: 'invert(1)', duration: 0})
 .to('header .logo',{filter: 'invert(1)', duration: 0})
 
+gsap.timeline({
+    scrollTrigger:{
+        trigger:'.short',
+        start:'0% 100%',
+        end:'0% 10%',
+        scrub:0,
+        //markers:true
+    }
+})
+.to('header', {color:'#fff',ease:'none',duration:5},0)
+.to('header .menu-icon img',{filter: 'invert(0)', duration: 0})
+.to('header .logo',{filter: 'invert(0)', duration: 0})
+
 
 gsap.registerPlugin(ScrollTrigger);
 
