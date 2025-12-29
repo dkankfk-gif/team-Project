@@ -38,8 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
     a.addEventListener("click", closeMenu);
   });
 });
-
-
 new Swiper('.best-product', {
     loop: true,
     slidesPerView: "auto",    
@@ -87,7 +85,7 @@ new Swiper('.best-product-right', {
     }, // false-스와이프 후 자동 재생 
     breakpoints:{
         1440:{
-            slidesPerView: "auto",  //브라우저가 1024보다 클 때
+            slidesPerViefoow: "auto",  //브라우저가 1024보다 클 때
             spaceBetween: 20,
         },
         1024:{
@@ -105,8 +103,6 @@ new Swiper('.best-product-right', {
     }
 
 });
-
-
 
 
 // svg 길이구하기
@@ -129,36 +125,6 @@ document.addEventListener('scroll', function(){
     }
     prevScrollTop = nowScrollTop;  //항상 스크롤값을 전달해야한다
 })
-
-    /* header */
-document.addEventListener("DOMContentLoaded", () => {
-  const menuBtn = document.querySelector("header .menu-icon .btn-menu a");
-  const closeBtn = document.querySelector("header ul.nav .btn-close");
-  const overlay = document.querySelector(".menu-overlay");
-
-  const openMenu = () => {
-    document.body.classList.add("menu-open");
-    document.body.style.overflow = "hidden"; // ✅ 스크롤 잠금
-  };
-
-  const closeMenu = () => {
-    document.body.classList.remove("menu-open");
-    document.body.style.overflow = ""; // ✅ 원복
-  };
-
-  menuBtn?.addEventListener("click", (e) => {
-    e.preventDefault();
-    openMenu();
-  });
-
-  closeBtn?.addEventListener("click", closeMenu);
-  overlay?.addEventListener("click", closeMenu);
-
-  // ✅ 메뉴 안 링크 누르면 자동 닫기(원하면)
-  document.querySelectorAll("header ul.nav a").forEach(a => {
-    a.addEventListener("click", closeMenu);
-  });
-});
 
 
 //ingredients
@@ -259,6 +225,21 @@ ScrollTrigger.matchMedia({
 });
 
 
+/* footer */
+document.querySelectorAll('footer .top-box .left-box ul').forEach(ul => {
+    const tit = ul.querySelector('li.tit');
+    if (!tit) return;
+
+    tit.addEventListener('click', () => {
+    // 다른 섹션 닫기
+    document.querySelectorAll('footer .top-box .left-box ul.open')
+        .forEach(other => { if (other !== ul) other.classList.remove('open'); });
+
+    // 현재 토글
+    ul.classList.toggle('open');
+    });
+});
+
 
 
 
@@ -275,7 +256,7 @@ document.addEventListener("DOMContentLoaded", () => {
       scale: 0.9,
       transformOrigin: "top center",
       ease: "none",
-      scrollTrigger: {올리면
+      scrollTrigger: {
         trigger: li,
         start: "top 60%",
         end: "top 0%",
@@ -295,8 +276,8 @@ document.addEventListener("DOMContentLoaded", () => {
   gsap.timeline({
     scrollTrigger: {
       trigger: ".materials",
-      start: "2% 68%",
-      end: "48% 28%",
+      start: "2% 70%",
+      end: "50% 30%",
       toggleActions: "play none none reverse",
     }
   }).to(items, {
@@ -665,37 +646,6 @@ function shortSequence(opt) {
     ease: "power3.out"
   }, "-=0.35");
 }
-
-
-document.addEventListener("DOMContentLoaded", () => {
-  // 1) footer accordion
-  const accordions = document.querySelectorAll("footer .top-box .left-box ul");
-
-  accordions.forEach((ul) => {
-    const title = ul.querySelector("li.tit");
-    if (!title) return;
-
-    title.addEventListener("click", (e) => {
-      e.preventDefault();
-
-      // 하나만 열리게
-      accordions.forEach((other) => {
-        if (other !== ul) other.classList.remove("open");
-      });
-
-      ul.classList.toggle("open");
-    });
-  });
-
-  // 2) floating top button
-  const btn = document.querySelector("footer .floating");
-  if (btn) {
-    btn.addEventListener("click", (e) => {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-  }
-});
 
 
 /* footer */
