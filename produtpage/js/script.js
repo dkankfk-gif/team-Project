@@ -221,3 +221,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+/* footer */
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.querySelector("footer .floating");
+  if (!btn) return;
+
+  btn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+});

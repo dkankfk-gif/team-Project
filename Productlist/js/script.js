@@ -156,6 +156,19 @@ gsap.timeline({
 .to('header .logo',{filter: 'invert(1)', duration: 0})
 
 
+/* footer */
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.querySelector("footer .floating");
+  if (!btn) return;
+
+  btn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+});
+
 /*   scrollTrigger:{
             trigger:'.con01', //트리거 대상
             start:'0% 80%',  //트리거 대상의 0%와 브라우저의 80%가 만날때 애니메이션이 시작됨.
