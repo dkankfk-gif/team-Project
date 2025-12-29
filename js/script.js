@@ -298,7 +298,6 @@ document.addEventListener("DOMContentLoaded", () => {
       start: "2% 70%",
       end: "50% 30%",
       toggleActions: "play none none reverse",
-      //markers: true
     }
   }).to(items, {
     y: 0,
