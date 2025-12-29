@@ -140,7 +140,7 @@ gsap.timeline({
 .to('header', {color:'#222',ease:'none',duration:5},0)
 .to('header .menu-icon img',{filter: 'invert(1)', duration: 0})
 .to('header .logo',{filter: 'invert(1)', duration: 0})
-
+//쇼츠때 다시 흰색으로 변경
 gsap.timeline({
     scrollTrigger:{
         trigger:'.short',
