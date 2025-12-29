@@ -295,8 +295,8 @@ document.addEventListener("DOMContentLoaded", () => {
   gsap.timeline({
     scrollTrigger: {
       trigger: ".materials",
-      start: "2% 70%",
-      end: "50% 30%",
+      start: "2% 68%",
+      end: "48% 28%",
       toggleActions: "play none none reverse",
     }
   }).to(items, {
