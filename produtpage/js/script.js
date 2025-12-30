@@ -11,20 +11,6 @@ $(document).on('click', 'a[href="#"]', function(e){
 //     })
 // })
 
-/* footer */
-document.querySelectorAll('footer .top-box .left-box ul').forEach(ul => {
-    const tit = ul.querySelector('li.tit');
-    if (!tit) return;
-
-    tit.addEventListener('click', () => {
-    // 다른 섹션 닫기
-    document.querySelectorAll('footer .top-box .left-box ul.open')
-        .forEach(other => { if (other !== ul) other.classList.remove('open'); });
-
-    // 현재 토글
-    ul.classList.toggle('open');
-    });
-});
 
 // svg 길이구하기
 $(function(){
@@ -393,7 +379,7 @@ document.addEventListener("DOMContentLoaded", () => {
         start: "top 20%",
         end: "bottom top",
         toggleActions: "play reverse play reverse",
-        markers: true
+        //markers: true
       }
     }
   );
@@ -419,106 +405,22 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-//스크롤에 따라 gnb가 나타나고 사라지는
-var prevScrollTop = 0;
-document.addEventListener('scroll', function(){
-    var nowScrollTop = $(window).scrollTop();   //먼저 현재값을 저장시킨다
-    if(nowScrollTop > prevScrollTop ){
-        $('header').addClass('active');
-    } else{             //아닐경우
-        $('header').removeClass('active');
+document.addEventListener("DOMContentLoaded", () => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.timeline({
+    scrollTrigger:{
+      trigger:'.TopTitle',
+      start:'top top',
+      end:'top top',
+      scrub: 0,
+      //markers:true
     }
-    prevScrollTop = nowScrollTop;  //항상 스크롤값을 전달해야한다
-})
-
-    /* header */
-document.addEventListener("DOMContentLoaded", () => {
-  const menuBtn = document.querySelector("header .menu-icon .btn-menu a");
-  const closeBtn = document.querySelector("header ul.nav .btn-close");
-  const overlay = document.querySelector(".menu-overlay");
-
-  const openMenu = () => {
-    document.body.classList.add("menu-open");
-    document.body.style.overflow = "hidden"; // ✅ 스크롤 잠금
-  };
-
-  const closeMenu = () => {
-    document.body.classList.remove("menu-open");
-    document.body.style.overflow = ""; // ✅ 원복
-  };
-
-  menuBtn?.addEventListener("click", (e) => {
-    e.preventDefault();
-    openMenu();
-  });
-
-  closeBtn?.addEventListener("click", closeMenu);
-  overlay?.addEventListener("click", closeMenu);
-
-  // ✅ 메뉴 안 링크 누르면 자동 닫기(원하면)
-  document.querySelectorAll("header ul.nav a").forEach(a => {
-    a.addEventListener("click", closeMenu);
-  });
+  })
+  .to('header', {color:'#222',ease:'none',duration:5},0)
+  .to('header .menu-icon img',{filter: 'invert(1)', duration: 0})
+  .to('header .logo',{filter: 'invert(1)', duration: 0});
 });
-
-/* footer */
-document.querySelectorAll('footer .top-box .left-box ul').forEach(ul => {
-    const tit = ul.querySelector('li.tit');
-    if (!tit) return;
-
-    tit.addEventListener('click', () => {
-    // 다른 섹션 닫기
-    document.querySelectorAll('footer .top-box .left-box ul.open')
-        .forEach(other => { if (other !== ul) other.classList.remove('open'); });
-
-    // 현재 토글
-    ul.classList.toggle('open');
-    });
-});
-
-
-    /* header */
-document.addEventListener("DOMContentLoaded", () => {
-  const menuBtn = document.querySelector("header .menu-icon .btn-menu a");
-  const closeBtn = document.querySelector("header ul.nav .btn-close");
-  const overlay = document.querySelector(".menu-overlay");
-
-  const openMenu = () => {
-    document.body.classList.add("menu-open");
-    document.body.style.overflow = "hidden"; // ✅ 스크롤 잠금
-  };
-
-  const closeMenu = () => {
-    document.body.classList.remove("menu-open");
-    document.body.style.overflow = ""; // ✅ 원복
-  };
-
-  menuBtn?.addEventListener("click", (e) => {
-    e.preventDefault();
-    openMenu();
-  });
-
-  closeBtn?.addEventListener("click", closeMenu);
-  overlay?.addEventListener("click", closeMenu);
-
-  // ✅ 메뉴 안 링크 누르면 자동 닫기(원하면)
-  document.querySelectorAll("header ul.nav a").forEach(a => {
-    a.addEventListener("click", closeMenu);
-  });
-});
-
-gsap.timeline({
-  scrollTrigger:{
-    trigger:'.TopTitle',
-    start:'top top',
-    end:'bottom top',
-    scrub: 0,
-    markers:true
-  }
-})
-.to('header', {color:'#222',ease:'none',duration:5},0)
-.to('header .menu-icon img',{filter: 'invert(1)', duration: 0})
-.to('header .logo',{filter: 'invert(1)', duration: 0})
 
 
 
@@ -599,17 +501,82 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-/* footer */
-document.addEventListener("DOMContentLoaded", () => {
-  const btn = document.querySelector("footer .floating");
-  if (!btn) return;
 
-  btn.addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
+
+    /* header */
+document.addEventListener("DOMContentLoaded", () => {
+  const menuBtn  = document.querySelector("header .menu-icon .btn-menu a");
+  const closeBtn = document.querySelector("header ul.nav .btn-close");
+  const overlay  = document.querySelector(".menu-overlay");
+
+  const openMenu = () => {
+    document.body.classList.add("menu-open");
+    document.body.style.overflow = "hidden";
+  };
+
+  const closeMenu = () => {
+    document.body.classList.remove("menu-open");
+    document.body.style.overflow = "";
+  };
+
+  if (menuBtn) {
+    menuBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      openMenu();
     });
+  }
+
+  if (closeBtn) closeBtn.addEventListener("click", closeMenu);
+  if (overlay)  overlay.addEventListener("click", closeMenu);
+
+  // 메뉴 안 링크 누르면 자동 닫기
+  document.querySelectorAll("header ul.nav a").forEach((a) => {
+    a.addEventListener("click", closeMenu);
   });
+}); // ✅ 이게 빠지면 전체가 안 먹힘
+
+
+//스크롤에 따라 gnb가 나타나고 사라지는
+var prevScrollTop = 0;
+document.addEventListener('scroll', function(){
+    var nowScrollTop = $(window).scrollTop();   //먼저 현재값을 저장시킨다
+    if(nowScrollTop > prevScrollTop ){
+        $('header').addClass('active');
+    } else{             //아닐경우
+        $('header').removeClass('active');
+    }
+    prevScrollTop = nowScrollTop;  //항상 스크롤값을 전달해야한다
+})
+
+
+
+//gnb컬러변경
+gsap.timeline({
+    scrollTrigger:{
+        trigger:'.TopTitle',
+        start:'0% 100%',
+        end:'0% 10%',
+        scrub:0,
+        //markers:true
+    }
+})
+.to('header', {color:'#222',ease:'none',duration:5},0)
+.to('header .menu-icon img',{filter: 'invert(1)', duration: 0})
+.to('header .logo',{filter: 'invert(1)', duration: 0})
+
+/* footer */
+document.querySelectorAll('footer .top-box .left-box ul').forEach(ul => {
+    const tit = ul.querySelector('li.tit');
+    if (!tit) return;
+
+    tit.addEventListener('click', () => {
+    // 다른 섹션 닫기
+    document.querySelectorAll('footer .top-box .left-box ul.open')
+        .forEach(other => { if (other !== ul) other.classList.remove('open'); });
+
+    // 현재 토글
+    ul.classList.toggle('open');
+    });
 });
 
 /* footer */

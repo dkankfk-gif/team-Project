@@ -1,0 +1,11 @@
+@media screen and (max-width:1440px){
+    .hero .visual .card{height: 500px;}
+    .hero .visual .card .title{gap: 52px;}
+    .hero .visual .card p.img{width: 46%;}
+    .hero .visual .card p.img img{width: 100%;}
+    .hero .visual .card .title h3.name{margin-bottom: 28px;}
+
+    .hero .visual .en_s{font-size: 80px;}
+    .itam{padding: 160px 60px 100px;}
+
+}

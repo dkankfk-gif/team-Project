@@ -6,83 +6,46 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/sub_2.css">
     <link rel="stylesheet" href="font/font.css">
-    <script src="js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="css/sub_2-responsive.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
-    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
-    <script src="https://unpkg.com/gsap@3/dist/MotionPathPlugin.min.js"></script>
-    
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/plugin/jquery.simplyscroll.min.js"></script>
+    <script src="js/plugin/scrolla.jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/ScrollTrigger.min.js"></script>
 
     
 </head>
 <body>
     <div class="wrap">
-        <!-- nav gnb -->
         <header>
-            <a href="#" class="logo"><img src="img/logo_2.svg" alt=""></a>
+            <a href="#" class="logo"><img src="img/logo.svg" alt=""></a>
             <ul class="nav en">
-                <!-- ✅ 추가: 닫기 버튼 -->
-                <li class="nav-close">
-                <button type="button" class="btn-close" aria-label="Close menu">×</button>
-                </li>
-                <li><a href="../index.html">HOME</a></li>
-                <li><a href="../brandstory/sub_01.html">BRAND</a></li>
-                <li><a href="../Productlist/sub_2.html">PRODUCTS</a></li>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">BRAND</a></li>
+                <li><a href="#">PRODUCTS</a></li>
                 <li><a href="#">CONTACT</a></li>
             </ul>
             <ul class="menu-icon">
                 <li><a href="#"><p class="img"><img src="img/shopping-bag-02.svg" alt=""></p></a></li>
-                <li class="btn-menu"><a href="#"><p class="img"><img src="img/menu-02.svg" alt=""></p></a></li>
+                <li><a href="#"><p class="img"><img src="img/menu-02.svg" alt=""></p></a></li>
             </ul>
-            
         </header>
-        <div class="menu-overlay"></div>
-
 
         <section class="hero">
             <div class="inner">
         <div class="visual">
                 <p class="visual-img"><img src="img/sub_img01.png" alt=""></p>
                 <p class="en_s">Ingredients.</p>
-
-
-                <p class="line-img" aria-hidden="true">
-                <svg class="hero-line-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 375">
-                    <defs>
-                    <!--  글로우/블러 필터 (애니메이션 중에만 강하게 보이게) -->
-                    <filter id="heroGlow" x="-30%" y="-30%" width="160%" height="160%">
-                        <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="blur"/>
-                        <feColorMatrix in="blur" type="matrix"
-                        values="1 0 0 0 0
-                                0 1 0 0 0
-                                0 0 1 0 0
-                                0 0 0 0.9 0" result="blurAlpha"/>
-                        <feMerge>
-                        <feMergeNode in="blurAlpha"/>
-                        <feMergeNode in="SourceGraphic"/>
-                        </feMerge>
-                    </filter>
-                    </defs>
-
-                    <!--  실제 라인 -->
-                    <path class="hero-line-path"
-                    d="M148.538 26.1041L148.32 25.6537L148.538 26.1041ZM495.034 86.0338C495.31 86.024 495.526 85.7923 495.516 85.5163L495.356 81.0191C495.346 80.7432 495.114 80.5274 494.838 80.5373C494.562 80.5471 494.347 80.7788 494.357 81.0548L494.499 85.0522L490.501 85.1947C490.226 85.2045 490.01 85.4362 490.02 85.7121C490.029 85.9881 490.261 86.2039 490.537 86.194L495.034 86.0338ZM14.5351 374.819L15.013 374.671C2.3424 333.521 -6.17554 266.715 9.45889 200.083C25.0888 133.47 64.8524 67.0396 148.755 26.5544L148.538 26.1041L148.32 25.6537C64.1013 66.2917 24.1721 133 8.48533 199.854C-7.1969 266.69 1.34471 333.679 14.0573 374.966L14.5351 374.819ZM148.538 26.1041L148.755 26.5544C216.831 -6.29423 290.155 -3.71097 353.062 13.2256C415.976 30.1641 468.412 61.4436 494.676 85.9L495.016 85.5341L495.357 85.1682C468.96 60.5873 416.374 29.2355 353.322 12.26C290.263 -4.71732 216.678 -7.33046 148.32 25.6537L148.538 26.1041Z"
-                    fill="none"
-                    stroke="rgba(255,255,255,0.82)"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    vector-effect="non-scaling-stroke"/>
-
-                    <!--  끝점을 따라가는 트레이서: 끊김 숨기기-->
-                    <circle class="hero-line-tracer" r="2.6" cx="0" cy="0"
-                    fill="rgba(255,255,255,0.9)" opacity="0"/>
-                </svg>
-                </p>
-
+                <div class="svgAni">
+                    <svg width="518" height="388" viewBox="0 0 518 388" fill="none" xmlns="http://www.w3.org/2000/svg"> 
+                        <path id="svgAni01" class="st0 animate" data-animate="motion" d="M14.8618 386.675C-8.47155 305.483 -19.1382 122.313 124.862 39.175C304.862 -64.7481 500.361 75.4374 516.361 84.675" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        <path id="svgAni02" class="st0 animate" data-animate="motion" d="M515.361 78.1748L516.361 85.1748L509.861 86.1748" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
                 <div class="card">
                     <div class="title">
-                        <h3 class="name">Ultimate Multi Vita 10% Serum <span class="txt">비타민의 힘을, 한 방울에 올티밋 멀티비타 10% 세럼</span></h3>
+                        <h3 class="name en">Ultimate Multi Vita 10% Serum <span class="txt">비타민의 힘을, 한 방울에 올티밋 멀티비타 10% 세럼</span></h3>
                         <a href="#" class="btn"><img src="img/arrow.svg" alt=""></a>
                     </div>
                     <div class="text-box">
@@ -95,149 +58,7 @@
             </div>
             </div>
         </section>
-
-
-
-
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-    if (!window.gsap) return;
-    gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
-
-    const hero = document.querySelector(".hero");
-    const path = hero?.querySelector(".hero-line-path");
-    const tracer = hero?.querySelector(".hero-line-tracer");
-    if (!hero || !path) return;
-
-    const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    // 1) dash 세팅(완전 숨김)
-    const len = path.getTotalLength();
-    gsap.set(path, {
-        strokeDasharray: len,
-        strokeDashoffset: len,
-        opacity: 0,                 //  시작은 완전 안보이게
-        filter: "url(#heroGlow)"     //  시작은 글로우 ON
-    });
-
-    // tracer 초기
-    if (tracer) gsap.set(tracer, { opacity: 0 });
-
-    if (reduceMotion) {
-        gsap.set(path, { strokeDashoffset: 0, opacity: 1, filter: "none" });
-        if (tracer) gsap.set(tracer, { opacity: 0 });
-        return;
-    }
-
-    const tl = gsap.timeline({
-        scrollTrigger: {
-        trigger: hero,
-        start: "top 70%",
-        toggleActions: "play none none reset"
-        // markers: true,
-        },
-        defaults: { ease: "none" } //  드로잉은 none이 가장 자연스러움
-    });
-
-    // 2) 페이드 인(그리기 시작과 동시에)
-    tl.to(path, { opacity: 1, duration: 0.25 }, 0);
-
-    // 3) 선 그리기(메인)
-    tl.to(path, {
-        strokeDashoffset: 0,
-        duration: 2.1
-    }, 0);
-
-    // 4) 글로우는 “그리는 동안만” 강하게 보이게 → 끝나면 제거
-    //    (필터는 서브패스 끊김 느낌을 확 줄여줌)
-    tl.to(path, { filter: "url(#heroGlow)", duration: 0.01 }, 0);
-    tl.to(path, { filter: "none", duration: 0.35, ease: "power1.out" }, 1.65);
-
-    // 5) (옵션) 트레이서가 끝점을 따라가며 끊김을 더 숨김
-    if (tracer) {
-        tl.to(tracer, { opacity: 1, duration: 0.15, ease: "power1.out" }, 0.05);
-
-        tl.to(tracer, {
-        duration: 2.1,
-        ease: "none",
-        motionPath: {
-            path: path,
-            align: path,
-            alignOrigin: [0.5, 0.5],
-            autoRotate: false
-        }
-        }, 0);
-
-        // 끝나면 트레이서 사라지게(깔끔)
-        tl.to(tracer, { opacity: 0, duration: 0.25, ease: "power1.out" }, 1.9);
-    }
-    });
-</script>
-
-
-        <!-- 모바일 390 hero -->
-        <section class="mobile">
-            <div class="inner">
-        <div class="visual">
-                <p class="visual-img"><img src="img/sub_img01.png" alt=""></p>
-                <p class="en_s">Ingredients.</p>
-                <p class="line-img"><img src="img/hero-line.svg" alt=""></p>
-                <div class="card">
-                    <div class="title">
-                        <h3 class="name">Ultimate Multi Vita <br> 10% Serum <span class="txt">비타민의 힘을, 한 방울에<br> 올티밋 멀티비타 10% 세럼</span></h3>
-                        <a href="#" class="btn"><img src="img/arrow.svg" alt=""></a>
-                    </div>
-                    <div class="text-box">
-                        <p class="text-img"><img src="img/hero-card.svg" alt=""></p>
-                        <p class="text">redefined</p>
-                    </div>
-                    <p class="txt">비타민의 힘을, 한 방울에 <br>올티밋 멀티비타 10% 세럼</p>
-                    <p class="img"><img src="img/hero-card-img.png" alt=""></p>
-                </div>
-            </div>
-            </div>
-        </section>
-
-
-
-
-        <!-- 모바일 768 Type -->
-        <section class="type">
-            <div class="inner">
-                <div class="top">
-                    <h2>TYPE</h2>
-                </div>
-                <div class="dottom">
-                    <ul class="type-list">
-                        <li>All</li>
-                        <li>Essence</li>
-                        <li>Skin Toner</li>
-                        <li>Emulsion</li>
-                        <li>Ampoule</li>
-                        <li>Cream</li>
-                    </ul>
-                    <div class="filter-list">
-                        <a href="">
-                            <p class="en">filter</p>
-                            <p class="img"><img src="img/arrow_2.svg" alt=""></p>
-                        </a>
-                    <ul class="list">
-                    <li>
-                        <a href="#">
-                            <p class="txt">RANGE</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <p class="txt">INGRDIENTS</p>
-                        </a>
-                    </li>
-                    </div>
-                </div>
-        </section>
-
-
-        <!-- filer -->
+        
         <section class="itam">
             <div class="inner">
             <div class="filter">
@@ -296,7 +117,6 @@
                     </li>
                 </ul>
             </div>
-
             <div class="products">
                 <div class="product-list">
                     <div class="top-box">
@@ -317,7 +137,7 @@
                         <div class="swiper-wrapper">
                             <!-- slide 1 -->
                             <div class="swiper-slide">
-                                <a href="../produtpage/sub_3.html">
+                                <a href="#">
                                     <div class="top">
                                         <p class="badge">30% SALE</p>
                                         <p class="icon">
@@ -326,7 +146,7 @@
                                     </div>
                                     <p class="img"><img src="img/product_01.png" alt=""></p>
                                     <div class="bottom">
-                                        <h4 class="name">Ultimate Multi Vita <br>10% Serum</h4>
+                                        <h4 class="name">Ultimate Multi Vita 10% Serum</h4>
                                         <p class="price">₩17,600</p>
                                     </div>
                                 </a>
@@ -343,7 +163,7 @@
                                     </div>
                                     <p class="img"><img src="img/product_02.png" alt=""></p>
                                     <div class="bottom">
-                                        <h4 class="name">Ultimate PDRN <br>Hyalu 7 Serum</h4>
+                                        <h4 class="name">Ultimate PDRN Hyalu 7 Serum</h4>
                                         <p class="price">₩17,000</p>
                                     </div>
                                 </a>
@@ -360,7 +180,7 @@
                                     </div>
                                     <p class="img"><img src="img/product_03.png" alt=""></p>
                                     <div class="bottom">
-                                        <h4 class="name">Ultimate Panthenol <br> 1% Serum</h4>
+                                        <h4 class="name">Ultimate Panthenol 1% Serum</h4>
                                         <p class="price">₩15,000</p>
                                     </div>
                                 </a>
@@ -496,7 +316,9 @@
                                 <a href="#">
                                     <div class="top">
                                         <p class="badge">30% SALE</p>
-                                        <p class="icon"><img src="img/shopping-bag-01.svg" alt=""></p>
+                                        <p class="icon">
+                                            <img src="img/shopping-bag-01.svg" alt="">
+                                        </p>
                                     </div>
                                     <p class="img"><img src="img/product_09.png" alt=""></p>
                                     <div class="bottom">
@@ -672,73 +494,6 @@
             </div>
         </section>
 
-
-<script>
-    gsap.registerPlugin(ScrollTrigger);
-
-    window.addEventListener("load", () => {
-
-        //  여러 product-list 각각 독립 적용
-        document.querySelectorAll(".product-list").forEach((wrap, idx) => {
-        const swiper = wrap.querySelector(".shop-swiper");
-        const track  = wrap.querySelector(".shop-swiper .swiper-wrapper");
-        const slides = gsap.utils.toArray(wrap.querySelectorAll(".shop-swiper .swiper-slide"));
-
-        if (!swiper || !track || !slides.length) return;
-
-        // ---------- (1) 레이아웃 안정화(스크립트에서도 보정)
-        
-        gsap.set(track, { x: 0, willChange: "transform" });
-        gsap.set(slides, { rotate: 0, x: 0, transformOrigin: "50% 50%", willChange: "transform" });
-
-        const getDistance = () => Math.max(0, track.scrollWidth - swiper.clientWidth);
-
-        // 기존 트리거 제거(새로고침/리프레시 안전)
-        ScrollTrigger.getAll().forEach(st => {
-            if (st.vars && st.vars.id === ("hScroll-" + idx)) st.kill();
-        });
-
-        // ---------- (2) 스크롤 = 가로 슬라이드만 ----------
-        const tl = gsap.timeline({
-            scrollTrigger: {
-            id: "hScroll-" + idx,
-            trigger: wrap,
-            start: "top top",
-            end: () => "+=" + getDistance(),
-            scrub: 1,
-            pin: true,
-            pinSpacing: true,
-            anticipatePin: 1,
-            invalidateOnRefresh: true,
-         /*   markers: true */
-            }
-        });
-
-        tl.to(track, {
-            x: () => -getDistance(),
-            ease: "none"
-        });
-
-        // ---------- (3) Hover = 카드 기울기 
-
-        slides.forEach((card) => {
-            const aTag = card.querySelector("a") || card;
-
-            
-
-            
-        });
-
-        });
-
-        //  리사이즈 시 거리 재계산
-        window.addEventListener("resize", () => ScrollTrigger.refresh());
-        ScrollTrigger.refresh();
-    });
-</script>
-
-
-
     <footer>
     <div class="inner">
         <div class="top-box">
@@ -759,13 +514,13 @@
                     <ul>
                         <li class="tit">Social <span class="a"></span> <span class="b"></span></li>
                         <li>
-                            <a href="#">Instargram</a>
+                            <a href="https://www.instagram.com/accounts/login/?next=%2Fthefaceshop.official%2F&source=omni_redirect&hl=ko#">Instargram</a>
                         </li>
                         <li>
-                            <a href="#">Facebook</a>
+                            <a href="https://www.facebook.com/thefaceshop.official/">Facebook</a>
                         </li>
                         <li>
-                            <a href="#">Youtube</a>
+                            <a href="https://www.youtube.com/channel/UC0qzGlTGeyn5JIUU-gCcaqg">Youtube</a>
                         </li>
                     </ul>
 
@@ -842,9 +597,10 @@
             <a href="#" class="floating">
                 <img src="img/arrow_1.svg" alt="">
             </a>
+            </div>
         </div>
-    </div>
     </footer>
+    </div>
 
 
 

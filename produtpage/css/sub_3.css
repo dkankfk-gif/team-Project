@@ -19,7 +19,7 @@ button:focus {outline: none}
 .en_s{font-family: 'PPEditorialNew',serif; font-style: normal;}
 
 /* header */
-header{width: 100%; padding: 40px 110px 20px; position: fixed; top: 0;left: 0; z-index: 100; display: flex;justify-content: space-between; color: #222; transition: color .2s ease;}
+header{width: 100%; padding: 40px 110px 20px; position: fixed; top: 0;left: 0; z-index: 100; display: flex;justify-content: space-between; color: #fff; transition: color .2s ease;}
 header .logo{display: inline-block;width: 176px;height: 34px;}
 header .logo img{width: 100%;}
 header p.img{width: 100%;}
@@ -35,9 +35,8 @@ header.active{transform: translateY(-100%);}
 
 
 /* product */
-.product{max-width: 1920px; height: 1000px;  padding-top:240px;
-background: rgba(215, 207, 196, 0.6);position: relative;}
-.product .inner{padding: 0 0 0 110px; display: flex;justify-content: space-between;}
+.product{max-width: 1920px; height: 1000px;  padding-top:240px;background: rgba(215, 207, 196, 0.6);position: relative;}
+.product .inner{ display: flex;justify-content: space-between; padding: 0 110px;}
 
 .product .inner .leftbox{width: 40%;z-index: 10;}
 .product .inner .leftbox div {overflow: hidden;}
@@ -873,7 +872,7 @@ footer .floating img{width: 24px;height: 24px; transform: rotate(-90deg);}
   .TopTitle .inner {margin: 23% 0 auto;}
   .product .rightbox{padding: 120px 200px 160px 200px;}
   .TopTitle .inner .right_txt p{margin-left: 10%;}
-  .Hydration{height: 1500px;}
+  .Hydration{height: 1755px;}
   .Hydration .svgAni2{width: 50%;}
   .Hydration .iner_tit {bottom: -155px}
   .Hydration .svgAni2{top: -30%;}
@@ -1266,10 +1265,10 @@ footer .top-box .right-box li{
 footer .bottom-box{justify-content:space-between;margin-top: 12px;}
 footer .bottom-box p.logo{margin-top:30px; gap: 40px;}
 footer .bottom-box p.text{font-size:12px; opacity:0.8; padding-top: 30px;}
-}
+
 
   .Hydration .iner_tit .right_txt {right: 150px;bottom: -60px;}
-  .product .inner{padding: 0 0 0 52px;}
+  .product .inner{padding: 0 52px;}
   .Search .searchBox input{padding: 0 24px 0 24px;}
   .Search .searchBox {height: 64px;}
   
