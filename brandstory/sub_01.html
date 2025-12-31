@@ -3,21 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>brand story</title>
     <link rel="stylesheet" href="css/sub_01.css">
     <link rel="stylesheet" href="font/font.css">
     <link rel="stylesheet" href="css/sub_01_responsive.css">
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <script src="js/script.js"></script>
 </head>
-<body>
+<body> 
     <div class="wrap">
-            <!-- nav gnb -->
+        <div class="menu-overlay"></div>
         <header>
-            <a href="#" class="logo"><img src="img/logo_2.svg" alt=""></a>
+            <a href="#" class="logo"><img src="img/logo.svg" alt=""></a>
             <ul class="nav en">
                 <!-- ✅ 추가: 닫기 버튼 -->
                 <li class="nav-close">
@@ -32,10 +31,8 @@
                 <li><a href="#"><p class="img"><img src="img/shopping-bag-01.svg" alt=""></p></a></li>
                 <li class="btn-menu"><a href="#"><p class="img"><img src="img/menu-01.svg" alt=""></p></a></li>
             </ul>
-            
         </header>
-        <div class="menu-overlay"></div>
-
+    
     
 
         <!-- main -->
@@ -98,11 +95,23 @@
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script>
-
-
         window.addEventListener("load", () => {
         const pills = gsap.utils.toArray(".main-Keyword .pill");
         if (!pills.length) return;
+        
+//스크롤에 따라 gnb가 나타나고 사라지는
+var prevScrollTop = 0;
+document.addEventListener('scroll', function(){
+    var nowScrollTop = $(window).scrollTop();   //먼저 현재값을 저장시킨다
+    if(nowScrollTop > prevScrollTop ){
+        $('header').addClass('active');
+    } else{             //아닐경우
+        $('header').removeClass('active');
+    }
+    prevScrollTop = nowScrollTop;  //항상 스크롤값을 전달해야한다
+});
+
+
 
         // 위->아래 순서(absolute top 기준)
         pills.sort((a, b) => {
@@ -130,7 +139,7 @@
             duration: 0.9,
             ease: "power3.out",
             stagger: { each: 0.08, from: "start" },
-            // ✅ 애니메이션 끝난 뒤에만 hover 회전 허용
+            //  애니메이션 끝난 뒤에만 hover 회전 허용
             onComplete: () => document.body.classList.add("body--pillReady")
         });
         });
@@ -146,9 +155,9 @@
   <div class="inner">
     <h1 class="tit1">
       Nature<br>
-      Powered<span class="slot slot-1"><img src="img/typo_product1.png" alt=""></span>skin<br>
+      Powered<span class="slot slot-1"><img src="img/typo_product1.svg" alt=""></span>skin<br>
       Loving <span class="gray">care that</span><br>
-      <span class="gray">feels<span class="slot slot-2"><img src="img/typo_product2.png" alt=""></span>Effortless!</span>
+      <span class="gray">feels<span class="slot slot-2"><img src="img/typo_product2.svg" alt=""></span>Effortless!</span>
     </h1>
   </div>
 </section>
@@ -410,16 +419,14 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
             <div class="bottom-textBox">
                 <ul>
-                    <li class="txt"><p>우리는 자연을 소비하지 않고 지켜가는 방식으로 아름다움을 만들어갑니다.<br>자연의 흐름을 해치지 않는 제조 방식을 핵심 원칙으로 삼으며, 제품이 만들<br>어지는 모든 과정에서 환경 영향을 최소화하고자 노력합니다. 또한 재활용<br>가능한 친환경 패키지를 사용해 자원을 절약하고 책임 있게 생산합니다.</p>
+                    <li class="txt"><p>우리는 자연을 소비하지 않고 지켜가는 방식으로 아름다움을 만들어갑니다.<br class="mo">자연의 흐름을 해치지 않는 제조 방식을 핵심 원칙으로 삼으며, 제품이 만들<br class="mo">어지는 모든 과정에서 환경 영향을 최소화하고자 노력합니다. 또한 재활용<br class="mo">가능한 친환경 패키지를 사용해 자원을 절약하고 책임 있게 생산합니다.</p>
                     </li>
-                    <li class="txt"><p>이러한 노력은 단순한 선택이 아니라 지속가능한 미래를 향한<br>우리의 의지입니다.더페이스샵은 오늘의 아름다움이 내일의<br>자연을 해치지 않도록, 환경과 함께 나아가는 브랜드가 되기<br>위해 책임 있는 변화를 꾸준히 이어가고 있습니다.</p>
+                    <li class="txt"><p>이러한 노력은 단순한 선택이 아니라 지속가능한 미래를 향한<br class="mo">우리의 의지입니다.더페이스샵은 오늘의 아름다움이 내일의<br class="mo">자연을 해치지 않도록, 환경과 함께 나아가는 브랜드가 되기<br class="mo">위해 책임 있는 변화를 꾸준히 이어가고 있습니다.</p>
                     </li>
                 </ul>             
             </div>
         </div>
     </section>
-
-
 
 
 
@@ -518,27 +525,27 @@ document.addEventListener('DOMContentLoaded', () => {
         const finalScale = coverScaleUniform(cRect, TARGET_W, TARGET_H);
 
 
-        /* ✅✅✅ 추가된 부분: 섹션 좌상단으로 이동해서 왼쪽 공백 제거 */
+        /*  추가된 부분: 섹션 좌상단으로 이동해서 왼쪽 공백 제거 */
       const sRect = section.getBoundingClientRect();
       const dx = sRect.left - cRect.left;
       const dy = sRect.top  - cRect.top;
-      /* ✅✅✅ 여기까지 */
+      /*  여기까지 */
 
 
 
 
 
-        // ✅ “덮인 상태 유지(pin)”를 위해 end를 넉넉히 줌
+        //  “덮인 상태 유지(pin)”를 위해 end를 넉넉히 줌
         // - end를 길게 줄수록, 확대 완료 상태가 오래 유지됨
 
         const tl = gsap.timeline({
             scrollTrigger: {
             id: "thumbZoom",
             trigger: canvas,
-            start: "top 20%",         // ✅ 요청: 더 늦게 시작
-            end: "+=180%",            // ✅ pin 유지 구간(원하면 220%까지 늘려도 OK)
+            start: "top 20%",         //  요청: 더 늦게 시작
+            end: "+=180%",            //  pin 유지 구간(원하면 220%까지 늘려도 OK)
             scrub: 1,
-            pin: section,             // ✅ 섹션 고정(덮인 상태 유지)
+            pin: section,             //  섹션 고정(덮인 상태 유지)
             pinSpacing: true,
             anticipatePin: 1,
             invalidateOnRefresh: true,
@@ -548,8 +555,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // 0~0.75 : 확대 + 라운드 0
         tl.to(canvas, {
-            scale: finalScale,          // ✅ 찌그러짐 없이 확대
-            borderRadius: 0,            // ✅ 185 → 0
+            scale: finalScale,          //  찌그러짐 없이 확대
+            borderRadius: 0,            //  185 → 0
             ease: "none",
             duration: 0.75
         }, 0);
@@ -570,7 +577,7 @@ document.addEventListener('DOMContentLoaded', () => {
             duration: 0.25
         }, 0.55);
 
-        // ✅ 0.75~1.00 : 확대 완료 “정지 유지” 구간
+        //  0.75~1.00 : 확대 완료 “정지 유지” 구간
         // (scrub이라서 end까지 가는 동안 현재 상태 유지됨)
         tl.to({}, { duration: 0.25 }); // 타임라인 길이 확보용 더미
         }
@@ -578,7 +585,34 @@ document.addEventListener('DOMContentLoaded', () => {
         build();
         window.addEventListener("resize", () => ScrollTrigger.refresh());
 
-    });
+        function getResponsiveConfig() {
+            const w = window.innerWidth;
+
+            // 기본값(PC)
+            let start = "top 20%";
+            let end   = "+=180%";
+            let targetW = 1920;
+            let targetH = 1080;
+
+
+            // 태블릿/모바일: 현재 뷰포트 기준으로 "화면가득" 확대되게
+            if (w <= 1024) {
+                start = "top 25%";
+                end   = "+=140%";
+                targetW = window.innerWidth;
+                targetH = window.innerHeight;
+            }
+            if (w <= 768) {
+                start = "top 30%";
+                end   = "+=120%";
+                targetW = window.innerWidth;
+                targetH = window.innerHeight;
+            }
+
+            return { start, end, targetW, targetH };
+            }
+            });
+
 </script>
 
 
@@ -829,7 +863,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const items = list.querySelectorAll(":scope > li");
 
     if (isMobile) {
-        // ✅ 각 li에 없으면 생성
+        //  각 li에 없으면 생성
         items.forEach(li => {
         if (li.querySelector(":scope > .toptit.is-cloned")) return;
 
@@ -839,7 +873,7 @@ document.addEventListener('DOMContentLoaded', () => {
         li.insertBefore(clone, li.firstChild);
         });
     } else {
-        // ✅ 모바일에서 만든 것만 제거
+        //  모바일에서 만든 것만 제거
         section.querySelectorAll(".toptit.is-cloned").forEach(el => el.remove());
     }
     }
@@ -856,8 +890,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 })();
 </script>
-
-
 
 </section>
 
@@ -1149,30 +1181,24 @@ document.addEventListener('DOMContentLoaded', () => {
   /* =====================================================
     5) 로드 / 리사이즈 처리 ( 디바운스)
   ===================================================== */
-  window.addEventListener('load', () => {
+    window.addEventListener('load', () => {
     recalc();
     start();
-  });
+    });
 
-  let resizeTimer = null;
-  window.addEventListener('resize', () => {
+    let resizeTimer = null;
+    window.addEventListener('resize', () => {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(() => {
-      recalc();
-    }, 120); // ⭐ resize 폭주 방지
-  });
+    recalc();
+    }, 120); //  resize 폭주 방지
+    });
 
-});
-
-
-</script>
+    });
+    </script>
 
 
-  </section>
-
-
-
-
+    </section>
     <footer>
     <div class="inner">
         <div class="top-box">
@@ -1193,13 +1219,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     <ul>
                         <li class="tit">Social <span class="a"></span> <span class="b"></span></li>
                         <li>
-                            <a href="#">Instargram</a>
+                            <a href="https://www.instagram.com/accounts/login/?next=%2Fthefaceshop.official%2F&source=omni_redirect&hl=ko#">Instargram</a>
                         </li>
                         <li>
-                            <a href="#">Facebook</a>
+                            <a href="https://www.facebook.com/thefaceshop.official/">Facebook</a>
                         </li>
                         <li>
-                            <a href="#">Youtube</a>
+                            <a href="https://www.youtube.com/channel/UC0qzGlTGeyn5JIUU-gCcaqg">Youtube</a>
                         </li>
                     </ul>
 
@@ -1276,10 +1302,13 @@ document.addEventListener('DOMContentLoaded', () => {
             <a href="#" class="floating">
                 <img src="img/arrow_1.svg" alt="">
             </a>
+            </div>
         </div>
-    </div>
     </footer>
     </div>
-    </div>
+
+
+
+</div>
 </body>
 </html>
