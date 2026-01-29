@@ -1,1314 +1,923 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>brand story</title>
+    <title>ver.3</title>
     <link rel="stylesheet" href="css/sub_01.css">
     <link rel="stylesheet" href="font/font.css">
     <link rel="stylesheet" href="css/sub_01_responsive.css">
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 </head>
-<body> 
+
+
+<body>
     <div class="wrap">
-        <div class="menu-overlay"></div>
         <header>
             <a href="#" class="logo"><img src="img/logo.svg" alt=""></a>
             <ul class="nav en">
-                <!-- ✅ 추가: 닫기 버튼 -->
-                <li class="nav-close">
-                <button type="button" class="btn-close" aria-label="Close menu">×</button>
-                </li>
-                <li><a href="../index.html">HOME</a></li>
-                <li><a href="../brandstory/sub_01.html">BRAND</a></li>
-                <li><a href="../Productlist/sub_2.html">PRODUCTS</a></li>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">BRAND</a></li>
+                <li><a href="#">PRODUCTS</a></li>
                 <li><a href="#">CONTACT</a></li>
             </ul>
             <ul class="menu-icon">
-                <li><a href="#"><p class="img"><img src="img/shopping-bag-01.svg" alt=""></p></a></li>
-                <li class="btn-menu"><a href="#"><p class="img"><img src="img/menu-01.svg" alt=""></p></a></li>
+                <li><a href="#">
+                        <p class="img"><img src="img/shopping-bag-01.svg" alt=""></p>
+                    </a></li>
+                <li><a href="#">
+                        <p class="img"><img src="img/menu-01.svg" alt=""></p>
+                    </a></li>
             </ul>
         </header>
-    
-    
+
+
 
         <!-- main -->
-<section class="main">
-<div class="inner">
+        <section class="main">
 
-    <div class="left">
-    <ul class="main-Keyword en">
-        <li class="pill pill--white">Nature</li>
+            <div class="inner">
 
-        <!-- 잎 아이콘  -->
-        <li class="pill pill--icon">
-        <img src="img/Group 1287_leaf.svg" alt="">
-        </li>
+                <div class="left">
+                    <ul class="main-Keyword en">
+                        <li class="pill pill--white">Nature</li>
 
-        <!-- 빈 원  -->
-        <li class="pill pill--circle" aria-hidden="true"></li>
+                        <!-- 잎 아이콘  -->
+                        <li class="pill pill--icon">
+                            <img src="img/Group 1287_leaf.svg" alt="">
+                        </li>
 
-        <li class="pill pill--white">Confidence</li>
-        <li class="pill pill--white">Heritage</li>
-        <li class="pill pill--white">Balance</li>
-        <li class="pill pill--white">Love</li>
-        <li class="pill pill--white">Breath</li>
-    </ul>
+                        <!-- 빈 원  -->
+                        <li class="pill pill--circle" aria-hidden="true"></li>
 
-
-    
-        <div class="main-Small">
-
-            <!-- dot  -->
-            <ul>
-                <li><a href="#" class="btn"></a></li>
-                <li><a href="#" class="btn"></a></li>
-                <li><a href="#" class="btn"></a></li>
-            </ul>
-
-            <p>Harnessing the true Power of nature we bring gentle comfort to your everyday skin Cleaner</p>
-
-            <div class="video">
-                <video autoplay="" muted="" loop="" playsinline=""><source src="img/main_sub.mp4"></video>
-            </div> 
-        </div>
+                        <li class="pill pill--white">Confidence</li>
+                        <li class="pill pill--white">Heritage</li>
+                        <li class="pill pill--white">Balance</li>
+                        <li class="pill pill--white">Love</li>
+                        <li class="pill pill--white">Breath</li>
+                    </ul>
 
 
-            <div class="txtBoxBottom">
-              <p class="semi">The Face Shop</p>
-              <p class="set"> treats <span class="bold">your skin</span></p>
-              <p class="ital">with love.</p>
+
+                    <div class="main-Small">
+
+                        <!-- dot  -->
+                        <ul>
+                            <li><a href="#" class="btn"></a></li>
+                            <li><a href="#" class="btn"></a></li>
+                            <li><a href="#" class="btn"></a></li>
+                        </ul>
+
+                        <p>Harnessing the true Power of nature we bring gentle comfort to your everyday skin Cleaner</p>
+
+                        <div class="video">
+                            <video autoplay="" muted="" loop="" playsinline="">
+                                <source src="img/main_sub.mp4">
+                            </video>
+                        </div>
+                    </div>
+
+
+                    <div class="txtBoxBottom">
+                        <p class="semi">The Face Shop</p>
+                        <p class="set"> treats <span class="bold">your skin</span></p>
+                        <p class="ital">with love.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="right">
+                    <img src="img/main_img.svg" alt="">
+                    <a href="#" class="btn">Try For Free<img src="img/arrow-narrow-right.svg" alt=""></a>
+                </div>
             </div>
+        </section>
 
-        </div>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+        <script>
+            window.addEventListener("load", () => {
+                const pills = gsap.utils.toArray(".main-Keyword .pill");
+                if (!pills.length) return;
 
+                // 위->아래 순서(absolute top 기준)
+                pills.sort((a, b) => {
+                    const at = parseFloat(getComputedStyle(a).top) || a.getBoundingClientRect().top;
+                    const bt = parseFloat(getComputedStyle(b).top) || b.getBoundingClientRect().top;
+                    return at - bt;
+                });
 
-        <div class="right">
-            <img src="img/main_img.svg" alt="">
-            <a href="#" class="btn">Try For Free<img src="img/arrow-narrow-right.svg" alt=""></a>
-        </div>
-        </div>
-</section>
+                // 초기 상태
+                gsap.set(pills, {
+                    opacity: 0,
+                    y: -120,     // 낙하 시작 높이
+                    rotate: -2,  // 살짝 기울임(원하면 0)
+                    scale: 0.98,
+                    transformOrigin: "50% 50%",
+                    willChange: "transform, opacity"
+                });
 
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script>
-        window.addEventListener("load", () => {
-        const pills = gsap.utils.toArray(".main-Keyword .pill");
-        if (!pills.length) return;
-        
-//스크롤에 따라 gnb가 나타나고 사라지는
-var prevScrollTop = 0;
-document.addEventListener('scroll', function(){
-    var nowScrollTop = $(window).scrollTop();   //먼저 현재값을 저장시킨다
-    if(nowScrollTop > prevScrollTop ){
-        $('header').addClass('active');
-    } else{             //아닐경우
-        $('header').removeClass('active');
-    }
-    prevScrollTop = nowScrollTop;  //항상 스크롤값을 전달해야한다
-});
-
-
-
-        // 위->아래 순서(absolute top 기준)
-        pills.sort((a, b) => {
-            const at = parseFloat(getComputedStyle(a).top) || a.getBoundingClientRect().top;
-            const bt = parseFloat(getComputedStyle(b).top) || b.getBoundingClientRect().top;
-            return at - bt;
-        });
-
-        // 초기 상태
-        gsap.set(pills, {
-            opacity: 0,
-            y: -120,     // 낙하 시작 높이
-            rotate: -2,  // 살짝 기울임(원하면 0)
-            scale: 0.98,
-            transformOrigin: "50% 50%",
-            willChange: "transform, opacity"
-        });
-
-        // 떨어지는 애니메이션
-        gsap.to(pills, {
-            opacity: 1,
-            y: 0,
-            rotate: 0,
-            scale: 1,
-            duration: 0.9,
-            ease: "power3.out",
-            stagger: { each: 0.08, from: "start" },
-            //  애니메이션 끝난 뒤에만 hover 회전 허용
-            onComplete: () => document.body.classList.add("body--pillReady")
-        });
-        });
-    </script>
+                // 떨어지는 애니메이션
+                gsap.to(pills, {
+                    opacity: 1,
+                    y: 0,
+                    rotate: 0,
+                    scale: 1,
+                    duration: 0.9,
+                    ease: "power3.out",
+                    stagger: { each: 0.08, from: "start" },
+                    //  애니메이션 끝난 뒤에만 hover 회전 허용
+                    onComplete: () => document.body.classList.add("body--pillReady")
+                });
+            });
+        </script>
 
 
 
-<!-- typo -->
+        <!-- typo -->
 
 
 
-<section class="typo" id="typo">
-  <div class="inner">
-    <h1 class="tit1">
-      Nature<br>
-      Powered<span class="slot slot-1"><img src="img/typo_product1.svg" alt=""></span>skin<br>
-      Loving <span class="gray">care that</span><br>
-      <span class="gray">feels<span class="slot slot-2"><img src="img/typo_product2.svg" alt=""></span>Effortless!</span>
-    </h1>
-  </div>
-</section>
-
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const section = document.querySelector('.typo');
-  const title = section?.querySelector('.tit1');
-  if (!section || !title) return;
-
-  // 원본(이미지 슬롯/gray 포함)을 보존한 채, <br> 기준으로 "줄 단위" 래핑
-  const raw = title.innerHTML;
-
-  // br을 기준으로 줄 나누기 (br, br/, br / 모두 대응)
-  const lines = raw
-    .split(/<br\s*\/?>/i)
-    .map(s => s.trim())
-    .filter(Boolean);
-
-  // 줄 래핑 적용
-  title.innerHTML = lines
-    .map(lineHTML => `<span class="line"><span class="line-inner">${lineHTML}</span></span>`)
-    .join('');
-
-  //  반복 재생: 들어오면 show, 나가면 hide
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        section.classList.add('is-inview');
-      } else {
-        section.classList.remove('is-inview');
-        // 재진입 시 애니메이션이 확실히 다시 시작되도록 리셋
-        void title.offsetHeight;
-      }
-    });
-  }, {
-    threshold: 0.35,
-    rootMargin: "0px 0px -10% 0px"
-  });
-
-  io.observe(section);
-});
-</script>
-
-
-
-
-
-
-
-
-
-<!-- ingre -->
-  <section class="ingre">
-        <div class="inner">
-            <div class="ingre-leftbox">
-
-
-
-<div class="card-clip">
-
-  <!-- 노란: 아래 → 위 -->
-  <div class="col col--up">
-    <div class="track">
-
-      <!-- 원본 -->
-      <ul class="card">
-        <li>
-          <a href="#">
-            <img src="img/ingre_leaf.png" alt="">
-            <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="img/ingre_clay.png" alt="">
-            <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="img/ingre_seed_oil.png" alt="">
-            <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
-          </a>
-        </li>
-      </ul>
-
-      <!-- 복제(무한루프용) -->
-      <ul class="card" aria-hidden="true">
-        <li>
-          <a href="#">
-            <img src="img/ingre_leaf.png" alt="">
-            <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="img/ingre_clay.png" alt="">
-            <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="img/ingre_seed_oil.png" alt="">
-            <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
-          </a>
-        </li>
-      </ul>
-
-    </div>
-  </div>
-
-  <!-- 초록: 위 → 아래 -->
-  <div class="col col--down">
-    <div class="track">
-
-      <!-- 원본 -->
-      <ul class="card2">
-        <li>
-          <a href="#">
-            <img src="img/ingre_extract.png" alt="">
-            <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="img/ingre_salt.png" alt="">
-            <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="img/ingre_extract2.png" alt="">
-            <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="img/ingre_bamdoo.png" alt="">
-            <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
-          </a>
-        </li>
-      </ul>
-
-      <!-- 복제(무한루프용) -->
-      <ul class="card2" aria-hidden="true">
-        <li>
-          <a href="#">
-            <img src="img/ingre_extract.png" alt="">
-            <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="img/ingre_salt.png" alt="">
-            <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="img/ingre_extract2.png" alt="">
-            <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="img/ingre_bamdoo.png" alt="">
-            <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
-          </a>
-        </li>
-      </ul>
-
-      
-
-    </div>
-    
-  </div>
-
-</div>
-
-
-      </div>
-          <div class="ingre-rightbox">
-
-                <p class="tit">600+</p>
-
-                <p class="txt">Carefully Selected <span>Ingredients</span></p>
-
-
-                <p class="txt2">Lgredients shaped <span>by nature</span> <br class="mo"> Remembered <span>by your skin!</span></p>
-          </div>
-      </div>
-    </section>
-
-
-    <!-- story -->
-    <section class="story">
-        <div class="inner">
-            <div class="top-textBox">
-
-                <p class="sub-tit">The perfect purity created by nature,</p>
-
-                <p class="tit">Your skin remembers it all day long. </p>
-
-                <p class="sub-tit2">자연이 만들어지는 완전한 순수함을, 온종일 피부가 기억합니다.</p>
+        <section class="typo" id="typo">
+            <div class="inner">
+                <h1 class="tit1">
+                    Nature<br>
+                    Powered<span class="slot slot-1"><img src="img/typo_product1.svg" alt=""></span>skin<br>
+                    Loving <span class="gray">care that</span><br>
+                    <span class="gray">feels<span class="slot slot-2"><img src="img/typo_product2.svg"
+                                alt=""></span>Effortless!</span>
+                </h1>
             </div>
-            <div class="bottom-textBox">
-                <ul>
-                    <li class="txt"><p>더페이스샵은 자연이 가진 순수한 힘에서 피부의 해답을 찾으며,<br class="mo">
-                    자연 유래 성분을 가장 중요한 원료를 기준으로 합니다. 우리는<br class="mo">피부에 자극 없이 편안하게 스며드는 순한 처방을 위해 모든<br class="mo">성분을 정직하게 선택하고 투명하게 공개합니다.</p>
-                    </li>
-                    <li class="txt"><p>자연의 본래 힘을 해치지 않는 방식으로 추출된 원료는 매일<br class="mo">
-                    의 스킨케어에 안전한 편안함을 전달합니다. 더페이스샵은<br class="mo">자연에서 온 진정성과 신뢰를 담아, 피부가 안심하고 사용할<br class="mo">수 있는 깨끗한 아름다움을 연구합니다.</p>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
+        </section>
 
 
-    <!-- keyword -->
-    <section class="keyword">
-        <div class="inner">
-            <video class="face" autoplay muted loop playsinline><source src="img/brand_story_main.mp4"></video>
-            <div class="textBox">
-            </div>
-            <div class="rows">
-                <ul class="list a">
-                    <li>Nature</li>
-                    <li>Pure</li>
-                    <li class="italic">Dew</li>
-                    <li>Leaf</li>
-                </ul>
-                <ul class="list b">
-                    <li>Herb</li>
-                    <li class="love">L<span>ove</span></li>
-                    <li class="italic">Calm</li>
-                </ul>
-                <ul class="list c">
-                    <li class="italic">Glow</li>
-                    <li>turn</li>
-                    <li>Clean</li>
-                    <li>Fresh</li>
-                    <li>Earth</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const section = document.querySelector('.typo');
+                const title = section?.querySelector('.tit1');
+                if (!section || !title) return;
+
+                // 원본(이미지 슬롯/gray 포함)을 보존한 채, <br> 기준으로 "줄 단위" 래핑
+                const raw = title.innerHTML;
+
+                // br을 기준으로 줄 나누기 (br, br/, br / 모두 대응)
+                const lines = raw
+                    .split(/<br\s*\/?>/i)
+                    .map(s => s.trim())
+                    .filter(Boolean);
+
+                // 줄 래핑 적용
+                title.innerHTML = lines
+                    .map(lineHTML => `<span class="line"><span class="line-inner">${lineHTML}</span></span>`)
+                    .join('');
+
+                //  반복 재생: 들어오면 show, 나가면 hide
+                const io = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            section.classList.add('is-inview');
+                        } else {
+                            section.classList.remove('is-inview');
+                            // 재진입 시 애니메이션이 확실히 다시 시작되도록 리셋
+                            void title.offsetHeight;
+                        }
+                    });
+                }, {
+                    threshold: 0.35,
+                    rootMargin: "0px 0px -10% 0px"
+                });
+
+                io.observe(section);
+            });
+        </script>
 
 
-<!-- story -->
-    <section class="story">
-        <div class="inner">
-            <div class="top-textBox">
-                <p class="sub-tit">Responsible choices for the environment,</p>
-                <p class="tit">our beauty begins there. </p>
-                <p class="sub-tit2">환경을 위한 책임 있는 선택, 우리의 아름다움은 그곳에서 시작됩니다.</p>
+
+
+
+
+
+
+
+        <!-- ingre -->
+        <section class="ingre">
+            <div class="inner">
+                <div class="ingre-leftbox">
+
+
+
+                    <div class="card-clip">
+
+                        <!-- 노란: 아래 → 위 -->
+                        <div class="col col--up">
+                            <div class="track">
+
+                                <!-- 원본 -->
+                                <ul class="card">
+                                    <li>
+                                        <a href="#">
+                                            <img src="img/ingre_leaf.png" alt="">
+                                            <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <img src="img/ingre_clay.png" alt="">
+                                            <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <img src="img/ingre_seed_oil.png" alt="">
+                                            <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
+                                        </a>
+                                    </li>
+                                </ul>
+
+                                <!-- 복제(무한루프용) -->
+                                <ul class="card" aria-hidden="true">
+                                    <li>
+                                        <a href="#">
+                                            <img src="img/ingre_leaf.png" alt="">
+                                            <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <img src="img/ingre_clay.png" alt="">
+                                            <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <img src="img/ingre_seed_oil.png" alt="">
+                                            <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
+                                        </a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+
+                        <!-- 초록: 위 → 아래 -->
+                        <div class="col col--down">
+                            <div class="track">
+
+                                <!-- 원본 -->
+                                <ul class="card2">
+                                    <li>
+                                        <a href="#">
+                                            <img src="img/ingre_extract.png" alt="">
+                                            <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <img src="img/ingre_salt.png" alt="">
+                                            <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <img src="img/ingre_extract2.png" alt="">
+                                            <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <img src="img/ingre_bamdoo.png" alt="">
+                                            <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
+                                        </a>
+                                    </li>
+                                </ul>
+
+                                <!-- 복제(무한루프용) -->
+                                <ul class="card2" aria-hidden="true">
+                                    <li>
+                                        <a href="#">
+                                            <img src="img/ingre_extract.png" alt="">
+                                            <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <img src="img/ingre_salt.png" alt="">
+                                            <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <img src="img/ingre_extract2.png" alt="">
+                                            <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <img src="img/ingre_bamdoo.png" alt="">
+                                            <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
+                                        </a>
+                                    </li>
+                                </ul>
+
+
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <div class="ingre-rightbox">
+
+                    <p class="tit">600+</p>
+
+                    <p class="txt">Carefully Selected <span>Ingredients</span></p>
+
+
+                    <p class="txt2">Lgredients shaped <span>by nature</span> <br class="mo"> Remembered <span>by your
+                            skin!</span></p>
+                </div>
             </div>
-            <div class="bottom-textBox">
-                <ul>
-                    <li class="txt"><p>우리는 자연을 소비하지 않고 지켜가는 방식으로 아름다움을 만들어갑니다.<br class="mo">자연의 흐름을 해치지 않는 제조 방식을 핵심 원칙으로 삼으며, 제품이 만들<br class="mo">어지는 모든 과정에서 환경 영향을 최소화하고자 노력합니다. 또한 재활용<br class="mo">가능한 친환경 패키지를 사용해 자원을 절약하고 책임 있게 생산합니다.</p>
-                    </li>
-                    <li class="txt"><p>이러한 노력은 단순한 선택이 아니라 지속가능한 미래를 향한<br class="mo">우리의 의지입니다.더페이스샵은 오늘의 아름다움이 내일의<br class="mo">자연을 해치지 않도록, 환경과 함께 나아가는 브랜드가 되기<br class="mo">위해 책임 있는 변화를 꾸준히 이어가고 있습니다.</p>
-                    </li>
-                </ul>             
+        </section>
+
+
+        <!-- story -->
+        <section class="story">
+            <div class="inner">
+                <div class="top-textBox">
+
+                    <p class="sub-tit">The perfect purity created by nature,</p>
+
+                    <p class="tit">Your skin remembers it all day long. </p>
+
+                    <p class="sub-tit2">자연이 만들어지는 완전한 순수함을, 온종일 피부가 기억합니다.</p>
+                </div>
+                <div class="bottom-textBox">
+                    <ul>
+                        <li class="txt">
+                            <p>더페이스샵은 자연이 가진 순수한 힘에서 피부의 해답을 찾으며,<br class="mo">
+                                자연 유래 성분을 가장 중요한 원료를 기준으로 합니다. 우리는<br class="mo">피부에 자극 없이 편안하게 스며드는 순한 처방을 위해 모든<br
+                                    class="mo">성분을 정직하게 선택하고 투명하게 공개합니다.</p>
+                        </li>
+                        <li class="txt">
+                            <p>자연의 본래 힘을 해치지 않는 방식으로 추출된 원료는 매일<br class="mo">
+                                의 스킨케어에 안전한 편안함을 전달합니다. 더페이스샵은<br class="mo">자연에서 온 진정성과 신뢰를 담아, 피부가 안심하고 사용할<br
+                                    class="mo">수 있는 깨끗한 아름다움을 연구합니다.</p>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+
+        <!-- keyword -->
+        <section class="keyword">
+            <div class="inner">
+                <video class="face" autoplay muted loop playsinline>
+                    <source src="img/brand_story_main.mp4">
+                </video>
+                <div class="textBox">
+                </div>
+                <div class="rows">
+                    <ul class="list a">
+                        <li>Nature</li>
+                        <li>Pure</li>
+                        <li class="italic">Dew</li>
+                        <li>Leaf</li>
+                    </ul>
+                    <ul class="list b">
+                        <li>Herb</li>
+                        <li class="love">L<span>ove</span></li>
+                        <li class="italic">Calm</li>
+                    </ul>
+                    <ul class="list c">
+                        <li class="italic">Glow</li>
+                        <li>turn</li>
+                        <li>Clean</li>
+                        <li>Fresh</li>
+                        <li>Earth</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- story -->
+        <section class="story">
+            <div class="inner">
+                <div class="top-textBox">
+                    <p class="sub-tit">Responsible choices for the environment,</p>
+                    <p class="tit">our beauty begins there. </p>
+                    <p class="sub-tit2">환경을 위한 책임 있는 선택, 우리의 아름다움은 그곳에서 시작됩니다.</p>
+                </div>
+                <div class="bottom-textBox">
+                    <ul>
+                        <li class="txt">
+                            <p>우리는 자연을 소비하지 않고 지켜가는 방식으로 아름다움을 만들어갑니다.<br class="mo">자연의 흐름을 해치지 않는 제조 방식을 핵심 원칙으로 삼으며,
+                                제품이 만들<br class="mo">어지는 모든 과정에서 환경 영향을 최소화하고자 노력합니다. 또한 재활용<br class="mo">가능한 친환경 패키지를
+                                사용해 자원을 절약하고 책임 있게 생산합니다.</p>
+                        </li>
+                        <li class="txt">
+                            <p>이러한 노력은 단순한 선택이 아니라 지속가능한 미래를 향한<br class="mo">우리의 의지입니다.더페이스샵은 오늘의 아름다움이 내일의<br
+                                    class="mo">자연을 해치지 않도록, 환경과 함께 나아가는 브랜드가 되기<br class="mo">위해 책임 있는 변화를 꾸준히 이어가고
+                                있습니다.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
 
 
         <!-- Package Section -->
 
-    <section class="Package" id="Package">
-    <div class="inner">
-
-        <!-- <1> -->
-        <div class="top">
-        <h2>
-            Nature our Core,<br>
-            Design Every Detail,<br>
-            Sustainability in Every Choice.
-        </h2>
-        </div>
-
-        <div class="middle">
-        <!-- <2> -->
-        <div class="left">
-            <p>Where Nature and Design <br>Shape a Better Beauty</p>
-        </div>
-
-        <!-- thumb -->
-        <div class="thumb-wrap" id="thumbWrap">
-            <div class="thumb-canvas" id="thumbCanvas">
-            <!--  확대용 큰 이미지(배경) -->
-            <img src="img/package_big.svg" class="img-big" alt="">
-
-            <!--  썸네일 프레임/커버(처음에 보이다가 확대 중 사라짐) -->
-            <img src="img/Package_img1.svg" class="img-frame" id="pkgFrame" alt="">
-            </div>
-        </div>
-
-        <!-- <3> copy -->
-        <div class="copy-wrap" id="pkgCopyWrap">
-            <ul class="copy" id="packageCopy">
-            <li><p>우리는 자연이 건네는 가장 순수한 영감을 바탕으로, 피부와 환경 모두에 이로운 아름다움을 설계합니다. 더페이스샵의  비건 철학은 단순히 성분을 넘어, 제품을 담아내는 모든 요소까지 확장됩니다. 환경 부담을 줄이기 위해 재활용이 가능한 용기와 식물성 원료 기반의 패키지 소재를 선택하고, 최소한의 잉크와 공정을 사용해 자연의 흐름을 거스르지 않는 디자인을 완성합니다.</p></li>
-            <li><p>지속 가능한 아름다움은 작은 선택에서 시작됩니다. 우리의 모든 패키지는 사용 후에도 또 한 번의 생명을 이어갈 수 있도록 고민하며 제작됩니다. 자연을 닮은 부드러운 색감, 불필요한 장식을 덜어낸 형태, 그리고 가벼운 소재는 지구를 향한 존중과 섬세한 미학을 함께 담아냅니다.</p></li>
-            <li><p>더페이스샵은 자연의 숨을 해치지 않는 기술과 감성을 일상 속에 스며들게 하며, 지속 가능한 미래를 위한 ‘순환형 아름다움’을 제안합니다.</p></li>
-            </ul>
-        </div>
-        </div><!-- /.middle -->
-
-    </div><!-- /.inner -->
-    </section>
-
-
-
-<script>
-    gsap.registerPlugin(ScrollTrigger);
-
-    window.addEventListener("load", () => {
-        const section  = document.querySelector("#Package");
-        const canvas   = document.querySelector("#thumbCanvas");
-        const frame    = document.querySelector("#pkgFrame");
-        const copyWrap = document.querySelector("#pkgCopyWrap");
-
-        if (!section || !canvas || !frame || !copyWrap) return;
-
-        //  확대 완료 타겟(요청사항): 1920x1080
-        const TARGET_W = 1920;
-        const TARGET_H = 1080;
-
-        function coverScaleUniform(fromRect, targetW, targetH) {
-        // cover 방식: 둘 중 큰 배율로 맞추면 화면을 "덮음"
-        const sx = targetW / fromRect.width;
-        const sy = targetH / fromRect.height;
-        return Math.max(sx, sy);
-        }
-
-        function build() {
-        // 기존 트리거 제거
-        ScrollTrigger.getAll().forEach(st => {
-            if (st.vars && st.vars.id === "thumbZoom") st.kill();
-        });
-
-        // 초기 상태
-        gsap.set(canvas, {
-            x: 0,
-            y: 0,
-            scale: 1,                             //  균일 스케일
-            borderRadius: "185px 185px 0 0",
-            transformOrigin: "50% 50%"
-        });
-
-        gsap.set(frame, { opacity: 1 });
-        gsap.set(copyWrap, { opacity: 1, filter: "blur(0px)", y: 0 });
-
-        // 현재 thumb 크기(시작 기준)
-        const cRect = canvas.getBoundingClientRect();
-
-        if (!cRect.width || !cRect.height) return;
-
-        //  1920x1080을 덮도록(cover) 균일 스케일 계산
-        const finalScale = coverScaleUniform(cRect, TARGET_W, TARGET_H);
-
-
-        /*  추가된 부분: 섹션 좌상단으로 이동해서 왼쪽 공백 제거 */
-      const sRect = section.getBoundingClientRect();
-      const dx = sRect.left - cRect.left;
-      const dy = sRect.top  - cRect.top;
-      /*  여기까지 */
-
-
-
-
-
-        //  “덮인 상태 유지(pin)”를 위해 end를 넉넉히 줌
-        // - end를 길게 줄수록, 확대 완료 상태가 오래 유지됨
-
-        const tl = gsap.timeline({
-            scrollTrigger: {
-            id: "thumbZoom",
-            trigger: canvas,
-            start: "top 20%",         //  요청: 더 늦게 시작
-            end: "+=180%",            //  pin 유지 구간(원하면 220%까지 늘려도 OK)
-            scrub: 1,
-            pin: section,             //  섹션 고정(덮인 상태 유지)
-            pinSpacing: true,
-            anticipatePin: 1,
-            invalidateOnRefresh: true,
-            /* markers: true */
-            }
-        });
-
-        // 0~0.75 : 확대 + 라운드 0
-        tl.to(canvas, {
-            scale: finalScale,          //  찌그러짐 없이 확대
-            borderRadius: 0,            //  185 → 0
-            ease: "none",
-            duration: 0.75
-        }, 0);
-
-        // 0.20~ : 프레임 사라짐(큰 이미지만 남기기)
-        tl.to(frame, {
-            opacity: 0,
-            ease: "none",
-            duration: 0.25
-        }, 0.20);
-
-        // 0.55~ : copy 사라짐(원하면 유지도 가능)
-        tl.to(copyWrap, {
-            opacity: 0,
-            filter: "blur(6px)",
-            y: -16,
-            ease: "none",
-            duration: 0.25
-        }, 0.55);
-
-        //  0.75~1.00 : 확대 완료 “정지 유지” 구간
-        // (scrub이라서 end까지 가는 동안 현재 상태 유지됨)
-        tl.to({}, { duration: 0.25 }); // 타임라인 길이 확보용 더미
-        }
-
-        build();
-        window.addEventListener("resize", () => ScrollTrigger.refresh());
-
-        function getResponsiveConfig() {
-            const w = window.innerWidth;
-
-            // 기본값(PC)
-            let start = "top 20%";
-            let end   = "+=180%";
-            let targetW = 1920;
-            let targetH = 1080;
-
-
-            // 태블릿/모바일: 현재 뷰포트 기준으로 "화면가득" 확대되게
-            if (w <= 1024) {
-                start = "top 25%";
-                end   = "+=140%";
-                targetW = window.innerWidth;
-                targetH = window.innerHeight;
-            }
-            if (w <= 768) {
-                start = "top 30%";
-                end   = "+=120%";
-                targetW = window.innerWidth;
-                targetH = window.innerHeight;
-            }
-
-            return { start, end, targetW, targetH };
-            }
-            });
-
-</script>
-
-
-
-
-<section class="TimeLine" id="TimeLine">
-    <div class="wrap">
-    <div class="con">
-
-        <p class="toptit">Our history</p>
-
-        <ul class="list">
-        <li class="line01">
-        <div class="textBox">
-            <span class="since">since</span>
-            <h1>2003</h1>
-            <span class="sub">Where naturalism begins</span>
-            <p class="txt">
-            '자연주의'라는 새로운 가치를 세상에 첫발을 내디뎠으며,<br>
-            자연에서 온 순수한 원료로 건강한 아름다움을 전하는 여정을 시작했습니다.
-            </p>
-        </div>
-
-        <div class="right">
-            <p class="img">
-            <img src="img/timeline.svg" alt="">
-            </p>
-        </div>
-        </li>
-    
-
-        <!-- Timeline 2 -->
-        <li class="line02">
-            <div class="left">
-                <p class="img">
-            <img class="first" src="img/timeline_2_img.svg" alt="">
-            <img class="sec"  src="img/timeline_2_img2.svg" alt="">
-            </p>
-            </div>
-
-
-            <p class="bg_img"><img src="img/timeline_2_img3.svg" alt=""></p>
-
-            <div class="textBox">
-
-            
-            <span class="sub">Expanding horizons with expertise</span>
-            <p class="txt" >
-            기술력과 인프라를 더해 제품의 안정성과 신뢰를 한층 강화하며<br>
-            더 많은 고객에게 다가갈 수 있는 기반을 마련했습니다.
-            </p>
-            <h1>2009</h1>
-            </div>
-
-        </li>
-
-        <!-- Timeline 3 -->
-        <li class="line03">
-
-            <div class="left">
-                <p class="img">
-            <img src="img/timeline_3_img.svg" alt="">
-            <img src="img/timeline_3_img2.svg" alt="">
-            </p>
-            </div>
-
-
-            <div class="textBox">
-            
-            <h1>2012</h1>
-            <span class="sub">Discovering the energy of seeds</span>
-            <p class="txt">
-            자연의 생명력이 응축된 '씨앗'을 근원으로 삼아 그 가치를 재발견하고,<br>
-            피부 본연의 힘을 깨우는 더페이스샵만의 차별화된 컨셉을 정립했습니다.
-            </p>
-            </div>
-
-            
-        </li>
-
-        <!-- Timeline 4 -->
-        <li class="line04">
-        <div class="left">
-            <p class="img">
-            <img src="img/timeline_4_img.svg" alt="">
-            <img src="img/timeline_4_img2.svg" alt="">
-            </p>
-        </div>
-
-        <div class="textBox">
-            
-            <h1>2016</h1>
-            <span class="sub">Harmonizing nature's wisdom and space</span>
-            <p class="txt">
-            자연의 지혜와 순수 원료가 어우러진 새로운 공간을 선보였으며,<br>
-            고객과 브랜드가 자연 속에서 교감하는 한 차원 높은 경험을 제안했습니다.
-            </p>
-        </div>
-        </li>
-
-        <!-- Timeline 5 -->
-        <li class="line05">
-        <div class="left">
-            <p class="img">
-            <img class="first" src="img/timeline_5_img.svg" alt="">
-            <img class="sec" src="img/timeline_5_img2.svg" alt="">
-            </p>
-        </div>
-
-        <div class="textBox">
-            <span class="sub">Beginning the journey for tomorrow</span>
-            <p class="txt">
-            동물성 원료 배제와 친환경 패키징을 도입하기 시작하며,<br>
-            피부와 지구를 모두 생각하는 가치 소비의 기준을 마련했습니다.
-            </p>
-            <h1>2021</h1>
-        </div>
-        </li>
-
-        <!-- Timeline 6 -->
-
-        <li class="line06">
-        <div class="left">
-            <p class="img">
-            <img src="img/timeline_6_img.svg" alt="">
-            </p>
-        </div>
-
-        <div class="textBox">
-            <h1>2023</h1>
-            <span class="sub">Pioneering affordable clean beauty</span>
-            <p class="txt">
-            자연과 기술의 균형 속에서 정직한 성분의 '클린 뷰티'를 실현하며<br>
-            지속 가능한 글로벌 브랜드로 성장하고 있습니다.
-            </p>
-        </div>
-        </li>
-
-        </ul>
-
-    </div>
-    </div>
-
-<script>
-    gsap.registerPlugin(ScrollTrigger);
-
-    // =========================
-    // Timeline GSAP (PC=가로 / <=900=세로 sticky)
-    // - 901px 이상: 가로 핀 + x이동 + stroke baseline 계산
-    // - 900px 이하: 가로 트리거 제거 + transform 초기화 (세로 sticky는 CSS 담당)
-    // =========================
-
-    function getBaselineY(el) {
-        const rect = el.getBoundingClientRect();
-        const style = getComputedStyle(el);
-
-        const fontSize = parseFloat(style.fontSize) || 0;
-        const lineHeight =
-        style.lineHeight === "normal"
-            ? fontSize * 1.2
-            : parseFloat(style.lineHeight) || fontSize * 1.2;
-
-        const baselineOffset = fontSize * 0.18;
-        return rect.top + lineHeight - baselineOffset;
-    }
-
-    function setTimelineStrokeToYearBaseline() {
-        const list = document.querySelector(".TimeLine .con .list");
-        if (!list) return;
-
-        const year = document.querySelector(".TimeLine .con .list .line01 h1"); // 2003 기준
-        if (!year) return;
-
-        const listRect = list.getBoundingClientRect();
-        const baselineY = getBaselineY(year);
-        const yInList = baselineY - listRect.top;
-
-        list.style.setProperty("--stroke-y", `${yInList}px`);
-    }
-
-    window.addEventListener("load", () => {
-        ScrollTrigger.matchMedia({
-        //  <=900: 세로(sticky) 모드 — 가로 GSAP 끄기
-        "(max-width: 900px)": function () {
-            const list = document.querySelector(".TimeLine .con .list");
-            if (list) gsap.set(list, { clearProps: "transform" });
-
-            // 세로 모드에서도 stroke baseline 쓰고 싶으면 주석 해제
-            // setTimelineStrokeToYearBaseline();
-            // ScrollTrigger.addEventListener("refresh", setTimelineStrokeToYearBaseline);
-        },
-
-        // >=901: PC 가로 모드 — 기존 가로 GSAP
-        "(min-width: 901px)": function () {
-            const section = document.querySelector(".TimeLine");
-            const con = section?.querySelector(".con");
-            const list = section?.querySelector(".list");
-            if (!section || !con || !list) return;
-
-            const getMaxScrollX = () => Math.max(0, list.scrollWidth - con.clientWidth);
-
-            gsap.to(list, {
-            x: () => -getMaxScrollX(),
-            ease: "none",
-            scrollTrigger: {
-                trigger: section,
-                pin: true,
-                scrub: 1,
-                anticipatePin: 1,
-                invalidateOnRefresh: true,
-                start: "top top",
-                end: () => "+=" + getMaxScrollX(),
-                markers: false,
-            },
-            });
-
-            ScrollTrigger.addEventListener("refreshInit", () => gsap.set(list, { x: 0 }));
-            ScrollTrigger.addEventListener("refresh", setTimelineStrokeToYearBaseline);
-
-            setTimelineStrokeToYearBaseline();
-            ScrollTrigger.refresh();
-
-            let t;
-            window.addEventListener("resize", () => {
-            clearTimeout(t);
-            t = setTimeout(() => ScrollTrigger.refresh(), 150);
-            });
-        },
-        });
-    });
-
-    
-
-</script>
-
-<script>
-(function () {
-    const MQ = window.matchMedia("(max-width: 900px)");
-
-    function applyRepeatTopTit(isMobile) {
-    const section = document.querySelector(".TimeLine");
-    if (!section) return;
-
-    const original = section.querySelector(".con > .toptit");
-    const list = section.querySelector(".con > .list");
-    if (!original || !list) return;
-
-    const items = list.querySelectorAll(":scope > li");
-
-    if (isMobile) {
-        //  각 li에 없으면 생성
-        items.forEach(li => {
-        if (li.querySelector(":scope > .toptit.is-cloned")) return;
-
-        const clone = original.cloneNode(true);
-        clone.classList.add("is-cloned");         // 구분용
-        // (선택) PC용 스타일 영향 없게 클래스 추가로만 제어
-        li.insertBefore(clone, li.firstChild);
-        });
-    } else {
-        //  모바일에서 만든 것만 제거
-        section.querySelectorAll(".toptit.is-cloned").forEach(el => el.remove());
-    }
-    }
-
-    // 최초 1회
-    applyRepeatTopTit(MQ.matches);
-
-    // 브레이크포인트 변경 감지
-    if (MQ.addEventListener) {
-    MQ.addEventListener("change", e => applyRepeatTopTit(e.matches));
-    } else {
-    // 구형 사파리 대응
-    MQ.addListener(e => applyRepeatTopTit(e.matches));
-    }
-})();
-</script>
-
-</section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <section class="beauty">
-        <div class="inner">
-            <div class="beauty-title">
-                <h1 class="tit">Nature-Powered<br><span>Beauty</span></h1>
-                <p class="txt">Clean, calming, and made for your skin's balance and everyday comfort</p>
-            </div>
-            <div class="beauty-product">
-
-
-                <ul class="card a">
-                    <li>
-                        <a href="#">
-                            <img src="img/brand_1.png" alt="">
-                        </a>
-                    </li>
-
-                    <li class="logo">
-                        <a href="#" class="name">
-                            <img src="img/brand_name1.svg" alt="">
-                        </a>
-                    </li>
-
-
-                    <li>
-                        <a href="#">
-                            <img src="img/brand_2.png" alt="">
-                        </a>
-                    </li>
-
-
-                    <li class="logo">
-                        <a href="#" class="name">
-                            <img src="img/brand_name2.svg" alt="">
-                        </a>
-                    </li>
-
-
-                    <li>
-                        <a href="#">
-                            <img src="img/brand_3.png" alt="">
-                        </a>
-                    </li>
-                </ul>
-
-
-                <ul class="card b">
-                    <li>
-                        <a href="#">
-                            <img src="img/brand_4.png" alt="">
-                        </a>
-                    </li>
-                    <li class="logo">
-                        <a href="#" class="name">
-                            <img src="img/brand_name3.svg" alt="">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="img/brand_5.png" alt="">
-                        </a>
-                    </li>
-                    <li class="logo">
-                        <a href="#" class="name">
-                            <img src="img/brand_name4.svg" alt="">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="img/brand_6.png" alt="">
-                        </a>
-                    </li>
-                </ul>
-
-
-
-
-                <ul class="card c">
-                    <li>
-                        <a href="#">
-                            <img src="img/brand_7.png" alt="">
-                        </a>
-                    </li>
-                    <li class="logo">
-                        <a href="#" class="name">
-                            <img src="img/brand_name5.svg" alt="">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="img/brand_8.png" alt="">
-                        </a>
-                    </li>
-                    <li class="logo">
-                        <a href="#" class="name">
-                            <img src="img/brand_name6.svg" alt="">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="img/brand_9.png" alt="">
-                        </a>
-                    </li>
-                </ul>
-
-
-                <ul class="card d">
-                    <li>
-                        <a href="#">
-                            <img src="img/brand_10.png" alt="">
-                        </a>
-                    </li>
-                    <li class="logo">
-                        <a href="#" class="name">
-                            <img src="img/brand_name7.svg" alt="">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="img/brand_11.png" alt="">
-                        </a>
-                    </li>
-                    <li class="logo">
-                        <a href="#" class="name">
-                            <img src="img/brand_name8.svg" alt="">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="img/brand_12.png" alt="">
-                        </a>
-                    </li>
-                </ul>
-
-
-
-                <ul class="card f">
-                    <li>
-                        <a href="#">
-                            <img src="img/brand_13.png" alt="">
-                        </a>
-                    </li>
-                    <li class="logo">
-                        <a href="#" class="name">
-                            <img src="img/brand_name9.svg" alt="">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="img/brand_14.png" alt="">
-                        </a>
-                    </li>
-                    <li class="logo">
-                        <a href="#" class="name">
-                            <img src="img/brand_name10.svg" alt="">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="img/brand_15.png" alt="">
-                        </a>
-                    </li>
-                </ul>
-
-
-            </div>
-        </div>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const wrap = document.querySelector('.beauty .beauty-product');
-  if (!wrap) return;
-
-  const cols = Array.from(wrap.querySelectorAll('ul.card'));
-  const SPEED = 28; // px/sec (18~40 조절 가능)
-
-  /* =====================================================
-    1) ul 내부 li 1회 복제 (무한 루프 준비)
-  ===================================================== */
-  cols.forEach((ul) => {
-    if (ul.dataset.loopReady === "1") return;
-
-    const items = Array.from(ul.children);
-    items.forEach(li => ul.appendChild(li.cloneNode(true)));
-
-    ul.dataset.loopReady = "1";
-  });
-
-  /* =====================================================
-    2) offset / half 값
-  ===================================================== */
-  let offsets = new Array(cols.length).fill(0);
-  let halves  = new Array(cols.length).fill(0);
-
-  /* =====================================================
-    3) 높이 재계산 ( display:none 대응 + 무한루프 방어)
-  ===================================================== */
-  function recalc() {
-    cols.forEach((ul, idx) => {
-      const total = ul.scrollHeight;
-
-      //  반응형에서 display:none 되면 scrollHeight = 0
-      if (!total || !isFinite(total)) {
-        halves[idx] = 0;
-        return;
-      }
-
-      const half = total / 2;
-      if (!half || !isFinite(half)) {
-        halves[idx] = 0;
-        return;
-      }
-
-      halves[idx] = half;
-
-      const isOddCol = (idx % 2 === 0); // 1,3,5열
-
-      // 짝수열은 -half에서 시작
-      if (!isOddCol && offsets[idx] === 0) {
-        offsets[idx] = -half;
-      }
-
-      // offset 범위 정리 ( half=0일 때 while 무한 방지됨)
-      if (isOddCol) {
-        while (offsets[idx] <= -half) offsets[idx] += half;
-        while (offsets[idx] > 0)      offsets[idx] -= half;
-      } else {
-        while (offsets[idx] >= 0)     offsets[idx] -= half;
-        while (offsets[idx] < -half)  offsets[idx] += half;
-      }
-    });
-  }
-
-  /* =====================================================
-    4) RAF 애니메이션
-  ===================================================== */
-  let rafId = null;
-  let last = performance.now();
-
-  function start(){
-    if (rafId) cancelAnimationFrame(rafId);
-    last = performance.now();
-    rafId = requestAnimationFrame(tick);
-  }
-
-  function tick(now){
-    const dt = (now - last) / 1000;
-    last = now;
-
-    cols.forEach((ul, idx) => {
-      const half = halves[idx];
-      if (!half) return; //  숨겨진 컬럼 스킵
-
-      const isOddCol = (idx % 2 === 0);
-      const dir = isOddCol ? -1 : 1;
-
-      offsets[idx] += dir * SPEED * dt;
-
-      // 루프 유지
-      if (isOddCol) {
-        if (offsets[idx] <= -half) offsets[idx] += half;
-      } else {
-        if (offsets[idx] >= 0) offsets[idx] -= half;
-      }
-
-      ul.style.transform = `translateY(${offsets[idx]}px)`;
-    });
-
-    rafId = requestAnimationFrame(tick);
-  }
-
-  /* =====================================================
-    5) 로드 / 리사이즈 처리 ( 디바운스)
-  ===================================================== */
-    window.addEventListener('load', () => {
-    recalc();
-    start();
-    });
-
-    let resizeTimer = null;
-    window.addEventListener('resize', () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(() => {
-    recalc();
-    }, 120); //  resize 폭주 방지
-    });
-
-    });
-    </script>
-
-
-    </section>
-    <footer>
-    <div class="inner">
-        <div class="top-box">
-            <div class="left-box">
-                    <ul>
-                        <li class="tit">Support <span class="a"></span><span class="b"></span></li>
-                        <li>
-                            <a href="#">FAQs</a>
+        <section class="Package" id="Package">
+            <div class="inner">
+
+                <!-- <1> -->
+                <div class="top">
+                    <h2>
+                        Nature our Core,<br class="mo">
+                        Design Every Detail,<br class="mo">
+                        Sustainability in Every Choice.
+                    </h2>
+                </div>
+
+                <div class="middle">
+                    <!-- <2> -->
+                    <div class="left">
+                        <p>Where Nature and Design <br>Shape a Better Beauty</p>
+                    </div>
+
+                    <!-- thumb -->
+                    <div class="thumb-wrap" id="thumbWrap">
+                        <div class="thumb-canvas" id="thumbCanvas">
+                            <!--  확대용 큰 이미지(배경) - PNG로 변경하여 품질 개선 -->
+                            <img src="img/package.png" class="img-big" alt="">
+
+                            <!--  썸네일 프레임/커버(처음에 보이다가 확대 중 사라짐) - 초록색 창문틀 -->
+                            <img src="img/Package_img1.svg" class="img-frame" id="pkgFrame" alt="">
+                        </div>
+                    </div>
+
+                    <!-- <3> copy -->
+                    <div class="copy-wrap" id="pkgCopyWrap">
+                        <ul class="copy" id="packageCopy">
+                            <li>
+                                <p>우리는 자연이 건네는 가장 순수한 영감을 바탕으로, 피부와 환경 모두에 이로운 아름다움을 설계합니다. 더페이스샵의 비건 철학은 단순히 성분을 넘어,
+                                    제품을 담아내는 모든 요소까지 확장됩니다. 환경 부담을 줄이기 위해 재활용이 가능한 용기와 식물성 원료 기반의 패키지 소재를 선택하고, 최소한의 잉크와
+                                    공정을 사용해 자연의 흐름을 거스르지 않는 디자인을 완성합니다.</p>
+                            </li>
+                            <li>
+                                <p>지속 가능한 아름다움은 작은 선택에서 시작됩니다. 우리의 모든 패키지는 사용 후에도 또 한 번의 생명을 이어갈 수 있도록 고민하며 제작됩니다. 자연을
+                                    닮은 부드러운 색감, 불필요한 장식을 덜어낸 형태, 그리고 가벼운 소재는 지구를 향한 존중과 섬세한 미학을 함께 담아냅니다.</p>
+                            </li>
+                            <li>
+                                <p>더페이스샵은 자연의 숨을 해치지 않는 기술과 감성을 일상 속에 스며들게 하며, 지속 가능한 미래를 위한 ‘순환형 아름다움’을 제안합니다.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div><!-- /.middle -->
+
+            </div><!-- /.inner -->
+        </section>
+
+
+
+        <!-- Package Animation Script -->
+        <script src="js/package_animation.js"></script>
+
+
+
+
+        <section class="TimeLine" id="TimeLine">
+            <div class="wrap">
+                <div class="con">
+
+                    <p class="toptit">Our history</p>
+
+                    <ul class="list">
+                        <!-- Timeline 1 -->
+                        <li class="line01">
+                            <div class="textBox">
+                                <span class="since">since</span>
+                                <h1>2003</h1>
+                                <span class="sub">Where naturalism begins</span>
+                                <p class="txt">
+                                    '자연주의'라는 새로운 가치를 세상에 첫발을 내디뎠으며,<br>
+                                    자연에서 온 순수한 원료로 건강한 아름다움을 전하는 여정을 시작했습니다.
+                                </p>
+                            </div>
+
+                            <div class="right">
+                                <p class="img">
+                                    <img src="img/timeline.svg" alt="">
+                                </p>
+                            </div>
                         </li>
-                        <li>
-                            <a href="#">Account</a>
+
+
+                        <!-- Timeline 2 -->
+                        <li class="line02">
+                            <div class="left">
+                                <p class="img">
+                                    <img class="first" src="img/timeline_2_img.svg" alt="">
+                                    <img class="sec" src="img/timeline_2_img2.svg" alt="">
+                                </p>
+                            </div>
+
+
+                            <p class="bg_img"><img src="img/timeline_2_img3.svg" alt=""></p>
+
+                            <div class="textBox">
+
+
+                                <span class="sub">Expanding horizons with expertise</span>
+                                <p class="txt">
+                                    기술력과 인프라를 더해 제품의 안정성과 신뢰를 한층 강화하며<br>
+                                    더 많은 고객에게 다가갈 수 있는 기반을 마련했습니다.
+                                </p>
+                                <h1>2009</h1>
+                            </div>
+
                         </li>
+
+                        <!-- Timeline 3 -->
+                        <li class="line03">
+
+                            <div class="left">
+                                <p class="img">
+                                    <img src="img/timeline_3_img.svg" alt="">
+                                    <img src="img/timeline_3_img2.svg" alt="">
+                                </p>
+                            </div>
+
+
+                            <div class="textBox">
+
+                                <h1>2012</h1>
+                                <span class="sub">Discovering the energy of seeds</span>
+                                <p class="txt">
+                                    자연의 생명력이 응축된 '씨앗'을 근원으로 삼아 그 가치를 재발견하고,<br>
+                                    피부 본연의 힘을 깨우는 더페이스샵만의 차별화된 컨셉을 정립했습니다.
+                                </p>
+                            </div>
+
+
+                        </li>
+
+                        <!-- Timeline 4 -->
+                        <li class="line04">
+                            <div class="left">
+                                <p class="img">
+                                    <img src="img/timeline_4_img.svg" alt="">
+                                    <img src="img/timeline_4_img2.svg" alt="">
+                                </p>
+                            </div>
+
+                            <div class="textBox">
+
+                                <h1>2016</h1>
+                                <span class="sub">Harmonizing nature's wisdom and space</span>
+                                <p class="txt">
+                                    자연의 지혜와 순수 원료가 어우러진 새로운 공간을 선보였으며,<br class="mo-hide">
+                                    고객과 브랜드가 자연 속에서 교감하는 한 차원 높은 경험을 제안했습니다.
+                                </p>
+                            </div>
+                        </li>
+
+                        <!-- Timeline 5 -->
+                        <li class="line05">
+                            <div class="left">
+                                <p class="img">
+                                    <img class="first" src="img/timeline_5_img2.svg" alt="">
+                                    <img class="sec" src="img/timeline_5_img.svg" alt="">
+                                </p>
+                            </div>
+
+                            <div class="textBox">
+                                <span class="sub">Beginning the journey for tomorrow</span>
+                                <p class="txt">
+                                    동물성 원료 배제와 친환경 패키징을 도입하기 시작하며,<br>
+                                    피부와 지구를 모두 생각하는 가치 소비의 기준을 마련했습니다.
+                                </p>
+                                <h1>2021</h1>
+                            </div>
+                        </li>
+
+                        <!-- Timeline 6 -->
+
+                        <li class="line06">
+                            <div class="left">
+                                <p class="img">
+                                    <img src="img/timeline_6_img.svg" alt="">
+                                </p>
+                            </div>
+
+                            <div class="textBox">
+                                <h1>2023</h1>
+                                <span class="sub">Pioneering affordable clean beauty</span>
+                                <p class="txt">
+                                    자연과 기술의 균형 속에서 정직한 성분의 '클린 뷰티'를 실현하며<br>
+                                    지속 가능한 글로벌 브랜드로 성장하고 있습니다.
+                                </p>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
+
+
+            <script src="js/sub_01.js"></script>
+
+        </section>
+
+
+
+        <section class="beauty">
+            <div class="inner">
+                <div class="beauty-title">
+                    <h1 class="tit">Nature-Powered<br><span>Beauty</span></h1>
+                    <p class="txt">Clean, calming, and made for your skin's balance and everyday comfort</p>
+                </div>
+                <div class="beauty-product">
+
+
+                    <ul class="card a">
                         <li>
-                            <a href="#">Contact us</a>
+                            <a href="#">
+                                <img src="img/brand_1.png" alt="">
+                            </a>
+                        </li>
+
+                        <li class="logo">
+                            <a href="#" class="name">
+                                <img src="img/brand_name1.svg" alt="">
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a href="#">
+                                <img src="img/brand_2.png" alt="">
+                            </a>
+                        </li>
+
+
+                        <li class="logo">
+                            <a href="#" class="name">
+                                <img src="img/brand_name2.svg" alt="">
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a href="#">
+                                <img src="img/brand_3.png" alt="">
+                            </a>
                         </li>
                     </ul>
 
-                    <ul>
-                        <li class="tit">Social <span class="a"></span> <span class="b"></span></li>
+
+                    <ul class="card b">
                         <li>
-                            <a href="https://www.instagram.com/accounts/login/?next=%2Fthefaceshop.official%2F&source=omni_redirect&hl=ko#">Instargram</a>
+                            <a href="#">
+                                <img src="img/brand_4.png" alt="">
+                            </a>
+                        </li>
+                        <li class="logo">
+                            <a href="#" class="name">
+                                <img src="img/brand_name3.svg" alt="">
+                            </a>
                         </li>
                         <li>
-                            <a href="https://www.facebook.com/thefaceshop.official/">Facebook</a>
+                            <a href="#">
+                                <img src="img/brand_5.png" alt="">
+                            </a>
+                        </li>
+                        <li class="logo">
+                            <a href="#" class="name">
+                                <img src="img/brand_name4.svg" alt="">
+                            </a>
                         </li>
                         <li>
-                            <a href="https://www.youtube.com/channel/UC0qzGlTGeyn5JIUU-gCcaqg">Youtube</a>
+                            <a href="#">
+                                <img src="img/brand_6.png" alt="">
+                            </a>
                         </li>
                     </ul>
 
-                    <ul>
-                        <li class="tit">About <span class="a"></span> <span class="b"></span></li>
+
+
+
+                    <ul class="card c">
                         <li>
-                            <a href="#">About us</a>
+                            <a href="#">
+                                <img src="img/brand_7.png" alt="">
+                            </a>
+                        </li>
+                        <li class="logo">
+                            <a href="#" class="name">
+                                <img src="img/brand_name5.svg" alt="">
+                            </a>
                         </li>
                         <li>
-                            <a href="#">Labs</a>
+                            <a href="#">
+                                <img src="img/brand_8.png" alt="">
+                            </a>
+                        </li>
+                        <li class="logo">
+                            <a href="#" class="name">
+                                <img src="img/brand_name6.svg" alt="">
+                            </a>
                         </li>
                         <li>
-                            <a href="#"></a>
+                            <a href="#">
+                                <img src="img/brand_9.png" alt="">
+                            </a>
                         </li>
                     </ul>
 
-                    <ul>
-                        <li class="tit">Shop <span class="a"></span> <span class="b"></span></li>
+
+                    <ul class="card d">
                         <li>
-                            <a href="#">Skincare</a>
+                            <a href="#">
+                                <img src="img/brand_10.png" alt="">
+                            </a>
+                        </li>
+                        <li class="logo">
+                            <a href="#" class="name">
+                                <img src="img/brand_name7.svg" alt="">
+                            </a>
                         </li>
                         <li>
-                            <a href="#">Cleansing</a>
+                            <a href="#">
+                                <img src="img/brand_11.png" alt="">
+                            </a>
+                        </li>
+                        <li class="logo">
+                            <a href="#" class="name">
+                                <img src="img/brand_name8.svg" alt="">
+                            </a>
                         </li>
                         <li>
-                            <a href="#">Makeup</a>
-                        </li>
-                        <li>
-                            <a href="#">Vegan Beauty</a>
+                            <a href="#">
+                                <img src="img/brand_12.png" alt="">
+                            </a>
                         </li>
                     </ul>
 
-                    <ul>
-                        <li class="tit">Help <span class="a"></span> <span class="b"></span></li>
+
+
+                    <ul class="card f">
                         <li>
-                            <a href="#">Help</a>
+                            <a href="#">
+                                <img src="img/brand_13.png" alt="">
+                            </a>
+                        </li>
+                        <li class="logo">
+                            <a href="#" class="name">
+                                <img src="img/brand_name9.svg" alt="">
+                            </a>
                         </li>
                         <li>
-                            <a href="#">Contact</a>
+                            <a href="#">
+                                <img src="img/brand_14.png" alt="">
+                            </a>
+                        </li>
+                        <li class="logo">
+                            <a href="#" class="name">
+                                <img src="img/brand_name10.svg" alt="">
+                            </a>
                         </li>
                         <li>
-                            <a href="#">Account</a>
+                            <a href="#">
+                                <img src="img/brand_15.png" alt="">
+                            </a>
                         </li>
                     </ul>
 
-                    <ul>
-                        <li class="tit">Legal <span class="a"></span> <span class="b"></span></li>
-                        <li>
-                            <a href="#">Shipping & Returns</a>
-                        </li>
-                        <li>
-                            <a href="#">Privacy Policy</a>
-                        </li>
-                        <li>
-                            <a href="#">Terms & Conditions</a>
-                        </li>
-                        <li>
-                            <a href="#">Accessibility</a>
-                        </li>
-                    </ul>
+
+                </div>
             </div>
-            <div class="right-box">
-                <ul>
-                    <li>Enter Your email</li>
-                    <li><img src="img/arrow.svg" alt=""></li>
-                </ul>
+
+
+        </section>
+        <footer>
+            <div class="inner">
+                <div class="top-box">
+                    <div class="left-box">
+                        <ul>
+                            <li class="tit">Support <span class="a"></span><span class="b"></span></li>
+                            <li>
+                                <a href="#">FAQs</a>
+                            </li>
+                            <li>
+                                <a href="#">Account</a>
+                            </li>
+                            <li>
+                                <a href="#">Contact us</a>
+                            </li>
+                        </ul>
+
+                        <ul>
+                            <li class="tit">Social <span class="a"></span> <span class="b"></span></li>
+                            <li>
+                                <a href="#">Instargram</a>
+                            </li>
+                            <li>
+                                <a href="#">Facebook</a>
+                            </li>
+                            <li>
+                                <a href="#">Youtube</a>
+                            </li>
+                        </ul>
+
+                        <ul>
+                            <li class="tit">About <span class="a"></span> <span class="b"></span></li>
+                            <li>
+                                <a href="#">About us</a>
+                            </li>
+                            <li>
+                                <a href="#">Labs</a>
+                            </li>
+                            <li>
+                                <a href="#"></a>
+                            </li>
+                        </ul>
+
+                        <ul>
+                            <li class="tit">Shop <span class="a"></span> <span class="b"></span></li>
+                            <li>
+                                <a href="#">Skincare</a>
+                            </li>
+                            <li>
+                                <a href="#">Cleansing</a>
+                            </li>
+                            <li>
+                                <a href="#">Makeup</a>
+                            </li>
+                            <li>
+                                <a href="#">Vegan Beauty</a>
+                            </li>
+                        </ul>
+
+                        <ul>
+                            <li class="tit">Help <span class="a"></span> <span class="b"></span></li>
+                            <li>
+                                <a href="#">Help</a>
+                            </li>
+                            <li>
+                                <a href="#">Contact</a>
+                            </li>
+                            <li>
+                                <a href="#">Account</a>
+                            </li>
+                        </ul>
+
+                        <ul>
+                            <li class="tit">Legal <span class="a"></span> <span class="b"></span></li>
+                            <li>
+                                <a href="#">Shipping & Returns</a>
+                            </li>
+                            <li>
+                                <a href="#">Privacy Policy</a>
+                            </li>
+                            <li>
+                                <a href="#">Terms & Conditions</a>
+                            </li>
+                            <li>
+                                <a href="#">Accessibility</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="right-box">
+                        <ul>
+                            <li>Enter Your email</li>
+                            <li><img src="img/arrow.svg" alt=""></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bottom-box">
+                    <p class="logo"><img src="img/logo_2.svg" alt=""></p>
+                    <p class="text">© THE FACE SHOP, Inc. All rights reserved. 2025</p>
+                </div>
             </div>
-        </div>
-        <div class="bottom-box">
-            <div class="logo-box">
-            <p class="logo"><img src="img/logo_2.svg" alt=""></p>
-            <p class="text">© THE FACE SHOP, Inc. All rights reserved. 2025</p>
-            </div>
-            <a href="#" class="floating">
-                <img src="img/arrow_1.svg" alt="">
-            </a>
-            </div>
-        </div>
-    </footer>
+        </footer>
+        <a href="#" class="floating">
+            <img src="img/arrow_1.svg" alt="">
+        </a>
     </div>
 
 
 
-</div>
+    </div>
 </body>
+
 </html>

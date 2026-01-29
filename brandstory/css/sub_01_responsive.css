@@ -1,5 +1,3 @@
-
-
 @charset "utf-8";
 /* reset */
 
@@ -11,105 +9,258 @@
 
 /* 1024*623 */
 
-@media (max-width: 1024px){
-header {padding: 40px 50px 20px;}
-header{width: 100%;  top: 0;left: 0; z-index: 100; display: flex;justify-content: space-between;}
-header .logo {margin-right: 30px;}
-.main .inner{padding: 67px 30px;  /*  좌우 패딩을 살짝 줄여서 오른쪽 여백 확보 */
-gap: 26px; /*  gap도 약간 줄여서 공간 재분배 */justify-content: space-between;}
-.main .inner .left ul.main-Keyword li {font-size: 16px;}
+@media (max-width: 1024px) {
+  header {
+    padding: 40px 50px 20px;
+  }
 
-.main .inner .left .txtBoxBottom p.set {line-height: 160%;}
+  header {
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  header .logo {
+    margin-right: 30px;
+  }
+
+  .main .inner {
+    padding: 67px 30px;
+    /*  좌우 패딩을 살짝 줄여서 오른쪽 여백 확보 */
+    gap: 26px;
+    /*  gap도 약간 줄여서 공간 재분배 */
+    justify-content: space-between;
+  }
+
+  .main .inner .left ul.main-Keyword li {
+    font-size: 16px;
+  }
+
+  .main .inner .left .txtBoxBottom p.set {
+    line-height: 160%;
+  }
 
   /* inner: 좌우 패딩 + 컬럼 사이 간격 */
-.main .inner .right{width: 55%; padding-right: 12px;   /* right만 여백 추가 */ display: flex; justify-content: flex-end;  /*  이미지 오른쪽 정렬 */ box-sizing: border-box;  }
-.main .inner .right a.btn {margin-top: 50px; }
-.main .inner .left .main-Small .video{display:none;}
-.main .inner .left ul.main-Keyword li.pill--circle {display: none !important;}
-.main .inner .left ul.main-Keyword li.pill--icon{width: 45px; height: 45px;padding: 0; border-radius: 50%; background: transparent;  position: absolute; top: 156px; left: 77px; } 
-/* Nature */
-.main .inner .left ul.main-Keyword li:nth-child(1){top: 167px;left: 0px;z-index: 3;}
-/* 겹침 원: Nature 아래와 Confidence 사이 */
-.main .inner .left ul.main-Keyword li:nth-child(3){top: 178px;  left: 37px; z-index: 2;}
-/* Confidence (green) */
-.main .inner .left ul.main-Keyword li:nth-child(4){top: 202px;left: 28px;z-index: 1;}
-
-/* Heritage */
-.main .inner .left ul.main-Keyword li:nth-child(5){top: 238px;left: 0px;}
-.main .inner .left ul.main-Keyword li:nth-child(6) {display: none !important;}
-/* Love */
-.main .inner .left ul.main-Keyword li:nth-child(7){top: 239px;left: 92px;}
-/* Breath  */
-.main .inner .left ul.main-Keyword li:nth-child(8){top: 278px;left: 20px;}
-.main .inner .left .main-Small p{font-size: 12px;  line-height: 150%; letter-spacing: -0.02em;  font-family: 'PP Mori', sans-serif;  color: #3B3B3B; }
-.main .inner .left .main-Small{position: absolute;
-top: clamp(291px, 18vw, 379px); left: clamp(166px, 16vw, 431px);  width: clamp(235px, 13vw, 300px); }
-.main .inner .left ul.main-Keyword{position: relative; height: 30px; font-family: 'PP Mori', sans-serif; font-size: 16px;
-font-weight: 400; }
-  /*  right 폭을 조금 더 줘서 이미지가 오른쪽으로 가는 느낌 */
-  .main .inner .left{ width: 52%; }
-  .main .inner .right{ width: 60%; }
-  /* 이미지 자체는 변형 없이 정렬만 오른쪽에 딱 */
-  .main .inner .right{display: flex;   justify-content: flex-end; /*  오른쪽 끝 정렬 */
+  .main .inner .right {
+    width: 55%;
+    padding-right: 12px;
+    /* right만 여백 추가 */
+    display: flex;
+    justify-content: flex-end;
+    /*  이미지 오른쪽 정렬 */
+    box-sizing: border-box;
   }
-  .main .inner .right > img{ margin-top: 80px; width: min(100%, 460px);  /* 너무 커지면 제한(원하면 숫자 조절) */ }
-.main .inner .right a.btn{
-  position: absolute;
-  right: clamp(13px, -37vw, 40px);
-  bottom: clamp(-39px, -47vw, 3px);
-  display: inline-flex;
-  align-items: center;
-  gap: 14px;
-  padding: 10.5px 17px;
-  border-radius: 100px;
-  background: #4B4B4B;
-  color: #fff;
-  text-decoration: none;
-  font-family: 'PP Mori', sans-serif;
-  font-size: clamp(14px, 1.23vw, 14px);
-  white-space: nowrap; 
+
+  .main .inner .right a.btn {
+    margin-top: 50px;
+  }
+
+  .main .inner .left .main-Small .video {
+    display: none;
+  }
+
+  .main .inner .left ul.main-Keyword li.pill--circle {
+    display: none !important;
+  }
+
+  .main .inner .left ul.main-Keyword li.pill--icon {
+    width: 45px;
+    height: 45px;
+    padding: 0;
+    border-radius: 50%;
+    background: transparent;
+    position: absolute;
+    top: 156px;
+    left: 77px;
+  }
+
+  /* Nature */
+  .main .inner .left ul.main-Keyword li:nth-child(1) {
+    top: 167px;
+    left: 0px;
+    z-index: 3;
+  }
+
+  /* 겹침 원: Nature 아래와 Confidence 사이 */
+  .main .inner .left ul.main-Keyword li:nth-child(3) {
+    top: 178px;
+    left: 37px;
+    z-index: 2;
+  }
+
+  /* Confidence (green) */
+  .main .inner .left ul.main-Keyword li:nth-child(4) {
+    top: 202px;
+    left: 28px;
+    z-index: 1;
+  }
+
+  /* Heritage */
+  .main .inner .left ul.main-Keyword li:nth-child(5) {
+    top: 238px;
+    left: 0px;
+  }
+
+  .main .inner .left ul.main-Keyword li:nth-child(6) {
+    display: none !important;
+  }
+
+  /* Love */
+  .main .inner .left ul.main-Keyword li:nth-child(7) {
+    top: 239px;
+    left: 92px;
+  }
+
+  /* Breath  */
+  .main .inner .left ul.main-Keyword li:nth-child(8) {
+    top: 278px;
+    left: 20px;
+  }
+
+  .main .inner .left .main-Small p {
+    font-size: 12px;
+    line-height: 150%;
+    letter-spacing: -0.02em;
+    font-family: 'PP Mori', sans-serif;
+    color: #3B3B3B;
+  }
+
+  .main .inner .left .main-Small {
+    position: absolute;
+    top: clamp(291px, 18vw, 379px);
+    left: clamp(166px, 16vw, 431px);
+    width: clamp(235px, 13vw, 300px);
+  }
+
+  .main .inner .left ul.main-Keyword {
+    position: relative;
+    height: 30px;
+    font-family: 'PP Mori', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  /*  right 폭을 조금 더 줘서 이미지가 오른쪽으로 가는 느낌 */
+  .main .inner .left {
+    width: 52%;
+  }
+
+  .main .inner .right {
+    width: 60%;
+  }
+
+  /* 이미지 자체는 변형 없이 정렬만 오른쪽에 딱 */
+  .main .inner .right {
+    display: flex;
+    justify-content: flex-end;
+    /*  오른쪽 끝 정렬 */
+  }
+
+  .main .inner .right>img {
+    margin-top: 80px;
+    width: min(100%, 460px);
+    /* 너무 커지면 제한(원하면 숫자 조절) */
+  }
+
+  .main .inner .right a.btn {
+    position: absolute;
+    right: clamp(13px, -37vw, 40px);
+    bottom: clamp(-39px, -47vw, 3px);
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10.5px 17px;
+    border-radius: 100px;
+    background: #4B4B4B;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'PP Mori', sans-serif;
+    font-size: clamp(14px, 1.23vw, 14px);
+    white-space: nowrap;
+  }
+
+  .main .inner .right a.btn img {
+    display: block;
+    width: 18px;
+    height: 18px;
+    transition: opacity 0.25s ease;
+  }
+
+  .main .inner .right a.btn:hover {
+    opacity: 0.85;
+  }
+
+  .main .inner .left .txtBoxBottom p.semi {
+    font-family: 'PP Mori', sans-serif;
+    font-size: clamp(56px, 5.8vw, 60px);
+    font-weight: 700;
+    line-height: 70%;
+  }
+
+  .main .inner .left ul.main-Keyword li.pill {
+    position: absolute;
+    display: inline-flex;
+    align-items: ceter;
+    text-align: end;
+    justify-content: center;
+    border-radius: 999px;
+    padding: 5px 11px;
+    white-space: nowrap;
+    box-sizing: border-box;
+    background: transparent;
+    line-height: 1.3;
+  }
 }
-.main .inner .right a.btn img{ display:block; width: 18px; height: 18px;  transition: opacity 0.25s ease;  }     
-.main .inner .right a.btn:hover{opacity: 0.85;}
-.main .inner .left .txtBoxBottom p.semi {font-family:'PP Mori' ,sans-serif; font-size: clamp(56px, 5.8vw, 60px); font-weight: 700;  line-height: 70%;  }
-.main .inner .left ul.main-Keyword li.pill{ position: absolute; display: inline-flex; align-items: ceter; text-align: end; justify-content: center; border-radius: 999px; padding: 5px 11px; white-space: nowrap; box-sizing: border-box; background: transparent; line-height: 1.3; } 
-}
 
 
 
-@media (max-width: 910px){
-  .main .inner .left .txtBoxBottom p.semi {font-size: clamp(53px, 5.8vw, 57px);}
-.main .inner .left .txtBoxBottom p.set {font-size: clamp(53px, 5.8vw, 110px);}
+@media (max-width: 910px) {
+  .main .inner .left .txtBoxBottom p.semi {
+    font-size: clamp(53px, 5.8vw, 57px);
+  }
+
+  .main .inner .left .txtBoxBottom p.set {
+    font-size: clamp(53px, 5.8vw, 110px);
+  }
 }
 
 
 
 
 /* 768*562 */
-@media (max-width: 768px){
+@media (max-width: 768px) {
 
   /* nav 숨기기 */
-  header ul.nav.en{
+  header ul.nav.en {
     display: none;
   }
 
   /* header를 3칸 레이아웃으로 */
-  header{
-    padding: 24px 20px;                 /* 원하는 값으로 조절 */
+  header {
+    padding: 24px 20px;
+    /* 원하는 값으로 조절 */
     display: grid;
-    grid-template-columns: 44px 1fr 44px; /* 좌 아이콘 / 로고 / 우 아이콘 */
+    grid-template-columns: 44px 1fr 44px;
+    /* 좌 아이콘 / 로고 / 우 아이콘 */
     align-items: center;
-    justify-items: center;               /* 가운데 정렬 기본 */
+    justify-items: center;
+    /* 가운데 정렬 기본 */
   }
 
   /* 로고는 가운데 */
-  header .logo{
+  header .logo {
     grid-column: 2;
     justify-self: center;
-    margin: 0;                           /* 1024에서 준 margin 제거 */
+    margin: 0;
+    /* 1024에서 준 margin 제거 */
   }
-  header .logo img{
-    height: 32px;                        /* 원하는 높이 */
+
+  header .logo img {
+    height: 32px;
+    /* 원하는 높이 */
     width: auto;
     display: block;
     top: 32px;
@@ -118,33 +269,39 @@ font-weight: 400; }
   }
 
   /* menu-icon은 "컨테이너" 자체를 그리드에 올리고 */
-  header ul.menu-icon{
-    grid-column: 1 / -1;                 /* 전체 영역을 차지하게 한 뒤 */
+  header ul.menu-icon {
+    grid-column: 1 / -1;
+    /* 전체 영역을 차지하게 한 뒤 */
     width: 100%;
     display: flex;
-    justify-content: space-between;      /* 양 끝 배치 */
+    justify-content: space-between;
+    /* 양 끝 배치 */
     align-items: center;
-    gap: 0;                              /* 양끝이면 gap 의미 없음 */
+    gap: 0;
+    /* 양끝이면 gap 의미 없음 */
     position: relative;
   }
 
   /* 아이콘 크기 통일(선택) */
-  header ul.menu-icon li{
+  header ul.menu-icon li {
     width: 44px;
     height: 44px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  header ul.menu-icon li a{
+
+  header ul.menu-icon li a {
     width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  header ul.menu-icon img{
-    width: 22px;                         /* 원하는 크기 */
+
+  header ul.menu-icon img {
+    width: 22px;
+    /* 원하는 크기 */
     height: 22px;
     display: block;
   }
@@ -152,8 +309,16 @@ font-weight: 400; }
   /*  순서 교정:
     현재 HTML은 [장바구니, 햄버거] 순서라서
      768에서 햄버거를 왼쪽, 장바구니를 오른쪽으로 배치 */
-  header ul.menu-icon li:first-child{ order: 2; } /* 장바구니 → 오른쪽 */
-  header ul.menu-icon li:last-child{  order: 1; } /* 햄버거   → 왼쪽 */
+  header ul.menu-icon li:first-child {
+    order: 2;
+  }
+
+  /* 장바구니 → 오른쪽 */
+  header ul.menu-icon li:last-child {
+    order: 1;
+  }
+
+  /* 햄버거   → 왼쪽 */
 }
 
 
@@ -173,15 +338,35 @@ font-weight: 400; }
 
 
 
-@media (max-width: 768px){
-/* header ul.nav {display: none !important;} */
-.main .inner .left .txtBoxBottom p {width: 104%; gap: 10px; }
-    
-/* 기본 레이아웃 */
-.main .inner .left .txtBoxBottom p {width: 106%;}
-.main .inner{padding: 40px; gap: 10px; align-items: flex-start;}
-.main .inner .left{width: 54%; position: relative;}
-.main .inner .right{width: 46%; position: relative;}
+@media (max-width: 768px) {
+
+  /* header ul.nav {display: none !important;} */
+  .main .inner .left .txtBoxBottom p {
+    width: 104%;
+    gap: 10px;
+  }
+
+  /* 기본 레이아웃 */
+  .main .inner .left .txtBoxBottom p {
+    width: 106%;
+  }
+
+  .main .inner {
+    padding: 40px;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .main .inner .left {
+    width: 54%;
+    position: relative;
+  }
+
+  .main .inner .right {
+    width: 46%;
+    position: relative;
+  }
+
   /* =========================================================
     - (1) ul.main-Keyword 안의 pill--white 들을
       768에서만 "가로 2열"로 쌓이게 (grid)
@@ -194,111 +379,192 @@ font-weight: 400; }
     transform: none;           
     z-index: 6;
   } */
-.main .inner .left .txtBoxBottom br {display: none};
-.main .inner .left .txtBoxBottom p.semi {font-family:'PP Mori' ,sans-serif; font-size: clamp(46px, 5.8vw, 60px);}
-/* 기존 pill 공통 768에서만 해제 */
-.main .inner .left .txtBoxBottom {position: relative; }
-.main .inner .left ul.main-Keyword li.pill:nth-child(1) { top: 163px; left: 164px; padding: 3.5px 12px; font-size: 14px; line-height: 1.4; color: #3B3B3B; } 
-.main .inner .left ul.main-Keyword li.pill:nth-child(1):hover { transform: rotate(-15deg);}
-.main .inner .left ul.main-Keyword li.pill:nth-child(7) { top: 163px; left: 263px; padding: 3.5px 12px; font-size: 14px; line-height: 1.4; color: #3B3B3B; z-index: 22;} 
-.main .inner .left ul.main-Keyword li.pill:nth-child(2) {display: none !important;}
-.main .inner .left ul.main-Keyword li.pill:nth-child(3) {display: none !important;}
-.main .inner .left ul.main-Keyword li.pill:nth-child(4) {display: none !important;}
-.main .inner .left ul.main-Keyword li.pill:nth-child(5) {display: none !important;}
-.main .inner .left ul.main-Keyword li.pill:nth-child(6) {display: none !important;}
-.main .inner .left ul.main-Keyword li.pill:nth-child(8) {display: none !important;}
+  .main .inner .left .txtBoxBottom br {
+    display: none
+  }
+
+  ;
+
+  .main .inner .left .txtBoxBottom p.semi {
+    font-family: 'PP Mori', sans-serif;
+    font-size: clamp(46px, 5.8vw, 60px);
+  }
+
+  /* 기존 pill 공통 768에서만 해제 */
+  .main .inner .left .txtBoxBottom {
+    position: relative;
+  }
+
+  .main .inner .left ul.main-Keyword li.pill:nth-child(1) {
+    top: 163px;
+    left: 164px;
+    padding: 3.5px 12px;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #3B3B3B;
+  }
+
+  .main .inner .left ul.main-Keyword li.pill:nth-child(1):hover {
+    transform: rotate(-15deg);
+  }
+
+  .main .inner .left ul.main-Keyword li.pill:nth-child(7) {
+    top: 163px;
+    left: 263px;
+    padding: 3.5px 12px;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #3B3B3B;
+    z-index: 22;
+  }
+
+  .main .inner .left ul.main-Keyword li.pill:nth-child(2) {
+    display: none !important;
+  }
+
+  .main .inner .left ul.main-Keyword li.pill:nth-child(3) {
+    display: none !important;
+  }
+
+  .main .inner .left ul.main-Keyword li.pill:nth-child(4) {
+    display: none !important;
+  }
+
+  .main .inner .left ul.main-Keyword li.pill:nth-child(5) {
+    display: none !important;
+  }
+
+  .main .inner .left ul.main-Keyword li.pill:nth-child(6) {
+    display: none !important;
+  }
+
+  .main .inner .left ul.main-Keyword li.pill:nth-child(8) {
+    display: none !important;
+  }
+
   /* =========================================================
     - pill--icon, pill--circle 768에서만 숨김
   ========================================================= */
-.main .inner .left ul.main-Keyword li.pill--icon,
-.main .inner .left ul.main-Keyword li.pill--circle{display: none !important;}
-/* =========================================================
+  .main .inner .left ul.main-Keyword li.pill--icon,
+  .main .inner .left ul.main-Keyword li.pill--circle {
+    display: none !important;
+  }
+
+  /* =========================================================
 - (2) main-Small 텍스트 영역을 2-1(좌상단) 방향으로 이동
 -> main-Small 박스 자체를 더 left/top으로
 ========================================================= */
-.main .inner .left .main-Small{
+  .main .inner .left .main-Small {
     position: absolute;
-    top: 0px;     /*  더 위로 (원하면 70~110 사이로 미세조정)*/
-    left: 6px;   /* 더 왼쪽으로 (원하면 280~340 사이로 미세조정)*/
+    top: 0px;
+    /*  더 위로 (원하면 70~110 사이로 미세조정)*/
+    left: 6px;
+    /* 더 왼쪽으로 (원하면 280~340 사이로 미세조정)*/
     width: 280px;
     z-index: 5;
-  } 
+  }
+
   /* 텍스트 줄바꿈/가독성 보정(선택) */
-  .main .inner .left .main-Small p{
+  .main .inner .left .main-Small p {
     font-size: 16px;
     line-height: 150%;
     margin-bottom: 14px;
-  } 
+  }
+
   /* (5) 버튼이 (4) 이미지 위로 올라가게(안전장치) */
-  .main .inner .right a.btn{
+  .main .inner .right a.btn {
     right: 18px !important;
     bottom: 18px !important;
     z-index: 10 !important;
   }
+
   /* 1) inner 기준 상단 여백 64px */
-  .main .inner{
+  .main .inner {
     padding-top: 268px !important;
     padding-left: 10px;
     padding-right: 10px;
-    padding-bottom: 125px; /* (네가 표시한 하단 여백 느낌) 필요없으면 빼도 됨 */
-    align-items: flex-start; /*  좌/우 상단 정렬 */
+    padding-bottom: 125px;
+    /* (네가 표시한 하단 여백 느낌) 필요없으면 빼도 됨 */
+    align-items: flex-start;
+    /*  좌/우 상단 정렬 */
   }
+
   /* 2) 오른쪽 이미지가 내려가는 원인 제거 */
-  .main .inner .right > img{  margin-top: 27px ; width: 100%;   }
-  .main .inner .right {width: 350px; height: 350px;}
+  .main .inner .right>img {
+    margin-top: 27px;
+    width: 100%;
+  }
+
+  .main .inner .right {
+    width: 350px;
+    height: 350px;
+  }
+
   /* 3) 왼쪽 텍스트(main-Small)도 상단 기준으로 시작 */
-  .main .inner .left .main-Small{margin-top: 0 !important;  }
+  .main .inner .left .main-Small {
+    margin-top: 0 !important;
+  }
+
   /* main-Small: absolute 해제 + 2열 grid로 (텍스트 | 비디오) */
-  .main .inner .left .main-Small{
+  .main .inner .left .main-Small {
     width: min(420px, 95%);
     z-index: 10;
     display: grid;
-    grid-template-columns: 1fr 101px; /* 왼쪽: 텍스트 / 오른쪽: 비디오(고정폭) */
+    grid-template-columns: 1fr 101px;
+    /* 왼쪽: 텍스트 / 오른쪽: 비디오(고정폭) */
     column-gap: 18px;
     row-gap: 12px;
     align-items: start;
   }
 
   /* dot은 윗줄 전체 폭 */
-  .main .inner .left .main-Small ul{
+  .main .inner .left .main-Small ul {
     grid-column: 1 / -1;
     margin: 0 0 6px 0;
   }
 
   /* 텍스트는 왼쪽 컬럼 */
-  .main .inner .left .main-Small p{
+  .main .inner .left .main-Small p {
     grid-column: 1 / 2;
     margin: 0;
     font-size: 16px;
     line-height: 150%;
   }
+
   /*  비디오는 오른쪽 컬럼 */
-  .main .inner .left .main-Small .video{
+  .main .inner .left .main-Small .video {
     grid-column: 2 / 3;
-    display: block !important;  /* 1024에서 none 먹어도 768에서 강제 노출 */
+    display: block !important;
+    /* 1024에서 none 먹어도 768에서 강제 노출 */
     width: 52px;
     height: 91px;
     justify-self: end;
     border-radius: 10px;
     overflow: hidden;
   }
+
   /* 아래 큰 타이틀이 겹치지 않게(absolute 해제했으니 자연스럽게 아래로) */
-  .main .inner .left .txtBoxBottom{
-    margin-top: 163px; 
+  .main .inner .left .txtBoxBottom {
+    margin-top: 163px;
     position: absolute;
     z-index: 1;
     font-size: 46px;
     top: 38px;
     left: 0px;
-    
+
 
   }
 }
 
-@media (max-width: 716px){
+@media (max-width: 716px) {
 
-.main .inner .left .txtBoxBottom p.semi {font-size: clamp(43px, 5.8vw, 57px);}
-.main .inner .left .txtBoxBottom p.set {font-size: clamp(43px, 5.8vw, 110px);}
+  .main .inner .left .txtBoxBottom p.semi {
+    font-size: clamp(43px, 5.8vw, 57px);
+  }
+
+  .main .inner .left .txtBoxBottom p.set {
+    font-size: clamp(43px, 5.8vw, 110px);
+  }
 }
 
 
@@ -307,96 +573,262 @@ font-weight: 400; }
 
 
 /* 390*639 */
-@media (max-width: 390px){
-  header {display: none !important;}
-  .main .inner{
+@media (max-width: 390px) {
+  header {
+    display: none !important;
+  }
+
+  .main .inner {
     flex-direction: column;
     padding: 0 16px 0 16px !important;
     gap: 14px;
   }
 
-  .main .inner .right {padding-right: 0;}
+  .main .inner .right {
+    padding-right: 0;
+  }
+
   .main .inner .left,
-  .main .inner .right{width: 100%;}
+  .main .inner .right {
+    width: 100%;
+  }
+
   /* (1) 키워드: 상단 오른쪽/왼쪽 정렬은 취향인데, 일단 작게 */
-  .main .inner .left ul.main-Keyword{
+  .main .inner .left ul.main-Keyword {
     transform: scale(0.78);
     transform-origin: left top;
-    height: 120px; /*  absolute pill들이라 높이 확보 */
+    height: 120px;
+    /*  absolute pill들이라 높이 확보 */
   }
+
   /* (2) main-Small: absolute 해제하고 자연스럽게 흐르게 */
-  .main .inner .left .main-Small{
+  .main .inner .left .main-Small {
     position: static;
     width: 100%;
     margin-top: 8px;
   }
-  .main .inner .left .main-Small p{font-size: 14px; margin-bottom: 12px;}
 
-  .main .inner .left .txtBoxBottom {text-align: center;} 
-  .main .inner .left .txtBoxBottom p.semi{color: #fff; font-size: 36px;}
-  .main .inner .left .txtBoxBottom p.set {color: #fff;font-size: 36px;}
-  .main .inner .left .txtBoxBottom p.bold {color: #fff;font-size: 36px; font-weight: 50 !important;}
-  .main .inner .left .txtBoxBottom p.ital {color: #fff;font-size: 36px;}
+  .main .inner .left .main-Small p {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
 
-  .main .inner .left .main-Small .video{width: 32px; height: 57px;}
+  .main .inner .left .txtBoxBottom {
+    text-align: center;
+  }
+
+  .main .inner .left .txtBoxBottom p.semi {
+    color: #fff;
+    font-size: 36px;
+  }
+
+  .main .inner .left .txtBoxBottom p.set {
+    color: #fff;
+    font-size: 36px;
+  }
+
+  .main .inner .left .txtBoxBottom p.bold {
+    color: #fff;
+    font-size: 36px;
+    font-weight: 50 !important;
+  }
+
+  .main .inner .left .txtBoxBottom p.ital {
+    color: #fff;
+    font-size: 36px;
+  }
+
+  .main .inner .left .main-Small .video {
+    width: 32px;
+    height: 57px;
+  }
+
   /* (4) 우측 이미지: 위로 올리고, 버튼은 이미지 안쪽 */
-  .main .inner .right{position: relative;}
-  .main .inner .right > img{margin-top: 0;}
+  .main .inner .right {
+    position: relative;
+  }
+
+  .main .inner .right>img {
+    margin-top: 0;
+  }
+
   /* (3) 타이틀: 이미지 위로 오버레이 (4번째 이미지 같은 느낌) */
-  .main .inner .left .txtBoxBottom{
+  .main .inner .left .txtBoxBottom {
     margin-top: 0;
     position: absolute;
     left: -13px;
     right: 58px;
-    top: 393px; /*  이미지 높이에 따라 조절 포인트 */
+    top: 490px;
+    /*  이미지 높이에 따라 조절 포인트 */
     z-index: 5;
     position: absolute;
     transform: translateY(-50%);
     line-height: 1.2%;
     font-weight: 300 !important;
   }
-  .main .inner .left .txtBoxBottom p.semi{
+
+  .main .inner .left .txtBoxBottom p.semi {
     color: #fff;
-    text-shadow: 0 2px 12px rgba(0,0,0,0.25);
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+    font-family: 'PP Mori', sans-serif;
+    font-weight: 600;
     font-size: 36px;
     line-height: 112%;
   }
-  .main .inner .left .txtBoxBottom span.semi,
-  .main .inner .left .txtBoxBottom span.ital{
-    color: #fff;
-    text-shadow: 0 2px 12px rgba(0,0,0,0.25);
+
+  .main .inner .left .txtBoxBottom p.set {
+    font-family: 'PP Mori', sans-serif;
+    font-weight: 600 !important;
+    font-size: 36px;
   }
+
+  .main .inner .left .txtBoxBottom span.bold {
+    font-family: 'PPEditorialNew', serif;
+    font-weight: 300 !important;
+    font-size: 36px !important;
+  }
+
+  .main .inner .left .txtBoxBottom p.ital {
+    font-family: 'PPEditorialNew', serif;
+    font-style: Italic;
+    font-weight: 300 !important;
+    font-size: 36px;
+  }
+
+  .main .inner .left .txtBoxBottom span.semi,
+  .main .inner .left .txtBoxBottom span.ital {
+    color: #fff;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+  }
+
   /* (5) 버튼: 모바일용 크기 다운 */
-  .main .inner .right a.btn{
+  .main .inner .right a.btn {
     right: 14px;
     bottom: 14px;
     padding: 12px 16px;
     font-size: 14px;
   }
-  .main .inner .right{position: relative;} /* 버튼 공간 */
+
+  .main .inner .right {
+    position: relative;
+  }
+
+  /* 버튼 공간 */
 
 
-.main .inner .left ul.main-Keyword li.pill{display: inline-flex; align-items: center; text-align: center; justify-content: center; border: 1px solid #3B3B3B; border-radius: 999px;padding: 9px 20px; white-space: nowrap; box-sizing: border-box; background: transparent; line-height: 1; } }
-@media (max-width: 390px){
-  .main .inner .left ul.main-Keyword li.pill{ display: none !important; }
+  .main .inner .left ul.main-Keyword li.pill {
+    display: inline-flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    border: 1px solid #3B3B3B;
+    border-radius: 999px;
+    padding: 9px 20px;
+    white-space: nowrap;
+    box-sizing: border-box;
+    background: transparent;
+    line-height: 1;
+  }
+
+
+
+}
+
+
+
+
+
+
+
+@media (max-width: 390px) {
+  .main .inner .left .main-Small {
+    padding-top: 100px;
+  }
+
+
+
 
   /* Nature */
-  .main .inner .left ul.main-Keyword li.pill:nth-child(1){display: inline-flex !important; position: absolute; top: 200px;  left: 50px;}
-  /* Confidence (green) */  
-  .main .inner .left ul.main-Keyword li.pill:nth-child(4){display: inline-flex !important;  position: absolute;  top: 250px;  left: 50px;}
+  .main .inner .left ul.main-Keyword li.pill:nth-child(1) {
+    display: inline-flex !important;
+    position: absolute;
+    top: 127px;
+    left: 319px;
+    padding: 5px 20px;
+    font-size: 16px;
+  }
+
+  .main .inner .left ul.main-Keyword li.pill:nth-child(3) {
+    display: inline-flex !important;
+    position: absolute;
+    top: 151px;
+    left: 282px;
+  }
+
+  /* Confidence (green) */
+  .main .inner .left ul.main-Keyword li.pill:nth-child(4) {
+    display: inline-flex !important;
+    position: absolute;
+    top: 163px;
+    left: 335px;
+  }
+
   /* Heritage */
-  .main .inner .left ul.main-Keyword li.pill:nth-child(5){display: inline-flex !important;  position: absolute;  top: 300px;  left: 50px;}
+  .main .inner .left ul.main-Keyword li.pill:nth-child(5) {
+    display: inline-flex !important;
+    position: absolute;
+    top: 201px;
+    left: 286px;
+  }
+
   /* Balance (green) */
-  .main .inner .left ul.main-Keyword li.pill:nth-child(6){ display: inline-flex !important;  position: absolute; top: 350px;  left: 50px;}
+  .main .inner .left ul.main-Keyword li.pill:nth-child(6) {
+    display: inline-flex !important;
+    position: absolute;
+    top: 240px;
+    left: 334px;
+  }
+
+  .main .inner .left ul.main-Keyword li.pill:nth-child(7) {
+    display: none !important;
+  }
 }
 
 /* ---------------------------- typo ----------------------------  */
-@media (max-width: 1620px){
- .typo .inner .h1 {font-size: 140px;}
+@media (max-width: 1620px) {
+  .typo .inner .h1 {
+    font-size: 140px;
+  }
 }
-@media (max-width: 390px){
- .typo .inner .h1 {font-size: 44px;}
- .typo {padding: 120px 16px 120px 16px;}
+
+
+@media (max-width: 768px) {
+  .typo {
+    padding: 162px 60px 140px 60px;
+  }
+
+  .typo.is-inview .tit1 .line:nth-child(2)>.line-inner {
+    padding: 15px 0;
+  }
+
+
+
+}
+
+
+@media (max-width: 390px) {
+  .typo .inner .h1 {
+    font-size: 44px;
+  }
+
+  .typo {
+    padding: 120px 4px 120px;
+  }
+
+  .typo .tit1 {
+    width: 100%;
+    font-size: 44px;
+  }
 }
 
 
@@ -411,32 +843,48 @@ font-weight: 400; }
     INGRE RESPONSIVE
     - 1024/768/390: 카드(위) + 텍스트(아래)
 ========================= */
-  /*  카드가 아래로, 텍스트가 위로 */
-  @media (max-width: 1024px){
-  .ingre .inner .ingre-rightbox{order: 1; width: 100%; }
-  .ingre .inner .ingre-leftbox{order: 2; width: 100%; margin: 0;}
+/*  카드가 아래로, 텍스트가 위로 */
+@media (max-width: 1024px) {
+  .ingre .inner .ingre-rightbox {
+    order: 1;
+    width: 100%;
+  }
+
+  .ingre .inner .ingre-leftbox {
+    order: 2;
+    width: 100%;
+    margin: 0;
+  }
+
   /* 텍스트 */
-/* =========================================================
+  /* =========================================================
     INGRE - Responsive (NO NESTED MEDIA)
     목표:
     1) 1024/768/390에서 레이아웃: rightbox(상단) + leftbox(하단)
     2) rightbox 내부 순서: tit(600+)가 txt보다 위
     3) txt2: 한 줄 유지 + 우하단 고정, <br class="mo"> 숨김
 ========================================================= */
-/* 1024 이하 공통(768/390 포함) */
+  /* 1024 이하 공통(768/390 포함) */
 
   /*  섹션: 상/하 스택 */
-  .ingre .inner{
+  .ingre .inner {
     padding: 0 60px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     gap: 24px;
   }
-  .ingre .inner .ingre-rightbox .txt2 {font-weight: 300;}
-  .ingre .inner .ingre-rightbox .txt2 {margin-top: 165px;}
+
+  .ingre .inner .ingre-rightbox .txt2 {
+    font-weight: 300;
+  }
+
+  .ingre .inner .ingre-rightbox .txt2 {
+    margin-top: 165px;
+  }
+
   /*  상단: 텍스트 / 하단: 카드 */
-  .ingre .inner .ingre-rightbox{
+  .ingre .inner .ingre-rightbox {
     order: 1;
     width: 100%;
     margin: 0 !important;
@@ -448,16 +896,24 @@ font-weight: 400; }
     padding-top: 50px;
     padding-bottom: 165px;
   }
-  .ingre .inner .ingre-leftbox{
+
+  .ingre .inner .ingre-leftbox {
     order: 2;
     width: 100%;
     margin: 0 !important;
   }
+
   /*  rightbox 내부 순서 고정: tit이 txt보다 위 */
-  .ingre .inner .ingre-rightbox .tit{ order: 2; }
-  .ingre .inner .ingre-rightbox .txt{ order: 1; }
+  .ingre .inner .ingre-rightbox .tit {
+    order: 2;
+  }
+
+  .ingre .inner .ingre-rightbox .txt {
+    order: 1;
+  }
+
   /*  txt2: 한 줄 + 우하단 */
-  .ingre .inner .ingre-rightbox .txt2{
+  .ingre .inner .ingre-rightbox .txt2 {
     order: 3;
     position: absolute;
     right: 0;
@@ -468,149 +924,286 @@ font-weight: 400; }
     line-height: 1.2;
     text-align: right;
   }
+
   /*  <br class="mo"> 숨김 */
-  .ingre .inner .ingre-rightbox .txt2 br.mo{
+  .ingre .inner .ingre-rightbox .txt2 br.mo {
     display: none !important;
   }
 }
-@media (max-width: 1025px){
-  .ingre .ingre-rightbox .txt {margin-bottom: 11px; }
+
+@media (max-width: 1025px) {
+  .ingre .ingre-rightbox .txt {
+    margin-bottom: 11px;
+  }
 }
 
 /* 795 이하 */
 
 /* 768 이하(선택: 패딩/타이포 미세 조정) */
-@media (max-width: 768px){
-  .ingre .inner{ padding: 0 40px; }
+@media (max-width: 768px) {
+  .ingre .inner {
+    padding: 0 40px;
+  }
+
+
 }
 
 /* 390 이하(선택: txt2가 길면 우하단 기준 살짝 축소) */
 
-@media (max-width: 390px){
-  .ingre .inner{ padding: 0 18px; }
-  .ingre .inner .ingre-rightbox .txt2{
+@media (max-width: 390px) {
+  .ingre .inner {
+    padding: 0 18px;
+  }
+
+  .ingre .inner .ingre-rightbox .txt2 {
     transform: scale(0.92);
     transform-origin: right bottom;
   }
-  
- 
+
+  .keyword .inner {
+    height: 48vh;
+  }
+
+
 }
 
 
 /* 텍스트크기 */
-@media (max-width: 1024px){
-  .ingre .inner .ingre-rightbox .txt2 {font-size: 20px;} }
-@media (max-width:  390px){
-  .ingre .inner .ingre-rightbox {text-align: center;}
-  .ingre .inner .ingre-rightbox .txt2 {font-size: 20px;}
+@media (max-width: 1024px) {
+  .ingre .inner .ingre-rightbox .txt2 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 390px) {
+  .ingre .inner .ingre-rightbox {
+    text-align: center;
+  }
+
+  .ingre .inner .ingre-rightbox .txt2 {
+    font-size: 20px;
+  }
 
 
   /* 카드 슬라이드 영역 높이 축소 */
-  :root{
+  :root {
     --ingre-clip-h: 720px;
     --ingre-gap: 22px;
     --ingre-dur: 32s;
     --ingre-down-offset: 120px;
   }
-  .card-clip{ height: var(--ingre-clip-h); }
-  .card-clip .col{ height: var(--ingre-clip-h); }
+
+  .card-clip {
+    height: var(--ingre-clip-h);
+  }
+
+  .card-clip .col {
+    height: var(--ingre-clip-h);
+  }
+
   /* 카드 크기 축소 */
   .ingre .card li,
-  .ingre .card2 li{
+  .ingre .card2 li {
     height: 320px;
   }
-  .ingre .card li a{ margin: 24px; }
-  .ingre .card2 li{ padding: 24px; }
+
+  .ingre .card li a {
+    margin: 24px;
+  }
+
+  .ingre .card2 li {
+    padding: 24px;
+  }
+
   .ingre .card li a .textbox,
-  .ingre .card2 li a .textbox{ margin-top: 150px; font-size: 16px; }
+  .ingre .card2 li a .textbox {
+    margin-top: 150px;
+    font-size: 16px;
+  }
+
   .ingre .card li a .textbox span.b,
-  .ingre .card2 li a .textbox span.b{ font-size: 16px; }
+  .ingre .card2 li a .textbox span.b {
+    font-size: 16px;
+  }
+
   /* 텍스트 톤 다운 */
-  .ingre .ingre-rightbox .tit{ font-size: 84px; }
-  .ingre .ingre-rightbox .txt{ font-size: 34px; margin-bottom: 24px; }
-  .ingre .ingre-rightbox .txt span{ font-size: 40px; }
-  .ingre .ingre-rightbox .txt2{ font-size: 18px; }
-  .ingre .ingre-rightbox .txt2 span{ font-size: 24px; }
+  .ingre .ingre-rightbox .tit {
+    font-size: 84px;
+  }
+
+  .ingre .ingre-rightbox .txt {
+    font-size: 34px;
+    margin-bottom: 24px;
+  }
+
+  .ingre .ingre-rightbox .txt span {
+    font-size: 40px;
+  }
+
+  .ingre .ingre-rightbox .txt2 {
+    font-size: 18px;
+  }
+
+  .ingre .ingre-rightbox .txt2 span {
+    font-size: 24px;
+  }
 }
+
 /* 768 */
-@media (max-width: 768px){
-  .ingre .inner{ padding: 0 40px; gap: 20px; }
-  :root{
+@media (max-width: 768px) {
+  .ingre .inner {
+    padding: 0 40px;
+    gap: 20px;
+  }
+
+  :root {
     --ingre-clip-h: 620px;
     --ingre-gap: 18px;
     --ingre-dur: 30s;
     --ingre-down-offset: 90px;
   }
+
   .ingre .card li,
-  .ingre .card2 li{ height: 280px; }
-  .ingre .card li a{ margin: 18px; }
-  .ingre .card2 li{ padding: 18px; }
+  .ingre .card2 li {
+    height: 280px;
+  }
+
+  .ingre .card li a {
+    margin: 18px;
+  }
+
+  .ingre .card2 li {
+    padding: 18px;
+  }
 
   .ingre .card li a .textbox,
-  .ingre .card2 li a .textbox{ margin-top: 122px; font-size: 14px; }
-  .ingre .card li a .textbox span.b,
-  .ingre .card2 li a .textbox span.b{ font-size: 14px; }
+  .ingre .card2 li a .textbox {
+    margin-top: 122px;
+    font-size: 14px;
+  }
 
-  .ingre .ingre-rightbox .tit{ font-size: 72px; }
-  .ingre .ingre-rightbox .txt{ font-size: 28px; margin-bottom: 16px; }
-  .ingre .ingre-rightbox .txt span{ font-size: 34px; }
-  .ingre .ingre-rightbox .txt2{ font-size: 16px; }
-  .ingre .ingre-rightbox .txt2 span{ font-size: 22px; }
+  .ingre .card li a .textbox span.b,
+  .ingre .card2 li a .textbox span.b {
+    font-size: 14px;
+  }
+
+  .ingre .ingre-rightbox .tit {
+    font-size: 72px;
+  }
+
+  .ingre .ingre-rightbox .txt {
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+
+  .ingre .ingre-rightbox .txt span {
+    font-size: 34px;
+  }
+
+  .ingre .ingre-rightbox .txt2 {
+    font-size: 16px;
+  }
+
+  .ingre .ingre-rightbox .txt2 span {
+    font-size: 22px;
+  }
 }
 
 /* 390 */
-@media (max-width: 390px){
-  .ingre .inner{ padding: 0 18px; gap: 42px; }
-  :root{
+@media (max-width: 390px) {
+  .ingre .inner {
+    padding: 0 18px;
+    gap: 42px;
+  }
+
+  :root {
     --ingre-clip-h: 560px;
     --ingre-gap: 14px;
     --ingre-dur: 28s;
     --ingre-down-offset: 70px;
   }
+
   .ingre .card li,
-  .ingre .card2 li{ height: 240px; }
-  .ingre .card li a{ margin: 14px; }
-  .ingre .card2 li{ padding: 14px; }
+  .ingre .card2 li {
+    height: 240px;
+  }
+
+  .ingre .card li a {
+    margin: 14px;
+  }
+
+  .ingre .card2 li {
+    padding: 14px;
+  }
 
   .ingre .card li a .textbox,
-  .ingre .card2 li a .textbox{ margin-top: 100px; font-size: 12px; }
-  .ingre .card li a .textbox span.b,
-  .ingre .card2 li a .textbox span.b{ font-size: 12px; }
+  .ingre .card2 li a .textbox {
+    margin-top: 100px;
+    font-size: 12px;
+  }
 
-  .ingre .ingre-rightbox .tit{ font-size: 56px; }
-  .ingre .ingre-rightbox .txt{ font-size: 22px; margin-bottom: 12px; }
-  .ingre .ingre-rightbox .txt span{ font-size: 26px; }
-  .ingre .ingre-rightbox .txt2{ font-size: 14px; }
-  .ingre .ingre-rightbox .txt2 span{ font-size: 18px; }
+  .ingre .card li a .textbox span.b,
+  .ingre .card2 li a .textbox span.b {
+    font-size: 12px;
+  }
+
+  .ingre .ingre-rightbox .tit {
+    font-size: 56px;
+  }
+
+  .ingre .ingre-rightbox .txt {
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+
+  .ingre .ingre-rightbox .txt span {
+    font-size: 26px;
+  }
+
+  .ingre .ingre-rightbox .txt2 {
+    font-size: 14px;
+  }
+
+  .ingre .ingre-rightbox .txt2 span {
+    font-size: 18px;
+  }
 }
 
-@media (max-width: 390px){
+@media (max-width: 390px) {
 
   /* 빨간 영역 컨테이너 */
-  .ingre .inner .ingre-rightbox{
+  .ingre .inner .ingre-rightbox {
     width: 100%;
     margin: 0 !important;
     display: flex;
     flex-direction: column;
-    align-items: center;   /* flex 기준 중앙 */
-    text-align: center;      /* 텍스트 중앙 */
+    align-items: center;
+    /* flex 기준 중앙 */
+    text-align: center;
+    /* 텍스트 중앙 */
   }
 
   /*  600+ */
-  .ingre .inner .ingre-rightbox p.tit{
-    width: 100%;             /*  핵심 */
+  .ingre .inner .ingre-rightbox p.tit {
+    width: 100%;
+    /*  핵심 */
     text-align: center;
     margin: 0 auto 8px;
   }
 
   /*  Carefully Selected Ingredients */
-  .ingre .inner .ingre-rightbox p.txt{
-    width: 100%;             /*  핵심 */
+  .ingre .inner .ingre-rightbox p.txt {
+    width: 100%;
+    /*  핵심 */
     text-align: center;
-    margin: 0 auto 16px;     /*  기존 450px 제거 */
+    margin: 0 auto 16px;
+    /*  기존 450px 제거 */
   }
-  .ingre .inner .ingre-rightbox {padding-bottom: 47px !important;}
-  
+
+  .ingre .inner .ingre-rightbox {
+    padding-bottom: 47px !important;
+  }
+
 
 
 
@@ -638,57 +1231,118 @@ font-weight: 400; }
 
 /* 1024 이하: 세로 + 우하단 */
 
-@media (max-width: 1024px){
+@media (max-width: 1024px) {
+
   /*  bottom-textBox 자체를 우하단으로 */
-  .story .bottom-textBox{
+  .story .bottom-textBox {
     display: flex;
-    justify-content: flex-end;  /* 아래로 */
-    align-items: flex-end;      /* 오른쪽으로 */
+    justify-content: flex-end;
+    /* 아래로 */
+    align-items: flex-end;
+    /* 오른쪽으로 */
     width: 100%;
-    margin-top: 24px;           /* 위 요소와 간격(원하면 조절) */
+    margin-top: 24px;
+    /* 위 요소와 간격(원하면 조절) */
   }
+
   /*  ul: 세로 스택 */
-  .story .bottom-textBox ul{
-    display: flex;              /* 혹시 깨질까 안전장치 */
+  .story .bottom-textBox ul {
+    display: flex;
+    /* 혹시 깨질까 안전장치 */
     flex-direction: column;
     gap: 18px;
     /* 오른쪽에 붙이되, 문단은 보기 편하게 */
     align-items: flex-start;
-    max-width: 547px;     }      /* 우하단 박스 폭 제한( 조절) */
-  .story {padding: 240px 52px 75px 52px;}
-  .story .inner .top-textBox p.sub-tit {font-size: 32px; text-align: left;}
-  .story .inner .top-textBox p.tit{font-size: 56px; text-align: left;}
-  .story .inner .top-textBox p.sub-tit2 {font-size: 18px;}
-  .story .inner .bottom-textBox {font-size: 18px;}
-  .story .inner .bottom-textBox li.txt br.mo{display: none !important;}
+    max-width: 547px;
+  }
+
+  /* 우하단 박스 폭 제한( 조절) */
+  .story {
+    padding: 240px 52px 75px 52px;
+  }
+
+  .story .inner .top-textBox p.sub-tit {
+    font-size: 32px;
+    text-align: left;
+  }
+
+  .story .inner .top-textBox p.tit {
+    font-size: 56px;
+    text-align: left;
+  }
+
+  .story .inner .top-textBox p.sub-tit2 {
+    font-size: 18px;
+  }
+
+  .story .inner .bottom-textBox {
+    font-size: 18px;
+  }
+
+  .story .inner .bottom-textBox li.txt br.mo {
+    display: none !important;
+  }
 
   /* br 제거 */
-  .story .bottom-textBox li.txt br.mo{display: none !important; }
+  .story .bottom-textBox li.txt br.mo {
+    display: none !important;
+  }
 }
 
 /* 768 이하: 다시 가로(첫번째 이미지처럼) */
-@media (max-width: 768px){
-  .story .top-textBox {margin-bottom: 122px;}
-  .story {padding: 240px 50px 75px 50px;}
-  .story .inner .top-textBox {text-align: center;}
-  .story .inner .top-textBox p.sub-tit {font-size: 12px; }
-  .story .inner .top-textBox p.tit{font-size: 28px; margin-top: 20px; }
-  .story .inner .bottom-textBox {font-size: 12px;}
-  .story .inner .top-textBox p.tit {text-align: center;}
-  .story .inner .top-textBox p.sub-tit {text-align: center;}
+@media (max-width: 768px) {
+  .story .top-textBox {
+    margin-bottom: 122px;
+  }
+
+  .story {
+    padding: 240px 50px 75px 50px;
+  }
+
+  .story .inner .top-textBox {
+    text-align: center;
+  }
+
+  .story .inner .top-textBox p.sub-tit {
+    font-size: 12px;
+  }
+
+  .story .inner .top-textBox p.tit {
+    font-size: 28px;
+    margin-top: 20px;
+  }
+
+  .story .inner .bottom-textBox {
+    font-size: 12px;
+  }
+
+  .story .inner .top-textBox p.tit {
+    text-align: center;
+  }
+
+  .story .inner .top-textBox p.sub-tit {
+    text-align: center;
+  }
 
 
 
 
 
-  .story .inner .top-textBox p.sub-tit2 {font-size: 12px;}
-  .story .top-textBox .tit {padding-bottom: 5px;}
+  .story .inner .top-textBox p.sub-tit2 {
+    font-size: 12px;
+  }
+
+  .story .top-textBox .tit {
+    padding-bottom: 5px;
+  }
+
   /* bottom-textBox 우하단 정렬 해제(기본 흐름) */
-  .story .bottom-textBox{
+  .story .bottom-textBox {
     display: block;
     margin-top: 0;
   }
-  .story .bottom-textBox ul{
+
+  .story .bottom-textBox ul {
     flex-direction: row;
     justify-content: flex-end;
     align-items: flex-start;
@@ -699,45 +1353,85 @@ font-weight: 400; }
 
 
 /* 390 이하: 세로 + 우하단(더 좁게) */
-@media (max-width: 390px){
-  .story .inner {padding: 60px 0 60px;}
-  .story .bottom-textBox{
+@media (max-width: 390px) {
+  .story .inner {
+    padding: 60px 0 60px;
+  }
+
+  .story .bottom-textBox {
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
     margin-top: 18px;
   }
-  .story .bottom-textBox ul{
+
+  .story .bottom-textBox ul {
     flex-direction: column;
     gap: 14px;
-    max-width: 320px; /*  모바일에서 더 타이트하게 */
+    max-width: 320px;
+    /*  모바일에서 더 타이트하게 */
   }
-  .story .inner .bottom-textBox{font-size: 12px;}
+
+  .story .inner .bottom-textBox {
+    font-size: 12px;
+  }
+
+  .stoty {
+    padding: 90px 50px 75px 50px;
+  }
 }
 
 /* --------------------- keyword --------------------- */
 
-@media (max-width: 1024px){
-.keyword .inner .rows  {position: absolute; top: 50%;left: 50%;transform: translate(-50%,-50%);width: 45%; font-size: 38PX;font-family: 'PPMori',sans-serif;}
+@media (max-width: 1024px) {
+  .keyword .inner .rows {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 45%;
+    font-size: 38PX;
+    font-family: 'PPMori', sans-serif;
+  }
 }
 
-@media (max-width: 768px){
-  .keyword .inner .rows  {position: absolute; top: 29%;left: 50%;transform: translate(-50%,-50%);width: 85%; font-size: 28PX;font-family: 'PPMori',sans-serif;}
+@media (max-width: 768px) {
+  .keyword .inner .rows {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+    font-size: 28PX;
+    font-family: 'PPMori', sans-serif;
+  }
 }
 
-@media (max-width: 390px){
-  .keyword .inner .rows  {position: absolute; top: 55%;left: 50%;transform: translate(-50%,-50%);width: 45%; font-size: 15PX;font-family: 'PPMori',sans-serif;}
+@media (max-width: 390px) {
+  .keyword .inner .rows {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    font-size: 15PX;
+    font-family: 'PPMori', sans-serif;
+  }
+
+  .keyword .face {
+    height: 48vh;
+  }
 }
 
 
-/* ------------------------story end----------------------------*/ 
+/* ------------------------story end----------------------------*/
 
 
 /*------------------------ Package ---------------------------- */
 
-@media (max-width: 1620px){
+@media (max-width: 1620px) {
 
-  .Package .middle{
+  .Package .middle {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-areas:
@@ -748,13 +1442,13 @@ font-weight: 400; }
   }
 
   /* 여백 재조정 */
- 
 
-  .copy-wrap{
+
+  .copy-wrap {
     margin-top: 0;
   }
 
-  .thumb-wrap{
+  .thumb-wrap {
     margin-left: 305px;
     bottom: 60px;
     width: 320px;
@@ -769,137 +1463,208 @@ font-weight: 400; }
 
 
 
-@media (max-width: 1024px){
-  .Package .inner{ padding: 80px 52px; }
-  .Package .top h2{
+@media (max-width: 1024px) {
+  .Package .inner {
+    padding: 80px 52px;
+  }
+
+  .Package .top h2 {
     width: 100%;
     font-size: 44px;
   }
 
-  .Package .middle {display: block; gap: 30px;} */
-  .Package .middle .left,
-  .Package .middle .right{
-    width: 100%;
-  }
-  .Package .middle .left p{
-    font-size: 38px; margin: 0;
+
+
+  .Package .middle {
+    display: block;
+    gap: 30px;
   }
 
-  .Package .thumb-stage{
+  */ .Package .middle .left,
+  .Package .middle .right {
+    width: 100%;
+  }
+
+  .Package .middle .left p {
+    font-size: 38px;
+    margin: 0;
+  }
+
+  .Package .thumb-stage {
     width: 320px;
     height: 420px;
   }
-  .Package .copy{
+
+  .Package .copy {
     margin: 100px 0 0 300px;
     width: 70%;
     font-size: 18px;
-    
-  }
-.Package .copy li {width: 100%}
-.site-header{padding:40px 40px 20px;}
-.Package .inner{padding:80px 40px;}
-.Package .top h2{font-size:48px;width:100%;}
-/* .Package .middle{gap:40px; } */
-.Package .left p{font-size:32px;}
-.Package .right{grid-template-columns:340px 1fr;column-gap:40px;}
-.thumb-wrap{width:269px;height:341px;}
-.Package .inner{ padding: 80px 40px; }
-    .Package .top h2{ font-size: 48px; width: 100%; font-weight: 500; }
 
-
-    .thumb-wrap{ width: 340px; height: 430px; margin-top: 140px; ; }
-
-
-@media (max-width: 1024px){
-
-  .Package .middle{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "left"
-      "copy"
-      "thumb";
-    row-gap: 48px;
   }
 
-  /* 여백 재조정 */
- 
-
-  .copy-wrap{
-    margin-top: 0;
+  .Package .copy li {
+    width: 100%
   }
 
-  .thumb-wrap{
-    margin-left: 305px;
-    bottom: 60px;
-    width: 320px;
-    height: 420px;
+  .site-header {
+    padding: 40px 40px 20px;
   }
+
+  .Package .inner {
+    padding: 80px 40px;
+  }
+
+  .Package .top h2 {
+    font-size: 48px;
+    width: 100%;
+  }
+
+  /* .Package .middle{gap:40px; } */
+  .Package .left p {
+    font-size: 32px;
+  }
+
+  .Package .right {
+    grid-template-columns: 340px 1fr;
+    column-gap: 40px;
+  }
+
+  .thumb-wrap {
+    width: 269px;
+    height: 341px;
+  }
+
+  .Package .inner {
+    padding: 80px 40px;
+  }
+
+  .Package .top h2 {
+    font-size: 48px;
+    width: 100%;
+    font-weight: 500;
+  }
+
+
+  .thumb-wrap {
+    width: 340px;
+    height: 430px;
+    margin-top: 140px;
+    ;
+  }
+
+
+  @media (max-width: 1024px) {
+
+    .Package .middle {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "left"
+        "copy"
+        "thumb";
+      row-gap: 48px;
+    }
+
+    /* 여백 재조정 */
+
+
+    .copy-wrap {
+      margin-top: 0;
+    }
+
+    .thumb-wrap {
+      margin-left: 305px;
+      bottom: 60px;
+      width: 320px;
+      height: 420px;
+    }
+  }
+
+
+
+
+
+
+
 }
 
-
-
-
-
-
-
-}
-
-@media (max-width: 768px){
+@media (max-width: 768px) {
 
   /* 섹션 기본 */
-  .Package{
+  .Package {
     min-height: auto;
     height: auto;
     overflow: hidden;
   }
+
   .Package .middle .left p {
-        font-size: 24px;}
+    font-size: 24px;
+  }
 
 
 
-  .Package .inner{
+  .Package .inner {
     max-width: 100%;
     padding: 90px 20px 40px;
   }
 
-  /* ✅ 768에서 “전체 레이아웃”을 grid area로 재배치 */
-  .Package .inner{
+  /*  768에서 “전체 레이아웃”을 grid area로 재배치 */
+  .Package .inner {
     display: grid;
-    grid-template-columns: 1fr 1fr;   /* 좌/우 2열 */
+    grid-template-columns: 1fr 1fr;
+    /* 좌/우 2열 */
     grid-template-areas:
-      "left left"   /* 1) 파란(left) - 위쪽(원하면 오른쪽 정렬) */
-      "top  top"    /* 2) 빨간(top) */
-      "copy copy"   /* 3) 초록(copy) */
-      "thumb thumb" /* 4) 노랑(thumb) */
+      "left left"
+      /* 1) 파란(left) - 위쪽(원하면 오른쪽 정렬) */
+      "top  top"
+      /* 2) 빨간(top) */
+      "copy copy"
+      /* 3) 초록(copy) */
+      "thumb thumb"
+      /* 4) 노랑(thumb) */
     ;
     row-gap: 18px;
   }
 
-  /* ✅ 영역 지정 */
-  .Package .top{ grid-area: top; }
-  .Package .middle{ display: contents; } /* middle 래퍼는 레이아웃 방해 안 하게 */
-  .Package .left{ grid-area: left; }
-  .Package .copy-wrap{ grid-area: copy; }
-  .Package .thumb-wrap{ grid-area: thumb; }
+  /*  영역 지정 */
+  .Package .top {
+    grid-area: top;
+  }
+
+  .Package .middle {
+    display: contents;
+  }
+
+  /* middle 래퍼는 레이아웃 방해 안 하게 */
+  .Package .left {
+    grid-area: left;
+  }
+
+  .Package .copy-wrap {
+    grid-area: copy;
+  }
+
+  .Package .thumb-wrap {
+    grid-area: thumb;
+  }
 
   /* =========================
-     폰트 사이즈(요구사항 반영)
+    폰트 사이즈(요구사항 반영)
      ========================= */
 
   /* 빨간: 36px */
-  .Package .top h2{
-    width: 54%;
+  .Package .top h2 {
+    width: 100%;
     font-size: 36px;
     line-height: 1.2;
-    margin-top:146px0;
+    margin-top: 146px;
 
-    /* ✅ “그 아래 왼쪽” 느낌 */
+    /*  “그 아래 왼쪽” 느낌 */
     text-align: left;
   }
 
   /* 파란: 24px (맨위 오른쪽) */
-  .Package .left p{
+  .Package .left p {
     font-size: 24px;
     line-height: 1.25;
     margin: 0;
@@ -910,35 +1675,78 @@ font-weight: 400; }
   }
 
   /* 초록: 12px */
-  .Package .copy li p{
+  .Package .copy li p {
     font-size: 12px;
     line-height: 1.7;
     margin: 0;
   }
 
   /* copy 간격 */
-  .Package .copy{ margin: 0; padding: 0; }
-  .Package .copy li + li{ margin-top: 12px; }
-  .Package .copy-wrap{ margin-top: 0; }
+  .Package .copy {
+    margin: 0;
+    padding: 0;
+  }
+
+  .Package .copy li+li {
+    margin-top: 12px;
+  }
+
+  .Package .copy-wrap {
+    margin-top: 0;
+  }
 
   /* 노란 썸네일: 200*254, 아래 가운데 */
-  .Package .thumb-wrap{
+  .Package .thumb-wrap {
     width: 200px;
     height: 254px;
-    margin: 18px auto 0;   /* 아래 가운데 */
+    margin: 18px auto 0;
+    /* 아래 가운데 */
     position: relative;
   }
 
-  .Package .thumb-canvas{
-    border-radius: 100px 100px 0 0; /* 200 기준 상단 라운드 느낌 */
+  .Package .thumb-canvas {
+    border-radius: 100px 100px 0 0;
+    /* 200 기준 상단 라운드 느낌 */
+  }
+
+  /* ========================================
+     390px Package 섹션 높이 조정
+     - Timeline sticky에 영향을 주지 않도록 높이 제한
+  ======================================== */
+  .Package {
+    min-height: auto !important;
+    height: auto !important;
+    max-height: none !important;
+    /* Package가 과도하게 높지 않도록 */
+  }
+
+  .Package .middle {
+    min-height: auto !important;
+    padding-bottom: 30px !important;
+    /* 하단 여백 줄임 */
   }
 
   /* 이미지 겹치기 유지 */
-  .Package .thumb-canvas img{
+  .Package .thumb-canvas img {
     width: 100%;
     height: 100%;
   }
-  .Package .copy {width: 95%; margin-bottom: 160px;}
+
+  .Package .copy {
+    width: 75%;
+    margin-bottom: 160px;
+  }
+}
+
+
+@media (max-width: 390x) {
+  .Package .top {
+    width: 100%;
+    font-size: 26px;
+    text-align: center;
+    line-height: 1.2;
+  }
+
 }
 
 
@@ -946,345 +1754,288 @@ font-weight: 400; }
 
 
 /* =========================================================
-    1024/768 : Horizontal → Vertical Sticky Card Stack
-   - Timeline1(2003)도 카드로 유지 + 상단 고정(sticky)
-   - Timeline2~6은 그 아래에서 sticky로 올라와 "붙는" 효과
-   - 기존 horizontal scroll용 sticky/height/transform 무력화
+      1024/768 : Horizontal → Vertical Sticky Card Stack
+    - Timeline1(2003)도 카드로 유지 + 상단 고정(sticky)
+    - Timeline2~6은 그 아래에서 sticky로 올라와 "붙는" 효과
+    - 기존 horizontal scroll용 sticky/height/transform 무력화
 ========================================================= */
 
-/* 1024*623 */
-@media (max-width: 1024px){
-  :root{
-    --tlHeaderTop: 16px;     /* 카드가 붙는 최상단 여백 */
-    --tlGap: 18px;           /* 카드 간격 */
-    --tlRadius: 18px;
-    --tlPadX: 48px;
-    --tlPadY: 34px;
-    --tlStickyOffset: 0px; /* Timeline1 아래에서 다른 카드들이 붙는 위치(핵심) */
-  }
+/*  TimeLine 전용 거터 고정(1920 기준) */
+.TimeLine {
+  --tlGutterL: 100px;
+  /* line01 margin-left 값과 통일 */
+  --tlItemPadL: 100px;
+  /* li 공통 padding-left 값과 통일 */
+}
 
-  /* 가로 스크롤 구조 해제 */
-  .timeline-scroll{
-    height: auto !important;  /* JS가 잡던 height 무력화 */
-    touch-action: auto;
-  }
-  .timeline-sticky{
-    position: static;
-    top: auto;
-    height: auto;
-    overflow: visible;
-    background: #F3F4F0;
-  }
-  .timeline-track{
-    display: flex;
-    flex-direction: column;
-    transform: none !important;
-    height: auto;
-    will-change: auto;
-  }
-  .timeline-track > section{
-    width: 100%;
-    height: auto;
-    overflow: visible;
-  }
-  /* 공통 카드 스타일 */
-  .timeline1, .timeline2, .timeline3, .timeline4, .timeline5, .timeline6{
-    position: sticky;
-    z-index: 5;
-    margin-bottom: var(--tlGap);
-  }
-  .timeline1 .inner, .timeline2 .inner, .timeline3 .inner,
-  .timeline4 .inner, .timeline5 .inner, .timeline6 .inner{
-    padding: var(--tlPadY) var(--tlPadX) !important;
-    border-radius: var(--tlRadius);
-    background: #F3F4F0;
-    box-shadow: 0 14px 30px rgba(0,0,0,0.08);
-    border: 1px solid rgba(0,0,0,0.06);
-    box-sizing: border-box;
-  }
-  /* Timeline1(2003) : 가장 위에 고정 */
-  .timeline1{
-    top: var(--tlHeaderTop);
-    z-index: 30; /* 다른 카드보다 위 */
-  }
-  /* Timeline2~6 : Timeline1 아래에서 붙기 (쌓이는 느낌) */
-  .timeline2, .timeline3, .timeline4, .timeline5, .timeline6{
-    top: var(--tlStickyOffset);
-    z-index: 10;
-  }
-  /*  카드 내부 레이아웃: 좌/우 → 세로(모바일/태블릿) */
-  .timeline1 .bottom,
-  .timeline2 .bottom,
-  .timeline3 .bottom,
-  .timeline4 .bottom,
-  .timeline5 .bottom,
-  .timeline6 .bottom{
-    flex-direction: column;
-   /*  gap: 18px; */
-    width: 100%;
-    margin: 0;          /* 기존 5.73% 마진 제거 */
-  }
-  /* topBox 타이포 */
-  .topBox h2{
-    width: 100% !important;
-    margin: 0 0 14px 0 !important;
-    font-size: 56px !important;
-  }
-  /* 연도 타이포 다운 */
-  .timeline1 .inner .bottom .left h1,
-  .timeline2 .inner .bottom .right .txt h1,
-  .timeline3 .inner .bottom .right .txt h1,
-  .timeline4 .inner .bottom .right .txt h1,
-  .timeline5 .inner .bottom .right .txt h1,
-  .timeline6 .inner .bottom .right .txt h1{
-    font-size: 96px !important;
-  }
+/* line01 시작점 고정 */
+.TimeLine .con .list li.line01 {
+  margin-left: var(--tlGutterL) !important;
+}
 
-  /* 좌/우 width 강제 100% */
-  .timeline1 .inner .bottom .left,
-  .timeline1 .inner .bottom .right,
-  .timeline2 .inner .bottom .left,
-  .timeline2 .inner .bottom .right,
-  .timeline3 .inner .bottom .left,
-  .timeline3 .inner .bottom .right,
-  .timeline4 .inner .bottom .left_timeline_4,
-  .timeline4 .inner .bottom .right,
-  .timeline5 .inner .bottom .left,
-  .timeline5 .inner .bottom .right,
-  .timeline6 .inner .bottom .left,
-  .timeline6 .inner .bottom .right{
-    width: 100% !important;
-  }
-
-  /* 이미지들 너무 튀지 않게 */
-  .timeline1 .inner .bottom .right img,
-  .timeline2 .inner .bottom .left img,
-  .timeline3 .inner .bottom .left img,
-  .timeline4 .inner .bottom .left_timeline_4 img,
-  .timeline5 .inner .bottom .left img,
-  .timeline6 .inner .bottom .left img{
-    max-width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  /* Timeline2의 absolute 장식 이미지(원래 top:-100px) 과하게 튀면 1024에서 완화 */
-  .timeline2 .inner .bottom .right span img{
-    position: static !important;
-    display: block;
-    margin: 0 0 10px 0;
-    max-width: 240px;
-  }
-
-  /* 기본 bottom 공통 margin 제거(코드에 5.73% 있어서) */
-  .bottom{
-    margin: 0 !important;
-    width: 100% !important;
-    
-  }
-  /*  첫 카드(2003)는 뒤에 깔리게 */
-  .timeline1{ z-index: 5 !important; }
-
-  /*  뒤로 갈수록 앞으로(높은 z-index) */
-  .timeline2{ z-index: 10 !important; }
-  .timeline3{ z-index: 15 !important; }
-  .timeline4{ z-index: 20 !important; }
-  .timeline5{ z-index: 25 !important; }
-  .timeline6{ z-index: 30 !important; }
-
-  /* 카드 배경 확실히(겹칠 때 비침 방지) */
-  .timeline1 .inner,
-  .timeline2 .inner,
-  .timeline3 .inner,
-  .timeline4 .inner,
-  .timeline5 .inner,
-  .timeline6 .inner{
-    background: #F3F4F0 !important;
+/* 1620 이하에서 li 전체에 주던 왼쪽 패딩도 변수로 고정 */
+@media (max-width: 1620px) {
+  .TimeLine .con .list>li {
+    padding-left: var(--tlItemPadL) !important;
   }
 }
+
+
+
+
+
+
+
 
 /* timeline_mobile_900.css */
 
 
 
-    @media (max-width: 900px){
+@media (max-width: 900px) {
 
-    /* 섹션/컨테이너: sticky 잘리지 않게 */
-    .TimeLine,
-    .TimeLine .wrap,
-    .TimeLine .con{
-        overflow: visible !important;
-    }
-    /*  모바일 여백 */
-    .TimeLine .con{
-        padding: 64px 20px 160px !important;
-    }
+  /* 섹션/컨테이너: sticky 잘리지 않게 */
+  .TimeLine,
+  .TimeLine .wrap,
+  .TimeLine .con {
+    overflow: visible !important;
+  }
 
-    /*  (중요) 상단에 있는 Our history는 sticky로 고정하지 않음 (반복 버전이므로) */
+  /*  모바일 여백 */
+  .TimeLine .con {
+    padding: 64px 20px 160px !important;
+  }
 
-    .TimeLine .con > .toptit{
-        position: static !important;
-        margin: 0 0 16px !important;
-        padding: 0 !important;
-        background: transparent !important;
-        backdrop-filter: none !important;
-        z-index: auto !important;
-    }
+  /*  (중요) 상단에 있는 Our history는 sticky로 고정하지 않음 (반복 버전이므로) */
+
+  .TimeLine .con>.toptit {
+    position: static !important;
+    margin: 0 0 16px !important;
+    padding: 0 !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    z-index: auto !important;
+  }
 
 
-    /*  리스트: 가로 → 세로로 */
-    .TimeLine .con .list{
-        display: block !important;
-        width: 100% !important;
-        padding: 0 !important;
-        margin: 0 !important;
-        transform: none !important;     /* PC gsap transform 잔여 방지 */
-        will-change: auto !important;
-    }
+  /*  리스트: 가로 → 세로로 */
+  .TimeLine .con .list {
+    display: block !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    transform: none !important;
+    /* PC gsap transform 잔여 방지 */
+    will-change: auto !important;
+  }
 
-    /*  가로 stroke(ul::before) 모바일에서는 끔(필요하면 살려도 됨) */
-    .TimeLine .con .list::before{
-        content: none !important;
-    }
+  /*  가로 stroke(ul::before) 모바일에서는 끔(필요하면 살려도 됨) */
+  .TimeLine .con .list::before {
+    content: none !important;
+  }
 
-    /* =========================
+  /* =========================
         카드(각 li) sticky 스택
         - 아래에서 위로 올라오며 겹치는 느낌
+        - 배경색으로 뒤 카드를 가림 (100% 너비 사용)
     ========================= */
-    .TimeLine .con .list > li{
-        position: sticky !important;
-        top: 18px;                       /*  화면 상단에서 붙는 위치 (조절 포인트) */
-        z-index: 1;
+  .TimeLine .con .list>li {
+    position: sticky !important;
+    top: 18px;
+    /*  화면 상단에서 붙는 위치 (조절 포인트) */
+    z-index: 1;
 
-        width: 100% !important;
-        max-width: none !important;
+    width: 100% !important;
+    /* 컨테이너 전체 너비 (vw 대신 % 사용) */
+    max-width: none !important;
 
-        background: #F3F4F0;             /* 섹션 배경과 동일하게 */
-        padding: 22px 0 56px !important;
-        overflow: visible !important;
-    }
+    background: #F3F4F0;
+    /* 섹션 배경과 동일하게 - 뒤 카드를 가림 */
+    padding: 22px 0 56px !important;
+    overflow: visible !important;
+  }
 
-    /* 카드 간 스크롤 길이(겹침 템포) */
-    .TimeLine .con .list > li + li{
-        margin-top: 160px !important;    /*  더 천천히: 200~260 */
-    }
+  /* 카드 간 스크롤 길이(겹침 템포) */
+  .TimeLine .con .list>li+li {
+    margin-top: 10px !important;
+    /*  더 천천히: 200~260 */
+  }
 
-    /* 마지막 카드 아래 여백 */
-    .TimeLine .con .list > li:last-child{
-        margin-bottom: 260px !important;
-    }
+  /* 마지막 카드 아래 여백 */
+  .TimeLine .con .list>li:last-child {
+    margin-bottom: 260px !important;
+  }
 
-    /* =========================
+  /* =========================
         Our history 반복 노출(각 카드마다)
         - li 안에 p.toptit이 있어야 함
         - (현재 HTML은 ul 전에 1개만 있어서, 반복을 원하면 각 li 안에도 넣어야 해)
     ========================= */
-    .TimeLine .con .list > li .toptit{
-        display: block !important;
-        position: sticky;                /* 카드 상단에서 따라다니는 느낌 */
-        top: 18px;                       /* li의 top과 동일 추천 */
-        z-index: 5;
+  .TimeLine .con .list>li .toptit {
+    display: block !important;
+    position: sticky;
+    /* 카드 상단에서 따라다니는 느낌 */
+    top: 18px;
+    /* li의 top과 동일 추천 */
+    z-index: 5;
 
-        margin: 0 0 14px !important;
-        padding: 10px 0 !important;
+    margin: 0 0 14px !important;
+    padding: 10px 0 !important;
 
-        font-size: 36px !important;
-        line-height: 1 !important;
+    font-size: 36px !important;
+    line-height: 1 !important;
 
-        background: rgba(243,244,240,0.92);
-        backdrop-filter: blur(2px);
-    }
+    /* 100% 너비 사용 (vw 대신) */
+    width: 100% !important;
 
-    /* =========================
+    background: rgba(243, 244, 240, 0.92);
+    backdrop-filter: blur(2px);
+  }
+
+  /* =========================
         PC용 좌/우 배치 해제 → 모바일은 세로 흐름
     ========================= */
-    .TimeLine .con .list li.line01,
-    .TimeLine .con .list li.line02,
-    .TimeLine .con .list li.line03,
-    .TimeLine .con .list li.line04,
-    .TimeLine .con .list li.line05,
-    .TimeLine .con .list li.line06{
-        display: block !important;
-        gap: 0 !important;
-        margin-left: 0 !important;
-        padding-left: 0 !important;
-    }
+  .TimeLine .con .list li.line01,
+  .TimeLine .con .list li.line02,
+  .TimeLine .con .list li.line03,
+  .TimeLine .con .list li.line04,
+  .TimeLine .con .list li.line05,
+  .TimeLine .con .list li.line06 {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
 
-    .TimeLine .con .list .left,
-    .TimeLine .con .list .right{
-        width: 100% !important;
-        height: auto !important;
-        position: static !important;
-    }
+  /* line02의 .toptit을 맨 위로 */
+  .TimeLine .con .list li.line02 .toptit,
+  .TimeLine .con .list li.line02 .toptit.is-cloned {
+    order: -10 !important;
+    /* 가장 먼저 표시 */
+    display: block !important;
+  }
 
-    .TimeLine .con .list .img{
-        width: 100% !important;
-        height: auto !important;
-        position: static !important;
-        margin: 0 0 16px !important;
-    }
+  /* 모든 li의 .toptit을 맨 위로 */
+  .TimeLine .con .list>li .toptit,
+  .TimeLine .con .list>li .toptit.is-cloned {
+    order: -10 !important;
+  }
 
-    .TimeLine .con .list .img img{
-    /*     width: 100% !important;
-        height: auto !important; */
-        display: block;
-        object-fit: cover;
-    }
+  .TimeLine .con .list li.line02 .left {
+    order: 1 !important;
+  }
 
-    /* textBox 정렬 모바일용 */
-    .TimeLine .con .list .textBox{
-        width: 100% !important;
-        text-align: left !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        position: relative;
-        z-index: 2;
-    }
+  .TimeLine .con .list li.line02 .bg_img {
+    order: 2 !important;
+  }
 
-    /* =========================
+  .TimeLine .con .list li.line02 .textBox {
+    order: 3 !important;
+  }
+
+  /* =========================
+      각 line별로 z-index 순차 부여
+      - line02가 line01 위로, line03이 line02 위로 덮이도록
+  ========================= */
+  .TimeLine .con .list li.line01 {
+    z-index: 1 !important;
+  }
+
+  .TimeLine .con .list li.line02 {
+    z-index: 2 !important;
+  }
+
+  .TimeLine .con .list li.line03 {
+    z-index: 3 !important;
+  }
+
+  .TimeLine .con .list li.line04 {
+    z-index: 4 !important;
+  }
+
+  .TimeLine .con .list li.line05 {
+    z-index: 5 !important;
+  }
+
+  .TimeLine .con .list li.line06 {
+    z-index: 6 !important;
+  }
+
+  .TimeLine .con .list .left,
+  .TimeLine .con .list .right {
+    width: 100% !important;
+    height: auto !important;
+    position: static !important;
+  }
+
+  .TimeLine .con .list .img {
+    width: 100% !important;
+    height: auto !important;
+    position: static !important;
+    margin: 0 0 16px !important;
+  }
+
+  .TimeLine .con .list .img img {
+    width: 100% !important;
+    height: auto !important;
+    display: block;
+    object-fit: cover;
+  }
+
+  /* textBox 정렬 모바일용 */
+  .TimeLine .con .list .textBox {
+    width: 100% !important;
+    text-align: left !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* =========================
         타이포 스케일(모바일)
     ========================= */
-    .TimeLine .con .list li h1{
-        font-size: 58px !important;
-        line-height: 1 !important;
-        margin: 10px 0 6px !important;
-    }
+  .TimeLine .con .list li h1 {
+    font-size: 58px !important;
+    line-height: 1 !important;
+    margin: 10px 0 6px !important;
+  }
 
-    .TimeLine .con .list li span.since{
-        font-size: 16px !important;
-        opacity: 0.9;
-    }
+  .TimeLine .con .list li span.since {
+    font-size: 16px !important;
+    opacity: 0.9;
+  }
 
-    .TimeLine .con .list li span.sub{
-        display: block;
-        font-size: 15px !important;
-        margin-top: 4px !important;
-    }
+  .TimeLine .con .list li span.sub {
+    display: block;
+    font-size: 15px !important;
+    margin-top: 4px !important;
+  }
 
-    .TimeLine .con .list li p.txt{
-        font-size: 13px !important;
-        line-height: 1.65 !important;
-        margin-top: 10px !important;
-    }
+  .TimeLine .con .list li p.txt {
+    font-size: 13px !important;
+    line-height: 1.65 !important;
+    margin-top: 10px !important;
+  }
 
-    /* =========================
+  /* =========================
         line02 bg_img는 모바일에서 배경 느낌으로 약하게
     ========================= */
-    .TimeLine .con .list li.line02 .bg_img{
-        position: static !important;
-        margin: 12px 0 6px !important;
-        opacity: 0.22 !important;
-        pointer-events: none;
-    }
+  .TimeLine .con .list li.line02 .bg_img {
+    position: static !important;
+    margin: 12px 0 6px !important;
+    opacity: 0.22 !important;
+    pointer-events: none;
+  }
 
-    .TimeLine .con .list li.line02 .bg_img img{
-        width: 100% !important;
-        height: auto !important;
-        display: block;
-    }
+  .TimeLine .con .list li.line02 .bg_img img {
+    width: 100% !important;
+    height: auto !important;
+    display: block;
+  }
 
-    /* line02의 2장 이미지는 세로로 자연스럽게 */
-/*     .TimeLine .con .list li.line02 .left .img{
+  /* line02의 2장 이미지는 세로로 자연스럽게 */
+  /*     .TimeLine .con .list li.line02 .left .img{
         display: grid !important;
         grid-template-columns: 1fr !important;
         gap: 14px !important;
@@ -1294,63 +2045,68 @@ font-weight: 400; }
 
 
   /*  원본(ul 밖) toptit은 숨김 */
-    .TimeLine .con > .toptit{
-        display: none !important;
-    }
-    /*  li 안에 JS로 복제된 toptit만 표시 + sticky */
-    .TimeLine .con .list > li > .toptit.is-cloned{
-        display: block !important;
-        position: sticky;
-        top: 18px;                 /* li sticky top과 맞추면 예쁨 */
-        z-index: 5;
+  .TimeLine .con>.toptit {
+    display: none !important;
+  }
 
-        margin: 0 0 14px 20px !important;
-        padding: 10px 0 !important;
+  /*  li 안에 JS로 복제된 toptit만 표시 + sticky */
+  .TimeLine .con .list>li>.toptit.is-cloned {
+    display: block !important;
+    position: sticky;
+    top: 18px;
+    /* li sticky top과 맞추면 예쁨 */
+    z-index: 5;
 
-        font-size: 42px !important;
-        line-height: 1 !important;
+    margin: 0 0 14px 20px !important;
+    padding: 80px 0 !important;
 
-        background: rgba(243,244,240,0.92);
-        backdrop-filter: blur(2px);
-    
-}}
+    font-size: 42px !important;
+    line-height: 1 !important;
+
+    background: rgba(243, 244, 240, 0.92);
+    backdrop-filter: blur(2px);
+
+  }
+}
 
 
 
 /* 768~900(모바일 sticky 모드)에서 
 line01만: 이미지가 위, 텍스트가 아래 */
-@media (max-width: 900px){
+@media (max-width: 900px) {
 
   /* line01을 세로 flex로 만들고 */
-  .TimeLine .con .list > li.line01{
+  .TimeLine .con .list>li.line01 {
     display: flex !important;
     flex-direction: column !important;
   }
 
   /* 이미지(빨간 영역)를 위로 */
-  .TimeLine .con .list > li.line01 .right{
+  .TimeLine .con .list>li.line01 .right {
     order: -1 !important;
     width: 100% !important;
     height: auto !important;
-    margin: 0 0 16px !important; /* 이미지-텍스트 간격 */
+    margin: 0 0 16px !important;
+    /* 이미지-텍스트 간격 */
   }
 
   /* 이미지 박스/이미지 크기 */
-  .TimeLine .con .list > li.line01 .right .img{
+  .TimeLine .con .list>li.line01 .right .img {
     width: 100% !important;
     height: auto !important;
     margin: 0 !important;
   }
 
-  .TimeLine .con .list > li.line01 .right .img img{
+  .TimeLine .con .list>li.line01 .right .img img {
     width: 100% !important;
     height: auto !important;
     display: block;
-    object-fit: cover; /* svg면 contain이 더 예쁠 수도 */
+    object-fit: cover;
+    /* svg면 contain이 더 예쁠 수도 */
   }
 
   /* 텍스트 박스는 아래로 */
-  .TimeLine .con .list > li.line01 .textBox{
+  .TimeLine .con .list>li.line01 .textBox {
     order: 0 !important;
     width: 61% !important;
     margin: 0 !important;
@@ -1359,271 +2115,567 @@ line01만: 이미지가 위, 텍스트가 아래 */
   }
 }
 
-@media (max-width: 900px){
-  .TimeLine .con .list > li{
+@media (max-width: 900px) {
+  .TimeLine .con .list>li {
     display: flex;
     flex-direction: column;
   }
 
-  .TimeLine .con .list > li .toptit{
-    order: -2; /* 가장 위 */
+  .TimeLine .con .list>li .toptit {
+    order: -2;
+    /* 가장 위 */
   }
 
-  .TimeLine .con .list > li .right{
+  .TimeLine .con .list>li .right {
     order: -1;
   }
 
-  .TimeLine .con .list > li .textBox{
+  .TimeLine .con .list>li .textBox {
     order: 0;
   }
-  
+
 }
 
 
 /* 768*562 */
 
-@media (max-width: 768px){
-  :root{
+@media (max-width: 768px) {
+  :root {
     --tlHeaderTop: 12px;
     --tlGap: 14px;
     --tlRadius: 16px;
     --tlPadX: 24px;
     --tlPadY: 22px;
-    --tlStickyOffset: 10px; /*  768에서 더 컴팩트 */
+    --tlStickyOffset: 10px;
+    /*  768에서 더 컴팩트 */
   }
-  .topBox h2{font-size: 44px !important;}
+
+  .topBox h2 {
+    font-size: 44px !important;
+  }
 
   .timeline1 .inner .bottom .left h1,
   .timeline2 .inner .bottom .right .txt h1,
   .timeline3 .inner .bottom .right .txt h1,
   .timeline4 .inner .bottom .right .txt h1,
   .timeline5 .inner .bottom .right .txt h1,
-  .timeline6 .inner .bottom .right .txt h1{
+  .timeline6 .inner .bottom .right .txt h1 {
     font-size: 84px !important;
   }
-  .timeline1 .inner .bottom .left span{font-size: 22px !important;}
-  .timeline1 .inner .bottom .left p:nth-of-type(1){font-size: 18px !important;}
-  .timeline1 .inner .bottom .left p:nth-of-type(2){font-size: 15px !important;}
-  .TimeLine .con .list li.line01 .right .img img {margin-left: 70px; margin-top: 190px;}
+
+  .timeline1 .inner .bottom .left span {
+    font-size: 22px !important;
+  }
+
+  .timeline1 .inner .bottom .left p:nth-of-type(1) {
+    font-size: 18px !important;
+  }
+
+  .timeline1 .inner .bottom .left p:nth-of-type(2) {
+    font-size: 15px !important;
+  }
+
+  .TimeLine .con .list li.line01 .right .img img {
+    margin-left: 0px;
+    margin-top: 20px;
+  }
 
 
   /* 카드 안 이미지 간격이 너무 크면 줄이기 */
-  .timeline3 .inner .bottom .left img:nth-of-type(2){
+  .timeline3 .inner .bottom .left img:nth-of-type(2) {
     margin-top: 20px !important;
   }
-  .timeline1{ z-index: 5 !important; }
-  .timeline2{ z-index: 10 !important; }
-  .timeline3{ z-index: 15 !important; }
-  .timeline4{ z-index: 20 !important; }
-  .timeline5{ z-index: 25 !important; }
-  .timeline6{ z-index: 30 !important; }
+
+  .timeline1 {
+    z-index: 5 !important;
+  }
+
+  .timeline2 {
+    z-index: 10 !important;
+  }
+
+  .timeline3 {
+    z-index: 15 !important;
+  }
+
+  .timeline4 {
+    z-index: 20 !important;
+  }
+
+  .timeline5 {
+    z-index: 25 !important;
+  }
+
+  .timeline6 {
+    z-index: 30 !important;
+  }
 
   .timeline1 .inner,
   .timeline2 .inner,
   .timeline3 .inner,
   .timeline4 .inner,
   .timeline5 .inner,
-  .timeline6 .inner{
+  .timeline6 .inner {
     background: #F3F4F0 !important;
   }
 
-.TimeLine .con .list li.line01 .right .img img {width: 442px !important; height: 249px !important;}
+  .TimeLine .con .list li.line01 .right .img img {
+    width: 442px !important;
+    height: 249px !important;
+  }
 
-.TimeLine .con .list li.line02 .left img.first {width:208px !important; height: 274px !important;}
-.TimeLine .con .list li.line02 .left img.sec {width:193px !important; height: 273px !important;}
-.TimeLine .con .list li.line02 .left   {display: flex;}
-.TimeLine .con .list .left, .TimeLine .con .list .right {width: 50%}
+  .TimeLine .con .list li.line02 .left img.first {
+    width: 208px !important;
+    height: 274px !important;
+  }
+
+  .TimeLine .con .list li.line02 .left img.sec {
+    width: 193px !important;
+    height: 273px !important;
+  }
+
+  .TimeLine .con .list li.line02 .left {
+    display: flex;
+  }
+
+  .TimeLine .con .list .left,
+  .TimeLine .con .list .right {
+    width: 50%
+  }
 }
 
-    
+
 
 /* 시작 */
 
-@media (max-width: 1620px){
-    /* timeline공통 */
-.TimeLine .con p.toptit{padding-left: 5px; font-size: 58px;}
+@media (max-width: 1620px) {
 
-.TimeLine .con .list {gap: 100px;}
-/* timeline1 */
-/* .TimeLine .con {height: 800px;} */
-.TimeLine .con .list li h1 {font-size: 80px; padding-left: 5px;}
-.TimeLine .con .list li.line01 .textBox h1 {margin-left: 0px; }
-.TimeLine .con .list li p.txt {font-size: 12px;}
-.TimeLine .con .list li.line01 .textBox {width: 395px;}
-.TimeLine .con .list li.line01 .right .img {width: 392px; height: 221px; position: absolute ; top: 25%; right: -3%;} 
-
-.TimeLine .con .list li span.sub {font-size: 14px;}
-.TimeLine .con .list li span.since {font-size: 24px;}
-.TimeLine .con .list li.line01 {margin-left: 30px;}
-
-
-
-
-
-
-
-
-/* timeline2 */
-.TimeLine .con .list > li {padding: 30px 200px 0 100px;}
-.TimeLine .con .list li.line02 .left img.first{width: 200px; height: 270px;}
-.TimeLine .con .list li.line02 .left img.sec {width: 200px; height: 250px; }
-.TimeLine .con .list li.line02 .textBox {width: 325px; margin-top: 160px; }
-
-.TimeLine .con .textBox .sub{background-color: transparent;}
-.TimeLine .con .textBox .txt{background-color: transparent;}
-
-@media (max-width: 768px){
-
-  /* ===== line02만 2열 grid로 재배치 ===== */
-  .TimeLine .con .list > li.line02{
-    display: grid !important;
-    grid-template-columns: 214px 1fr; /* 좌(이미지) / 우(텍스트영역) */
-    grid-template-rows: 300px auto;    /* 우측: bg -> text */
-    column-gap: 24px;
-    row-gap: 14px;
-    align-items: start;
+  /* timeline공통 */
+  .TimeLine .con p.toptit {
+    padding-left: 5px;
+    font-size: 58px;
   }
 
-  /* 왼쪽 이미지(빨간) : 1열 전체(2행) */
-  .TimeLine .con .list > li.line02 .left{
-    grid-column: 1;
-    grid-row: 1 / span 2;
-    width: 100% !important;
-    position: relative !important;
+  .TimeLine .con .list {
+    gap: 100px;
   }
 
-  /*  두 이미지 “세로로” */
-  .TimeLine .con .list > li.line02 .left .img{
+  /* timeline1 */
+  /* .TimeLine .con {height: 800px;} */
+  .TimeLine .con .list li h1 {
+    font-size: 80px;
+    padding-left: 5px;
+  }
+
+  .TimeLine .con .list li.line01 .textBox h1 {
+    margin-left: 0px;
+  }
+
+  .TimeLine .con .list li p.txt {
+    font-size: 12px;
+  }
+
+  .TimeLine .con .list li.line01 .textBox {
+    width: 395px;
+  }
+
+  .TimeLine .con .list li.line01 .right .img {
+    width: 392px;
+    height: 221px;
+    position: absolute;
+    top: 25%;
+    right: -20%;
+  }
+
+  .TimeLine .con .list li span.sub {
+    font-size: 14px;
+  }
+
+  .TimeLine .con .list li span.since {
+    font-size: 24px;
+  }
+
+  .TimeLine .con .list li.line01 {
+    margin-left: 30px;
+  }
+
+
+
+  /* timeline2 */
+  .TimeLine .con .list>li {
+    padding: 30px 200px 0 100px;
+  }
+
+  .TimeLine .con .list li.line02 .left img.first {
+    width: 200px;
+    height: 270px;
+  }
+
+  .TimeLine .con .list li.line02 .left img.sec {
+    width: 200px;
+    height: 250px;
+  }
+
+  .TimeLine .con .list li.line02 .textBox {
+    width: 325px;
+    margin-top: 160px;
+  }
+
+  .TimeLine .con .textBox .sub {
+    background-color: transparent;
+  }
+
+  .TimeLine .con .textBox .txt {
+    background-color: transparent;
+  }
+
+  @media (max-width: 768px) {
+
+    /* ===== line02만 2열 grid로 재배치 ===== */
+    .TimeLine .con .list>li.line02 {
+      display: grid !important;
+      grid-template-columns: 214px 1fr;
+      /* 좌(이미지) / 우(텍스트영역) */
+      grid-template-rows: 300px auto;
+      /* 우측: bg -> text */
+      column-gap: 24px;
+      row-gap: 14px;
+      align-items: start;
+
+    }
+
+
+    /* 왼쪽 이미지(빨간) : 1열 전체(2행) */
+    .TimeLine .con .list>li.line02 .left {
+      grid-column: 1;
+      grid-row: 1 / span 2;
+      width: 100% !important;
+      position: relative !important;
+    }
+
+    /*  두 이미지 “세로로” */
+    .TimeLine .con .list>li.line02 .left .img {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 16px;
+      margin: 0 !important;
+    }
+
+    .TimeLine .con .list>li.line02 .left .img img {
+      width: 100% !important;
+      height: auto !important;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* 오른쪽 위 배경이미지(초록) */
+    .TimeLine .con .list>li.line02 .bg_img {
+      grid-column: 2;
+      grid-row: 1;
+      position: static !important;
+      /* 모바일에서 absolute 해제 */
+      margin: 0 !important;
+      opacity: 1 !important;
+      /* 지금 900px 규칙에서 0.22로 낮추고 있어서 다시 올림 */
+    }
+
+    .TimeLine .con .list>li.line02 .bg_img img {
+      width: 100% !important;
+      height: auto !important;
+      display: block;
+    }
+
+    /* 오른쪽 아래 텍스트박스 */
+    .TimeLine .con .list>li.line02 .textBox {
+      /*  grid-column: 2;  */
+      grid-row: 2;
+      width: 100% !important;
+      text-align: left !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    .TimeLine .con .list li.line02 .left img.sec {
+      top: 50% !important;
+      left: 50% !important;
+    }
+
+
+    /* (선택) 2009가 너무 커서 레이아웃 깨지면 줄이기 */
+    .TimeLine .con .list>li.line02 .textBox h1 {
+      font-size: 66px !important;
+      /* 너 모바일 공통이 58px라 그대로 */
+      margin: 15px 0 0 !important;
+    }
+
+    @media (max-width: 768px) {
+
+      /* ====== line02 레이아웃: 좌(이미지2개) / 우(bg+text overlap) ====== */
+      .TimeLine .con .list>li.line02 {
+        display: grid !important;
+        grid-template-columns: 1fr 1.15fr;
+        /* 좌/우 비율 */
+        column-gap: 28px;
+        align-items: start;
+      }
+
+      /* ---------- LEFT (빨간) : 이미지 2개를 좌우 배치 ---------- */
+      .TimeLine .con .list>li.line02 .left {
+        grid-column: 1;
+        position: relative;
+      }
+
+
+
+
+      .TimeLine .con .list>li.line02 .left .img {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 18px;
+        align-items: start;
+        margin: 0 !important;
+      }
+
+      /* 큰 사진(위/왼쪽 느낌) */
+      .TimeLine .con .list>li.line02 .left .img img.first {
+        width: 208px !important;
+        height: 274px !important;
+        display: block;
+        transform: translateY(-6px);
+        /* 살짝 위로 */
+      }
+
+      .TimeLine .con .list li.line02 .left img.first {
+        margin-right: 0;
+        margin-left: 0px;
+      }
+
+      /* 작은 사진(아래/오른쪽 느낌) */
+      .TimeLine .con .list>li.line02 .left .img img.sec {
+        width: 193px !important;
+        height: 273px !important;
+        display: block;
+        transform: translateY(46px);
+        /* 더 아래로 내려 높이다름 연출 */
+      }
+
+      /* ---------- RIGHT (초록+파랑) : 오버랩 ---------- */
+      .TimeLine .con .list>li.line02 .bg_img {
+        grid-column: 2;
+        position: relative !important;
+        /* absolute 해제 */
+        margin: 0 !important;
+        opacity: 1 !important;
+      }
+
+      .TimeLine .con .list>li.line02 .bg_img img {
+        width: 100% !important;
+        height: auto !important;
+        display: block;
+      }
+
+      /* 텍스트 박스를 bg 위에 겹치기 */
+      .TimeLine .con .list>li.line02 .textBox {
+        grid-column: 2;
+        position: relative;
+        z-index: 3;
+        /*  bg 위로 */
+        margin-top: -56px !important;
+        /*  겹치는 정도(조절 포인트) */
+        padding: 0 !important;
+        text-align: left !important;
+      }
+
+      .TimeLine .con .list li p.txt {
+        font-size: 12px;
+        font-weight: 200;
+      }
+
+      /* bg는 뒤로 */
+      .TimeLine .con .list>li.line02 .bg_img {
+        z-index: 1;
+      }
+    }
+
+
+  }
+
+
+
+
+  /* .TimeLine .con .list > li > .toptit.is-cloned {
+display: none !important;} */
+  .TimeLine .con .list .textBox {
+    top: 4%;
+    right: -5%;
+  }
+
+  .TimeLine .con .list li.line02 .left img.sec {
+    margin-top: 100px;
+  }
+
+  /* timeline3 */
+  .TimeLine .con .list li.line03 {
+    padding: 30px 0 30px 0;
+    gap: 50;
+  }
+
+  .TimeLine .con .list li.line03 .left .img img:nth-child(1) {
+    width: 260px;
+    height: 146px;
+    margin-right: 50px;
+  }
+
+  .TimeLine .con .list li.line03 .left .img img:nth-child(2) {
+    width: 226px;
+    height: 127px;
+  }
+
+  .TimeLine .con .list li.line03 .textBox {
+    margin-top: 160px
+  }
+
+  ;
+
+  .TimeLine .con .list li.line03 {
+    justify-content: space-between;
+  }
+
+  .TimeLine .con .list li.line03 .left .img img:nth-child(2) {
+    bottom: 217px;
+  }
+
+  .TimeLine .con .list li.line03 {
+    margin-left: 205px;
+    background-color: #F3F4F0;
+  }
+
+  .TimeLine .con .list li h1 {
+    margin-right: 5px;
+  }
+
+  .TimeLine .con .textBox .sub {
+    margin-right: 5px;
+  }
+
+
+
+
+
+  /* timeline4 */
+  .TimeLine .con .list li.line04 {
+    padding: 30px 0 30px 0;
+  }
+
+  .TimeLine .con .list li.line04 .left .img img:nth-child(1) {
+    width: 168px;
+    height: 199px;
+    bottom: -30px;
+  }
+
+  .TimeLine .con .list li.line04 .left .img img:nth-child(2) {
+    width: 295px;
+    height: 171px;
+    position: absolute;
+    right: -114px;
+    top: 124px;
+  }
+
+  .TimeLine .con .list li.line04 .textBox {
+    margin-left: 270px;
+    top: 50px;
+  }
+
+  .TimeLine .con .list>li {
+    overflow: visible !important;
+  }
+
+
+
+  /* timeline5 */
+  .TimeLine .con .list li.line05 .left .img img.first {
+    width: 197px;
+    height: 242px;
+  }
+
+  .TimeLine .con .list li.line05 .left .img img.sec {
+    width: 197px;
+    height: 262px;
+    top: 95px;
+  }
+
+  .TimeLine .con .list li.line05 .left .img img.first {
+    left: 100px;
+  }
+
+  .TimeLine .con .list li.line05 .textBox {
+    right: 147px
+  }
+
+  .TimeLine .con .list li.line05 .textBox {
+    width: 280px;
+    margin-top: 150px;
+    margin-right: 150px;
+  }
+
+  /* line05와 line06 사이 간격 확보 */
+  .TimeLine .con .list li.line05 {
+    margin-right: 200px;
+  }
+
+  /*timeline6  */
+  .TimeLine .con .list li.line06 .left .img {
+    width: 475px;
+    height: 265px;
+  }
+
+  .TimeLine .con .list li.line06 .left {
+    width: 475px;
+    height: 265px;
+    flex-shrink: 0;
+  }
+
+  .TimeLine .con .list li.line06 {
+    width: max-content;
+    min-width: fit-content;
     display: flex !important;
-    flex-direction: column !important;
-    gap: 16px;
-    margin: 0 !important;
+    gap: 80px !important;
+    align-items: flex-start;
+    padding-left: 0;
+    margin-left: 0;
   }
 
-  .TimeLine .con .list > li.line02 .left .img img{
-    width: 100% !important;
-    height: auto !important;
-    display: block;
+  .TimeLine .con .list li.line06 .textBox {
+    position: relative;
+    right: -67px;
+    flex-shrink: 0;
+    width: 357px;
+    margin-top: 0;
+  }
+
+  .TimeLine .con {
+    width: 100%;
+    overflow: visible !important;
+  }
+
+  .TimeLine .con .list li.line06 .textBox {
+    min-width: 0;
+    text-align: left;
+  }
+
+  .TimeLine .con .list li.line06 .left .img img {
+    margin-left: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
   }
 
-  /* 오른쪽 위 배경이미지(초록) */
-  .TimeLine .con .list > li.line02 .bg_img{
-    grid-column: 2;
-    grid-row: 1;
-    position: static !important; /* 모바일에서 absolute 해제 */
-    margin: 0 !important;
-    opacity: 1 !important;       /* 지금 900px 규칙에서 0.22로 낮추고 있어서 다시 올림 */
+  .TimeLine .con .list {
+    overflow-x: visible;
   }
-
-  .TimeLine .con .list > li.line02 .bg_img img{
-    width: 100% !important;
-    height: auto !important;
-    display: block;
-  }
-
-  /* 오른쪽 아래 텍스트박스 */
-  .TimeLine .con .list > li.line02 .textBox{
-/*  grid-column: 2;  */
-    grid-row: 2; 
-    width: 100% !important;
-    text-align: left !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-.TimeLine .con .list li.line02 .left img.sec {top: 50% !important; left: 50% !important;}
-
-
-  /* (선택) 2009가 너무 커서 레이아웃 깨지면 줄이기 */
-  .TimeLine .con .list > li.line02 .textBox h1{
-    font-size: 58px !important; /* 너 모바일 공통이 58px라 그대로 */
-    margin: 8px 0 0 !important;
-  }
-}
-.TimeLine .con .list > li > .toptit.is-cloned {
-display: none !important;}
-.TimeLine .con .list .textBox {top: 50%; right: 50%;} 
-
-.TimeLine .con .list li.line02 .left img.sec {margin-top: 20px; padding: 30px; }
-
-/* timeline3 */
-.TimeLine .con .list li.line03 {padding: 30px 0 30px 0; gap: 50;}
-.TimeLine .con .list li.line03 .left .img img:nth-child(1){width: 260px; height: 146px;}
-.TimeLine .con .list li.line03 .left .img img:nth-child(2) 
-{width: 226px; height: 127px;}
-.TimeLine .con .list li.line03 .textBox {margin-top: 160px};
-.TimeLine .con .list li.line03 {justify-content: space-between;}
-.TimeLine .con .list li.line03 .left .img img:nth-child(2) {bottom: 217px;}
-.TimeLine .con .list li.line03 {margin-left: 205px;}
-.TimeLine .con .list li h1 {margin-right: 5px;}
-.TimeLine .con .textBox .sub {margin-right: 5px;}
-
-
-
-
-
-/* timeline4 */
-.TimeLine .con .list li.line04 {padding: 30px 0 30px 0;}
-.TimeLine .con .list li.line04 .left .img img:nth-child(1){width: 168px; height: 199px; bottom: -30px;}
-
-.TimeLine .con .list li.line04 .left .img img:nth-child(2){width: 295px; height: 171px;position: absolute;
-    right: -87px;
-    top: 124px;}
-.TimeLine .con .list li.line04 .textBox {margin-left: 100px; top: 50px;}
-.TimeLine .con .list > li {overflow: visible !important;}
-
-
-
-/* timeline5 */
-.TimeLine .con .list li.line05 .left .img img.first {width: 197px; height: 242px;}
-.TimeLine .con .list li.line05 .left .img img.sec {width: 197px; height: 262px; top: 95px;}
-.TimeLine .con .list li.line05 .left .img img.first  {left: 100px;}
-.TimeLine .con .list li.line05 .textBox {right: 147px}
-.TimeLine .con .list li.line05 .textBox {width: 357px; margin-top: 150px;}
-
-
-
-
-/*timeline6  */
-.TimeLine .con .list li.line06 .left .img {width: 475px; height: 265px; }
-/* .TimeLine .con .list li.line06 .left {width: 475px; height: 265px;} */
-
-
-
-
-.TimeLine .con .list li.line06 {width: max-content;}
-.TimeLine .con .list li.line06 .textBox {position: absolute; right: -165px;}
-.TimeLine .con { width: 100%;
-    overflow: visible !important;}
-.TimeLine .con .list li.line06 .textBox {min-width: 0; text-align: left;}
-
-.TimeLine .con .list li.line06 .left .img img {margin-left: 270px;}
-.TimeLine .con .list {overflow-x: visible;}
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1640,29 +2692,44 @@ display: none !important;}
 ========================================================= */
 
 /* 1024 이하: 3열만 보이게 */
-@media (max-width: 1024px){
+@media (max-width: 1024px) {
+
   /* 컨테이너 여백/간격 필요시 */
-  .beauty{
-    padding: 0 18px;              /* 원하면 조절 */
-    max-width: auto;    /* 높이 고정이면 잘릴 수 있어서 */
-    /* min-height: 1200px;  */      /* 원하면 조절 */
-    
+  .beauty {
+    padding: 0 18px;
+    /* 원하면 조절 */
+    max-width: auto;
+    /* 높이 고정이면 잘릴 수 있어서 */
+    /* min-height: 1200px;  */
+    /* 원하면 조절 */
+
   }
-  .beauty .beauty-product {margin: 300px auto;}
-  .beauty .beauty-product{
-    gap: 18px;                     /* 열 간격 */
-    transform: translateY(-80px);   /* 기존 -120px 완화(원하면 유지/조절) */
-   
+
+  .beauty .beauty-product {
+    margin: 300px auto;
+  }
+
+  .beauty .beauty-product {
+    gap: 18px;
+    /* 열 간격 */
+    transform: translateY(-80px);
+    /* 기존 -120px 완화(원하면 유지/조절) */
+
   }
 
   /*  5개 중 3개만 노출 (a,b,c만) */
-  .beauty .beauty-product .card{ display: none; }
+  .beauty .beauty-product .card {
+    display: none;
+  }
+
   .beauty .beauty-product .card.a,
   .beauty .beauty-product .card.b,
-  .beauty .beauty-product .card.c{ display: block; }
+  .beauty .beauty-product .card.c {
+    display: block;
+  }
 
   /*  3열이므로 폭이 자연스럽게 1/3 */
-  .beauty .beauty-product .card{
+  .beauty .beauty-product .card {
     flex: 1 1 0;
     min-width: 0;
   }
@@ -1671,99 +2738,1435 @@ display: none !important;}
     - JS가 transform을 계속 덮어쓰긴 하지만,
       "CSS transform"은 JS 시작 전 초기 위치/시각을 만들 수 있어.
      - 모바일에선 통일감 있게 a/c는 0, b는 -215 느낌만 유지 */
-  .beauty .beauty-product .card.a{ transform: translateY(0); }
-  .beauty .beauty-product .card.b{ transform: translateY(-215px); }
-  .beauty .beauty-product .card.c{ transform: translateY(0); }
+  .beauty .beauty-product .card.a {
+    transform: translateY(0);
+  }
+
+  .beauty .beauty-product .card.b {
+    transform: translateY(-215px);
+  }
+
+  .beauty .beauty-product .card.c {
+    transform: translateY(0);
+  }
 
   /* 타이틀 사이즈(선택) */
-  .beauty .inner .beauty-title{ top: 7%; }
-  .beauty .inner .beauty-title .tit{ font-size: 64px;  }
-  .beauty .inner .beauty-title .tit span{ font-size: 56px; }
-  .beauty .inner .beauty-title .txt{ font-size: 14px; }
+  .beauty .inner .beauty-title {
+    top: 7%;
+  }
+
+  .beauty .inner .beauty-title .tit {
+    font-size: 64px;
+  }
+
+  .beauty .inner .beauty-title .tit span {
+    font-size: 56px;
+  }
+
+  .beauty .inner .beauty-title .txt {
+    font-size: 14px;
+  }
 }
+
 /* 768 이하: “여전히 3열” 유지(요구사항) + 조금 더 타이트하게 */
-@media (max-width: 768px){
-  .beauty{
+@media (max-width: 768px) {
+  .beauty {
     padding: 0 14px;
     min-height: 1100px;
   }
-  .beauty .beauty-product{
+
+  .beauty .beauty-product {
     gap: 14px;
     transform: translateY(-70px);
   }
-  .beauty .inner .beauty-title .tit{ font-size: 46px; }
-  .beauty .inner .beauty-title .tit span{ font-size: 48px; }
+
+  .beauty .inner .beauty-title .tit {
+    font-size: 46px;
+  }
+
+  .beauty .inner .beauty-title .tit span {
+    font-size: 48px;
+  }
 }
 
 /* 390 이하: 2열만 보이게 */
 
 
-@media (max-width: 390px){
-  .beauty .beauty-product {width: 152%;}
-  .beauty{
+@media (max-width: 390px) {
+  .beauty .beauty-product {
+    width: 152%;
+  }
+
+  .beauty {
     padding: 0 12px;
     min-height: 980px;
   }
 
-  .beauty .beauty-product{
+  .beauty .beauty-product {
     gap: 12px;
     transform: translateY(-60px);
   }
 
   /*  2열만 노출 (a,b만) */
-  .beauty .beauty-product .card{ display: none; }
-/*   .beauty .beauty-product .card.a, */
-  .beauty .beauty-product .card.b{ display: block; }
+  .beauty .beauty-product .card {
+    display: none;
+  }
+
+  /*   .beauty .beauty-product .card.a, */
+  .beauty .beauty-product .card.b {
+    display: block;
+  }
+
   /* 2열 폭 */
-  .beauty .beauty-product .card{
+  .beauty .beauty-product .card {
     flex: 1 1 0;
     min-width: 0;
   }
+
   /* 2열 오프셋 패턴 (번갈아 느낌 유지) */
-  .beauty .beauty-product .card.a{ transform: translateY(0); }
-  .beauty .beauty-product .card.b{ transform: translateY(-215px); }
+  .beauty .beauty-product .card.a {
+    transform: translateY(0);
+  }
+
+  .beauty .beauty-product .card.b {
+    transform: translateY(-215px);
+  }
 
   /* 타이틀 더 축소(선택) */
-  .beauty .inner .beauty-title{ top: 14%; }
-  .beauty .inner .beauty-title .tit{ font-size: 46px; }
-  .beauty .inner .beauty-title .tit span{ font-size: 40px; }
-  .beauty .inner .beauty-title .txt{ font-size: 12px; }
+  .beauty .inner .beauty-title {
+    top: 14%;
+  }
+
+  .beauty .inner .beauty-title .tit {
+    font-size: 46px;
+  }
+
+  .beauty .inner .beauty-title .tit span {
+    font-size: 40px;
+  }
+
+  .beauty .inner .beauty-title .txt {
+    font-size: 12px;
+  }
 }
 
 /* ----------------------- footer ----------------------------*/
-@media screen and (max-width:1024px){
-    footer .inner{padding: 52px;}
-    footer .top-box .left-box ul{font-size: 16px;}
-    footer .top-box .right-box ul{font-size: 14px;}
-    footer .bottom-box{align-items: flex-end;}
-    footer .bottom-box p.logo{width: 155px; height: auto;}
-    footer .bottom-box p.logo img{width: 100%;}
-    footer .bottom-box p.text{font-size: 12px;}
+@media screen and (max-width:1024px) {
+  footer .inner {
+    padding: 52px;
+  }
+
+  footer .top-box .left-box ul {
+    font-size: 16px;
+  }
+
+  footer .top-box .right-box ul {
+    font-size: 14px;
+  }
+
+  footer .bottom-box {
+    align-items: flex-end;
+  }
+
+  footer .bottom-box p.logo {
+    width: 155px;
+    height: auto;
+  }
+
+  footer .bottom-box p.logo img {
+    width: 100%;
+  }
+
+  footer .bottom-box p.text {
+    font-size: 12px;
+  }
 }
 
-@media screen and (max-width:768px){
-  footer .inner{padding:60px 20px;}
-    footer .top-box{display:block; margin:0;}
-    footer .top-box .left-box{width:100%;gap: 14px;}
-    footer .top-box .left-box ul{width:100%;}
-    footer .top-box .left-box ul li{display:none;margin:0; cursor: pointer;} 
-    footer .top-box .left-box ul li.tit{display:flex;justify-content:space-between;align-items:center;font-size:16px;color:#fff;padding:0 4px;border-bottom:0px ;margin:0; position: relative;}
-    footer .top-box .left-box ul li.tit::after{content:'';font-size:22px;line-height:1;opacity:0.9;}
-    footer .top-box .right-box{width:100%;margin-top:20px;}
-    footer .top-box .right-box ul{width:100%;}
-    footer .top-box .right-box li:nth-child(2) img{width: 18px;height: 18px;}
-    footer .bottom-box{justify-content: space-between; gap: 0;}
-    footer .bottom-box p.logo{margin-top:30px;}
-    footer .bottom-box p.text{font-size:12px;opacity:0.8;}
-    footer .top-box .right-box li{padding: 0px 4px 12px; display: flex; align-items: center; justify-content: center;}
+@media screen and (max-width:768px) {
+  footer .inner {
+    padding: 60px 20px;
+  }
 
-    footer .top-box .left-box ul li.tit span{position: absolute;width: 18px;height: 2px;background: #fff;transition: transform 0.3s ease, opacity 0.3s ease;top: 50%; right: 4px; transform-origin: center;}
-    footer .top-box .left-box ul li.tit span.b{transform: rotate(90deg);}
-    .floating{display: none;}
+  footer .top-box {
+    display: block;
+    margin: 0;
+  }
 
-    footer .top-box .left-box ul.open li{display: block;}
-    footer .top-box .left-box ul.open li.tit{display: flex; font-size: 16px;}
-    footer .top-box .left-box ul.open li.tit .b{opacity: 0;}
-    footer .top-box .left-box ul.open li{display: block; padding: 8px 4px; font-size: 14px; font-weight: 400;}
+  footer .top-box .left-box {
+    width: 100%;
+    gap: 14px;
+  }
 
+  footer .top-box .left-box ul {
+    width: 100%;
+  }
+
+  footer .top-box .left-box ul li {
+    display: none;
+    margin: 0;
+    cursor: pointer;
+  }
+
+  footer .top-box .left-box ul li.tit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    color: #fff;
+    padding: 0 4px;
+    border-bottom: 0px;
+    margin: 0;
+    position: relative;
+  }
+
+  footer .top-box .left-box ul li.tit::after {
+    content: '';
+    font-size: 22px;
+    line-height: 1;
+    opacity: 0.9;
+  }
+
+  footer .top-box .right-box {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  footer .top-box .right-box ul {
+    width: 100%;
+  }
+
+  footer .top-box .right-box li:nth-child(2) img {
+    width: 18px;
+    height: 18px;
+  }
+
+  footer .bottom-box {
+    justify-content: space-between;
+    gap: 1;
+  }
+
+  footer .bottom-box p.logo {
+    margin-top: 30px;
+  }
+
+  footer .bottom-box p.text {
+    font-size: 12px;
+    opacity: 0.8;
+  }
+
+  footer .top-box .right-box li {
+    padding: 0px 4px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  footer .top-box .left-box ul li.tit span {
+    position: absolute;
+    width: 18px;
+    height: 2px;
+    background: #fff;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    top: 50%;
+    right: 4px;
+    transform-origin: center;
+  }
+
+  footer .top-box .left-box ul li.tit span.b {
+    transform: rotate(90deg);
+  }
+
+  .floating {
+    display: none;
+  }
+
+  footer .top-box .left-box ul.open li {
+    display: block;
+  }
+
+  footer .top-box .left-box ul.open li.tit {
+    display: flex;
+    font-size: 16px;
+  }
+
+  footer .top-box .left-box ul.open li.tit .b {
+    opacity: 0;
+  }
+
+  footer .top-box .left-box ul.open li {
+    display: block;
+    padding: 8px 4px;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+}
+
+
+/* ========================================================================
+   Timeline 섹션 반응형 이미지 크기 조정
+   - Timeline 1 기준 비율: 1024(54.74%), 768(46.53%), 390(32.84%)
+   - Timeline 2~6의 모든 이미지를 같은 비율로 축소
+   - 주의: sticky 레이아웃은 유지, 이미지 크기만 조정
+======================================================================== */
+
+/* 1024px 이하 - Timeline 이미지 54.74% 축소 */
+@media (max-width: 1024px) {
+
+  /* Timeline 1 - 950x535 → 520x293 */
+  .TimeLine .con .list li.line01 .right {
+    width: 520px;
+    height: 293px;
+  }
+
+  .TimeLine .con .list li.line01 .right .img {
+    width: 520px;
+    height: 293px;
+  }
+
+  /* Timeline 2 - 비율 54.74% 적용 */
+  .TimeLine .con .list li.line02 .left img.first {
+    width: 164px;
+    /* 300 * 0.5474 */
+    height: 235px;
+    /* 430 * 0.5474 */
+  }
+
+  .TimeLine .con .list li.line02 .left img.sec {
+    width: 164px;
+    /* 300 * 0.5474 */
+    height: 213px;
+    /* 390 * 0.5474 */
+  }
+
+  .TimeLine .con .list li.line02 .bg_img img {
+    width: 416px;
+    /* 760 * 0.5474 */
+  }
+
+  /* Timeline 3 - 비율 54.74% 적용 */
+  .TimeLine .con .list li.line03 .left .img img:nth-child(1) {
+    width: 261px;
+    /* 477 * 0.5474 */
+    height: 148px;
+    /* 270 * 0.5474 */
+  }
+
+  .TimeLine .con .list li.line03 .left .img img:nth-child(2) {
+    width: 241px;
+    /* 440 * 0.5474 */
+    height: 124px;
+    /* 227 * 0.5474 */
+  }
+
+  /* Timeline 4 - 비율 54.74% 적용 */
+  .TimeLine .con .list li.line04 .left .img img:nth-child(1) {
+    width: 142px;
+    /* 260 * 0.5474 */
+    height: 170px;
+    /* 310 * 0.5474 */
+  }
+
+  .TimeLine .con .list li.line04 .left .img img:nth-child(2) {
+    width: 263px;
+    /* 480 * 0.5474 */
+    height: 153px;
+    /* 280 * 0.5474 */
+  }
+
+  /* Timeline 5 - 비율 54.74% 적용 */
+  .TimeLine .con .list li.line05 .left .img img.first {
+    width: 164px;
+    /* 300 * 0.5474 */
+    height: 213px;
+    /* 390 * 0.5474 */
+  }
+
+  .TimeLine .con .list li.line05 .left .img img.sec {
+    width: 164px;
+    /* 300 * 0.5474 */
+    height: 235px;
+    /* 430 * 0.5474 */
+  }
+
+  /* Timeline 6 - 비율 54.74% 적용 */
+  .TimeLine .con .list li.line06 .left {
+    width: 523px;
+    /* 955 * 0.5474 */
+    height: 293px;
+    /* 535 * 0.5474 */
+  }
+
+  .TimeLine .con .list li.line06 .left .img {
+    width: 523px;
+    height: 293px;
+  }
+}
+
+
+/* 768px 이하 - Timeline 이미지 46.53% 축소 */
+@media (max-width: 768px) {
+
+  /* 모든 li를 flexbox로 설정하여 order 작동하게 함 */
+  .TimeLine .con .list li.line01,
+  .TimeLine .con .list li.line02,
+  .TimeLine .con .list li.line03,
+  .TimeLine .con .list li.line04,
+  .TimeLine .con .list li.line05,
+  .TimeLine .con .list li.line06 {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  /* 모든 li의 .toptit을 맨 위로 배치 */
+  .TimeLine .con .list li .toptit,
+  .TimeLine .con .list li.line01 .toptit,
+  .TimeLine .con .list li.line02 .toptit,
+  .TimeLine .con .list li.line03 .toptit,
+  .TimeLine .con .list li.line04 .toptit,
+  .TimeLine .con .list li.line05 .toptit,
+  .TimeLine .con .list li.line06 .toptit {
+    order: -10 !important;
+    display: block !important;
+  }
+
+  /* line02의 다른 요소들 순서 */
+  .TimeLine .con .list li.line02 .left {
+    order: 1 !important;
+  }
+
+  .TimeLine .con .list li.line02 .bg_img {
+    order: 2 !important;
+  }
+
+  .TimeLine .con .list li.line02 .textBox {
+    order: 3 !important;
+  }
+
+  /* ========================================
+    Timeline 2 (line02) - 768px 좌우 배치
+    <2><3> 이미지들 왼쪽 | <4> textBox 오른쪽
+    <5> bg_img 배경
+  ======================================== */
+  .TimeLine .con .list li.line02 {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    position: relative !important;
+    align-items: flex-start !important;
+    min-height: 100vh !important;
+    /* 최소 화면 높이만큼 확보 */
+    padding-bottom: 200px !important;
+    /* 추가 여백 */
+    background: #F3F4F0 !important;
+    /* 배경색으로 line01 완전히 가림 */
+  }
+
+  /* .toptit은 전체 너비 차지하며 맨 위 */
+  .TimeLine .con .list li.line02 .toptit {
+    order: -10 !important;
+    width: 100% !important;
+    margin-bottom: 20px !important;
+  }
+
+  /* bg_img는 배경 레이어 (absolute) - 2사분면 (위쪽) */
+  .TimeLine .con .list li.line02 .bg_img {
+    position: absolute !important;
+    top: 157px !important;
+    /* 위쪽 배치 */
+    right: 5% !important;
+    z-index: 10 !important;
+    /* .left 이미지와 겹칠 수 있도록 1로 설정 (.textBox는 z-index 2) */
+    order: 0 !important;
+    width: 50% !important;
+    /* 크기 조정 */
+    max-width: 330px !important;
+  }
+
+  .TimeLine .con .list li.line02 .bg_img img {
+    width: 100% !important;
+    height: auto !important;
+    opacity: 1 !important;
+    display: block !important;
+    /* 확실히 표시 */
+  }
+
+  /* 왼쪽 이미지 영역 */
+  .TimeLine .con .list li.line02 .left {
+    order: 1 !important;
+    width: 43% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 15px !important;
+    z-index: 2 !important;
+    position: relative !important;
+  }
+
+  /* 이미지 크기 */
+  .TimeLine .con .list li.line02 .left img.first {
+    width: 208px !important;
+    height: 274px !important;
+  }
+
+  .TimeLine .con .list li.line02 .left img.sec {
+    width: 193px !important;
+    height: 233px !important;
+  }
+
+  /* 오른쪽 텍스트 영역 - 3사분면 (아래쪽), bg_img와 겹침 */
+  .TimeLine .con .list li.line02 .textBox {
+    order: 2 !important;
+    width: 53% !important;
+    z-index: 2 !important;
+    /* bg_img 위로 */
+    position: relative !important;
+    right: 13px !important;
+    /* text-align: right !important; */
+    margin-top: 80px !important;
+    /* bg_img와 겹치도록 위에서 여백 */
+    text-align: right !important;
+  }
+
+  /* Timeline 1 - 피그마 디자인 기준: 442x249, 왼쪽 정렬, 왼쪽 여백 70px */
+  .TimeLine .con .list li.line01 .right {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding-left: 70px !important;
+  }
+
+  .TimeLine .con .list li.line01 .right .img {
+    width: 442px !important;
+    height: 249px !important;
+    margin-bottom: 50px !important;
+    /* 이미지와 textBox 사이 간격 - !important로 강제 적용 */
+  }
+
+  .TimeLine .con .list li.line01 .right .img img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+  }
+
+  .TimeLine .con .list li.line01 .textBox {
+    width: 100% !important;
+    text-align: left !important;
+    margin-top: 0 !important;
+    /* 900px 설정 제거 */
+  }
+
+  /* Timeline 2 - 피그마 디자인 규격으로 이미지 크기 설정 */
+  .TimeLine .con .list li.line02 .left img.first {
+    width: 208px !important;
+    /* 피그마: 208px */
+    height: 274px !important;
+    /* 피그마: 274px */
+  }
+
+  .TimeLine .con .list li.line02 .left img.sec {
+    width: 193px !important;
+    /* 피그마: 193px */
+    height: 233px !important;
+    /* 피그마: 233px */
+  }
+
+  .TimeLine .con .list li.line02 .bg_img img {
+    width: 354px;
+    /* 760 * 0.4653 */
+    height: 248px;
+    /* 535 * 0.4653 */
+  }
+
+  /* ========================================
+     Timeline 3 (line03) - 768px 좌우 배치
+     .left (이미지 영역) 왼쪽 | .textBox 오른쪽
+  ======================================== */
+  .TimeLine .con .list li.line03 {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    align-items: flex-start !important;
+    gap: 20px !important;
+  }
+
+  /* .toptit은 전체 너비 차지하며 맨 위 */
+  .TimeLine .con .list li.line03 .toptit {
+    order: -10 !important;
+    width: 100% !important;
+    margin-bottom: 20px !important;
+  }
+
+  /* 왼쪽 이미지 영역 */
+  .TimeLine .con .list li.line03 .left {
+    order: 1 !important;
+    width: 40% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 15px !important;
+    z-index: 2 !important;
+  }
+
+  /* 이미지 크기 - 피그마 디자인 규격 */
+  .TimeLine .con .list li.line03 .left .img img:nth-child(1) {
+    width: 302px !important;
+    height: 171px !important;
+  }
+
+  .TimeLine .con .list li.line03 .left .img img:nth-child(2) {
+    width: 271px !important;
+    height: 154px !important;
+    margin-left: 54px !important;
+  }
+
+  /* 오른쪽 텍스트 영역 */
+  .TimeLine .con .list li.line03 .textBox {
+    order: 2 !important;
+    width: 55% !important;
+    z-index: 2 !important;
+    text-align: right !important;
+    margin-top: 40px !important;
+  }
+
+  /* Timeline 4 - 비율 46.53% 적용 */
+  .TimeLine .con .list li.line04 .left .img img:nth-child(1) {
+    width: 183px !important;
+    /* 피그마: 183px */
+    height: 217px !important;
+    /* 피그마: 217px */
+  }
+
+  .TimeLine .con .list li.line04 .left .img img:nth-child(2) {
+    width: 303px !important;
+    /* 피그마: 303px */
+    height: 177px !important;
+    /* 피그마: 177px */
+  }
+
+  /* ========================================
+    Timeline 4 (line04) - 768px 복합 배치
+    왼쪽: img1 (손) | 오른쪽: img2 (인테리어) + textBox
+  ======================================== */
+  .TimeLine .con .list li.line04 {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    align-items: flex-start !important;
+    gap: 20px !important;
+  }
+
+  /* .toptit은 전체 너비 차지하며 맨 위 */
+  .TimeLine .con .list li.line04 .toptit {
+    order: -10 !important;
+    width: 100% !important;
+    margin-bottom: 20px !important;
+  }
+
+  /* 왼쪽 이미지 영역 - img1만 포함 */
+  .TimeLine .con .list li.line04 .left {
+    order: 1 !important;
+    width: 33% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    padding-left: 20px !important;
+    /* 왼쪽으로 붙이기 */
+  }
+
+  .TimeLine .con .list .textBox {
+    margin-bottom: 0 !important;
+  }
+
+
+  /* 이미지 컨테이너 - 이미지 간 간격 */
+  .TimeLine .con .list li.line04 .left .img {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+    /* 이미지 간 간격 */
+  }
+
+  /* img1 (손 이미지) - 왼쪽에 배치 */
+  .TimeLine .con .list li.line04 .left .img img:nth-child(1) {
+    width: 94% !important;
+    height: 100% !important;
+    order: 1 !important;
+    position: relative !important;
+    top: 19px !important;
+    /* 아래로 이동 */
+    left: -46px !important;
+    /* 왼쪽으로 이동 */
+  }
+
+  /* img2 (인테리어) - 오른쪽 위로 이동 */
+  .TimeLine .con .list li.line04 .left .img img:nth-child(2) {
+    width: 500px !important;
+    /* 파란색 영역 크기로 설정 */
+    height: auto !important;
+    /* 비율 유지 */
+    position: absolute !important;
+    top: -58px !important;
+    right: -277px !important;
+    order: -1 !important;
+  }
+
+  /* 오른쪽 텍스트 영역 - img2 아래 */
+  .TimeLine .con .list li.line04 .textBox {
+    order: 2 !important;
+    width: 55% !important;
+    margin-top: 220px !important;
+    /* img2 높이(177px) + 간격 */
+
+
+  }
+
+  /* line04를 relative로 설정하여 absolute 기준점 생성 */
+  .TimeLine .con .list li.line04 .left .img {
+    position: relative !important;
+  }
+
+  /* ========================================
+     Timeline 5 (line05) - 768px 좌우 배치
+     왼쪽: textBox | 오른쪽: 이미지 영역 (left)
+  ======================================== */
+  .TimeLine .con .list li.line05 {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    align-items: flex-start !important;
+    gap: 20px !important;
+  }
+
+  /* .toptit은 전체 너비 차지하며 맨 위 */
+  .TimeLine .con .list li.line05 .toptit {
+    order: -10 !important;
+    width: 100% !important;
+    margin-bottom: 20px !important;
+  }
+
+  /* 왼쪽 텍스트 영역 */
+  .TimeLine .con .list li.line05 .textBox {
+    order: 1 !important;
+    width: 45% !important;
+    text-align: right !important;
+    /* 오른쪽 정렬 */
+    margin-top: 120px !important;
+    /* 위 여백 */
+    align-self: flex-end !important;
+    /* 아래쪽 배치 */
+  }
+
+  /* 오른쪽 이미지 영역 */
+  .TimeLine .con .list li.line05 .left {
+    order: 2 !important;
+    width: 50% !important;
+    display: flex !important;
+    flex-direction: column-reverse !important;
+    /* 역순: img2가 위, img1이 아래 */
+    gap: 15px !important;
+    position: relative !important;
+    height: 500px !important;
+    /* 4사분면 공간 확보 */
+  }
+
+  /* 이미지 크기 - 피그마 디자인 규격 + 위치 조절 가능 */
+  .TimeLine .con .list li.line05 .left .img img.first {
+    width: 201px !important;
+    /* 피그마: 201px */
+    height: 246px !important;
+    /* 피그마: 246px */
+    position: relative !important;
+    top: 70px !important;
+    right: -168px !important;
+    align-self: flex-start !important;
+    margin: 0 !important;
+    /* 좌우 margin 제거 */
+  }
+
+  .TimeLine .con .list li.line05 .left .img img.sec {
+    width: 182px !important;
+    /* 피그마: 182px */
+    height: 240px !important;
+    /* 피그마: 240px */
+    position: relative !important;
+    top: 52px !important;
+    left: -16px !important;
+    /* 2사분면 (왼쪽 위) - 위쪽 배치 */
+    align-self: flex-start !important;
+    margin: 0 !important;
+    /* 좌우 margin 제거 */
+  }
+
+  .TimeLine .con .list li.line04 .left .img img:nth-child(2) {
+    width: 223px;
+    /* 480 * 0.4653 */
+    height: 130px;
+    /* 280 * 0.4653 */
+  }
+
+  /* Timeline 5 - 비율 46.53% 적용 */
+  .TimeLine .con .list li.line05 .left .img img.first {
+    width: 140px;
+    /* 300 * 0.4653 */
+    height: 181px;
+    /* 390 * 0.4653 */
+  }
+
+  .TimeLine .con .list li.line05 .left .img img.sec {
+    width: 140px;
+    /* 300 * 0.4653 */
+    height: 200px;
+    /* 430 * 0.4653 */
+  }
+
+  /* ========================================
+     Timeline 6 (line06) - 768px 오른쪽 정렬
+  ======================================== */
+  .TimeLine .con .list li.line06 {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-end !important;
+    /* 오른쪽 정렬 */
+  }
+
+  /* .toptit은 전체 너비 차지하며 맨 위 */
+  .TimeLine .con .list li.line06 .toptit {
+    width: 100% !important;
+    text-align: left !important;
+    /* toptit은 왼쪽 정렬 유지 */
+  }
+
+  /* 이미지 영역 오른쪽 정렬 */
+  .TimeLine .con .list li.line06 .left {
+    align-self: flex-end !important;
+    margin-left: 100px !important;
+    /* 오른쪽 배치 */
+    width: 100% !important;
+    /* textBox와 같은 너비로 왼쪽 끝 맞춤 */
+  }
+
+  /* 텍스트 영역 오른쪽 정렬 */
+  .TimeLine .con .list li.line06 .textBox {
+    align-self: flex-end !important;
+    /* 오른쪽 배치 */
+    width: 67% !important;
+    /* 너비 제한하여 왼쪽 여백 생성 */
+    text-align: left !important;
+    /* 텍스트는 왼쪽 정렬 */
+  }
+
+  /* Timeline 6 - 비율 46.53% 적용 */
+  .TimeLine .con .list li.line06 .left {
+    width: 444px;
+    /* 955 * 0.4653 */
+    height: 249px;
+    /* 535 * 0.4653 */
+  }
+
+  .TimeLine .con .list li.line06 .left .img {
+    width: 444px;
+    height: 249px;
+  }
+}
+
+
+/* 390px 이하 - Timeline 이미지 32.84% 축소 */
+@media (max-width: 390px) {
+
+  /* ========================================
+     390px Header 스타일
+  ======================================== */
+  header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 15px 15px !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+    background: transparent !important;
+  }
+
+  /* 로고를 absolute로 가운데 배치 */
+  header .logo {
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+
+  header .logo img {
+    height: 28px !important;
+    width: auto !important;
+    position: static !important;
+    display: block !important;
+  }
+
+  header ul.menu-icon {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+
+  header ul.menu-icon li {
+    width: 40px !important;
+    height: 40px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  header ul.menu-icon img {
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+  /* 햄버거 왼쪽, 장바구니 오른쪽 */
+  header ul.menu-icon li:first-child {
+    order: 2 !important;
+  }
+
+  header ul.menu-icon li:last-child {
+    order: 1 !important;
+  }
+
+  header ul.nav {
+    display: none !important;
+  }
+
+
+  /* 모든 li의 toptit 폰트 사이즈 축소: 42px → 32px + 왼쪽 정렬 */
+  .TimeLine .con .list>li .toptit {
+    font-size: 32px !important;
+    text-align: left !important;
+    padding: 5px 0 !important;
+    /* 상하 패딩 줄임 */
+    margin: 0 0 8px !important;
+    /* 하단 여백 줄임 */
+  }
+
+  /* 모든 Timeline textBox 내부 p.txt 12px로 통일 */
+  .TimeLine .con .list li .textBox p.txt {
+    font-size: 12px !important;
+  }
+
+  /* line01 h1 (2003) 폰트 사이즈 축소: 66px → 52px */
+  .TimeLine .con .list li.line01 .textBox h1 {
+    font-size: 52px !important;
+  }
+
+  /* Timeline 1 - 442x249 → 313x176 */
+  .TimeLine .con .list li.line01 .right {
+    width: 313px;
+    height: 176px;
+    padding-left: 0px !important;
+    /* 768px의 70px 패딩 제거 */
+  }
+
+  .TimeLine .con .list li.line01 .right .img {
+    width: 313px;
+    height: 176px;
+  }
+
+  /* .main 섹션 폰트 두께 조절 */
+  .main .set {
+    font-weight: 300 !important;
+    /* 얇게 */
+  }
+
+  .main .ital {
+    font-weight: 700 !important;
+    /* 두껍게 */
+  }
+
+  /* img 태그 자체에 크기 적용 */
+  .TimeLine .con .list li.line01 .right .img img {
+    width: 313px !important;
+    height: 176px !important;
+    object-fit: cover;
+  }
+
+  /* textBox margin-left 0px로 리셋 (900px의 70px 제거) */
+  .TimeLine .con .list>li.line01 .textBox {
+    margin-left: 0px !important;
+  }
+
+  /* Timeline 2 - bg_img 숨기기 (390px에서 배치하지 않음) */
+  .TimeLine .con .list li.line02 .bg_img {
+    display: none !important;
+  }
+
+  /* Timeline 2 - 비율 32.84% 적용 */
+  .TimeLine .con .list li.line02 .left img.first {
+    width: 99px;
+    /* 300 * 0.3284 */
+    height: 141px;
+    /* 430 * 0.3284 */
+    position: relative;
+    left: 0px;
+    /* 좌우 위치 조절: 음수 = 왼쪽, 양수 = 오른쪽 */
+  }
+
+  .TimeLine .con .list li.line02 .left img.sec {
+    width: 99px;
+    /* 300 * 0.3284 */
+    height: 128px;
+    /* 390 * 0.3284 */
+    position: relative;
+    left: 0px;
+    /* 좌우 위치 조절: 음수 = 왼쪽, 양수 = 오른쪽 */
+  }
+
+  /* ========================================
+     390px line02 배치
+     - .left (상단): 2사분면/3사분면 이미지 배치
+     - .textBox (하단): 텍스트 + 2009
+  ======================================== */
+
+  /* line02 전체를 세로 배치 */
+  .TimeLine .con .list li.line02 {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    padding: 0px 15px 30px !important;
+  }
+
+  /* .left: 상단, 2사분면/3사분면 배치 */
+  .TimeLine .con .list li.line02 .left {
+    width: 100% !important;
+    max-width: 320px !important;
+    height: auto !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: auto auto !important;
+    gap: 5px !important;
+    /* 이미지 간 여백 최소화: 10px → 5px */
+    margin: 0 !important;
+    /* 다른 미디어 쿼리의 margin 제거 */
+    padding: 0 !important;
+    /* 다른 미디어 쿼리의 padding 제거 */
+    position: static !important;
+    /* position 영향 제거 */
+  }
+
+  /* img.first: 2사분면 (왼쪽 상단) - 208×274 → 191×250 */
+  .TimeLine .con .list li.line02 .left img.first {
+    grid-column: 1 / 2 !important;
+    grid-row: 1 / 2 !important;
+    width: 191px !important;
+    height: 250px !important;
+    object-fit: cover !important;
+    justify-self: start !important;
+    /* Grid 정렬 기본값 */
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative !important;
+    /* static → relative: left/right 조절 가능 */
+    left: 50px !important;
+    /* 오른쪽으로 이동 (양수 = 오른쪽) */
+  }
+
+  /* img.sec: 3사분면 (왼쪽 하단) - 193×233 → 207×250 */
+  .TimeLine .con .list li.line02 .left img.sec {
+    grid-column: 1 / 2 !important;
+    grid-row: 2 / 3 !important;
+    width: 207px !important;
+    height: 250px !important;
+    object-fit: cover !important;
+    justify-self: start !important;
+    /* Grid 정렬 기본값 */
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative !important;
+    /* static → relative: left/right 조절 가능 */
+    left: -71px !important;
+    /* 왼쪽 유지 (조절 가능) */
+  }
+
+  /* .textBox: 하단 배치 */
+  .TimeLine .con .list li.line02 .textBox {
+    width: 102% !important;
+    max-width: 326px !important;
+    text-align: left !important;
+    order: 2 !important;
+  }
+
+  .TimeLine .con .list li.line02 .bg_img img {
+    width: 250px;
+    /* 760 * 0.3284 */
+  }
+
+  /* ========================================
+     390px Timeline 섹션 높이 확보
+     - sticky가 작동하려면 충분한 스크롤 공간 필요
+  ======================================== */
+  .TimeLine {
+    min-height: 400vh !important;
+    /* 충분한 스크롤 공간 확보 */
+    overflow-x: hidden !important;
+    /* 가로 스크롤 방지 */
+  }
+
+  .TimeLine .con {
+    min-height: 100% !important;
+    overflow-x: hidden !important;
+    /* 가로 스크롤 방지 */
+    width: 100% !important;
+  }
+
+  /* ========================================
+     390px sticky 설정 - 900px 설정 완전히 override
+     문제: 900px의 padding: 56px, margin-top: 10px이 적용되어 
+           카드가 너무 많이 올라가고 다음 카드가 늦게 나타남
+  ======================================== */
+  .TimeLine .con .list>li {
+    position: sticky !important;
+    top: 0px !important;
+    /* 900px의 18px → 0px (div.con 0,0 기준) */
+
+    width: 100% !important;
+    max-width: none !important;
+    background: #F3F4F0 !important;
+
+    padding: 0px 0 30px !important;
+    /* padding-top: 0px: sticky가 즉시 시작 */
+    /* padding-bottom: 30px */
+
+    overflow: visible !important;
+  }
+
+  /* 각 line별로 z-index 순차 부여 - line02가 line01 위로 덮이도록 */
+  .TimeLine .con .list li.line01 {
+    z-index: 1 !important;
+  }
+
+  .TimeLine .con .list li.line02 {
+    z-index: 2 !important;
+  }
+
+  .TimeLine .con .list li.line03 {
+    z-index: 3 !important;
+  }
+
+  .TimeLine .con .list li.line04 {
+    z-index: 4 !important;
+  }
+
+  .TimeLine .con .list li.line05 {
+    z-index: 5 !important;
+  }
+
+  .TimeLine .con .list li.line06 {
+    z-index: 6 !important;
+  }
+
+  /* 카드 간격: 음수로 설정하여 다음 카드가 빨리 나타나도록 */
+  .TimeLine .con .list>li+li {
+    margin-top: -10px !important;
+    /* 900px의 10px → -10px: 카드가 겹치듯이 빨리 올라옴 */
+  }
+
+
+  /* 마지막 카드 하단 여백 */
+  .TimeLine .con .list>li:last-child {
+    margin-bottom: 200px !important;
+  }
+
+  /* Timeline 3 - 390px 이미지 배치 */
+  .TimeLine .con .list li.line03 .left .img {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+  }
+
+  /* 첫번째 이미지: 238*133, 오른쪽 2사분면 배치 */
+  .TimeLine .con .list li.line03 .left .img img:nth-child(1) {
+    width: 238px !important;
+    height: 100% !important;
+    margin-left: 93px !important;
+    /* 오른쪽 정렬 */
+    margin-right: 0px !important;
+    /* 오른쪽 위치 미세 조절: 양수 = 왼쪽으로, 음수 = 더 오른쪽으로 */
+  }
+
+  /* 두번째 이미지: 281*158, 왼쪽 3사분면 배치 */
+  .TimeLine .con .list li.line03 .left .img img:nth-child(2) {
+    width: 281px !important;
+    height: 100% !important;
+    margin-right: 135px !important;
+    /* 왼쪽 정렬 */
+    margin-left: 0px !important;
+    /* 왼쪽 위치 미세 조절: 양수 = 오른쪽으로 */
+  }
+
+  /* Timeline 3 - 390px textBox 스타일 */
+  .TimeLine .con .list li.line03 .textBox {
+    width: 100% !important;
+    /* 전체 너비 */
+    max-width: 100% !important;
+    text-align: left !important;
+    /* 텍스트 왼쪽 정렬 */
+    padding-left: 0px !important;
+    /* 왼쪽 패딩 조절 */
+    padding-right: 0px !important;
+    /* 오른쪽 패딩 조절 */
+  }
+
+  .TimeLine .con .list li.line03 p.txt {
+    font-size: 12px !important;
+  }
+
+  /* Timeline 4 - 390px .left 컨테이너 */
+  .TimeLine .con .list li.line04 .left {
+    width: 100% !important;
+    /* 전체 너비 */
+    max-width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  /* Timeline 4 - 390px 이미지 배치 (가운데 정렬) */
+  .TimeLine .con .list li.line04 .left .img {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    /* 가운데 정렬 */
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  /* 첫번째 이미지: 222*171 */
+  .TimeLine .con .list li.line04 .left .img img:nth-child(1) {
+    width: 221px !important;
+    height: 190px !important;
+    position: relative !important;
+    left: -96px !important;
+    top: -257px !important;
+    /* 좌우 위치 조절 */
+  }
+
+  /* 두번째 이미지: 315*182 */
+  .TimeLine .con .list li.line04 .left .img img:nth-child(2) {
+    width: 315px !important;
+    height: 100% !important;
+    position: relative !important;
+    left: 0px !important;
+    top: 166px !important;
+    /* 좌우 위치 조절: 음수 = 왼쪽, 양수 = 오른쪽 */
+  }
+
+  /* Timeline 4 - 390px textBox 스타일 */
+  .TimeLine .con .list li.line04 .textBox {
+    width: 105% !important;
+    max-width: 105% !important;
+    text-align: right !important;
+    /* 텍스트 오른쪽 정렬 */
+    padding-left: 0px !important;
+    padding-right: 8px !important;
+    padding-bottom: 130px !important;
+    margin-top: 0px !important;
+    margin-left: auto !important;
+    /* 오른쪽 정렬 유지 */
+  }
+
+  .TimeLine .con .list li.line04 p.txt {
+    font-size: 12px !important;
+  }
+
+  /* Timeline 5 - 390px 레이아웃 (이미지 위, 텍스트 아래) */
+  .TimeLine .con .list li.line05 {
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: visible !important;
+    width: 100% !important;
+    /* 전체 너비 */
+    max-width: 100% !important;
+    background: #F3F4F0 !important;
+    /* 배경색으로 빈 공간 채움 */
+  }
+
+  .TimeLine .con .list li.line05 .toptit {
+    margin-bottom: 8px !important;
+    /* 768px의 20px → 8px로 줄임 */
+  }
+
+  .TimeLine .con .list li.line05 .left {
+    order: 1 !important;
+    /* 이미지 먼저 (위) */
+    width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  .TimeLine .con .list li.line05 .textBox {
+    order: 2 !important;
+    /* 텍스트 나중에 (아래) */
+    width: 100% !important;
+    display: block !important;
+    /* 텍스트박스 표시 */
+    visibility: visible !important;
+    opacity: 1 !important;
+    padding-left: 0px !important;
+    /* 왼쪽 패딩 조절 */
+    padding-right: 15px !important;
+    /* 오른쪽 패딩 조절 */
+    margin-left: 0px !important;
+    /* 왼쪽 마진 조절 */
+    margin-right: 0px !important;
+    /* 오른쪽 마진 조절 */
+  }
+
+  /* 이미지 컨테이너 */
+  .TimeLine .con .list li.line05 .left .img {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
+  /* first 이미지: 아래로 (order: 2) */
+  .TimeLine .con .list li.line05 .left .img img.first {
+    width: 99px;
+    height: 128px;
+    order: 2 !important;
+    /* 두번째로 배치 (아래) */
+  }
+
+  /* sec 이미지: 위로 (order: 1) */
+  .TimeLine .con .list li.line05 .left .img img.sec {
+    width: 99px;
+    height: 141px;
+    order: 1 !important;
+    /* 첫번째로 배치 (위) */
+  }
+
+  /* Timeline 6 - 390px 레이아웃 (가운데 정렬, 전체 너비) */
+  .TimeLine .con .list li.line06 {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    /* 가운데 정렬 */
+    width: 100% !important;
+    background: #F3F4F0 !important;
+  }
+
+  .TimeLine .con .list li.line06 .left {
+    width: 100% !important;
+    /* 전체 너비 */
+    max-width: 100% !important;
+    height: auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    margin-left: 0px !important;
+  }
+
+  .TimeLine .con .list li.line06 .left .img {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    /* 이미지 가운데 정렬 */
+    height: auto !important;
+  }
+
+  .TimeLine .con .list li.line06 .left .img img {
+    width: 358px !important;
+    /* 이미지 가로 크기 */
+    height: 200px !important;
+    /* 이미지 세로 크기 */
+    object-fit: cover !important;
+  }
+
+  .TimeLine .con .list li.line06 .textBox {
+    width: 100% !important;
+    /* 전체 너비 */
+    max-width: 100% !important;
+    text-align: left !important;
+    /* 텍스트 왼쪽 정렬 */
+    padding: 0 15px !important;
+    /* 좌우 패딩 */
+  }
+
+  .TimeLine .con .list li.line06 p.txt {
+    font-size: 12px !important;
+  }
+
+  /* =========================
+      390px: .left와 .textBox 상하 배치 + 가운데 정렬
+      - 각 li 카드가 세로로 쌓이며 가운데 정렬
+      - sticky 효과와 z-index는 900px 이하에서 상속됨
+  ========================= */
+
+  /* 모든 line 카드를 세로 방향 flexbox + 가운데 정렬 */
+  .TimeLine .con .list li.line01,
+  .TimeLine .con .list li.line02,
+  .TimeLine .con .list li.line03,
+  .TimeLine .con .list li.line04,
+  .TimeLine .con .list li.line05,
+  .TimeLine .con .list li.line06 {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    /* flex-start → center로 변경 */
+  }
+
+  /* .left (이미지 영역) - 상단 + 가운데 정렬 */
+  .TimeLine .con .list .left {
+    width: 100% !important;
+    order: -1 !important;
+    /* 음수로 설정하여 항상 먼저 배치 */
+    margin-bottom: 20px !important;
+    display: flex !important;
+    justify-content: center !important;
+    /* 이미지 가운데 정렬 */
+  }
+
+  /* .textBox (텍스트 영역) - 하단 + 가운데 정렬 */
+  .TimeLine .con .list .textBox {
+    width: 100% !important;
+    order: 10 !important;
+    /* 큰 숫자로 설정하여 항상 나중에 배치 */
+    text-align: center !important;
+    /* left → center로 변경 */
+  }
+
+  /* line01의 .right도 동일하게 */
+  .TimeLine .con .list li.line01 .right {
+    width: 100% !important;
+    order: -1 !important;
+    /* 음수로 설정하여 항상 먼저 배치 */
+    margin-bottom: 20px !important;
+    display: flex !important;
+    justify-content: center !important;
+    /* 이미지 가운데 정렬 */
+  }
+
+  /* toptit도 가운데 정렬 */
+  .TimeLine .con .list>li .toptit {
+    text-align: left !important;
+  }
+
+  /* line02, line03, line04, line05의 .img도 가운데 정렬 */
+  .TimeLine .con .list li.line02 .left,
+  .TimeLine .con .list li.line03 .left,
+  .TimeLine .con .list li.line04 .left,
+  .TimeLine .con .list li.line05 .left {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* 이미지들도 가운데 정렬 */
+  .TimeLine .con .list li.line02 .left .img,
+  .TimeLine .con .list li.line03 .left .img,
+  .TimeLine .con .list li.line04 .left .img,
+  .TimeLine .con .list li.line05 .left .img {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 15px !important;
+  }
 }

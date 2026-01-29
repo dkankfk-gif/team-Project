@@ -1,11 +1,1895 @@
-@media screen and (max-width:1440px){
-    .hero .visual .card{height: 500px;}
-    .hero .visual .card .title{gap: 52px;}
-    .hero .visual .card p.img{width: 46%;}
-    .hero .visual .card p.img img{width: 100%;}
-    .hero .visual .card .title h3.name{margin-bottom: 28px;}
+/* 태블릿모드 1024 */
+@media screen and (max-width:1024px) {
+    .wrap {
+        position: relative;
+        box-sizing: border-box;
+        margin: 0 auto;
+        width: 100%;
+    }
 
-    .hero .visual .en_s{font-size: 80px;}
-    .itam{padding: 160px 60px 100px;}
+
+    /* header */
+    header {
+        width: 100%;
+        padding: 5.86% 10.74% 1.95%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    header .logo {
+        display: inline-block;
+    }
+
+    header p.img {
+        width: 100%;
+    }
+
+    header p.img img {
+        width: 100%;
+    }
+
+    header ul.nav {
+        display: flex;
+        gap: 6.25%;
+        font-size: 16px;
+        font-weight: 500;
+        color: #fff;
+        align-items: center;
+    }
+
+    header ul.menu-icon {
+        display: flex;
+        gap: 24%;
+    }
+
+    header {
+        color: #fff;
+    }
+
+    /*  1024 이하 텍스트는 흰색 */
+
+    /*  1024 이하에서 로고/아이콘을 흰색으로 */
+    header .logo img,
+    header .menu-icon img {
+        filter: brightness(0) invert(1);
+    }
+
+    .mobile {
+        display: none;
+    }
+
+    .hero .visual {
+        position: relative;
+        display: block;
+    }
+
+    .hero .visual .txt {
+        font-family: 'Yoon Gothic', sans-serif;
+    }
+
+    .hero .visual .visual-img {
+        width: 100%;
+        position: relative;
+    }
+
+    .hero .visual .visual-img::before {
+        content: '';
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0));
+        width: 100%;
+        height: 100%;
+        left: 0;
+        bottom: 0;
+        position: absolute;
+    }
+
+    .hero .visual .visual-img img {
+        width: 100%;
+    }
+
+    .hero .visual .en_s {
+        font-size: 55px;
+        font-weight: 400;
+        letter-spacing: -3px;
+        text-decoration: underline 3px;
+        font-style: italic;
+        position: absolute;
+        left: 18%;
+        bottom: 12%;
+        z-index: 2;
+        color: #fff;
+    }
+
+    .hero .visual .line-img img {
+        width: 194px;
+        height: 241px;
+        position: absolute;
+        top: -330px;
+        left: 250px;
+    }
+
+    .hero .visual .card {
+        position: absolute;
+        right: 8%;
+        bottom: 4%;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.2));
+        padding: 18px 18px;
+        color: #fff;
+        border-radius: 33px;
+        height: 288px;
+        backdrop-filter: blur(2px);
+        overflow: hidden;
+    }
+
+    .hero .visual .card .title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 18px;
+    }
+
+    .hero .visual .card .title h3.name {
+        font-size: 17px;
+        margin-bottom: 22px;
+        font-family: 'PP Mori';
+    }
+
+    .hero .visual .card .title h3.name span.txt {
+        display: block;
+        font-size: 10px;
+        padding-top: 2px;
+        font-weight: 50;
+    }
+
+    .hero .visual .card .title a.btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 26px;
+        height: 26px;
+        background: #222;
+        border-radius: 50%;
+        padding: 0;
+    }
+
+    .hero .visual .card .title a.btn img {
+        width: 13px;
+        height: auto;
+    }
+
+    .hero .visual .card .text-box {
+        margin-bottom: 8px;
+    }
+
+    .hero .visual .card .text-box p.text-img {
+        font-family: 'PP Mori', sans-serif;
+        font-size: 30px;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    .hero .visual .card .text-box p.text {
+        font-size: 30px;
+        text-transform: uppercase;
+    }
+
+    .hero .visual .card p.text {
+        font-size: 16px;
+    }
+
+    .hero .visual .card p.txt {
+        font-size: 10px;
+    }
+
+    .hero .visual .card p.img {
+        position: absolute;
+        right: -44px;
+        bottom: -8px;
+        width: 45%;
+        display: block;
+    }
+
+    .hero .visual .line-img {
+        position: absolute;
+        left: 38%;
+        bottom: 30%;
+    }
+
+    /* svgAni2 - 비율 유지하며 축소 */
+    .hero .visual .svgAni2 {
+        width: 22% !important;
+        left: 35% !important;
+        bottom: 38% !important;
+    }
+
+    .hero .visual .svgAni2 .hero-line-svg {
+        width: 100%;
+        height: auto;
+    }
+
+
+
+
+    /* filter */
+
+    .itam {
+        padding: 200px 53px 160px;
+        gap: 160px;
+        width: 100%;
+        position: relative;
+    }
+
+    .itam .inner {
+        display: flex;
+        gap: 160px;
+    }
+
+    .filter {
+        width: 16.1%;
+    }
+
+    .filter .title {
+        font-size: 16px;
+        text-transform: uppercase;
+        font-weight: 500;
+        padding: 0 8px 25px;
+    }
+
+    .filter .title a {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    .filter .filter-group .name-box a {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 8px 14px;
+        border-top: 1px solid #000;
+        font-size: 16px;
+    }
+
+    .filter ul.list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding-bottom: 16px;
+    }
+
+    .filter ul.list li {
+        width: 100%;
+    }
+
+    .filter ul.list li a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding: 0 8px;
+        font-size: 14px;
+    }
+
+    .filter .Category {
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 16px;
+        font-weight: 500;
+        border-top: 1px solid #000;
+        border-bottom: 1px solid #000;
+        position: relative;
+    }
+
+    .filter .Category::before {
+        content: '';
+        left: 0;
+        top: 50%;
+        width: 100%;
+        height: 0.5px;
+        background: #000;
+        position: absolute;
+    }
+
+    .filter .Category li {
+        width: 100%;
+    }
+
+    .filter .Category li a {
+        display: flex;
+        padding: 16px 8px;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    /* type */
+    .type {
+        width: 100%;
+        padding: 76px 20px;
+        display: none;
+    }
+
+
+
+    /* product */
+
+    .products {
+        width: 68%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 160px;
+    }
+
+    .product-list {
+        width: 100%;
+        box-sizing: border-box;
+        overflow: visible;
+    }
+
+    .products .top-box {
+        width: 100%;
+    }
+
+    .products .top-box p.text {
+        font-size: 14px;
+        padding-bottom: 10px;
+    }
+
+    .products .title-box {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 45px;
+    }
+
+    .products .title-box .left p.title {
+        font-size: 28px;
+        font-weight: 600;
+    }
+
+    .products .title-box .left p.sub {
+        font-size: 24px;
+        font-style: italic;
+        text-decoration: underline;
+    }
+
+    .products .title-box .right {
+        display: flex;
+        gap: 20px;
+    }
+
+    .products .title-box .right p.img {
+        width: 36px;
+        height: 36px;
+        background: #222;
+        text-align: center;
+        line-height: 31px;
+        border-radius: 50%;
+    }
+
+    .products .title-box .right p.img:nth-child(1) {
+        transform: rotate(180deg);
+    }
+
+    .products .title-box .right p.img img {
+        width: 15px;
+    }
+
+
+    /* 슬라이드 */
+
+    .products .shop-swiper .swiper-slide {
+        background: #f3f4f0;
+        width: 287px;
+        height: 405px;
+        border-radius: 10px;
+        overflow: visible;
+    }
+
+    .products .shop-swiper a {
+        display: block;
+        width: 287px;
+        height: 406px;
+        padding: 23px 23px;
+    }
+
+    .products .shop-swiper .top {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 28px;
+    }
+
+    .products .shop-swiper .top p.badge {
+        font-size: 12px;
+        padding: 8px 14px;
+        background: #45663C;
+        color: #fff;
+        border-radius: 100px;
+    }
+
+    .products .shop-swiper .top p.icon {
+        width: 28px;
+        height: 28px;
+        background: #fff;
+        border-radius: 70%;
+        text-align: center;
+        line-height: 22px;
+    }
+
+    .products .shop-swiper .top p.icon img {
+        width: 14px;
+        height: 14px;
+        align-items: center;
+    }
+
+    .products .shop-swiper p.img {
+        margin: 0 auto;
+        width: 157px;
+        height: 225px;
+        margin-bottom: 28px;
+    }
+
+    .products .shop-swiper p.img img {
+        width: 100%;
+    }
+
+    .products .shop-swiper .bottom {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .products .shop-swiper .bottom h4.name {
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    .products .shop-swiper .bottom p.price {
+        font-size: 17px;
+        font-weight: 600;
+    }
+
+
+    /* footer */
+    footer {
+        color: #fff;
+        background: #202020;
+    }
+
+    footer .inner {
+        padding: 56px 52px 53px;
+    }
+
+    footer .top-box {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 100px;
+    }
+
+    footer .top-box .left-box {
+        display: flex;
+        width: 50%;
+        flex-wrap: wrap;
+        row-gap: 60px;
+    }
+
+    footer .top-box .left-box ul {
+        width: 30%;
+    }
+
+    footer .top-box .left-box ul li {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+
+    footer .top-box .left-box ul li:last-child {
+        margin-bottom: 0;
+    }
+
+    footer .top-box .left-box ul li.tit {
+        color: rgba(255, 255, 255, 0.6);
+        margin-bottom: 18px;
+    }
+
+    footer .top-box .right-box {
+        display: block;
+        width: 20%;
+        /* padding: ; */
+    }
+
+    footer .top-box .right-box ul {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #fff;
+    }
+
+    footer .top-box .right-box li {
+        font-size: 14px;
+        padding: 10px 0;
+    }
+
+    footer .top-box .right-box li img {
+        width: 12px;
+        height: 12px;
+    }
+
+    footer .bottom-box {
+        display: flex;
+        gap: 70px;
+    }
+
+    footer .bottom-box p.logo {
+        color: #fff;
+    }
+
+
+    .floating {
+        display: block;
+        padding: 14px;
+        position: fixed;
+        right: 6%;
+        bottom: 5%;
+        background: #fff;
+        border-radius: 50%;
+    }
+
+    .floating img {
+        width: 42px;
+        height: 42px;
+        color: #222;
+    }
+}
+
+
+
+
+
+@media screen and (max-width:950px) {
+
+    .hero .visual {
+        position: relative;
+        display: block;
+    }
+
+    .hero .visual .txt {
+        font-family: 'Yoon Gothic', sans-serif;
+    }
+
+    .hero .visual .visual-img {
+        width: 100%;
+        position: relative;
+    }
+
+    .hero .visual .visual-img::before {
+        content: '';
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0));
+        width: 100%;
+        height: 100%;
+        left: 0;
+        bottom: 0;
+        position: absolute;
+    }
+
+    .hero .visual .visual-img img {
+        width: 100%;
+    }
+
+    .hero .visual .en_s {
+        font-size: 55px;
+        font-weight: 400;
+        letter-spacing: -3px;
+        text-decoration: underline 3px;
+        font-style: italic;
+        position: absolute;
+        left: 18%;
+        bottom: 12%;
+        z-index: 2;
+        color: #fff;
+    }
+
+    .hero .visual .line-img img {
+        width: 194px;
+        height: 241px;
+        position: absolute;
+        top: -330px;
+        left: 250px;
+    }
+
+    .hero .visual .card {
+        position: absolute;
+        right: 8%;
+        bottom: 4%;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.2));
+        padding: 18px 18px;
+        color: #fff;
+        border-radius: 33px;
+        height: 288px;
+        backdrop-filter: blur(2px);
+        overflow: hidden;
+    }
+
+    .hero .visual .card .title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 18px;
+    }
+
+    .hero .visual .card .title h3.name {
+        font-size: 17px;
+        margin-bottom: 22px;
+        font-family: 'PP Mori';
+    }
+
+    .hero .visual .card .title h3.name span.txt {
+        display: block;
+        font-size: 10px;
+        padding-top: 2px;
+        font-weight: 50;
+    }
+
+    .hero .visual .card .title a.btn {
+        display: block;
+        width: 23px;
+        height: 25px;
+        background: #222;
+        border-radius: 50%;
+        padding: 0px;
+        text-align: center;
+    }
+
+    .hero .visual .card .title a.btn img {
+        width: 20px;
+        height: 24px;
+    }
+
+    .hero .visual .card .text-box {
+        margin-bottom: 8px;
+    }
+
+    .hero .visual .card .text-box p.text-img {
+        font-family: 'PP Mori', sans-serif;
+        font-size: 30px;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    .hero .visual .card .text-box p.text {
+        font-size: 30px;
+        text-transform: uppercase;
+    }
+
+    .hero .visual .card p.text {
+        font-size: 16px;
+    }
+
+    .hero .visual .card p.txt {
+        font-size: 10px;
+    }
+
+    .hero .visual .card p.img {
+        position: absolute;
+        right: -44px;
+        bottom: -8px;
+        width: 45%;
+        display: block;
+    }
+
+    .hero .visual .line-img {
+        position: absolute;
+        left: 38%;
+        bottom: 30%;
+    }
+
+    /* svgAni2 - 비율 유지하며 축소 */
+    .hero .visual .svgAni2 {
+        width: 18% !important;
+        left: 38% !important;
+        bottom: 40% !important;
+    }
+}
+
+
+
+
+
+
+/* 모바일 모드 header 768*/
+@media (max-width: 768px) {
+
+    /* nav 숨기기 */
+    header ul.nav.en {
+        display: none;
+    }
+
+    /* header를 3칸 레이아웃으로 */
+    header {
+        padding: 24px 20px;
+        /* 원하는 값으로 조절 */
+        display: grid;
+        grid-template-columns: 44px 1fr 44px;
+        /* 좌 아이콘 / 로고 / 우 아이콘 */
+        align-items: center;
+        justify-items: center;
+        /* 가운데 정렬 기본 */
+    }
+
+    /* 로고는 가운데 */
+    header .logo {
+        grid-column: 2;
+        justify-self: center;
+        margin: 0;
+        /* 1024에서 준 margin 제거 */
+    }
+
+    header .logo img {
+        height: 32px;
+        /* 원하는 높이 */
+        width: auto;
+        display: block;
+        top: 33px;
+        left: 38%;
+        position: absolute;
+    }
+
+    /* menu-icon은 "컨테이너" 자체를 그리드에 올리고 */
+    header ul.menu-icon {
+        grid-column: 1 / -1;
+        /* 전체 영역을 차지하게 한 뒤 */
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        /* 양 끝 배치 */
+        align-items: center;
+        gap: 0;
+        /* 양끝이면 gap 의미 없음 */
+        top: -87%;
+        position: relative;
+    }
+
+    /* 아이콘 크기 통일(선택) */
+    header ul.menu-icon li {
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    header ul.menu-icon li a {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    header ul.menu-icon img {
+        width: 22px;
+        /* 원하는 크기 */
+        height: 22px;
+        display: block;
+    }
+
+    /*  순서 교정:
+    현재 HTML은 [장바구니, 햄버거] 순서라서
+     768에서 햄버거를 왼쪽, 장바구니를 오른쪽으로 배치 */
+    header ul.menu-icon li:first-child {
+        order: 2;
+    }
+
+    /* 장바구니 → 오른쪽 */
+    header ul.menu-icon li:last-child {
+        order: 1;
+    }
+
+    /* 햄버거   → 왼쪽 */
+
+}
+
+
+
+@media screen and (max-width:768px) {
+    .hero .visual .line-img svg {
+        display: none !important;
+    }
+
+    .hero .visual .en_s {
+        font-size: 40px;
+        font-weight: 300;
+        left: 28%;
+        bottom: 17%;
+    }
+
+    .hero .visual .card {
+        width: 39%;
+        border-radius: 10px;
+    }
+
+    .hero .visual .card p.img {
+        width: 40%;
+    }
+
+    .hero .visual .card .title h3.name span.txt {
+        font-size: 9px;
+    }
+
+    .hero .visual .card .title a.btn img {
+        width: 15px;
+        height: 25px;
+        right: 8%;
+        position: absolute;
+    }
+
+    .hero .visual .card .title a.btn {
+        width: 25px;
+    }
+
+
+
+
+    /* 1) 전체 레이아웃: filter가 위로, products가 아래로 */
+    .itam {
+        padding: 120px 20px 120px;
+    }
+
+    .itam .inner {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .filter {
+        width: 100%;
+        font-family: 'PPMori', sans-serif;
+        font-style: normal;
+    }
+
+    /* 2) FILTER 타이틀 */
+    .filter .title {
+        padding-bottom: 14px;
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .filter .title p.en {
+        font-family: 'PP Mori', sans-serif;
+    }
+
+    .filter .filter-group .name-box p.name {
+        font-family: 'PPEditorialNew', serif;
+        font-weight: 400 !important;
+    }
+
+    /* 3) TYPE / RANGE / INGREDIENTS 기본(세로) */
+    .filter .filter-group,
+    .filter .Category {
+        width: 100%;
+    }
+
+
+    .filter .Category {
+        border-top: 0;
+        border-bottom: 0;
+        position: static;
+        gap: 6px;
+        /* 기본 숨김 - 클릭 시 펼쳐짐 */
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.3s ease, opacity 0.3s ease;
+    }
+
+    .filter .Category.is-open {
+        max-height: 200px;
+        opacity: 1;
+    }
+
+    .filter .Category::before {
+        display: none;
+    }
+
+    .filter .Category li a {
+        padding: 8px 0;
+    }
+
+    .filter .Category li a .name {
+        opacity: .35;
+        font-size: 14px;
+        letter-spacing: .02em;
+    }
+
+    .filter .Category li a .img {
+        opacity: .25;
+        /* 화살표도 흐리게 */
+        transform: scale(.9);
+    }
+
+    /* 4) TYPE: 닫혀 있을 때는 세로(기존처럼) */
+    .filter .filter-group .name-box a {
+        border-top: 0;
+        padding: 10px 0;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    /*  TYPE 리스트: 768px에서 항상 보이고 가로 나열 */
+    .filter .filter-group .list {
+        display: flex !important;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 18px;
+        padding: 12px 0 8px;
+        height: auto !important;
+        overflow: visible;
+        white-space: nowrap;
+    }
+
+    /*  TYPE: 열렸을 때만 "상단 가로 탭" 처럼 */
+    .filter .filter-group.is-open .list {
+        height: auto;
+        /* 안전(실제 height는 GSAP가 제어) */
+        overflow: visible;
+        /* 가로 탭이 잘리지 않게 */
+        padding: 12px 0 8px;
+        display: flex;
+        flex-direction: row;
+        /*  가로 나열 */
+        flex-wrap: nowrap;
+        /*  한 줄 고정 */
+        gap: 18px;
+        white-space: nowrap;
+        border-top: 1px solid #000;
+    }
+
+    /*  가로 스크롤 가능하게(항목 많을 때) */
+    .filter .filter-group.is-open .list {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        /* Firefox */
+    }
+
+    .filter .filter-group.is-open .list::-webkit-scrollbar {
+        display: none;
+        /* Chrome/Safari */
+    }
+
+    /*  li가 100% 먹던 걸 해제 */
+    .filter ul.list li {
+        width: auto;
+    }
+
+    .filter ul.list li a {
+        padding: 0;
+        font-size: 14px;
+        color: #222222;
+        opacity: 1;
+    }
+
+    /* All 항목 스타일 */
+    .filter ul.list li.all-item {
+        display: block;
+    }
+
+    .filter ul.list li.all-item a {
+        font-family: 'PP Mori', sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        color: #222222;
+    }
+
+    .filter ul.list li.all-item a .txt {
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        text-decoration-thickness: 0.5px;
+    }
+
+    /* 선택 탭 스타일(지금은 class가 없어서 hover만) */
+    .filter ul.list li a:hover .txt {
+        text-decoration: underline;
+    }
+
+    /*  PRODUCTS: 위 타이틀영역 정리 */
+    .products {
+        width: 100%;
+        gap: 36px;
+        /* 섹션 간격 */
+    }
+
+    /* (top-box) 오른쪽 화살표 2개 숨김 */
+    .products .title-box .right {
+        display: none !important;
+    }
+
+    /* 타이틀 크기 모바일용(원하면) */
+    .products .title-box {
+        margin-bottom: 22px;
+    }
+
+    .products .title-box .left p.title {
+        font-size: 24px;
+    }
+
+    .products .title-box .left p.sub {
+        font-size: 18px;
+    }
+
+    .filter .filter-group .name-box .img {
+        display: none !important;
+    }
+
+    .filter .filter-group.is-open .list {
+        border-top: 0;
+        padding: 12px 0 0;
+    }
+
+    /* .filter{position: relative;}
+.filter .Category{
+    position: absolute;
+    top: 0; right: 0;
+    width: 160px;
+    border: 0;
+    gap: 0;} */
+    .filter .Category li .img {
+        display: none !important;
+    }
+
+    /* 1) FILTER 영역을 2컬럼 grid로 재배치 */
+    .filter {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 160px;
+        /*  우측 고정폭(원하면 140~180 조절) */
+        grid-template-areas:
+            "typeHead filterHead"
+            "typeList  category";
+        column-gap: 24px;
+        row-gap: 0;
+        /*  FILTER ↔ Category 간격 제거 */
+        align-items: start;
+        overflow-x: hidden;
+        box-sizing: border-box;
+    }
+
+    /* 2) 오른쪽 상단(B) = FILTER 타이틀(A를 이동) */
+    .filter .title {
+        grid-area: filterHead;
+        justify-self: end;
+        text-align: right;
+
+        /*  여백 원천 차단 */
+        margin: 0 !important;
+        padding: 0 !important;
+        padding-bottom: 8px !important;
+        height: auto;
+        line-height: 1;
+
+        font-size: 14px;
+        font-weight: 400;
+        text-transform: uppercase;
+        opacity: .9;
+
+        /* 페이지 밖으로 벗어나지 않도록 */
+        max-width: 100%;
+        box-sizing: border-box;
+
+        /* 밑줄과 간격 */
+        display: inline-block;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .filter .title a {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+    }
+
+    /* 왼쪽 상단 = TYPE 헤더 */
+    .filter .filter-group {
+        grid-area: typeHead;
+        width: 100%;
+    }
+
+    .filter .filter-group .name-box a {
+        border-top: 0;
+        padding: 0;
+        /*  여기서도 불필요 여백 제거 */
+        margin: 0;
+        font-size: 18px;
+        font-weight: 700;
+        justify-content: flex-start;
+    }
+
+    /* TYPE 화살표 숨김 유지 */
+    .filter .filter-group .name-box .img {
+        display: none !important;
+    }
+
+    /*  TYPE 리스트(가로탭) = 왼쪽 아래 */
+    .filter .filter-group .list {
+        grid-area: typeList;
+        padding-bottom: 0;
+    }
+
+    .filter .filter-group.is-open .list {
+        border-top: 0;
+        padding: 12px 0 0;
+    }
+
+    /*  오른쪽 아래 = RANGE/INGREDIENTS */
+    .filter .Category {
+        grid-area: category;
+        width: 160px;
+        justify-self: end;
+        align-self: start;
+
+        border: 0;
+        position: static;
+        gap: 6px;
+        margin-top: 2px;
+        /* ✅ FILTER 바로 아래 붙게(필요하면 0~4 조절) */
+    }
+
+    .filter .Category::before {
+        display: none;
+    }
+
+    /* 주황 영역 화살표 숨김(원하면 유지) */
+    .filter .Category li .img {
+        display: none !important;
+    }
+
+    /* RANGE/INGREDIENTS 정렬/간격 */
+    .filter .Category li a {
+        padding: 6px 0;
+        justify-content: flex-end;
+        /* 오른쪽 정렬 */
+    }
+
+    .filter .Category li a .name {
+        opacity: .35;
+        font-size: 13px;
+        letter-spacing: .02em;
+    }
+
+    .filter .title {
+        padding: 0 !important;
+        margin: 0 !important;
+        line-height: 1;
+        /*  줄 높이 최소화 */
+    }
+
+    .filter .title p {
+        margin: 0 !important;
+        padding: 0 !important;
+        line-height: 1;
+    }
+
+
+    .filter .title .img {
+        width: 18px;
+        height: 18px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .filter .title .img img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        transform: rotate(0deg);
+        transform-origin: 50% 50%;
+        transition: transform .25s ease;
+    }
+
+    /* 열렸을 때 화살표 회전 */
+    .filter .Category.is-open~.title .img img,
+    .filter .title.is-open .img img {
+        transform: rotate(90deg);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*  swiper를 "슬라이드"가 아니라 "2열 그리드"처럼 */
+    .products .shop-swiper {
+        overflow: visible;
+        /* 가로 슬라이드용 클리핑 해제 */
+    }
+
+    .products .shop-swiper .swiper-wrapper {
+        transform: none !important;
+        /* 혹시 인라인 transform 들어오면 무력화 */
+        display: flex;
+        flex-wrap: wrap;
+        /*  줄바꿈 */
+        gap: 16px;
+        /*  카드 간격(원하는 값으로 조절) */
+        width: 100%;
+    }
+
+    /*  2열 */
+    .products .shop-swiper .swiper-slide {
+        width: calc(50% - 8px) !important;
+        /* gap(16)의 절반만큼 빼기 */
+        height: auto !important;
+        /* 고정 높이 해제 */
+        margin-right: 0 !important;
+        /* swiper 기본 여백 제거 */
+    }
+
+    /*  카드 내부도 반응형으로 */
+    .products .shop-swiper a {
+        width: 100%;
+        height: auto;
+        padding: 18px 16px;
+    }
+
+    .products .shop-swiper p.img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 18px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .products .shop-swiper p.img img {
+        width: min(180px, 60%);
+        height: auto;
+        display: block;
+    }
+
+    .products .shop-swiper .bottom {
+        gap: 10px;
+    }
+
+    /*  "정적인 카드" 느낌이면 스와이프 제스처도 줄이기(선택) */
+    .products .shop-swiper {
+        touch-action: pan-y;
+    }
+
+
+
+
+
+
+
+
+
+    footer .inner {
+        padding: 60px 20px;
+    }
+
+    footer .top-box {
+        display: block;
+        margin: 0;
+    }
+
+    footer .top-box .left-box {
+        width: 100%;
+        gap: 14px;
+    }
+
+    footer .top-box .left-box ul {
+        width: 100%;
+    }
+
+    footer .top-box .left-box ul li {
+        display: none;
+        margin: 0;
+        cursor: pointer;
+    }
+
+    footer .top-box .left-box ul li.tit {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 16px;
+        color: #fff;
+        padding: 0 4px;
+        border-bottom: 0px;
+        margin: 0;
+        position: relative;
+    }
+
+    footer .top-box .left-box ul li.tit::after {
+        content: '';
+        font-size: 22px;
+        line-height: 1;
+        opacity: 0.9;
+    }
+
+    footer .top-box .right-box {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    footer .top-box .right-box ul {
+        width: 100%;
+    }
+
+    footer .top-box .right-box li:nth-child(2) img {
+        width: 18px;
+        height: 18px;
+    }
+
+    footer .bottom-box {
+        justify-content: space-between;
+        gap: 0;
+    }
+
+    footer .bottom-box p.logo {
+        margin-top: 30px;
+    }
+
+    footer .bottom-box p.text {
+        font-size: 12px;
+        opacity: 0.8;
+    }
+
+    footer .top-box .right-box li {
+        padding: 0px 4px 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    footer .top-box .left-box ul li.tit span {
+        position: absolute;
+        width: 18px;
+        height: 2px;
+        background: #fff;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        top: 50%;
+        right: 4px;
+        transform-origin: center;
+    }
+
+    footer .top-box .left-box ul li.tit span.b {
+        transform: rotate(90deg);
+    }
+
+    .floating {
+        display: none;
+    }
+
+    footer .top-box .left-box ul.open li {
+        display: block;
+    }
+
+    footer .top-box .left-box ul.open li.tit {
+        display: flex;
+        font-size: 16px;
+    }
+
+    footer .top-box .left-box ul.open li.tit .b {
+        opacity: 0;
+    }
+
+    footer .top-box .left-box ul.open li {
+        display: block;
+        padding: 8px 4px;
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+}
+
+/*  기본(PC 포함): 검정 */
+header {
+    color: #222;
+}
+
+header .logo img,
+header .menu-icon img {
+    filter: brightness(0);
+}
+
+/*  1024~769 구간만: 흰색 */
+@media (max-width:1024px) and (min-width:769px) {
+    header {
+        color: #fff;
+    }
+
+    /* 텍스트 쓸 일이 있으면 */
+    header .logo img,
+    header .menu-icon img {
+        filter: brightness(0) invert(1);
+    }
+}
+
+/*  768 이하(768/390 포함): 다시 검정 */
+@media (max-width:768px) {
+    header {
+        color: #222;
+    }
+
+    header .logo img,
+    header .menu-icon img {
+        filter: brightness(0) !important;
+        /*  흰색 규칙 덮어쓰기 */
+    }
+
+
+
+
+    footer .bottom-box p.logo {
+        width: 132px;
+        height: 8px;
+    }
+
+    footer .bottom-box p.logo img {
+        width: 154px;
+        height: 29px;
+    }
+
+    footer .bottom-box p.text {
+        font-size: 6px;
+        margin-top: 49px;
+    }
+}
+
+
+
+@media screen and (max-width:628px) {
+
+    /* filter - TYPE과 FILTER를 같은 줄에 배치 */
+    .filter {
+        display: block;
+        width: 100%;
+        position: relative;
+    }
+
+    .filter .title {
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: inline-block;
+        margin: 0;
+    }
+
+    .filter .filter-group {
+        width: 100%;
+    }
+
+    .hero .visual .line-img svg {
+        display: none !important;
+    }
+
+    /* svgAni2 - 비율 유지하며 축소 */
+    .hero .visual .svgAni2 {
+        width: 16% !important;
+        left: 40% !important;
+        bottom: 45% !important;
+    }
+
+    .hero .visual .en_s {
+        font-size: 40px;
+        font-weight: 300;
+        left: 28%;
+        bottom: 17%;
+    }
+
+    .hero .visual .card {
+        width: 39%;
+        border-radius: 10px;
+    }
+
+    .hero .visual .card p.img {
+        width: 40%;
+    }
+
+    .hero .visual .card .title h3.name span.txt {
+        font-size: 9px;
+    }
+
+    .hero .visual .card .title a.btn img {
+        width: 15px;
+        height: 25px;
+        right: 8%;
+        position: absolute;
+    }
+
+    .hero .visual .card .title a.btn {
+        width: 25px;
+    }
+}
+
+
+
+
+
+
+/* 중간 breakpoint 480px - 628px와 390px 사이 자연스러운 전환 */
+@media screen and (max-width:480px) {
+    .hero .visual .en_s {
+        font-size: 28px;
+        font-weight: 200;
+        left: 8%;
+        bottom: 80%;
+    }
+
+    .hero .visual .card {
+        width: 55%;
+        height: auto;
+        padding: 12px;
+        border-radius: 8px;
+    }
+
+    .hero .visual .card .title h3.name {
+        font-size: 14px;
+    }
+
+    .hero .visual .card .title h3.name span.txt {
+        font-size: 8px;
+    }
+
+    .hero .visual .card .text-box p.text-img {
+        font-size: 24px;
+    }
+
+    .hero .visual .card .text-box p.text {
+        font-size: 22px;
+    }
+
+    .hero .visual .card p.txt {
+        font-size: 8px;
+    }
+
+    .hero .visual .card p.img {
+        width: 45%;
+    }
+
+    .hero .visual .card .title a.btn {
+        width: 20px;
+        height: 20px;
+    }
+
+    .hero .visual .card .title a.btn img {
+        width: 10px;
+        height: 18px;
+    }
+
+    /* header - 768px에서 390px로 자연스러운 전환 */
+    header {
+        padding: 20px 16px;
+    }
+
+    header .logo img {
+        height: 28px;
+        top: 28px;
+        left: 42%;
+    }
+
+    header ul.menu-icon {
+        top: -75%;
+    }
+
+    header ul.menu-icon li {
+        width: 40px;
+        height: 40px;
+    }
+
+    header ul.menu-icon img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+
+/* 모바일 모드 390*/
+@media screen and (max-width:390px) {
+
+    /* nav 숨기기 */
+    header ul.nav.en {
+        display: none;
+    }
+
+    /* header - flex로 menu-icon만 배치, 로고는 absolute */
+    header {
+        padding: 24px 20px 15px;
+        display: flex !important;
+        justify-content: space-between;
+        align-items: center;
+        background: #f0f0ed;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+        box-sizing: border-box;
+    }
+
+    /* 로고 - 390px 단독 위치 조정 */
+    header .logo {
+        position: absolute !important;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0;
+        z-index: 10;
+    }
+
+    header .logo img {
+        height: 32px;
+        width: auto;
+        display: block;
+        filter: brightness(0) !important;
+        /* 390px 단독 조정 */
+        position: static;
+        top: auto;
+        left: auto;
+    }
+
+    /* menu-icon - 전체 너비, 양 끝 배치 */
+    header ul.menu-icon {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0;
+    }
+
+    /* 아이콘 크기 통일 */
+    header ul.menu-icon li {
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    header ul.menu-icon li a {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    header ul.menu-icon img {
+        width: 22px;
+        height: 22px;
+        display: block;
+        filter: brightness(0) !important;
+    }
+
+    /* 순서 교정: 햄버거를 왼쪽, 장바구니를 오른쪽으로 배치 */
+    header ul.menu-icon li:first-child {
+        order: 2;
+    }
+
+    header ul.menu-icon li:last-child {
+        order: 1;
+    }
+
+    /* wrap 컨테이너 - header 높이만큼 상단 여백 추가 */
+    .wrap {
+        padding-top: 68px;
+    }
+
+    /* hero 섹션 */
+    .hero {
+        margin-top: 0;
+    }
+
+    .filter .Category {
+        display: none !important;
+    }
+
+    .hero .visual .hero-line-svg {
+        display: none !important;
+    }
+
+    .filter .title p.en {
+        font-family: 'PP Mori', sans-serif;
+        font-weight: 400 !important;
+        font-size: 12px;
+        line-height: 1.3;
+    }
+
+    /* filter 타이틀 - TYPE 오른쪽에 배치 */
+    .filter .title {
+        position: absolute;
+        right: 20px;
+        top: 0;
+        display: inline-block;
+        padding-bottom: 8px;
+        border-bottom: 1px solid #ccc;
+        margin: 0;
+    }
+
+    .filter {
+        position: relative;
+    }
+
+    .filter .title a {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        /* FILTERS와 화살표 사이 간격 */
+    }
+
+    .filter .title .img {
+        width: 14px;
+        height: 14px;
+    }
+
+    .filter .title .img img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .filter .filter-group .name-box {
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .filter .filter-group .name-box a {
+        display: flex;
+        align-items: center;
+        gap: 60px;
+        /* TYPE과 화살표 사이 간격 */
+        width: 100%;
+    }
+
+    .filter .filter-group .name-box .img {
+        display: none !important;
+    }
+
+    .filter .filter-group .name-box p.name {
+        font-family: 'PPEditorialNew', serif;
+        font-weight: 400 !important;
+        line-height: 1.3;
+        font-size: 22px;
+    }
+
+    /* ul.list 가로 스크롤 */
+    .filter .filter-group ul.list {
+        display: flex !important;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 16px;
+        overflow-x: auto !important;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        /* Firefox */
+        padding: 10px 0;
+        margin: 0;
+        white-space: nowrap;
+        height: auto !important;
+    }
+
+    .filter .filter-group ul.list::-webkit-scrollbar {
+        display: none;
+        /* Chrome/Safari */
+    }
+
+    .filter .filter-group ul.list li {
+        flex-shrink: 0;
+    }
+
+    .filter .filter-group ul.list li a {
+        font-size: 14px;
+        color: #222222;
+    }
+
+    /* 드래그 스크롤 커서 */
+    .filter .filter-group ul.list {
+        cursor: grab;
+    }
+
+    .filter .filter-group ul.list.dragging {
+        cursor: grabbing;
+    }
+
+    .filter .filter-group ul.list.dragging li a {
+        pointer-events: none;
+    }
+
+    .hero .visual .en_s {
+        font-family: 'PPEditorialNew', serif !important;
+        font-size: 20px !important;
+        letter-spacing: normal;
+        line-height: 1.1;
+        font-weight: lighter !important;
+        font-style: italic !important;
+        text-decoration: underline 1px !important;
+        left: 5%;
+        bottom: 82%;
+    }
+
+    .hero .visual .card {
+        width: 220px;
+        height: 235px;
+        padding: 15px;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+    }
+
+    .hero .visual .card .title h3.name {
+        font-family: 'PP Mori', sans-serif;
+        font-size: 18px;
+    }
+
+    .hero .visual .card .title h3.name span.txt {
+        display: block;
+        font-family: 'Yoon Gothic', sans-serif;
+        font-size: 10px;
+    }
+
+    .hero .visual .card .text-box p.text {
+        font-size: 26px;
+        margin-top: -23px;
+
+    }
+
+    .hero .visual .card .text-box p.text-img {
+        font-family: 'PP Mori', sans-serif;
+        font-size: 28px;
+        font-weight: 600;
+        margin-top: -13px;
+        margin-bottom: 10px;
+    }
+
+    .hero .visual .card p.txt {
+        margin-top: -15px;
+    }
+
+    /* 버튼을 p.txt 아래로 이동 */
+    .hero .visual .card .title a.btn {
+        position: absolute;
+        bottom: 7px;
+        left: 15px;
+        width: 22px;
+        height: 22px;
+    }
+
+    .hero .visual .card .title a.btn img {
+        width: 22px;
+        height: 14px;
+        top: 3px;
+        right: auto;
+    }
+
+    .hero .visual .card p.img {
+        width: 43%;
+    }
+
+    .products .shop-swiper .bottom h4.name {
+        font-size: 12px;
+        font-weight: 300;
+    }
+
+    .products .shop-swiper .bottom {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    footer .bottom-box p.logo {
+        width: 132px;
+        height: 8px;
+    }
+
+    footer .bottom-box p.logo img {
+        width: 154px;
+        height: 29px;
+    }
+
+    footer .bottom-box p.text {
+        font-size: 6px;
+        margin-top: 40px;
+    }
 
 }
