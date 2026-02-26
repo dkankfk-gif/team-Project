@@ -61,33 +61,16 @@
                     <!--.svgAni2 -->
                     <div class="svgAni2" style="position:absolute; width:27%; left:32%; bottom:35%; z-index: 10;">
                         <svg class="hero-line-svg" viewBox="0 0 518 388" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                                <filter id="heroGlow" x="-30%" y="-30%" width="160%" height="160%">
-                                    <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="blur" />
-                                    <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0
-                    0 1 0 0 0
-                    0 0 1 0 0
-                    0 0 0 0.9 0" result="blurAlpha" />
-                                    <feMerge>
-                                        <feMergeNode in="blurAlpha" />
-                                        <feMergeNode in="SourceGraphic" />
-                                    </feMerge>
-                                </filter>
-                            </defs>
-
                             <!-- (1) 실제 라인 -->
-                            <path class="hero-line-path"
+                            <path id="svgAni01" class="hero-line-path"
                                 d="M14.8618 386.675C-8.47155 305.483 -19.1382 122.313 124.862 39.175C304.862 -64.7481 500.361 75.4374 516.361 84.675"
                                 fill="none" stroke="white" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" />
 
-                            <!-- (2) 화살표 머리 -->
-                            <path class="hero-line-arrow" d="M515.361 78.1748L516.361 85.1748L509.861 86.1748"
-                                fill="none" stroke="white" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" />
-
-                            <!-- 트레이서 -->
-                            <circle class="hero-line-tracer" r="2.6" cx="0" cy="0" fill="white" opacity="0" />
+                            <!--  화살표 머리 -->
+                            <path id="svgAni02" class="hero-line-arrow"
+                                d="M515.361 78.1748L516.361 85.1748L509.861 86.1748" fill="none" stroke="white"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </div>
 
@@ -111,106 +94,39 @@
 
 
 
+        <!-- SVG Path 길이 측정 & CSS 애니메이션 -->
         <script>
-            document.addEventListener("DOMContentLoaded", () => {
-                if (!window.gsap) return;
-                gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
+            $(function () {
+                // 각 path의 길이//
+                var pathLine = document.getElementById('svgAni01');
+                var pathArrow = document.getElementById('svgAni02');
 
-                const hero = document.querySelector(".hero");
-                const path = hero?.querySelector(".hero-line-path");
-                const tracer = hero?.querySelector(".hero-line-tracer");
-                const arrow = hero?.querySelector(".hero-line-arrow");
+                if (!pathLine || !pathArrow) return;
 
-                if (!hero || !path) return;
+                var lengthLine = Math.ceil(pathLine.getTotalLength()) + 2;   // 길이 + 2
+                var lengthArrow = Math.ceil(pathArrow.getTotalLength()) + 2;  // 길이 + 2
 
-                // 1) 초기 상태 세팅 (공통)
-                const len = path.getTotalLength();
-
-                // 곡선 라인: 숨김 상태 시작
-                gsap.set(path, {
-                    strokeDasharray: len,
-                    strokeDashoffset: len,
-                    opacity: 0,
-                    filter: "url(#heroGlow)"
+        
+                $(pathLine).css({
+                    'stroke-dasharray': lengthLine,
+                    'stroke-dashoffset': lengthLine
+                });
+                $(pathArrow).css({
+                    'stroke-dasharray': lengthArrow,
+                    'stroke-dashoffset': lengthArrow
                 });
 
-                if (tracer) gsap.set(tracer, { opacity: 0 });
 
-                // 화살표 머리: 초기 숨김 + 축소
-                if (arrow) {
-                    gsap.set(arrow, {
-                        opacity: 0,
-                        scale: 1.8,
-                        transformOrigin: "50% 50%"
-                    });
-                }
+                setTimeout(function () {
+                    $(pathLine).addClass('animate');
+                }, 100);
 
-                //  gsap.matchMedia() 사용 
-                let mm = gsap.matchMedia();
-
-                // (1) PC/일반 (reduced motion이 아닐 때)
-                mm.add("(prefers-reduced-motion: no-preference)", () => {
-
-                    // 타임라인 생성
-                    const tl = gsap.timeline({
-                        scrollTrigger: {
-                            trigger: hero,
-                            start: "top 70%",
-                            toggleActions: "play none none reset"
-                        },
-                        defaults: { ease: "none" }
-                    });
-
-                    // 2-1) 라인 페이드 인
-                    tl.to(path, { opacity: 1, duration: 0.25 }, 0);
-
-                    // 2-2) 라인 드로잉 (속도 획기적 개선: 0.6초)
-                    tl.to(path, { strokeDashoffset: 0, duration: 0.08 }, 0);
-
-                    // 2-3) 글로우 효과 (그리는 동안만)
-                    tl.to(path, { filter: "url(#heroGlow)", duration: 0.01 }, 0);
-                    // 0.5초 무렵부터 글로우 제거 시작
-                    tl.to(path, { filter: "none", duration: 0.2, ease: "power1.out" }, 0.01);
-
-                    // 2-4) 트레이서 (옵션)
-                    if (tracer) {
-                        tl.to(tracer, { opacity: 1, duration: 0.1, ease: "power1.out" }, 0.05);
-                        tl.to(tracer, {
-                            duration: 0.6,
-                            ease: "none",
-                            motionPath: {
-                                path: path,
-                                align: path,
-                                alignOrigin: [0.5, 0.5],
-                                autoRotate: false
-                            }
-                        }, 0);
-                        // 끝나면 트레이서 사라지게
-                        tl.to(tracer, { opacity: 0, duration: 0.2, ease: "power1.out" }, 0.55);
-                    }
-
-                    // 3) 화살표 머리: 라인 끝나는 순간 "선명하고 빠르게" 등장
-                    if (arrow) {
-                        tl.to(arrow, {
-                            opacity: 1,
-                            scale: 1,         // 크기 유지 (필요 시 1.1 등 조절 가능)
-                            duration: 0.001,    // 아주 짧게
-                            ease: "none"
-                        }, ">");
-                    }
-                });
-
-                // (2) 모션 줄이기 (접근성)
-                mm.add("(prefers-reduced-motion: reduce)", () => {
-                    gsap.set(path, { strokeDashoffset: 0, opacity: 1, filter: "none" });
-                    if (tracer) gsap.set(tracer, { opacity: 0 });
-                    if (arrow) gsap.set(arrow, { opacity: 1, scale: 1 });
-                });
-
+                //  화살표 머리: 곡선이 다 그려진 직후 시작 (1100ms)
+                setTimeout(function () {
+                    $(pathArrow).addClass('animate');
+                }, 1100); // 100 + 500(delay) + 500(duration) = 1100
             });
         </script>
-
-
 
 
         <!-- filer -->
@@ -774,8 +690,6 @@
                             if (!isOpen) list.style.paddingBottom = "0px";
                         }
                     });
-
-
                 });
             })();
 

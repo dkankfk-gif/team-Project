@@ -7,28 +7,48 @@
   box-sizing: border-box;
 }
 
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,tbody,tfoot,thead,tr,th,td {  margin: 0;  padding: 0;}
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,tbody,tfoot,thead,tr,th,td {
+  margin: 0;
+  padding: 0;
+}
 
-h1,h2,h3,h4,h5,h6 {  font-weight: 700;  font-size: inherit;}
+h1,h2,h3,h4,h5,h6 {
+  font-weight: 700;
+  font-size: inherit;
+}
 
-a {  color: inherit;  text-decoration: inherit;}
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
 
-img {  vertical-align: middle;}
+img {
+  vertical-align: middle;
+}
 
-a img {  border: none;}
+a img {
+  border: none;
+}
 
-li {  list-style: none;}
+li {
+  list-style: none;
+}
 
-address,em,i {  font-style: normal;}
+address,
+em,
+i {
+  font-style: normal;
+}
 
-a:focus {  outline: none}
+a:focus {
+  outline: none
+}
 
-button:focus {  outline: none}
+button:focus {
+  outline: none
+}
 
-/* .wrap > section:not(.TimeLine) {
-  padding-left: 10px;
-  padding-right: 110px;
-} */
+
 .wrap {
   position: relative;
   box-sizing: border-box;
@@ -64,11 +84,17 @@ header {
   background: #F3F4F0;
 }
 
-header .logo {  display: inline-block;}
+header .logo {
+  display: inline-block;
+}
 
-header p.img {  width: 100%;}
+header p.img {
+  width: 100%;
+}
 
-header p.img img {  width: 100%;}
+header p.img img {
+  width: 100%;
+}
 
 header ul.nav {
   display: flex;
@@ -184,7 +210,7 @@ header ul.menu-icon li a {
 
 
 .main .inner .left .txtBoxBottom {
-  margin-top: clamp(360px, 34vw, 641px);
+  margin-top: clamp(200px, 34vw, 641px);
 }
 
 .main .inner .left .txtBoxBottom {
@@ -201,6 +227,7 @@ header ul.menu-icon li a {
   font-size: clamp(56px, 5.8vw, 110px);
   font-weight: 700;
   line-height: 116%;
+  color: #3B3B3B;
 }
 
 .main .inner .left .txtBoxBottom p.set {
@@ -208,6 +235,7 @@ header ul.menu-icon li a {
   font-size: clamp(56px, 5.8vw, 110px);
   font-weight: 700;
   line-height: 116%;
+  color: #3B3B3B;
 }
 
 .main .inner .left .txtBoxBottom p span.bold {
@@ -215,6 +243,7 @@ header ul.menu-icon li a {
   font-weight: 400;
   font-size: clamp(56px, 5.8vw, 115px);
   line-height: 116%;
+  color: #3B3B3B;
 }
 
 .main .inner .left .txtBoxBottom p.ital {
@@ -222,9 +251,8 @@ header ul.menu-icon li a {
   font-size: clamp(56px, 5.8vw, 115px);
   font-style: italic;
   line-height: 116%;
+  color: #3B3B3B;
 }
-
-
 
 
 
@@ -408,7 +436,7 @@ header ul.menu-icon li a {
   justify-content: space-between;
   /* 1920px: 110px 105px 220px 110px → 390px: 40px 16px 60px 16px */
   padding: clamp(40px, 4.6vw + 11px, 110px) clamp(16px, 5.8vw + 3px, 105px) clamp(60px, 10.5vw + 19px, 220px) clamp(16px, 6.1vw + 2px, 110px);
-  gap: clamp(20px, 6.5vw + 6px, 120px);
+  gap: clamp(20px, 1.5vw + 6px, 120px);
 }
 
 .main .inner .right {
@@ -424,7 +452,7 @@ header ul.menu-icon li a {
   margin-top: clamp(80px, 10vw, 200px);
 }
 
-/* 버튼: inner 기준 absolute였는데, right 기준으로 바꾸면 모바일에서도 컨트롤 쉬움 */
+
 .main .inner .right a.btn {
   position: absolute;
   right: clamp(0px, -37vw, 40px);
@@ -465,7 +493,7 @@ header ul.menu-icon li a {
   font-size: clamp(56px, 8vw, 160px);
   /*  반응형 타이포 */
   line-height: 1.05;
-  color: #000;
+  color: #30302F;
 
 }
 
@@ -488,11 +516,7 @@ header ul.menu-icon li a {
   margin: 0 auto;
 }
 
-/* =========================
-    TITLE (색상 고정)
-    - 기본: #000
-    - 회색: .gray -> #BEBEBE
-========================= */
+
 .typo .tit1 {
   margin: 0;
   text-align: right;
@@ -501,7 +525,7 @@ header ul.menu-icon li a {
   font-size: clamp(56px, 8vw, 160px);
   /* 반응형 타이포 */
   line-height: 1.05;
-  color: #000;
+  color: #30302F;
 }
 
 .typo .tit1 span.gray {
@@ -510,10 +534,7 @@ header ul.menu-icon li a {
   font-weight: 400;
 }
 
-/* =========================
-    INLINE SLOT (반응형)
-    - 이미지가 텍스트 흐름 안에서 안정적으로 자리 유지
-========================= */
+
 .typo .tit1 .slot {
   display: inline-block;
   vertical-align: middle;
@@ -573,19 +594,6 @@ header ul.menu-icon li a {
 .typo.is-inview .tit1 .line:nth-child(5)>.line-inner {
   transition-delay: 1.15s;
 }
-
-/* 접근성: 모션 줄이기 */
-@media (prefers-reduced-motion: reduce) {
-  .typo .tit1 .line>.line-inner {
-    transition: none;
-    opacity: 1;
-    transform: none;
-  }
-}
-
-
-
-
 
 
 
@@ -698,6 +706,7 @@ header ul.menu-icon li a {
 .ingre .ingre-rightbox .tit {
   font-size: 100px;
   font-family: 'PPMori', sans-serif;
+  color: #1D1D1D;
 }
 
 .ingre .ingre-rightbox .txt {
@@ -705,23 +714,27 @@ header ul.menu-icon li a {
   margin-bottom: 450px;
   font-family: 'PPMori', sans-serif;
   font-weight: 500;
+  color: #1D1D1D;
 }
 
 .ingre .ingre-rightbox .txt span {
   font-size: 48px;
   font-family: "PP Editorial New", serif;
   font-style: italic;
+  color: #1D1D1D;
 }
 
 .ingre .ingre-rightbox .txt2 {
   font-size: 20px;
   font-family: 'PPMori', sans-serif;
+  color: #1D1D1D;
 }
 
 .ingre .ingre-rightbox .txt2 span {
   font-size: 28px;
   font-family: "PP Editorial New", serif;
   font-style: italic;
+  color: #1D1D1D;
 }
 
 /* ingre hover*/
@@ -834,10 +847,10 @@ header ul.menu-icon li a {
 .ingre .card li,
 .ingre .card2 li {
   margin: 0 !important;
-  /* 기존 margin: 0 20px 20px → gap로 대체 */
+  
 }
 
-/* 카드2 컬럼의 시작 오프셋(네가 쓰던 -215px 느낌) */
+/* 카드2 컬럼의 시작 오프셋*/
 .card-clip .col--down .track {
   transform: translateY(-215px);
 }
@@ -876,13 +889,6 @@ header ul.menu-icon li a {
   }
 }
 
-
-/* (선택) 모션 줄이기 */
-@media (prefers-reduced-motion: reduce) {
-  .card-clip .track {
-    animation: none !important;
-  }
-}
 
 
 :root {
@@ -937,6 +943,7 @@ header ul.menu-icon li a {
 .story .top-textBox .sub-tit {
   font-size: 32px;
   font-family: 'PPMori', sans-serif;
+  color: #3B3B3B;
 }
 
 .story .top-textBox .tit {
@@ -1038,14 +1045,13 @@ header ul.menu-icon li a {
 .Package {
   position: relative;
   overflow: hidden;
-  min-height: 1400px;
-
+  padding-bottom: 0 !important;
 }
 
 .Package .inner {
   /* width: 100%; */
   max-width: 1920px;
-  padding: 110px 100px;
+  padding: 110px 100px 0;
 
 }
 
@@ -1054,18 +1060,18 @@ header ul.menu-icon li a {
   width: 88.54%;
   font-size: 60px;
   font-family: 'PP Editorial New';
+  font-weight: 400;
+  color: #222222;
 }
 
-/*  3열 구조: left / thumb / copy */
 .Package .middle {
   width: 93%;
   display: grid;
   grid-template-columns: 42% 370px 1fr;
-  /* left / 이미지 / 텍스트 */
+  grid-template-areas: "left thumb copy";
   column-gap: 80px;
   align-items: start;
   margin-top: 120px;
-
 }
 
 /* <2> left */
@@ -1073,44 +1079,17 @@ header ul.menu-icon li a {
   font-size: 40px;
   font-family: 'PP Mori';
   margin-top: 220px;
-  /* 화면 예시처럼 아래로 내리기 */
+  
+  color: #222222;
 }
 
-/* 노란색 이미지 */
-.thumb-wrap {
-  width: 370px;
-  height: 470px;
-  position: relative;
-  margin-top: 140px;
-  /* 예시처럼 살짝 아래로 */
-}
 
-.thumb-canvas {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  border-radius: 185px 185px 0 0;
-  /* 상단 둥글게 */
-}
-
-.coverimg {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-}
-
-.img-large {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
 
 /* <3> copy */
 .copy-wrap {
   width: 100%;
   margin-top: 190px;
-  /* 예시처럼 텍스트 위치 조정 */
+  
 }
 
 .copy {
@@ -1126,939 +1105,495 @@ header ul.menu-icon li a {
   font-size: 16px;
   line-height: 1.7;
   margin: 0;
-}
-
-.thumb-canvas {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  border-radius: 185px 185px 0 0;
+  color: #222222;
 }
 
 .Package .copy-wrap {
   margin-left: 100px;
-}
-
-/*  썸네일 래퍼 */
-.thumb-wrap {
-  width: 370px;
-  height: 470px;
-  position: relative;
-  margin-top: 140px;
-}
-
-/*  확대 대상 */
-.thumb-canvas {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  border-radius: 185px 185px 0 0;
-  transform-origin: 50% 50%;
-  will-change: transform, border-radius;
-}
-
-/* 두 이미지 겹치기 */
-.thumb-canvas img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
-  /* PNG 이미지 품질 최적화 */
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges;
-  backface-visibility: hidden;
-  transform-style: preserve-3d;
-}
-
-/* 확대용 큰 이미지(배경) - PNG 최적화 */
-.img-big {
-  object-fit: cover;
-  /* 고품질 렌더링 */
-  image-rendering: high-quality;
-  image-rendering: -webkit-optimize-contrast;
-}
-
-/* 썸네일 프레임/커버 - PNG 최적화 */
-.img-frame {
-  object-fit: contain;
-  pointer-events: none;
-  opacity: 1;
-  will-change: opacity;
-  /* 고품질 렌더링 */
-  image-rendering: high-quality;
-  image-rendering: -webkit-optimize-contrast;
-}
-
-.Package .middle {
-  display: grid;
-  grid-template-columns: 42% 370px 1fr;
-  grid-template-areas: "left thumb copy";
-  column-gap: 9px;
 }
 
 .Package .left {
   grid-area: left;
 }
 
-.Package .thumb-wrap {
+/* clip-path  */
+.thumb_con {
+  width: 420px;
+  height: 600px;
+  position: relative;
+  left: -50px;
+  margin: 150px auto 60px;
   grid-area: thumb;
+  justify-self: center;
+}
+
+.thumb_con .imgWrap {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.thumb_con .imgWrap img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  /*  clip-path: 상단 아치, 하단 고정 */
+  clip-path: inset(5% 5% 0% 5% round 48% 48% 0% 0%);
 }
 
 .Package .copy-wrap {
   grid-area: copy;
 }
 
-/* 기본 */
-.TimeLine {
-  background: #F3F4F0;
-}
-
-.TimeLine .con {
-  padding: 100px 50px;
-}
-
-.TimeLine .con .textBox {
-  background: #F3F4F0;
-}
-
-.TimeLine .con p.toptit {
-  color: #45663C;
-  font-size: 100px;
-  font-family: 'PP Editorial New';
-  font-style: italic;
-  line-height: 1;
-  margin: 0 0 40px;
-  position: relative;
-  /* sticky 제거 */
-  z-index: 30;
-  background: transparent;
-  padding-bottom: 0;
-  padding-left: 100px;
-}
-
-/* 가로 리스트 */
-.TimeLine .con .list {
-  display: flex;
-  flex-wrap: nowrap;
-  gap: clamp(16px, 2vw, 15px);
-
-
-  /*  하단 여백을 더 넉넉하게 */
-  padding-bottom: 300px;
-  margin: 0;
-  list-style: none;
-  will-change: transform;
-}
-
-/*  li를 '세로(column)'로 만들고, 높이 고정 대신 min-height */
-.TimeLine .con .list>li {
-  flex: 0 0 auto;
-  width: min(1400px, 86vw);
-
-  /* 고정 height 제거 → 여유 있게 늘어날 수 있게 */
-  height: auto;
-  min-height: clamp(360px, 32vw, 520px);
-
-  /*  내부 여백 조금 넉넉히 */
-  /* padding: clamp(14px, 2vw, 30px); */
-  padding: 30px 200px 0 150px;
-  /*  이미지 안 잘리게 */
-  overflow: hidden;
-
-}
-
-
-
-/* 텍스트 */
-.TimeLine .con .list>li h1 {
-  /* margin: 25px; */
-  font-size: clamp(40px, 5vw, 80px);
-}
-
-.TimeLine .con .list>li p {
-  /* margin: 10px 0 0; */
-  line-height: 1.5;
-}
-
-
-/* 텍스트 공동  */
-
-.TimeLine .con .list li h1 {
-  font-size: 180px;
-  color: #3c3c3c;
-  font-family: 'PP Editorial New';
-  font-style: italic;
-  font-weight: 400;
-}
-
-.TimeLine .con .list li span.since {
-  font-size: 40px;
-  color: rgba(60, 60, 60, 0.4);
-  font-family: 'PP Editorial New';
-  font-style: italic;
-}
-
-.TimeLine .con .list li span.sub {
-  font-family: 'PP Editorial New';
-  font-style: italic;
-  font-weight: 100;
-  font-size: 24px;
-  color: rgba(60, 60, 60, 0.8)
-}
-
-.TimeLine .con .list li p.txt {
-  font-family: 'Yoon Gothic', sans-serif;
-  font-size: 18px;
-  font-weight: 800;
-  margin-top: 20px;
-}
-
-.TimeLine .con .list .line02 h1 {
-  margin-top: 20px;
-}
-
-
-
-/* timeline01 */
-/* p 기본 마진 제거(필수) */
-.TimeLine p {
-  margin: 0;
-}
-
-/* ===== 텍스트 공통 ===== */
-.TimeLine .con .list li h1 {
-  font-size: 180px;
-  color: #3c3c3c;
-  font-family: 'PP Editorial New';
-  font-style: italic;
-  font-weight: 400;
-}
-
-.TimeLine .con .list li span.since {
-  font-size: 40px;
-  color: rgba(60, 60, 60, 0.4);
-  font-family: 'PP Editorial New';
-  font-style: italic;
-}
-
-.TimeLine .con .list li span.sub {
-  font-family: 'PP Editorial New';
-  font-style: italic;
-  font-weight: 100;
-  font-size: 24px;
-  color: rgba(60, 60, 60, 0.8);
-}
-
-.TimeLine .con .list li p.txt {
-  font-family: 'Yoon Gothic', sans-serif;
-  font-size: 18px;
-  font-weight: 800;
-}
-
-/* ===== timeline01 ===== */
-
-/*  li 자체에 flex를 걸어야 좌/우로 나뉨 */
-.TimeLine .con .list li.line01 {
-  max-width: 1920px;
-}
-
-.TimeLine .con .list li.line01 {
-  display: flex;
-  align-items: flex-start;
-  /* 텍스트는 위 기준 */
-  justify-content: space-between;
-  gap: 60px;
-  /* 좌/우 간격 */
-  padding-left: 0;
-  margin-left: 100px;
-}
-
-/* 좌측 텍스트 박스 */
-.TimeLine .con .list li.line01 .textBox {
-  flex: 0 0 auto;
-  width: 595px;
-  /* 빨간 박스 폭(원하는 값으로 조절) */
-  margin-top: 115px;
-}
-
-.TimeLine .con .list li.line01 .textBox h1 {
-  margin-left: 30px;
-}
-
-/* 우측 이미지 영역(노란 박스 자리) */
-.TimeLine .con .list li.line01 .right {
-  flex: 0 0 auto;
-  width: 950px;
-  height: 535px;
-  /*  목표 규격 */
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  /*  이미지 바닥 정렬 */
-}
-
-/* 이미지 박스(p.img): 박스 규격을 정확히 잡는 곳 */
-.TimeLine .con .list li.line01 .right .img {
-  width: 950px;
-  height: 535px;
-  overflow: visible;
-  /* 박스 안에서만 보이게(원하면 visible로 변경) */
-
-}
-
-/* 이미지 자체 */
-.TimeLine .con .list li.line01 .right .img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  /* svg/이미지에 맞게 contain으로 바꿔도 됨 */
-  display: block;
-
-
-}
-
-
-/* ===== timeline02 ===== */
-.TimeLine .con .list li.line02 {
-  position: relative;
-  /* bg_img 절대배치 기준점 */
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 165px;
-  max-width: 1920px;
-  overflow: visible;
-  /*  위로 올린 bg_img 잘리지 않게 */
-}
-
-/*  노란색 배경 이미지: 레이아웃에서 분리 + 위로 올리기 */
-.TimeLine .con .list li.line02 .bg_img {
-  position: absolute;
-  top: -140px;
-  /*  파란 박스만큼 위로(수치 조절) */
-  right: 0;
-  /* 필요하면 left:0/transform으로 정렬 */
-  z-index: 1;
-  /*  textBox보다 아래 */
-  margin: 0;
-  pointer-events: none;
-  /* 클릭 방해 방지 */
-}
-
-/* bg_img 내부 img 크기(원하는대로) */
-.TimeLine .con .list li.line02 .bg_img img {
-  display: block;
-  width: 760px;
-  /*  노란 이미지 폭(수치 조절) */
-  height: auto;
-}
-
-/* 빨간 영역: 배경 이미지 위로 */
-.TimeLine .con .list li.line02 .textBox {
-  position: relative;
-  z-index: 3;
-  /*  bg_img(1) 위 */
-  flex: 0 0 auto;
-  width: 500px;
-  margin-left: auto;
-  text-align: right;
-  /* 필요하면 살짝 위로 당기기 */
-  margin-top: 246px;
-  /*  빨간 박스 위치 미세조정 */
-}
-
-/* 왼쪽 이미지 영역은 기본값 유지 */
-.TimeLine .con .list li.line02 .left {
-  position: relative;
-  z-index: 2;
-  /*  bg_img 위로(원하면), textBox보다 아래 */
-  flex: 0 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-
-
-.TimeLine .con .list li.line02 .left img.first {
-  width: 300px;
-  height: 430px;
-  margin-right: 15px;
-}
-
-.TimeLine .con .list li.line02 .left img.sec {
-  width: 300px;
-  height: 390px;
-  margin-top: 200px;
-}
-
-/* timeline03 */
-
-
-.TimeLine .con .list li.line03 {
-  display: flex;
-  align-items: flex-start;
-
-
-
-  /*  line03은 내부 좌우 여백 과한 것 방지 (공통 li padding이 크면 덮어씀) */
-  padding: 30px 0 30px 100px;
-}
-
-/* 오른쪽 텍스트 박스 */
-.TimeLine .con .list li.line03 .textBox {
-
-  width: 582px;
-  /* 요청 고정 */
-  text-align: right;
-  /* 목표 느낌 */
-  margin-top: 82px;
-}
-
-/* 왼쪽 이미지 영역(노란 영역) */
-.TimeLine .con .list li.line03 .left {
-  flex: 0 0 auto;
-  width: 48%;
-  /*  이미지 두 장 들어갈 자리(여유폭) */
-  height: 600px;
-  /*  이미지 배치용 캔버스(필요시 조절) */
-  position: relative;
-}
-
-/* p.img는 캔버스 역할 */
-.TimeLine .con .list li.line03 .left .img {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-}
-
-/*  1번 이미지: 550x310 (좌상단) */
-.TimeLine .con .list li.line03 .left .img img:nth-child(1) {
-  position: absolute;
-  left: 0;
-  top: 55px;
-  width: 477px;
-  height: 270px;
-  object-fit: cover;
-  display: block;
-}
-
-/*  2번 이미지: 440x250 (우하단) */
-.TimeLine .con .list li.line03 .left .img img:nth-child(2) {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 440px;
-  height: 227px;
-  object-fit: cover;
-  display: block;
-}
-
-
-/*  Timeline 04  */
-
-.TimeLine .con .list li.line04 {
-  display: flex;
-  align-items: flex-start;
-
-  gap: 50px;
-
-  /* line04만 여백 재정의(공통 li padding이 과하면 덮어씀) */
-  padding: 30px 60px 30px 60px;
-}
-
-/* 왼쪽 이미지 영역(노란 박스) */
-.TimeLine .con .list li.line04 .left {
-  flex: 0 0 auto;
-  width: 54%;
-  /* 이미지 영역 넉넉하게 */
-  height: 420px;
-  /* 두 이미지가 들어갈 캔버스 높이 */
-  position: relative;
-}
-
-/* 캔버스 */
-.TimeLine .con .list li.line04 .left .img {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-}
-
-/* ① 이미지(260x310) - 좌하단 */
-.TimeLine .con .list li.line04 .left .img img:nth-child(1) {
-  position: absolute;
-  left: 0;
-  bottom: -90px;
-  width: 260px;
-  height: 310px;
-  object-fit: cover;
-  display: block;
-}
-
-/* ② 이미지(480x280) - 우상단 */
-.TimeLine .con .list li.line04 .left .img img:nth-child(2) {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 480px;
-  height: 280px;
-  object-fit: cover;
-  display: block;
-}
-
-/* 오른쪽 텍스트 박스(빨간 박스) */
-.TimeLine .con .list li.line04 .textBox {
-  flex: 0 0 auto;
-  width: 572px;
-  /* 필요하면 line03처럼 고정 */
-  text-align: left;
-  margin-left: auto;
-
-  /*  첫 번째 목표처럼 '아래쪽'에 자리잡게 */
-  padding: 82px 0 110px;
-  /* 위치감 조절 포인트 */
-}
-
-
-/* line05 */
-
-
-.TimeLine .con .list li.line05 {
-  display: flex;
-  align-items: flex-start;
-
-  gap: 50px;
-
-  /*  line05에서만 과한 공통 padding 덮기 */
-  padding: 30px 0 30px 100px;
-}
-
-/* ----- 왼쪽 이미지 영역(노란 영역) ----- */
-.TimeLine .con .list li.line05 .left {
-  flex: 0 0 auto;
-  width: 700px;
-  /* 두 이미지 들어갈 캔버스 폭(필요시 조절) */
-  height: 460px;
-  /* 큰 이미지(430) 기준으로 여유 */
-  position: relative;
-}
-
-/* p.img = 캔버스 */
-.TimeLine .con .list li.line05 .left .img {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-}
-
-/* 1번 이미지: 300x390 (왼쪽) */
-.TimeLine .con .list li.line05 .left .img img.first {
-  position: absolute;
-  left: 0;
-  top: 180px;
-  width: 300px;
-  height: 390px;
-  object-fit: cover;
-  display: block;
-}
-
-/* 2번 이미지: 300x430 (오른쪽) */
-.TimeLine .con .list li.line05 .left .img img.sec {
-  position: absolute;
-  left: 340px;
-  /*  1번 옆으로 띄우기(간격 포함) */
-  top: 0;
-  /*  더 위로 올라간 느낌 */
-  width: 300px;
-  height: 430px;
-  object-fit: cover;
-  display: block;
-}
-
-/* ----- 오른쪽 텍스트 영역(빨간 영역) ----- */
-.TimeLine .con .list li.line05 .textBox {
-  flex: 0 0 auto;
-  width: 492px;
-  /* 목표처럼 작게(원하면 380~460 조절) */
-  margin-top: 200px;
-  text-align: right;
-}
-
-/* sub(영문) */
-.TimeLine .con .list li.line05 .textBox .sub {
-  display: block;
-  margin-bottom: 10px;
-  line-height: 1.2;
-}
-
-/* 본문 */
-.TimeLine .con .list li.line05 .textBox .txt {
-  margin: 0 0 16px;
-  line-height: 1.55;
-  word-break: keep-all;
-}
-
-
-
-
-/* Timeline 06  */
-
-
-.TimeLine .con .list li.line06 {
-  margin-right: 400px;
-  /* 가로 스크롤 영역 확보 (200px → 400px) */
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 80px;
-
-  /* 공통 li padding 덮기 - 왼쪽 패딩 제거하여 전체를 왼쪽으로 이동 */
-  padding: 30px 110px 30px 0px;
-  /* 기존: 60px → 0px */
-}
-
-/* ----- 왼쪽 이미지 영역(노란 영역) ----- */
-.TimeLine .con .list li.line06 .left {
-  flex: 0 0 auto;
-  width: 955px;
-  height: 535px;
-  display: flex;
-  align-items: flex-start;
-}
-
-/* p.img = 이미지 박스(규격 고정) */
-.TimeLine .con .list li.line06 .left .img {
-  width: 955px;
-  height: 535px;
-  margin: 0;
-}
-
-/* 이미지 */
-.TimeLine .con .list li.line06 .left .img img {
-  width: 95%;
-  height: 100%;
-  object-fit: cover;
-  /* SVG면 contain 추천 */
-  display: block;
-}
-
-/* ----- 오른쪽 텍스트 영역(빨간 영역) ----- */
-.TimeLine .con .list li.line06 .textBox {
-  flex: 0 0 auto;
-  width: 420px;
-  /* 목표처럼 작게 보이게 (원하면 380~520) */
-  margin-left: -111px;
-  text-align: right;
-  margin-top: 145px;
-}
-
-/* sub */
-.TimeLine .con .list li.line06 .textBox .sub {
-  display: block;
-  margin: 8px 0 12px;
-  line-height: 1.2;
-}
-
-/* 본문 */
-.TimeLine .con .list li.line06 .textBox .txt {
-  margin: 0;
-  line-height: 1.55;
-  word-break: keep-all;
-}
-
-/* =========================
-TIMELINE FINAL
-
-
-/* con = 실제 보이는 프레임(여기 폭 기준으로 JS가 계산함) */
-.TimeLine .con {
-  width: 100%;
-  overflow: hidden;
-  /*  list가 커져도 브라우저 가로 스크롤 생성 방지 */
-}
-
-/* list는 가로로 길어져야 하므로 max-content + 마지막 여백은 padding-right로 */
-.TimeLine .con .list {
-  display: flex;
-  flex-wrap: nowrap;
-  width: max-content;
-  padding-right: 110px;
-  /*  마지막 카드가 화면 끝에서 숨지 않게 “끝 여백” */
-  box-sizing: content-box;
-}
-
-/* 각 li는 con 안에서 "한 화면 가득" 보이도록 폭을 con 기준으로 제한 */
-.TimeLine .con .list>li {
-  box-sizing: border-box;
-
-  /* 기존 width:min(1400px,86vw) 때문에 1920에서 애매하게 잘릴 수 있어서
-        "con 패딩(좌110/우110) 기준으로 꽉 차게"로 강제 */
-  width: calc(100vw - 220px);
-  /* con 패딩이 110px*2 라는 전제 */
-  max-width: 1700px;
-  /* 1920-220 = 1700 */
-}
-
-/* ---------- line06 버그 픽스(오타/폭초과 원인 제거) ---------- */
-.TimeLine .con .list li.line06 {
-  margin-right: 0;
-  /*  200px로 scrollWidth만 키우던 요소 제거 */
-  padding: 30px 110px 30px 0px;
-}
-
-/* line06 이미지/텍스트가 con 폭 넘치지 않게 */
-.TimeLine .con .list li.line06 .left {
-  flex: 0 0 auto;
-  max-width: 955px;
-}
-
-.TimeLine .con .list li.line06 .textBox {
-  flex: 0 0 auto;
-  width: 420px;
-  min-width: 590px;
-  /* 글 줄바꿈으로 찌그러지지 않게 */
-}
-
-/* ---------- toptit “또 보이는 느낌” 방지용(핀 구간에서 겹침 최소화) ---------- */
-.TimeLine .con p.toptit {
-  position: relative;
-  /* sticky/fixed 있으면 절대 금지 */
-  z-index: 5;
-  margin: 0 0 40px;
-}
-
-/*  ul이 기준점 */
-.TimeLine .con .list {
-  position: relative;
-  --stroke-y: 30%;
-  /* JS가 못 잡을 때 대비 기본값 */
-}
-
-.TimeLine .con .list {
-  --stroke-offset: 100px;
-  /* 위로 올리고 싶으면 음수, 내리고 싶으면 양수 */
-}
-
-/*  뒤를 가로지르는 stroke */
-.TimeLine .con .list::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-
-  top: calc(var(--stroke-y) + var(--stroke-offset)) !important;
-  /* 위치고정값 */
-  height: 1px;
-  background: #2b4a2c;
-
-
-  /*  transform: scaleY(0.15); */
-  transform-origin: center;
-
-  opacity: .2;
-  /* 체감 두께 조절 */
-  z-index: 1;
-  pointer-events: none;
-}
-
-/*  stroke 위로 올려야 하는 요소들 */
-.TimeLine .con .list>li {
-  position: relative;
-  z-index: 2;
-}
-
-.TimeLine .con .list>li .img,
-.TimeLine .con .list>li .textBox {
-  position: relative;
-  z-index: 3;
-}
-
-/* =========================
-    TimeLine: 800px 이하 = 세로 sticky 스택
-    (반응형 CSS 파일 맨 마지막에!)
-========================= */
-@media (max-width: 800px) {
-
-  /* sticky가 잘리거나 무력화되는 원인 제거 */
-  .TimeLine,
-  .TimeLine .wrap,
-  .TimeLine .con {
-    height: auto !important;
-    overflow: visible !important;
-  }
-
-  /*  (선택) 모바일 패딩 */
-  .TimeLine .con {
-    padding: 80px 20px 160px !important;
-  }
-
-  /*  Our history는 1개만 상단 고정(가장 안정적) */
-  .TimeLine .con>.toptit {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background: rgba(243, 244, 240, 0.92);
-    backdrop-filter: blur(2px);
-    margin: 0 0 24px !important;
-    padding: 12px 0 !important;
-  }
-
-  /*  가로 → 세로 + GSAP transform 잔여 제거 */
-  .TimeLine .con .list {
-    display: block !important;
-    width: 100% !important;
-    transform: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    will-change: auto !important;
-  }
-
-  /*  가로 stroke 제거 */
-  .TimeLine .con .list::before {
-    content: none !important;
-  }
-
-  /*  카드 sticky 스택 */
-  .TimeLine .con .list>li {
-    position: sticky !important;
-    top: 64px;
-    /* toptit(대략 64px) 아래에 붙게 */
-    z-index: 1;
-    background: #F3F4F0;
-    width: 100% !important;
-    max-width: none !important;
-    padding: 24px 0 64px !important;
-    overflow: visible !important;
-  }
-
-  /* Timeline1만 최상단에 고정 (sticky 효과 명확화) */
-  .TimeLine .con .list>li.line01 {
-    top: 0 !important;
-    /* "Our history" 타이틀 바로 아래 고정 */
-    z-index: 10;
-    /* 다른 Timeline보다 위에 표시 */
-    padding-top: 0 !important;
-    /* 콘텐츠 시작점(초록색 선)부터 상단에 고정 */
-    margin-top: -24px !important;
-    /* toptit과의 간격 제거하여 초록색 선이 바로 붙게 */
-  }
-
-  /* 겹침 템포(스크롤 길이) */
-  .TimeLine .con .list>li+li {
-    margin-top: 180px !important;
-  }
-
-  .TimeLine .con .list>li:last-child {
-    margin-bottom: 260px !important;
-  }
-
-  /*  PC용 좌/우 배치/absolute 정리(모바일 흐름으로) */
-  .TimeLine .con .list li {
-    display: block !important;
-    margin-left: 0 !important;
-    padding-left: 0 !important;
-  }
-
-  /* 모든 요소 중앙정렬 */
-  .TimeLine .con .list .left,
-  .TimeLine .con .list .right,
-  .TimeLine .con .list .img,
-  .TimeLine .con .list .textBox {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-    position: static !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    text-align: center !important;
-  }
-
-  /* 이미지 컨테이너 중앙정렬 */
-  .TimeLine .con .list .left,
-  .TimeLine .con .list .right {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-  }
-
-  /* 텍스트 박스 중앙정렬 */
-  .TimeLine .con .list .textBox {
-    padding-left: 20px !important;
-    padding-right: 20px !important;
-  }
-
-  /* Timeline별 이미지 크기 제한 (잘리지 않게) */
-  .TimeLine .con .list li.line01 .right .img,
-  .TimeLine .con .list li.line06 .left .img {
-    max-width: 442px !important;
-    /* 768px 기준 이미지 최대 크기 */
-  }
-
-  /* Timeline 2, 3, 4, 5의 이미지들도 화면 넘치지 않게 */
-  .TimeLine .con .list .img img {
-    max-width: 135% !important;
-    height: auto !important;
-    object-fit: contain !important;
-  }
-
-  /* Timeline2 배경 이미지 중앙정렬 및 위치 조정 */
-  .TimeLine .con .list li.line02 .bg_img {
-    position: static !important;
-    margin: 20px auto !important;
-    text-align: center !important;
-  }
-
-  /* Timeline 3, 4, 5의 absolute 이미지들을 순차 배치로 변경 */
-  .TimeLine .con .list li.line03 .left .img img,
-  .TimeLine .con .list li.line04 .left .img img,
-  .TimeLine .con .list li.line05 .left .img img {
-    position: static !important;
-    margin: 10px auto !important;
-    display: block !important;
-  }
-
-  /* Timeline5 이미지 간격 조정 */
-  .TimeLine .con .list li.line05 .left .img img.first,
-  .TimeLine .con .list li.line05 .left .img img.sec {
-    left: auto !important;
-    top: auto !important;
-  }
-}
 
 
 /* =========================================================
-    TimeLine stroke 기준좌표 고정 패치
-  - 다른 섹션 padding/margin 변경과 무관하게 stroke 위치 안정화
+  수정 TimeLine CSS  (tl- )
+  - 1920px 기준 데스크탑 레이아웃
+  - 반응형(1023px 이하)은 sub_01_responsive.css에 작성 예정
 ========================================================= */
 
-/* 1) list를 확실한 기준 좌표계로 잠금 */
-.TimeLine .con .list {
-  position: relative !important;
-  /* ::before가 이걸 기준으로 붙음 */
-  padding-top: 0 !important;
-  /* 필요 시 여기만 조절 */
-  --stroke-offset: -96px;
-  /*  baseline 보정값(필요 시 조절) */
+/* --- 섹션 --- */
+.TimeLine {
+  width: 100%;
+  background: #F3F4F0;
+  overflow: hidden;
+  /* 가로 스크롤은 GSAP이 제어 */
 }
 
-/* 2) before는 list 기준으로만 움직이게 (기존 코드 유지 + offset만 추가) */
-.TimeLine .con .list::before {
-  top: calc(var(--stroke-y) + var(--stroke-offset)) !important;
+/* --- wrap: 전체 감싸기 --- */
+.TimeLine .tl-wrap {
+  width: 100%;
+  overflow: visible;
+  position: relative;
+  /* 고정 타이틀 기준점 */
+}
+
+/* --- 카드 리스트 (가로 배열) --- */
+.TimeLine .tl-list {
+  display: flex;
+  flex-wrap: nowrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  will-change: transform;
+}
+
+/* --- 개별 카드 --- */
+.TimeLine .tl-card {
+  flex: 0 0 100vw;
+  width: 100vw;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 280px 110px 200px;
+  /* Our history 높이(137+100+40) 확보 */
+  position: relative;
+  overflow: hidden;
+}
+
+/* --- Our history 타이틀(공통 스타일) --- */
+.TimeLine .tl-title {
+  font-family: 'PPEditorialNew', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 100px;
+  color: #45663C;
+  line-height: 1;
+  margin: 0;
+}
+
+/* --- 고정 타이틀 (데스크탑: tl-list 밖 → 슬라이드 안 됨) --- */
+.TimeLine .tl-title--fixed {
+  position: absolute;
+  top: 137px;
+  left: 110px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+
+/* --- body: 텍스트 + 이미지 좌우 배치 --- */
+.TimeLine .tl-body {
+  display: flex;
+  align-items: center;
+  gap: 150px;
+}
+
+/* --- 가로선: --- */
+.TimeLine .tl-list {
+  position: relative;
+  /* ::before 기준점 */
+  width: max-content;
+  /* flex  전체 너비 확보 */
+}
+
+.TimeLine .tl-list::before {
+  content: '';
+  position: absolute;
   left: 0;
+  width: 100%;
+  /* 리스트 전체 너비 */
+  top: clamp(320px, 34vw, 600px);
+  height: 1px;
+  background: rgba(60, 60, 60, 0.3);
+  pointer-events: none;
+  z-index: 0;
+  /* 제일 아래: 가로선 */
+}
+
+/* --- 지도 배경 이미지 (카드 2 전용) --- */
+.TimeLine .tl-map {
+  position: absolute;
+  top: 30%;
+  right: 110px;
+  transform: translateY(-50%);
+  z-index: 1;
+  /* 가로선(0) 위, 텍스트(2) 아래 */
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.TimeLine .tl-map img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* z-index: 텍스트 영역 제일 위 */
+.TimeLine .tl-text {
+  position: relative;
+  z-index: 2;
+}
+
+.TimeLine .tl-imgs {
+  position: relative;
+  z-index: 2;
+}
+
+
+
+
+
+/* --- 텍스트 영역 --- */
+.TimeLine .tl-text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: #F3F4F0;
+  padding-left: 40px;
+}
+
+.TimeLine .tl-since {
+  display: inline-block;
+  font-family: 'PPEditorialNew', serif;
+  font-style: italic;
+  font-size: 40px;
+  color: rgba(60, 60, 60, 0.4);
+  margin-bottom: 48px;
+}
+
+.TimeLine .tl-year {
+  display: inline-block;
+  font-family: 'PPEditorialNew', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 180px;
+  color: #3C3C3C;
+  line-height: 1;
+  margin-left: 10px;
+}
+
+
+
+.TimeLine .tl-sub-en {
+  display: inline-block;
+  font-family: 'PPEditorialNew', serif;
+  font-style: italic;
+  font-weight: 100;
+  font-size: 24px;
+  line-height: 132%;
+  letter-spacing: -0.02em;
+  color: rgba(59, 59, 59, 0.7);
+  margin: 0;
+}
+
+.TimeLine .tl-sub-kr {
+  display: inline-block;
+  font-family: 'Yoon Gothic', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.7;
+  letter-spacing: -0.02em;
+  color: #3C3C3C;
+  margin-top: 17px;
+  word-break: keep-all;
+}
+
+/* --- 이미지 영역 --- */
+.TimeLine .tl-img {
+  flex: 0 0 auto;
+  width: 950px;
+  max-width: 55%;
+  /* 비율로 반응 가능 */
+}
+
+.TimeLine .tl-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+
+/* === 카드별 레이아웃 방향 === */
+
+/* 카드 1 : 텍스트(왼) → 이미지(오)  — 기본 flex 방향 유지 */
+.TimeLine .tl-card--01 .tl-body {
+  flex-direction: row;
+}
+
+/* 카드 2 : 이미지(왼) → 텍스트(오) */
+.TimeLine .tl-card--02 .tl-body {
+  flex-direction: row-reverse;
+  align-items: flex-end;
+}
+
+.TimeLine .tl-card--02 .tl-text {
+  background: transparent;
+  align-items: flex-end;
+  margin-bottom: 70px;
+}
+
+.TimeLine .tl-card--02 .tl-sub-en {
+  order: 1;
+}
+
+.TimeLine .tl-card--02 .tl-sub-kr {
+  order: 2;
+  text-align: right;
+  background-color: transparent;
+
+}
+
+.TimeLine .tl-card--02 .tl-bg {
+  background: #F3F4F0;
+  padding-bottom: 20px;
+}
+
+.TimeLine .tl-card--02 .tl-year {
+  order: 3;
+  padding-top: 38px;
+  background: #F3F4F0;
+}
+
+/* 카드 3 : 이미지(왼) → 텍스트(오) */
+.TimeLine .tl-card--03 .tl-body {
+  flex-direction: row-reverse;
+  gap: 125px;
+}
+
+.TimeLine .tl-card--03 .tl-text {
+  align-items: flex-end;
+  margin-top: 33px;
+  padding-right: 30px;
+  flex: none;
+}
+
+.TimeLine .tl-card--03 .tl-sub-kr {
+  text-align: right;
+}
+
+/* 카드 4 : 이미지(왼) → 텍스트(오) */
+.TimeLine .tl-card--04 .tl-body {
+  flex-direction: row-reverse;
+  align-items: flex-end;
+}
+
+.TimeLine .tl-card--04 .tl-text {
+  flex: none;
+}
+
+/* 카드 5 : 이미지(왼) → 텍스트(오) */
+.TimeLine .tl-card--05 .tl-body {
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+.TimeLine .tl-card--05 .tl-text {
+  align-items: flex-end;
+  margin-top: 150px;
+  padding-right: 110px;
+}
+
+.TimeLine .tl-card--05 .tl-sub-en {
+  order: 1;
+}
+
+.TimeLine .tl-card--05 .tl-sub-kr {
+  order: 2;
+  text-align: right;
+  margin-bottom: 37px;
+}
+
+.TimeLine .tl-card--05 .tl-year {
+  order: 3;
+}
+
+
+/* === 복수 이미지 컨테이너 (카드 2, 3, 4, 5 등) === */
+.TimeLine .tl-imgs {
+  display: flex;
+  gap: 45px;
+  flex: 0 0 auto;
+  max-width: 55%;
+}
+
+.TimeLine .tl-imgs .tl-img {
+  flex: 0 0 auto;
+  position: relative;
+}
+
+.TimeLine .tl-imgs .tl-img img {
+  display: block;
+  /* width: 100%;
+  height: 100%; */
+  object-fit: cover;
+  position: absolute;
+}
+
+/* 카드 2 이미지 크기 */
+.TimeLine .tl-card--02 .tl-img--a {
+  width: 400px;
+  height: 530px;
+  align-self: flex-start;
+}
+
+.TimeLine .tl-card--02 .tl-img--b {
+  width: 400px;
+  height: 490px;
+  align-self: flex-end;
+  margin-top: 125px;
+}
+
+/* 카드 3: 사분면 배치 (img--a 좌상단, img--b 우하단) */
+.TimeLine .tl-card--03 .tl-imgs {
+  position: relative;
+  width: 1040px;
+  height: 610px;
+  max-width: none;
+  /* 55% 제한 해제 */
+  flex: 0 0 1040px;
+  display: block;
+  /* flex → block으로 전환 */
+}
+
+.TimeLine .tl-card--03 .tl-img--a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 550px;
+  height: 310px;
+}
+
+.TimeLine .tl-card--03 .tl-img--a img {
+  width: 100%;
+  height: 100%;
+}
+
+.TimeLine .tl-card--03 .tl-img--b {
+  position: absolute;
+  bottom: 30px;
+  right: 13px;
+  width: 440px;
+  height: 250px;
+}
+
+/* 카드 4: 이미지 배치 */
+.TimeLine .tl-card--04 .tl-imgs {
+  position: relative;
+  width: 740px;
+  height: 500px;
+  max-width: none;
+  flex: 0 0 740px;
+  display: block;
+}
+
+.TimeLine .tl-card--04 .tl-img--a {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 260px;
+  height: 310px;
+}
+
+.TimeLine .tl-card--04 .tl-img--b {
+  position: absolute;
+  top: 130px;
   right: 0;
+  width: 480px;
+  height: 280px;
 }
 
-/* 3) 혹시 다른 섹션 공통 스타일이 .con에 padding을 먹이면 TimeLine만 차단 */
-.TimeLine .con {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  padding-left: 50px !important;
-  padding-right: 50px !important;
+/* 카드 5 이미지 크기 */
+.TimeLine .tl-card--05 .tl-img--a {
+  width: 400px;
+  height: 490px;
+  align-self: flex-start;
+  margin-top: 150px;
 }
 
+.TimeLine .tl-card--05 .tl-img--a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.TimeLine .tl-card--05 .tl-img--b {
+  width: 400px;
+  height: 530px;
+  margin-top: 20px;
+}
+
+.TimeLine .tl-card--05 .tl-img--b img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 카드 6 이미지 크기 */
+.TimeLine .tl-card--06 .tl-body {
+  flex-direction: row-reverse;
+  align-items: flex-end;
+}
+
+.TimeLine .tl-card--06 {
+  padding-right: 228px;
+  padding-left: 0;
+}
+
+.TimeLine .tl-card--06 .tl-text {
+  flex: none;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.TimeLine .tl-card--06 .tl-sub-kr {
+  text-align: left;
+}
+
+.TimeLine .tl-card--06 .tl-img {
+  width: 955px;
+  height: 535px;
+  flex: 0 0 auto;
+}
+
+.TimeLine .tl-card--06 .tl-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 
 /* beauty */
@@ -2186,32 +1721,24 @@ TIMELINE FINAL
   /* column 내부만 보이게 */
 }
 
-/*  ul 내부를 애니메이션할 track 래퍼처럼 쓰기 */
+/*  ul 내부 애니메이션 track  */
 .beauty .beauty-product .card {
   will-change: transform;
 }
 
-/*  li 간격: 기존 레이아웃에 맞춰 유지 (필요하면 숫자만 조정) */
+/*  li 간격: 기존 레이아웃에 맞춰 유지  */
 .beauty .beauty-product .card li {
   margin-bottom: 20px;
   /* 카드 간격 */
 }
 
-/*  마지막-첫번째가 붙어 보이는 현상 방지:
-   클론 시작부에도 동일 간격을 주기 위해 '패딩 바텀'을 ul에 추가 */
+
 .beauty .beauty-product .card {
   padding-bottom: 20px;
   /* margin-bottom과 동일 값 */
 }
 
 
-
-/* 모션 줄이기 */
-@media (prefers-reduced-motion: reduce) {
-  .beauty .beauty-product .card {
-    transform: none !important;
-  }
-}
 
 
 
@@ -2228,18 +1755,7 @@ footer .inner {
   padding: 140px 110px 60px;
 }
 
-/* TimeLine */
-.TimeLine {
-  width: 100%;
-  background: #F3F4F0;
-  overflow: hidden;
-}
 
-.TimeLine .con {
-  /* 1920px: 64px 110px 160px → 390px: 20px 20px 80px */
-  padding: clamp(20px, 2.9vw + 8px, 64px) clamp(20px, 5.9vw + 7px, 110px) clamp(80px, 5.2vw + 60px, 160px);
-  position: relative;
-}
 
 footer .top-box {
   display: flex;

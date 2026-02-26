@@ -1,172 +1,96 @@
 /**
- * Package Section - Image Zoom Animation
- * GSAP ScrollTrigger를 사용한 이미지 확대 효과
- * 390px 이하에서는 비활성화
+ * Package Section - clip-path reveal + 확대 애니메이션
+ * Phase 1: clip-path 아치 → 직사각형 (하단 고정, 상단/좌우 열림)
+ * Phase 2: thumb_con이 뷰포트 전체를 채우도록 확대 (하단 기준)
  */
 
 gsap.registerPlugin(ScrollTrigger);
 
-window.addEventListener("load", () => {
-    const section = document.querySelector("#Package");
-    const canvas = document.querySelector("#thumbCanvas");
-    const frame = document.querySelector("#pkgFrame");
-    const copyWrap = document.querySelector("#pkgCopyWrap");
+$(function () {
+    const thumbCon = document.querySelector('.thumb_con');
+    const section = document.querySelector('.Package');
+    if (!thumbCon || !section) return;
 
-    if (!section || !canvas || !frame || !copyWrap) return;
+    // 부모 요소들 overflow: visible 설정 (확대 시 잘리지 않도록)
+    const middle = document.querySelector('.Package .middle');
+    const inner = document.querySelector('.Package .inner');
+    if (middle) middle.style.overflow = 'visible';
+    if (inner) inner.style.overflow = 'visible';
+    thumbCon.style.overflow = 'visible';
 
-    // 확대 완료 타겟(요청사항): 1920x1080
-    const TARGET_W = 1920;
-    const TARGET_H = 1080;
+    const windowClip = 'inset(5% 5% 0% 5% round 48% 48% 0% 0%)';
+    const openClip = 'inset(0% 0% 0% 0% round 0% 0% 0% 0%)';
+    const imgEl = document.querySelector('.imgWrap img');
 
-    // 390px 이하 미디어 쿼리 매칭
-    const mobileQuery = window.matchMedia("(max-width: 390px)");
+    function createAnimation(startVal, endVal) {
+        // 뷰포트 전체 기준으로 확대 비율 계산
+        const vw = window.innerWidth;
+        const vh = section.getBoundingClientRect().height;
+        const thumbRect = thumbCon.getBoundingClientRect();
 
-    function coverScaleUniform(fromRect, targetW, targetH) {
-        // cover 방식: 둘 중 큰 배율로 맞추면 화면을 "덮음"
-        const sx = targetW / fromRect.width;
-        const sy = targetH / fromRect.height;
-        return Math.max(sx, sy);
-    }
+        const scaleX = vw / thumbRect.width;
+        const scaleY = vh / thumbRect.height;
+        const scale = Math.max(scaleX, scaleY);
 
-    // 애니메이션 제거 함수
-    function killAnimation() {
-        ScrollTrigger.getAll().forEach(st => {
-            if (st.vars && st.vars.id === "thumbZoom") st.kill();
-        });
-        // 초기 상태로 리셋
-        gsap.set(canvas, { clearProps: "all" });
-        gsap.set(frame, { clearProps: "all" });
-        gsap.set(copyWrap, { clearProps: "all" });
-    }
+        // thumb_con 하단 중앙 → 뷰포트 하단 중앙으로의 이동량
+        const thumbCenterX = thumbRect.left + thumbRect.width / 2;
+        const thumbBottomY = thumbRect.bottom;
+        const secRect = section.getBoundingClientRect();
+        const secCenterX = secRect.left + secRect.width / 2;
+        const secBottomY = secRect.bottom;
 
-    function build() {
-        // 390px 이하에서는 애니메이션 비활성화
-        if (mobileQuery.matches) {
-            killAnimation();
-            return;
-        }
-
-        // 기존 트리거 제거
-        ScrollTrigger.getAll().forEach(st => {
-            if (st.vars && st.vars.id === "thumbZoom") st.kill();
-        });
-
-        // 초기 상태
-        gsap.set(canvas, {
-            x: 0,
-            y: 0,
-            scale: 1,
-            borderRadius: "185px 185px 0 0",
-            transformOrigin: "50% 50%"
-        });
-
-        gsap.set(frame, { opacity: 1 });
-        gsap.set(copyWrap, { opacity: 1, filter: "blur(0px)", y: 0 });
-
-        // 현재 thumb 크기(시작 기준)
-        const cRect = canvas.getBoundingClientRect();
-
-        if (!cRect.width || !cRect.height) return;
-
-        // 1920x1080을 덮도록(cover) 균일 스케일 계산
-        const finalScale = coverScaleUniform(cRect, TARGET_W, TARGET_H);
-
-        /* 추가된 부분: 섹션 좌상단으로 이동해서 왼쪽 공백 제거 */
-        const sRect = section.getBoundingClientRect();
-        const dx = sRect.left - cRect.left;
-        const dy = sRect.top - cRect.top;
-        /* 여기까지 */
-
-        // "덮인 상태 유지(pin)"를 위해 end를 넉넉히 줌
-        // - end를 길게 줄수록, 확대 완료 상태가 오래 유지됨
+        const dx = secCenterX - thumbCenterX;
+        const dy = secBottomY - thumbBottomY;
 
         const tl = gsap.timeline({
             scrollTrigger: {
-                id: "thumbZoom",
-                trigger: canvas,
-                start: "top 20%",
-                end: "+=180%",
-                scrub: 1,
-                pin: section,
-                pinSpacing: true,
-                anticipatePin: 1,
-                invalidateOnRefresh: true,
-                /* markers: true */
+                trigger: '.thumb_con',
+                start: startVal,
+                end: endVal,
+                scrub: 1.5,
+                markers: false,
+                onLeaveBack: function () {
+                    if (imgEl) imgEl.style.clipPath = windowClip;
+                    section.style.overflow = 'hidden';
+                },
+                onEnter: function () {
+                    section.style.overflow = 'visible';
+                },
+                onUpdate: function (self) {
+                    // Phase 2 시작 시 overflow 해제
+                    if (self.progress > 0.4) {
+                        section.style.overflow = 'visible';
+                    } else {
+                        section.style.overflow = 'hidden';
+                    }
+                }
             }
         });
 
-        // 0~0.75 : 확대 + 라운드 0
-        tl.to(canvas, {
-            scale: finalScale,
-            borderRadius: 0,
-            ease: "none",
-            duration: 0.75
-        }, 0);
+        // Phase 1: clip-path 아치 → 완전 개방 (하단 0 고정)
+        tl.fromTo(imgEl,
+            { clipPath: windowClip },
+            { clipPath: openClip, ease: 'none', duration: 10 }, 0
+        );
 
-        // 0.20~ : 프레임 사라짐(큰 이미지만 남기기)
-        tl.to(frame, {
-            opacity: 0,
-            ease: "none",
-            duration: 0.25
-        }, 0.20);
-
-        // 0.55~ : copy 사라짐(원하면 유지도 가능)
-        tl.to(copyWrap, {
-            opacity: 0,
-            filter: "blur(6px)",
-            y: -16,
-            ease: "none",
-            duration: 0.25
-        }, 0.55);
-
-        // 0.75~1.00 : 확대 완료 "정지 유지" 구간
-        // (scrub이라서 end까지 가는 동안 현재 상태 유지됨)
-        tl.to({}, { duration: 0.25 }); // 타임라인 길이 확보용 더미
+        // Phase 2: thumb_con 확대 (하단 기준점) → 뷰포트 전체 채움
+        tl.fromTo(thumbCon,
+            { scale: 1, x: 0, y: 0, transformOrigin: 'center bottom' },
+            {
+                scale: scale, x: dx, y: dy,
+                transformOrigin: 'center bottom',
+                ease: 'none', duration: 10
+            },
+            10
+        );
     }
 
-    // 미디어 쿼리 변경 감지
-    mobileQuery.addEventListener("change", (e) => {
-        if (e.matches) {
-            killAnimation();
-        } else {
-            build();
+    ScrollTrigger.matchMedia({
+        "(min-width: 769px)": function () {
+            createAnimation('0% 20%', '100% 80%');
+        },
+        "(max-width: 768px)": function () {
+            createAnimation('20% 80%', '100% 40%');
         }
     });
-
-    // 초기 빌드 (390px 초과일 때만)
-    if (!mobileQuery.matches) {
-        build();
-    }
-
-    window.addEventListener("resize", () => {
-        if (!mobileQuery.matches) {
-            ScrollTrigger.refresh();
-        }
-    });
-
-    function getResponsiveConfig() {
-        const w = window.innerWidth;
-
-        // 기본값(PC)
-        let start = "top 20%";
-        let end = "+=180%";
-        let targetW = 1920;
-        let targetH = 1080;
-
-        // 태블릿/모바일: 현재 뷰포트 기준으로 "화면가득" 확대되게
-        if (w <= 1024) {
-            start = "top 25%";
-            end = "+=140%";
-            targetW = window.innerWidth;
-            targetH = window.innerHeight;
-        }
-        if (w <= 768) {
-            start = "top 30%";
-            end = "+=120%";
-            targetW = window.innerWidth;
-            targetH = window.innerHeight;
-        }
-
-        return { start, end, targetW, targetH };
-    }
-});
+})

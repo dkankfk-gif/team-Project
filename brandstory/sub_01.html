@@ -7,7 +7,7 @@
     <title>ver.3</title>
     <link rel="stylesheet" href="css/sub_01.css">
     <link rel="stylesheet" href="font/font.css">
-    <link rel="stylesheet" href="css/sub_01_responsive.css">
+    <link rel="stylesheet" href="css/sub_01_responsive.css?v=2">
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 </head>
@@ -18,9 +18,9 @@
         <header>
             <a href="#" class="logo"><img src="img/logo.svg" alt=""></a>
             <ul class="nav en">
-                <li><a href="../index.html">HOME</a></li>
-                <li><a href="../brandstory/sub_01.html">BRAND</a></li>
-                <li><a href="../Productlist/sub_2.html">PRODUCTS</a></li>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">BRAND</a></li>
+                <li><a href="#">PRODUCTS</a></li>
                 <li><a href="#">CONTACT</a></li>
             </ul>
             <ul class="menu-icon">
@@ -140,194 +140,191 @@
 
 
 
-        <section class="typo" id="typo">
-            <div class="inner">
-                <h1 class="tit1">
-                    Nature<br>
-                    Powered<span class="slot slot-1"><img src="img/typo_product1.svg" alt=""></span>skin<br>
-                    Loving <span class="gray">care that</span><br>
-                    <span class="gray">feels<span class="slot slot-2"><img src="img/typo_product2.svg"
-                                alt=""></span>Effortless!</span>
-                </h1>
-            </div>
-        </section>
+    <section class="typo" id="typo">
+        <div class="inner">
+            <h1 class="tit1">
+                Nature<br>
+                Powered<span class="slot slot-1"><img src="img/typo_product1.svg" alt=""></span>skin<br>
+                Loving <span class="gray">care that</span><br>
+                <span class="gray">feels<span class="slot slot-2"><img src="img/typo_product2.svg"
+                            alt=""></span>Effortless!</span>
+            </h1>
+        </div>
+    </section>
 
 
-        <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                const section = document.querySelector('.typo');
-                const title = section?.querySelector('.tit1');
-                if (!section || !title) return;
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const section = document.querySelector('.typo');
+            const title = section?.querySelector('.tit1');
+            if (!section || !title) return;
 
-                // 원본(이미지 슬롯/gray 포함)을 보존한 채, <br> 기준으로 "줄 단위" 래핑
-                const raw = title.innerHTML;
+            // 원본(이미지 슬롯/gray 포함)을 보존한 채, <br> 기준으로 "줄 단위" 래핑
+            const raw = title.innerHTML;
 
-                // br을 기준으로 줄 나누기 (br, br/, br / 모두 대응)
-                const lines = raw
-                    .split(/<br\s*\/?>/i)
-                    .map(s => s.trim())
-                    .filter(Boolean);
+            // br을 기준으로 줄 나누기 (br, br/, br / 모두 대응)
+            const lines = raw
+                .split(/<br\s*\/?>/i)
+                .map(s => s.trim())
+                .filter(Boolean);
 
-                // 줄 래핑 적용
-                title.innerHTML = lines
-                    .map(lineHTML => `<span class="line"><span class="line-inner">${lineHTML}</span></span>`)
-                    .join('');
+            // 줄 래핑 적용
+            title.innerHTML = lines
+                .map(lineHTML => `<span class="line"><span class="line-inner">${lineHTML}</span></span>`)
+                .join('');
 
-                //  반복 재생: 들어오면 show, 나가면 hide
-                const io = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            section.classList.add('is-inview');
-                        } else {
-                            section.classList.remove('is-inview');
-                            // 재진입 시 애니메이션이 확실히 다시 시작되도록 리셋
-                            void title.offsetHeight;
-                        }
-                    });
-                }, {
-                    threshold: 0.35,
-                    rootMargin: "0px 0px -10% 0px"
+            //  반복 재생: 들어오면 show, 나가면 hide
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        section.classList.add('is-inview');
+                    } else {
+                        section.classList.remove('is-inview');
+                        // 재진입 시 애니메이션이 확실히 다시 시작되도록 리셋
+                        void title.offsetHeight;
+                    }
                 });
-
-                io.observe(section);
+            }, {
+                threshold: 0.35,
+                rootMargin: "0px 0px -10% 0px"
             });
-        </script>
+
+            io.observe(section);
+        });
+    </script>
 
 
 
 
 
 
+    <!-- ingre -->
+    <section class="ingre">
+        <div class="inner">
+            <div class="ingre-leftbox">
 
 
 
-        <!-- ingre -->
-        <section class="ingre">
-            <div class="inner">
-                <div class="ingre-leftbox">
+                <div class="card-clip">
 
+                    <!-- 노란: 아래 → 위 -->
+                    <div class="col col--up">
+                        <div class="track">
 
+                            <!-- 원본 -->
+                            <ul class="card">
+                                <li>
+                                    <a href="#">
+                                        <img src="img/ingre_leaf.png" alt="">
+                                        <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="img/ingre_clay.png" alt="">
+                                        <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="img/ingre_seed_oil.png" alt="">
+                                        <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
+                                    </a>
+                                </li>
+                            </ul>
 
-                    <div class="card-clip">
+                            <!-- 복제(무한루프용) -->
+                            <ul class="card" aria-hidden="true">
+                                <li>
+                                    <a href="#">
+                                        <img src="img/ingre_leaf.png" alt="">
+                                        <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="img/ingre_clay.png" alt="">
+                                        <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="img/ingre_seed_oil.png" alt="">
+                                        <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
+                                    </a>
+                                </li>
+                            </ul>
 
-                        <!-- 노란: 아래 → 위 -->
-                        <div class="col col--up">
-                            <div class="track">
-
-                                <!-- 원본 -->
-                                <ul class="card">
-                                    <li>
-                                        <a href="#">
-                                            <img src="img/ingre_leaf.png" alt="">
-                                            <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <img src="img/ingre_clay.png" alt="">
-                                            <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <img src="img/ingre_seed_oil.png" alt="">
-                                            <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
-                                        </a>
-                                    </li>
-                                </ul>
-
-                                <!-- 복제(무한루프용) -->
-                                <ul class="card" aria-hidden="true">
-                                    <li>
-                                        <a href="#">
-                                            <img src="img/ingre_leaf.png" alt="">
-                                            <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <img src="img/ingre_clay.png" alt="">
-                                            <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <img src="img/ingre_seed_oil.png" alt="">
-                                            <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
-                                        </a>
-                                    </li>
-                                </ul>
-
-                            </div>
                         </div>
+                    </div>
 
-                        <!-- 초록: 위 → 아래 -->
-                        <div class="col col--down">
-                            <div class="track">
+                    <!-- 초록: 위 → 아래 -->
+                    <div class="col col--down">
+                        <div class="track">
 
-                                <!-- 원본 -->
-                                <ul class="card2">
-                                    <li>
-                                        <a href="#">
-                                            <img src="img/ingre_extract.png" alt="">
-                                            <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <img src="img/ingre_salt.png" alt="">
-                                            <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <img src="img/ingre_extract2.png" alt="">
-                                            <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <img src="img/ingre_bamdoo.png" alt="">
-                                            <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
-                                        </a>
-                                    </li>
-                                </ul>
+                            <!-- 원본 -->
+                            <ul class="card2">
+                                <li>
+                                    <a href="#">
+                                        <img src="img/ingre_extract.png" alt="">
+                                        <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="img/ingre_salt.png" alt="">
+                                        <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="img/ingre_extract2.png" alt="">
+                                        <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="img/ingre_bamdoo.png" alt="">
+                                        <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
+                                    </a>
+                                </li>
+                            </ul>
 
-                                <!-- 복제(무한루프용) -->
-                                <ul class="card2" aria-hidden="true">
-                                    <li>
-                                        <a href="#">
-                                            <img src="img/ingre_extract.png" alt="">
-                                            <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <img src="img/ingre_salt.png" alt="">
-                                            <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <img src="img/ingre_extract2.png" alt="">
-                                            <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <img src="img/ingre_bamdoo.png" alt="">
-                                            <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
-                                        </a>
-                                    </li>
-                                </ul>
+                            <!-- 복제(무한루프용) -->
+                            <ul class="card2" aria-hidden="true">
+                                <li>
+                                    <a href="#">
+                                        <img src="img/ingre_extract.png" alt="">
+                                        <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="img/ingre_salt.png" alt="">
+                                        <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="img/ingre_extract2.png" alt="">
+                                        <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="img/ingre_bamdoo.png" alt="">
+                                        <p class="textbox"><span class="b">Camellia Sinensis</span>Leaf Extract</p>
+                                    </a>
+                                </li>
+                            </ul>
 
 
-
-                            </div>
 
                         </div>
 
                     </div>
+
+                </div>
 
 
                 </div>
@@ -453,14 +450,10 @@
                         <p>Where Nature and Design <br>Shape a Better Beauty</p>
                     </div>
 
-                    <!-- thumb -->
-                    <div class="thumb-wrap" id="thumbWrap">
-                        <div class="thumb-canvas" id="thumbCanvas">
-                            <!--  확대용 큰 이미지(배경) - PNG로 변경하여 품질 개선 -->
-                            <img src="img/package.png" class="img-big" alt="">
-
-                            <!--  썸네일 프레임/커버(처음에 보이다가 확대 중 사라짐) - 초록색 창문틀 -->
-                            <img src="img/Package_img1.svg" class="img-frame" id="pkgFrame" alt="">
+                    <!-- clip-path -->
+                    <div class="thumb_con" id="thumbWrap">
+                        <div class="imgWrap">
+                            <img src="img/package.png" alt="">
                         </div>
                     </div>
 
@@ -486,156 +479,155 @@
             </div><!-- /.inner -->
         </section>
 
-
-
         <!-- Package Animation Script -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
         <script src="js/package_animation.js"></script>
 
 
 
-
+        <!-- ========== TimeLine 섹션 ========== -->
         <section class="TimeLine" id="TimeLine">
-            <div class="wrap">
-                <div class="con">
+            <div class="tl-wrap">
+                <!-- 데스크탑(1024+): 고정 타이틀 -->
+                <p class="tl-title tl-title--fixed">Our history</p>
+                <ul class="tl-list">
 
-                    <p class="toptit">Our history</p>
-
-                    <ul class="list">
-                        <!-- Timeline 1 -->
-                        <li class="line01">
-                            <div class="textBox">
-                                <span class="since">since</span>
-                                <h1>2003</h1>
-                                <span class="sub">Where naturalism begins</span>
-                                <p class="txt">
-                                    '자연주의'라는 새로운 가치를 세상에 첫발을 내디뎠으며,<br>
+                    <!-- 카드 1 : 텍스트(왼) + 이미지(오) -->
+                    <li class="tl-card tl-card--01">
+                        <p class="tl-title">Our history</p>
+                        <div class="tl-body">
+                            <div class="tl-text">
+                                <span class="tl-since">Since</span>
+                                <h2 class="tl-year">2003</h2>
+                                <p class="tl-sub-en">Where naturalism begins</p>
+                                <p class="tl-sub-kr">
+                                    ‘자연주의’라는 새로운 가치를 걸고 세상에 첫발을 내디뎠으며,<br class="br-desk">
                                     자연에서 온 순수한 원료로 건강한 아름다움을 전하는 여정을 시작했습니다.
                                 </p>
                             </div>
+                            <div class="tl-img">
+                                <img src="img/timeline.svg" alt="">
+                            </div>
+                        </div>
+                    </li>
 
-                            <div class="right">
-                                <p class="img">
-                                    <img src="img/timeline.svg" alt="">
+                    <!-- 카드 2 : 이미지(왼) + 텍스트(오) -->
+                    <li class="tl-card tl-card--02">
+                        <p class="tl-title">Our history</p>
+                        <div class="tl-body">
+                            <div class="tl-text">
+                                <h2 class="tl-year">2009</h2>
+                                <p class="tl-sub-en">Expanding horizons with expertise</p>
+                                <p class="tl-sub-kr">
+                                    기술력과 인프라를 더해 제품의 안정성과 신뢰를 한층 강화하며<br class="br-desk">
+                                    <span class="tl-bg">더 많은 고객에게 다가갈 수 있는 기반을 마련했습니다.</span>
                                 </p>
                             </div>
-                        </li>
-
-
-                        <!-- Timeline 2 -->
-                        <li class="line02">
-                            <div class="left">
-                                <p class="img">
-                                    <img class="first" src="img/timeline_2_img.svg" alt="">
-                                    <img class="sec" src="img/timeline_2_img2.svg" alt="">
-                                </p>
+                            <div class="tl-imgs">
+                                <div class="tl-img tl-img--a">
+                                    <img src="img/timeline_2_img.svg" alt="">
+                                </div>
+                                <div class="tl-img tl-img--b">
+                                    <img src="img/timeline_2_img2.svg" alt="">
+                                </div>
                             </div>
-
-
-                            <p class="bg_img"><img src="img/timeline_2_img3.svg" alt=""></p>
-
-                            <div class="textBox">
-
-
-                                <span class="sub">Expanding horizons with expertise</span>
-                                <p class="txt">
-                                    기술력과 인프라를 더해 제품의 안정성과 신뢰를 한층 강화하며<br>
-                                    더 많은 고객에게 다가갈 수 있는 기반을 마련했습니다.
-                                </p>
-                                <h1>2009</h1>
+                            <!-- 지도 배경 이미지 (텍스트 뒤, 가로선 위) -->
+                            <div class="tl-map">
+                                <img src="img/timeline_2_img3.svg" alt="">
                             </div>
+                        </div>
+                    </li>
 
-                        </li>
-
-                        <!-- Timeline 3 -->
-                        <li class="line03">
-
-                            <div class="left">
-                                <p class="img">
-                                    <img src="img/timeline_3_img.svg" alt="">
-                                    <img src="img/timeline_3_img2.svg" alt="">
-                                </p>
-                            </div>
-
-
-                            <div class="textBox">
-
-                                <h1>2012</h1>
-                                <span class="sub">Discovering the energy of seeds</span>
-                                <p class="txt">
-                                    자연의 생명력이 응축된 '씨앗'을 근원으로 삼아 그 가치를 재발견하고,<br>
+                    <!-- 카드 3 : 이미지(왼) + 텍스트(오) -->
+                    <li class="tl-card tl-card--03">
+                        <p class="tl-title">Our history</p>
+                        <div class="tl-body">
+                            <div class="tl-text">
+                                <h2 class="tl-year">2012</h2>
+                                <p class="tl-sub-en">Discovering the energy of seeds</p>
+                                <p class="tl-sub-kr">
+                                    자연의 생명력이 응축된 ‘씨앗’을 근원으로 삼아 그 가치를 재발견하고 ,<br>
                                     피부 본연의 힘을 깨우는 더페이스샵만의 차별화된 컨셉을 정립했습니다.
                                 </p>
                             </div>
-
-
-                        </li>
-
-                        <!-- Timeline 4 -->
-                        <li class="line04">
-                            <div class="left">
-                                <p class="img">
-                                    <img src="img/timeline_4_img.svg" alt="">
-                                    <img src="img/timeline_4_img2.svg" alt="">
-                                </p>
+                            <div class="tl-imgs">
+                                <div class="tl-img tl-img--a">
+                                    <img src="img/timeline_3_img.svg" alt="">
+                                </div>
+                                <div class="tl-img tl-img--b">
+                                    <img src="img/timeline_3_img2.svg" alt="">
+                                </div>
                             </div>
+                        </div>
+                    </li>
 
-                            <div class="textBox">
-
-                                <h1>2016</h1>
-                                <span class="sub">Harmonizing nature's wisdom and space</span>
-                                <p class="txt">
-                                    자연의 지혜와 순수 원료가 어우러진 새로운 공간을 선보였으며,<br class="mo-hide">
+                    <!-- 카드 4 : 이미지(왼) + 텍스트(오) -->
+                    <li class="tl-card tl-card--04">
+                        <p class="tl-title">Our history</p>
+                        <div class="tl-body">
+                            <div class="tl-text">
+                                <h2 class="tl-year">2016</h2>
+                                <p class="tl-sub-en">Harmonizing nature's wisdom and space</p>
+                                <p class="tl-sub-kr">
+                                    자연의 지혜와 순수 원료가 어우러진 새로운 공간을 선보였으며,<br class="br-desk">
                                     고객과 브랜드가 자연 속에서 교감하는 한 차원 높은 경험을 제안했습니다.
                                 </p>
                             </div>
-                        </li>
-
-                        <!-- Timeline 5 -->
-                        <li class="line05">
-                            <div class="left">
-                                <p class="img">
-                                    <img class="first" src="img/timeline_5_img2.svg" alt="">
-                                    <img class="sec" src="img/timeline_5_img.svg" alt="">
-                                </p>
+                            <div class="tl-imgs">
+                                <div class="tl-img tl-img--a">
+                                    <img src="img/timeline_4_img.svg" alt="">
+                                </div>
+                                <div class="tl-img tl-img--b">
+                                    <img src="img/timeline_4_img2.svg" alt="">
+                                </div>
                             </div>
+                        </div>
+                    </li>
 
-                            <div class="textBox">
-                                <span class="sub">Beginning the journey for tomorrow</span>
-                                <p class="txt">
-                                    동물성 원료 배제와 친환경 패키징을 도입하기 시작하며,<br>
+                    <!-- 카드 5 : 이미지(왼) + 텍스트(오) -->
+                    <li class="tl-card tl-card--05">
+                        <p class="tl-title">Our history</p>
+                        <div class="tl-body">
+                            <div class="tl-text">
+                                <h2 class="tl-year">2021</h2>
+                                <p class="tl-sub-en">Beginning the journey for tomorrow</p>
+                                <p class="tl-sub-kr">
+                                    동물성 원료 배제와 친환경 패키징을 도입하기 시작하며,<br class="br-desk">
                                     피부와 지구를 모두 생각하는 가치 소비의 기준을 마련했습니다.
                                 </p>
-                                <h1>2021</h1>
                             </div>
-                        </li>
-
-                        <!-- Timeline 6 -->
-
-                        <li class="line06">
-                            <div class="left">
-                                <p class="img">
-                                    <img src="img/timeline_6_img.svg" alt="">
-                                </p>
+                            <div class="tl-imgs">
+                                <div class="tl-img tl-img--a">
+                                    <img src="img/timeline_5_img.svg" alt="">
+                                </div>
+                                <div class="tl-img tl-img--b">
+                                    <img src="img/timeline_5_img2.svg" alt="">
+                                </div>
                             </div>
+                        </div>
+                    </li>
 
-                            <div class="textBox">
-                                <h1>2023</h1>
-                                <span class="sub">Pioneering affordable clean beauty</span>
-                                <p class="txt">
-                                    자연과 기술의 균형 속에서 정직한 성분의 '클린 뷰티'를 실현하며<br>
+                    <!-- 카드 6 : 이미지(왼) + 텍스트(오) -->
+                    <li class="tl-card tl-card--06">
+                        <p class="tl-title">Our history</p>
+                        <div class="tl-body">
+                            <div class="tl-text">
+                                <h2 class="tl-year">2023</h2>
+                                <p class="tl-sub-en">Pioneering affordable clean beauty</p>
+                                <p class="tl-sub-kr">
+                                    자연과 기술의 균형 속에서 정직한 성분의 ‘클린 뷰티’를 실현하며<br>
                                     지속 가능한 글로벌 브랜드로 성장하고 있습니다.
                                 </p>
                             </div>
-                        </li>
+                            <div class="tl-img">
+                                <img src="img/timeline_6_img.svg" alt="">
+                            </div>
+                        </div>
+                    </li>
 
-                    </ul>
-
-                </div>
+                </ul>
             </div>
-
-
             <script src="js/sub_01.js"></script>
-
         </section>
 
 
